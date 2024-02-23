@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Group Theory | Artin’s Algebra</title>
+  <meta name="description" content="Artins albgrae" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Group Theory | Artin’s Algebra" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Artins albgrae" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Group Theory | Artin’s Algebra" />
+  
+  <meta name="twitter:description" content="Artins albgrae" />
+  
+
+<meta name="author" content="Ashan Jayamal" />
+
+
+<meta name="date" content="2024-02-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="lienaer-operators.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Artins Algebra</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Matrices</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#basic-operations"><i class="fa fa-check"></i><b>1.1</b> Basic Operations</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="group-theory.html"><a href="group-theory.html"><i class="fa fa-check"></i><b>2</b> Group Theory</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="group-theory.html"><a href="group-theory.html#laws-of-compositions"><i class="fa fa-check"></i><b>2.1</b> Laws of Compositions</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="group-theory.html"><a href="group-theory.html#exercises"><i class="fa fa-check"></i><b>2.1.1</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="group-theory.html"><a href="group-theory.html#groups-and-subgroups"><i class="fa fa-check"></i><b>2.2</b> Groups and Subgroups</a></li>
+<li class="chapter" data-level="2.3" data-path="group-theory.html"><a href="group-theory.html#subgroups-of-the-additive-group-of-integers"><i class="fa fa-check"></i><b>2.3</b> Subgroups of the Additive Group of Integers</a></li>
+<li class="chapter" data-level="2.4" data-path="group-theory.html"><a href="group-theory.html#cyclic-groups"><i class="fa fa-check"></i><b>2.4</b> Cyclic Groups</a></li>
+<li class="chapter" data-level="2.5" data-path="group-theory.html"><a href="group-theory.html#homomorphisms"><i class="fa fa-check"></i><b>2.5</b> Homomorphisms</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="group-theory.html"><a href="group-theory.html#examples-of-homomorphisms"><i class="fa fa-check"></i><b>2.5.1</b> Examples of Homomorphisms</a></li>
+<li class="chapter" data-level="2.5.2" data-path="group-theory.html"><a href="group-theory.html#trivial-homomorphism"><i class="fa fa-check"></i><b>2.5.2</b> Trivial Homomorphism</a></li>
+<li class="chapter" data-level="2.5.3" data-path="group-theory.html"><a href="group-theory.html#inclusion-map"><i class="fa fa-check"></i><b>2.5.3</b> Inclusion Map</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="group-theory.html"><a href="group-theory.html#isomorphisms"><i class="fa fa-check"></i><b>2.6</b> Isomorphisms</a></li>
+<li class="chapter" data-level="2.7" data-path="group-theory.html"><a href="group-theory.html#equivalence-relations-and-partitions"><i class="fa fa-check"></i><b>2.7</b> Equivalence Relations and Partitions</a></li>
+<li class="chapter" data-level="2.8" data-path="group-theory.html"><a href="group-theory.html#cosets"><i class="fa fa-check"></i><b>2.8</b> Cosets</a></li>
+<li class="chapter" data-level="2.9" data-path="group-theory.html"><a href="group-theory.html#modular-arithmetic"><i class="fa fa-check"></i><b>2.9</b> Modular Arithmetic</a></li>
+<li class="chapter" data-level="2.10" data-path="group-theory.html"><a href="group-theory.html#the-correspondence-theorem"><i class="fa fa-check"></i><b>2.10</b> The Correspondence Theorem</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="group-theory.html"><a href="group-theory.html#problem"><i class="fa fa-check"></i><b>2.10.1</b> <strong>PROBLEM</strong></a></li>
+<li class="chapter" data-level="2.10.2" data-path="group-theory.html"><a href="group-theory.html#problem-1"><i class="fa fa-check"></i><b>2.10.2</b> Problem</a></li>
+<li class="chapter" data-level="2.10.3" data-path="group-theory.html"><a href="group-theory.html#problem-2"><i class="fa fa-check"></i><b>2.10.3</b> Problem</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="group-theory.html"><a href="group-theory.html#product-groups"><i class="fa fa-check"></i><b>2.11</b> Product Groups</a></li>
+<li class="chapter" data-level="2.12" data-path="group-theory.html"><a href="group-theory.html#quotient-groups"><i class="fa fa-check"></i><b>2.12</b> Quotient Groups</a></li>
+<li class="chapter" data-level="2.13" data-path="group-theory.html"><a href="group-theory.html#exercises-1"><i class="fa fa-check"></i><b>2.13</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="lienaer-operators.html"><a href="lienaer-operators.html"><i class="fa fa-check"></i><b>3</b> Lienaer Operators</a></li>
+<li class="chapter" data-level="4" data-path="vector-spaces..html"><a href="vector-spaces..html"><i class="fa fa-check"></i><b>4</b> Vector spaces.</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/ashanjayamal/Artins-Albegra.git" target="blank">Property of Ashan Jaymal</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Artin’s Algebra</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="group-theory" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Group Theory<a href="group-theory.html#group-theory" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="laws-of-compositions" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Laws of Compositions<a href="group-theory.html#laws-of-compositions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercises" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Exercises<a href="group-theory.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-2" class="exercise"><strong>Exercise 2.1  </strong></span>Let <span class="math inline">\(S\)</span> be a set. Prove that the law of composition defined by <span class="math inline">\(ab = a\)</span> for all <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> in <span class="math inline">\(S\)</span> is associative? For which sets does this law have an identity?</p>
+</div>
+<p><strong>Solution</strong>: Let <span class="math inline">\(a,b,c\in S\)</span>.
+Now consider following
+<span class="math display">\[(ab)c=(ac)=a=(ab)=a(bc)\]</span>
+Thus, the given law of composition is associative.</p>
+<p>If the given law of composition has an identity element whenever every element <span class="math inline">\(a\in S\)</span> has a multiplicative inverse./
+In other words, for every element <span class="math inline">\(a\in S\)</span>, there exists an element <span class="math inline">\(e \in S\)</span> such that <span class="math display">\[ae = ea = a.\]</span>
+Thus, <span class="math inline">\(ae=a=ea=e\)</span>. So, the identity element is the same as every element in S, and the law has an identity for all sets S. Thus, only singletons sets have this given law of compositions have identity.</p>
+</div>
+</div>
+<div id="groups-and-subgroups" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Groups and Subgroups<a href="group-theory.html#groups-and-subgroups" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-3" class="definition"><strong>Definition 2.1  (Group) </strong></span>A group is a set <span class="math inline">\(G\)</span> together with a law of composition that has the following properties:</p>
+<ul>
+<li>The law of composition is associative: <span class="math inline">\((ab)c = a(bc)\)</span> for all <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> in <span class="math inline">\(G\)</span>.</li>
+<li><span class="math inline">\(G\)</span> contains an identity element <span class="math inline">\(1\)</span>, such that <span class="math inline">\(la = a\)</span> and <span class="math inline">\(al = a\)</span> for all <span class="math inline">\(a\)</span> in <span class="math inline">\(G\)</span>.</li>
+<li>Every element <span class="math inline">\(a\)</span> of <span class="math inline">\(G\)</span> has an inverse, an element <span class="math inline">\(b\)</span> such that <span class="math inline">\(ab = 1\)</span> and <span class="math inline">\(ba = 1\)</span>.</li>
+</ul>
+</div>
+<p><strong>Noatation</strong>: If set ‘<span class="math inline">\(G\)</span>’ with composition ‘<span class="math inline">\(\ccdot\)</span>’ is a group, then we denote it by <span class="math inline">\((G,\cdot)\)</span>
+::: {.definition #unnamed-chunk-4 name=“Ableian Group”}
+Group G is called abliean if its law of composition is commutative. i.e.
+<span class="math display">\[\forall x\in G, xy=yx\]</span>
+:::</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 2.1  </strong></span></p>
+<ul>
+<li><span class="math inline">\(\mathbb{R}^\times:=\mathbb{R}\setminus \{0\}\)</span> is an abliean group under multiplication</li>
+<li><span class="math inline">\(GL_n(\mathbb{R}):=\{A\in M_n(\mathbb{R}): \text{ A is invertible}\}\)</span> with materix multiplication is non-abliean group. This group is called <em>general linear group</em>.</li>
+</ul>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-6" class="definition"><strong>Definition 2.2  (Order of group) </strong></span>The order of a group <span class="math inline">\(G\)</span> is the number of elements that it contains. We <span class="math display">\[| G | := \text{number of elements of }G=\text{ the order of G}\]</span></p>
+<p>If the order is finite, <span class="math inline">\(G\)</span> is said to be a finite group. If not, <span class="math inline">\(G\)</span> is an infinite group.</p>
+</div>
+<p>Here is our notation for some familiar infinite abelian groups:</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-7" class="example"><strong>Example 2.2  </strong></span></p>
+<ul>
+<li><span class="math inline">\((\mathbb{Z},+)\)</span> :The set of integers, with addition as itslaw of composition (the additive group of integers)</li>
+<li><span class="math inline">\((\mathbb{R},+)\)</span> :The set of real numbers, with addition as its law of
+composition (the additive group of real numbers)</li>
+<li><span class="math inline">\((\mathbb{R}^\times,\times)\)</span> :The set of nonzero real numbers, with multiplication as its law of composition(the multiplicative group)
+<span class="math inline">\((\mathbb{C},+)\)</span> :the set of complex numbers, with addition as its law of composition (the additive group of complex numbers)</li>
+<li><span class="math inline">\((\mathbb{C}^\times,\times)\)</span> :The set of nonzero complex numbers, with multiplication as its law of composition(the multiplicative group of complex numbers)</li>
+</ul>
+</div>
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-8" class="proposition"><strong>Proposition 2.1  (Cancellation Law) </strong></span>Let <span class="math inline">\(G\)</span> be group and let <span class="math inline">\(a, b, c \in G\)</span> whose law of composition is written multiplicatively.</p>
+<ul>
+<li>If <span class="math inline">\(ab = ac\)</span> or if <span class="math inline">\(ba = ca\)</span>, then <span class="math inline">\(b = c\)</span>.</li>
+<li>If <span class="math inline">\(a b = a\)</span> or if <span class="math inline">\(ba = a\)</span>, then <span class="math inline">\(b = 1\)</span></li>
+</ul>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-1" class="proof"><em>Proof</em>. </span>Multiply both sides of <span class="math inline">\(ab=ac\)</span> on the left by<span class="math inline">\(a^{-1}\)</span> to obtain <span class="math inline">\(b = c\)</span>. The other proofs are analogous.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-2" class="remark"><em>Remark</em>. </span>As you saw <span class="math inline">\(a^{-1}\)</span> plays amajor rule in above proof. So the cancelation rule does not holds when elemenet <span class="math inline">\(a\)</span> is not invertible.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-11" class="example"><strong>Example 2.3  (Example that not holding the cancelation law) </strong></span><span class="math display">\[\begin{bmatrix} 1 &amp; 1 \\ 0 &amp; 0\end{bmatrix}
+\begin{bmatrix} 1 &amp; 1 \\ 2 &amp; 0\end{bmatrix}=
+\begin{bmatrix} 1 &amp; 1 \\ 0 &amp; 0\end{bmatrix}
+\begin{bmatrix} 3 &amp; 0 \\ 0 &amp; 1\end{bmatrix}\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-12" class="example"><strong>Example 2.4  </strong></span>Let <span class="math inline">\(T\)</span> be a set and <span class="math inline">\(G:=\{f:T\to T: f \text{ is a bijection}\}\)</span>. Then <span class="math inline">\(G\)</span> with composition is a group. We use notation $sys(T) $ to denote the</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-13" class="example"><strong>Example 2.5  </strong></span>The group of permutations of the set of indices <span class="math inline">\(\{l, 2, ... , n\}\)</span> is called the <em>symmetric group</em>,and is denoted by <span class="math inline">\(S_n\)</span>. Then <span class="math inline">\(|S_n|=n !\)</span>. So, <span class="math inline">\(S_n\)</span> is a finite group of order <span class="math inline">\(n!\)</span>.</p>
+<p>Let’s disscuss some individualcases for n.</p>
+<ul>
+<li><strong><span class="math inline">\(n=2\)</span></strong><br />
+The permutations of a set <span class="math inline">\(\{1, 2\}\)</span> of two elements are the identity <span class="math inline">\(i\)</span> and the transposition <span class="math inline">\(\tau=(12)\)</span>.
+<span class="math display">\[S_2:=\{id,(12)\}\]</span></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\circ\)</span></th>
+<th><span class="math inline">\(id\)</span></th>
+<th><span class="math inline">\((12)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(id\)</span></td>
+<td><span class="math inline">\(id\)</span></td>
+<td><span class="math inline">\((12)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((12)\)</span></td>
+<td><span class="math inline">\((12)\)</span></td>
+<td><span class="math inline">\(id\)</span></td>
+</tr>
+<tr class="odd">
+<td>——</td>
+<td>——</td>
+<td>—–</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><span class="math inline">\(n=3\)</span><br />
+<span class="math inline">\(S_3\)</span> has order <span class="math inline">\(3!=6\)</span>. <span class="math inline">\(S_3\)</span> serves as a convenient example because it is the smallest group whose law of composition isn’t commutative. We will refer to it often. To describe it, we pick two particular permutations in terms of which we can write all others. We take the cyclic permutation <span class="math inline">\((123)\)</span>, and the transposition <span class="math inline">\((12)\)</span>, and label them as <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, respectively.Then
+<span class="math display">\[\begin{eqnarray}
+x^3 &amp;=&amp; (123)^3=(123)(123)(123)=(123)(132)=id\\
+y^2 &amp;=&amp; (12)^2=(12)(12)=id\\
+yx  &amp;=&amp; (12)(123)=(13)=(132)(12)=((123)(123))(12)=(123)^2(12)
+\end{eqnarray}\]</span>
+As a summary,
+<span class="math display">\[x^3=1,Y^2=1,yx=x^2y\]</span></li>
+</ul>
+</div>
+</div>
+<div id="subgroups-of-the-additive-group-of-integers" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Subgroups of the Additive Group of Integers<a href="group-theory.html#subgroups-of-the-additive-group-of-integers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="cyclic-groups" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Cyclic Groups<a href="group-theory.html#cyclic-groups" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="homomorphisms" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Homomorphisms<a href="group-theory.html#homomorphisms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-14" class="definition"><strong>Definition 2.3  </strong></span>Let <span class="math inline">\((G, *)\)</span> and <span class="math inline">\((G&#39;, \odot)\)</span> be groups. A <strong>homomorphism</strong> <span class="math inline">\(\phi: G \rightarrow G&#39;\)</span> is a map from <span class="math inline">\(G\)</span> to <span class="math inline">\(G&#39;\)</span> such that for all <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> in <span class="math inline">\(G\)</span>:</p>
+<p><span class="math display">\[\begin{equation}
+    \phi(a * b) = \phi(a) \odot \phi(b).
+\end{equation}\]</span></p>
+</div>
+<div id="examples-of-homomorphisms" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Examples of Homomorphisms<a href="group-theory.html#examples-of-homomorphisms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Determinant Function</strong>: <span class="math inline">\(\text{det}: GL_n(\mathbb{R}) \to \mathbb{R}^\times\)</span></li>
+<li><strong>Exponential Map</strong>: <span class="math inline">\(\text{exp}: (\mathbb{R}, +) \to (\mathbb{R}^\times, \times)\)</span> defined by <span class="math inline">\(x \mapsto e^x\)</span></li>
+<li><strong>Map <span class="math inline">\(\phi\)</span></strong>: <span class="math inline">\((\mathbb{Z}, +) \to G\)</span> defined by <span class="math inline">\(\phi(n) = a^n\)</span>, where <span class="math inline">\(a\)</span> is a given element of <span class="math inline">\(G\)</span></li>
+<li><strong>Absolute Value Map</strong>: <span class="math inline">\(|\cdot| : (\mathbb{C}^\times, \times) \to (\mathbb{R}^\times, \times)\)</span></li>
+</ol>
+</div>
+<div id="trivial-homomorphism" class="section level3 hasAnchor" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> Trivial Homomorphism<a href="group-theory.html#trivial-homomorphism" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The trivial homomorphism <span class="math inline">\(\phi: G \rightarrow G&#39;\)</span> between any two groups maps every element of <span class="math inline">\(G\)</span> to the identity in <span class="math inline">\(G&#39;\)</span>.</p>
+</div>
+<div id="inclusion-map" class="section level3 hasAnchor" number="2.5.3">
+<h3><span class="header-section-number">2.5.3</span> Inclusion Map<a href="group-theory.html#inclusion-map" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If <span class="math inline">\(H\)</span> is a subgroup of <span class="math inline">\(G\)</span>, the inclusion map <span class="math inline">\(i: H \rightarrow G\)</span> defined by <span class="math inline">\(i(x) = x\)</span> for <span class="math inline">\(x\)</span> in <span class="math inline">\(H\)</span> is a homomorphism.</p>
+<hr />
+<p><strong>Proposition 5.1.1</strong></p>
+<p>Let <span class="math inline">\(\phi: G \rightarrow G&#39;\)</span> be a group homomorphism.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>If <span class="math inline">\(a_i, \ldots, a_k\)</span> are elements of <span class="math inline">\(G\)</span>, then <span class="math inline">\(\phi(a_i \ldots a_k) = \phi(a_i) \ldots \phi(a_k)\)</span>.</p></li>
+<li><p><span class="math inline">\(\phi\)</span> maps the identity to the identity: <span class="math inline">\(\phi(1_G) = 1_{G&#39;}\)</span>.</p></li>
+<li><p><span class="math inline">\(\phi\)</span> maps inverses to inverses: <span class="math inline">\(\phi(a^{-1}) = \phi(a)^{-1}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<div id="isomorphisms" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Isomorphisms<a href="group-theory.html#isomorphisms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="equivalence-relations-and-partitions" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Equivalence Relations and Partitions<a href="group-theory.html#equivalence-relations-and-partitions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="cosets" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Cosets<a href="group-theory.html#cosets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="modular-arithmetic" class="section level2 hasAnchor" number="2.9">
+<h2><span class="header-section-number">2.9</span> Modular Arithmetic<a href="group-theory.html#modular-arithmetic" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-15" class="exercise"><strong>Exercise 2.2  </strong></span>What are the possible values of <span class="math inline">\(a^2\)</span> modulo 4? modulo 8?</p>
+</div>
+<p><strong>solution</strong>
+_In modulo 4_<br />
+<span class="math display">\[\begin{eqnarray*}
+    \overline{0}^2&amp;\equiv &amp; 0 \pmod{4}\\
+    \overline{1}^2&amp;\equiv &amp; 1 \pmod{4}\\
+    \overline{2}^2&amp;\equiv &amp; 0 \pmod{4}\\
+    \overline{3}^2&amp;\equiv &amp; 1 \pmod{4}\\
+\end{eqnarray*}\]</span>
+The possible values of <span class="math inline">\(a^2\pmod{4}\)</span> are 0 and 1.</p>
+<p>_In modulo 8_<br />
+<span class="math display">\[\begin{eqnarray*}
+    \overline{0}^2&amp;\equiv &amp; 0 \pmod{8}\\
+    \overline{1}^2&amp;\equiv &amp; 1 \pmod{8}\\
+    \overline{2}^2&amp;\equiv &amp; 4 \pmod{8}\\
+    \overline{3}^2&amp;\equiv &amp; 1 \pmod{8}\\
+    \overline{4}^2&amp;\equiv &amp; 0 \pmod{8}\\
+    \overline{5}^2&amp;\equiv &amp; 1 \pmod{8}\\
+    \overline{6}^2&amp;\equiv &amp; 4 \pmod{8}\\
+    \overline{7}^2&amp;\equiv &amp; 1 \pmod{8}\\
+\end{eqnarray*}\]</span>
+The possible values of <span class="math inline">\(a^2\pmod{8}\)</span> are 0,1 and 4.</p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-16" class="exercise"><strong>Exercise 2.3  </strong></span>Prove that every integer <span class="math inline">\(a\)</span> is congruent to the sum of its decimal digits modulo 9.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-3" class="proof"><em>Proof</em>. </span></p>
+<pre><code>Let $x\in  \mathbb{Z}$. Now we can represent x as follows
+\[x=a_010^0+a_110^1+\cdots +a_n10^n=\sum_{i=0}^n a_{i}10^i\text{  forsome } n\in \mathbb{Z},\text{ and }a_i\in \{0,1,...,9\}\]
+
+We need to show $x \equiv  \sum_{i=0}^na_i\pmod{9$}.So, now consider,
+\begin{eqnarray*}
+    x-\sum_{i=0}^n a_{i}&amp;=&amp;\sum_{i=0}^n a_{i}10^i-\sum_{i=0}^n a_{i}\\
+    &amp;=&amp; \sum_{i=0}^n (a_{i}10^i- a_{i})\\
+    &amp;=&amp; \sum_{i=0}^n a_{i}(10^i- 1)
+\end{eqnarray*}
+By follwing calim we can get that,</code></pre>
+<p><span class="math display">\[\begin{eqnarray*}
+    x-\sum_{i=0}^n a_i &amp;equiv &amp; 0 \pmod{9}\\
+    x &amp;\equiv &amp; \sum_{i=0}^na_i\pmod{9}
+\end{eqnarray*}\]</span></p>
+</div>
+<p>: <span class="math inline">\(9|(10^k-1)\)</span> for any <span class="math inline">\(k\in \mathbb{N}\)</span>.</p>
+<div class="proof">
+<p><span id="unlabeled-div-4" class="proof"><em>Proof</em>. </span>We use mathematical induction.<br />
+<em><span class="math inline">\(k=1\)</span></em><br />
+This case is trivial. Because <span class="math inline">\(9|10-1\)</span>.<br />
+<em><span class="math inline">\(k=n\in\mathbb{Z}\)</span></em><br />
+Now asuume when <span class="math inline">\(n=k, 9|(10^n-1)\)</span>.<br />
+<em><span class="math inline">\(k=n+1\)</span></em>
+<span class="math display">\[10^{n+1}-1 =10\cdot 10^{n}-1=9\cdot 10^n + (10^n - 1) \]</span>
+Thus <span class="math inline">\(9\vert (10^{n+1}-1)\)</span>.<br />
+Therefore,by mathematical induction, <span class="math inline">\(9|(10^n-1)\)</span> for any <span class="math inline">\(n\in \mathbb{N}\)</span>.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-19" class="exercise"><strong>Exercise 2.4  </strong></span>Solve the congruence <span class="math inline">\(2x \equiv 5\)</span> modulo 9 and modulo 6.</p>
+</div>
+<p>Done Later add.
+::: {.exercise #unnamed-chunk-20}
+Determine the integers <span class="math inline">\(n\)</span> for which the pair of congruences <span class="math inline">\(2x - y \equiv 1\)</span> and <span class="math inline">\(4x + 3y \equiv 2\)</span> modulo <span class="math inline">\(n\)</span> has a solution.
+:::
+Done Later add.
+::: {.exercise #unnamed-chunk-21}
+Prove the Chinese Remainder Theorem: Let <span class="math inline">\(a, b, u, v\)</span> be integers, and assume that the greatest common divisor of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is 1. Then there is an integer <span class="math inline">\(x\)</span> such that <span class="math inline">\(x \equiv u\)</span> modulo <span class="math inline">\(a\)</span> and <span class="math inline">\(X \equiv v\)</span> modulo <span class="math inline">\(b\)</span>.<br />
+Hint: Do the case <span class="math inline">\(u = 0\)</span> and <span class="math inline">\(v = 1\)</span> first.
+:::</p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-22" class="exercise"><strong>Exercise 2.5  </strong></span>Determine the order of each of the matrices A and B when the matrix entries are interpreted modulo 3.</p>
+</div>
+</div>
+<div id="the-correspondence-theorem" class="section level2 hasAnchor" number="2.10">
+<h2><span class="header-section-number">2.10</span> The Correspondence Theorem<a href="group-theory.html#the-correspondence-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-23" class="definition"><strong>Definition 2.4  </strong></span>Let <span class="math inline">\(\phi: G \rightarrow G^\prime\)</span> be a group homomorphism, and let <span class="math inline">\(H\)</span> be a subgroup of <span class="math inline">\(G\)</span>. We may restrict <span class="math inline">\(\phi\)</span> to <span class="math inline">\(H\)</span>, obtaining a homomorphism
+<span class="math display">\[\phi|_H: H \rightarrow G^\prime\]</span></p>
+</div>
+<p>In other words, we take the same map but restrict its domain.</p>
+<p><strong>Notation</strong>: We use this notation for clarity <span class="math inline">\([\phi|_H](h)\)</span>.</p>
+<p>Further, we can see that follwoing observatons.</p>
+<ul>
+<li>By definition, <span class="math inline">\(\forall h\in H,\phi|_H(h) = \phi(h)\)</span></li>
+<li>The restriction <span class="math inline">\(\phi|_H\)</span> is a homomorphism (Since <span class="math inline">\(\phi\)</span> is homomorphism).</li>
+<li>The kernel of <span class="math inline">\(\phi|_H\)</span> is the intersection of the kernel of <span class="math inline">\(\phi\)</span> with <span class="math inline">\(H\)</span>:
+<span class="math display">\[ker(\phi|_H) = (ker\phi) \cap H\]</span>
+There is no need to prove this. This is trivial by definition of kernel.</li>
+<li>Image of <span class="math inline">\(\phi|_H\)</span> is the same as the image <span class="math inline">\(\phi(H)\)</span> of <span class="math inline">\(H\)</span> under the map <span class="math inline">\(\phi\)</span>.
+<span class="math display">\[Im(\phi_H)=\phi(H)\]</span></li>
+<li>If <span class="math inline">\(|H|\)</span> and <span class="math inline">\(|G&#39;|\)</span> have no common factor, <span class="math inline">\(\phi(H) = \{1\}\)</span>, so <span class="math inline">\(H\)</span> is contained in the kernel.
+(Since, by Artin’s book corollary 2.8.13,</li>
+</ul>
+<p><span class="math display">\[\begin{eqnarray}
+|Im(\phi_H)|&amp;\biggr |&amp;|H|\\
+|Im(\phi_H)|&amp;\biggr |&amp; |G&#39;|
+\end{eqnarray}\]</span>, Thus,, if <span class="math inline">\(|H|\)</span> and <span class="math inline">\(|G&#39;|\)</span> have no common factors,<span class="math inline">\(|Im(\phi_H)|=|\phi(H)| =1.\)</span> So, <span class="math inline">\(Im(\phi_H)=\phi(H)= \{1\}\)</span>)</p>
+<p>Now let’s see an example.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-24" class="example"><strong>Example 2.6  </strong></span>Define sign homorphism <span class="math inline">\(\sigma: S_n \to \{\pm 1\}\)</span> by <span class="math inline">\(\sigma(x)=1\)</span> if <span class="math inline">\(x\)</span> is even, and <span class="math inline">\(\sigma (x)=−1\)</span> if <span class="math inline">\(x\)</span> is odd. Then the image of the sign homomorphism is,
+<span class="math display">\[Im(\sigma)=\{\pm 1\}\]</span>
+it has order <span class="math inline">\(2\)</span>.</p>
+<p>Let <span class="math inline">\(H=\{x \in S_n : \text{if $x$ has odd order}\}\)</span>. Then <span class="math inline">\(H\)</span> is a subgroup. So,, <span class="math inline">\(H \subset \ker(\sigma)\)</span> (We can easily verify this.)</p>
+<p>Furthur, The sub group of <span class="math inline">\(S_n\)</span> with even permutations is called <em>Alternating group</em> (<span class="math inline">\(A_n\)</span>).</p>
+</div>
+<div id="problem" class="section level3 hasAnchor" number="2.10.1">
+<h3><span class="header-section-number">2.10.1</span> <strong>PROBLEM</strong><a href="group-theory.html#problem" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="proposition">
+<p><span id="prp:2104" class="proposition"><strong>Proposition 2.2  </strong></span>Let <span class="math inline">\(\phi:G \to G^{\prime}\)</span> be a homomorphism with kernel <span class="math inline">\(K\)</span>, and let <span class="math inline">\(H^\prime\leq G^\prime\)</span>. Denote the inverse image <span class="math inline">\(\phi^{-1}(H^\prime)\)</span> by <span class="math inline">\(H\)</span>. i.e.:</p>
+<p><span class="math display">\[H=\phi^{-1}(H^\prime)=\{x\in G: \phi(x)\in H^\prime\}\]</span>
+Then,</p>
+<ul>
+<li><span class="math inline">\(\phi^{-1}(H^\prime)\)</span> is a subgroup of <span class="math inline">\(G\)</span> that contains <span class="math inline">\(K\)</span>.</li>
+<li>If <span class="math inline">\(H\)</span> is a normal subgroup of <span class="math inline">\(G^\prime\)</span>, then <span class="math inline">\(\phi^{-1}(H^\prime)\)</span> is also a normal subgroup of <span class="math inline">\(G\)</span>.</li>
+<li>If <span class="math inline">\(\phi\)</span> is surjective and <span class="math inline">\(H\)</span> is a normal subgroup of <span class="math inline">\(G\)</span>, then <span class="math inline">\(\phi^{-1}(H^\prime)\)</span> is a normal subgroup of <span class="math inline">\(G^\prime\)</span>.</li>
+</ul>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-5" class="remark"><em>Remark</em>. </span><span class="math inline">\(\phi^{-1}\)</span> is not a map.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-6" class="proof"><em>Proof</em>. </span></p>
+<ul>
+<li><strong>Claim 1</strong>: <span class="math inline">\(K\subseteq \phi^{-1}(H^\prime)=H\)</span><br />
+Let <span class="math inline">\(x\in K\)</span>. Then <span class="math inline">\(\phi(x)=1_{G^\prime}\)</span>. Since <span class="math inline">\(1_{G^\prime}\in H^\prime\)</span>. Thus, <span class="math inline">\(x\in \phi^{-1}(H^\prime)=H\)</span>. Therfore, <span class="math inline">\(K\subseteq \phi^{-1}(H^\prime)=H\)</span></li>
+<li><strong>Claim 2</strong>: <span class="math inline">\(\phi^{-1}(H^\prime)\)</span> is a subgroup of <span class="math inline">\(G\)</span><br />
+
+<ul>
+<li><em>Closure</em> :Suppose <span class="math inline">\(x,y\in H= \phi^{-1}(H^\prime)\)</span>. Then <span class="math inline">\(\phi(x),\phi(y)\in \phi(H^\prime)\)</span>. Since <span class="math inline">\(\phi\)</span> is hormophism <span class="math inline">\(\phi(x)\phi(y)=\phi(xy)\)</span>. Since <span class="math inline">\(H^\prime\leq G^\prime\)</span>, then <span class="math inline">\(\phi(xy)=\phi(x)\phi(y)\in H^\prime\)</span>. Thus, <span class="math inline">\(xy\in \phi^{-1}(H^\prime)=H\)</span></li>
+<li><em>Identity</em> : Since <span class="math inline">\(\phi(1_G)=1_{G^\prime}\)</span>, <span class="math inline">\(1_G\in \phi^{-1}(H^\prime)=H\)</span></li>
+<li><em>Inverse</em> : Let <span class="math inline">\(x\in \phi^{-1}(H^\prime)=H\)</span>. Then <span class="math inline">\(\phi(x)\in H^\prime\)</span> and since <span class="math inline">\(H^\prime \leq G^\prime\)</span>,then <span class="math inline">\((\phi(x))^{-1}\in H^\prime\)</span>. Since <span class="math inline">\(\phi\)</span> is a homomorphism, <span class="math inline">\((\phi(x))^{-1}=\phi(x^{-1})\)</span>, Thus <span class="math inline">\((\phi(x))^{-1}=\phi(x^{-1})\in H^\prime\)</span>. Hence, <span class="math inline">\(x^{-1}\in \phi^{-1}(H^\prime)\)</span>.</li>
+</ul></li>
+<li><strong>Claim 3</strong>: If <span class="math inline">\(H^\prime\)</span> is a normal subgroup of <span class="math inline">\(G^\prime\)</span>, then <span class="math inline">\(\phi^{-1}(H^\prime)\)</span> is also a normal subgroup of <span class="math inline">\(G\)</span>.<br />
+Now suppose that <span class="math inline">\(H^\prime\)</span> is a normal subgroup of <span class="math inline">\(G^\prime\)</span>. Let <span class="math inline">\(x\in H\)</span> and <span class="math inline">\(g\in G\)</span>. Then, since <span class="math inline">\(\phi\)</span> is hormorphism,
+<span class="math display">\[\phi(gxg^{-1})=\phi(g)\phi(x)\phi(g^{-1})=\phi(g)\phi(x)(\phi(g))^{-1}\]</span>
+So, <span class="math inline">\(\phi(gxg^{-1})\)</span> is conjugate of <span class="math inline">\(\phi(x)\)</span>. Since <span class="math inline">\(x\in H=\phi^{-1}(H^\prime)\)</span>,the <span class="math inline">\(\phi(x)\in H^\prime\)</span>. Thus, <span class="math inline">\(\phi(gxg^{-1})=\phi(g)\phi(x)(\phi(g))^{-1}\in H^\prime\)</span>. Hence,
+<span class="math inline">\(gxg^{-1}\in \phi^{-1}(H^\prime)=H\)\)</span>.</li>
+<li><strong>Claim 4</strong>: If <span class="math inline">\(\phi\)</span> is surjective and <span class="math inline">\(H\)</span> is a normal subgroup of <span class="math inline">\(G\)</span>, then <span class="math inline">\(\phi^{-1}(H^\prime)\)</span> is a normal subgroup of <span class="math inline">\(G^\prime\)</span>.<br />
+Suppose that <span class="math inline">\(\phi\)</span> is surjective and <span class="math inline">\(H\)</span> is a normal subgroup of <span class="math inline">\(G\)</span>. Let <span class="math inline">\(a\in H^\prime\)</span> and <span class="math inline">\(b\in G^\prime\)</span>. Since <span class="math inline">\(\phi\)</span> is surjcetive, There are elements <span class="math inline">\(x\in H\)</span> and <span class="math inline">\(y\in G\)</span> such that <span class="math inline">\(\phi(x) = a\)</span> and <span class="math inline">\(\phi(y) = b\)</span>. Since <span class="math inline">\(H\)</span> is normal <span class="math inline">\(yxy^{- 1}\in H\)</span>, thus <span class="math inline">\(\phi(yxy^{-1})=bab^{-1}\in H^\prime\)</span>.</li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-27" class="example"><strong>Example 2.7  </strong></span>let denote the determinant homomorphism <span class="math display">\[det:GL_n(\mathbb{R})\to \mathbb{R}^\times\]</span>. Note that <span class="math inline">\(\mathbb{R}^+\unlhd \mathbb{R}^\times\)</span>. (It is very clear that $The set of positive real numbers is a subgroup of <span class="math inline">\(\mathbb{R}^\times\)</span>, and since <span class="math inline">\(\mathbb{R}^\times\)</span> is abliean, <span class="math inline">\(\mathbb{R}^+\)</span> is normal.) Now consider the inverse image of <span class="math inline">\(\mathbb{R}^+\)</span>,
+<span class="math display">\[det^{-1}(\mathbb{R}^+)=\{A\in GL_n(\mathbb{R}):det(A)\in \mathbb{R}^+\}=SL_n(\mathbb{R})\]</span>. By above proposition we can ge that <span class="math inline">\(SL_n(\mathbb{R})\)</span> is normal subgroup. (Because <span class="math inline">\(\mathbb{R}^+\unlhd \mathbb{R}^\times\)</span> and <span class="math inline">\(det\)</span> is surjective map.)</p>
+</div>
+<div class="theorem">
+<p><span id="thm:CorrespondenceTheorem" class="theorem"><strong>Theorem 2.1  (Correspondence Theorem) </strong></span>Let <span class="math inline">\(\phi: G \to G^\prime\)</span> be a surjective group homomorphism with kernel <span class="math inline">\(K\)</span>. There is a bijective correspondence between subgroups of <span class="math inline">\(G^\prime\)</span> and subgroups of <span class="math inline">\(G\)</span> that contain <span class="math inline">\(K\)</span>:
+<span class="math display">\[\{\text{subgroups of $G$ that contain $K$}\}\longleftrightarrow \{\text{subgroups of $G^\prime$}\}\]</span>
+This corresponde nce is defined as follows:
+<span class="math display">\[\begin{aligned}
+\text{a subgroup $H$ of $G$ that contains K} &amp;\rightsquigarrow \text{ its image} (\phi(H) \in G^\prime,\\
+\text{a subgroup $H^\prime$ of $G^\prime$} &amp;\rightsquigarrow \text{ its inverse image $\phi^{-1}(H^\prime)$ in $G$}.
+\end{aligned}\]</span></p>
+<ul>
+<li>If <span class="math inline">\(H\)</span> and <span class="math inline">\(H^\prime\)</span> are corresponding subgroups, then <span class="math inline">\(H\)</span> is normal in <span class="math inline">\(G\)</span> if and only if is normal in <span class="math inline">\(G^\prime\)</span>.</li>
+<li>If If <span class="math inline">\(H\)</span> and <span class="math inline">\(H^\prime\)</span> are corresponding subgroups, then
+<span class="math display">\[|H|= |H^\prime||K |\]</span></li>
+</ul>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-7" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(H\)</span> be subgroup of <span class="math inline">\(G\)</span> that contain <span class="math inline">\(K\)</span>. Let <span class="math inline">\(H^\prime\)</span> be a subgroup of <span class="math inline">\(G^\prime\)</span>. Now we need to check folllwings,</p>
+<ul>
+<li><p><span class="math inline">\(\phi(H)\)</span> is a subgroup of <span class="math inline">\(G^\prime\)</span>.</p></li>
+<li><p><span class="math inline">\(\phi^{-1}(H^\prime)\)</span> is a subgroup of <span class="math inline">\(G\)</span>, and it contains <span class="math inline">\(K\)</span>.</p></li>
+<li><p><span class="math inline">\(H^\prime\)</span> is a normal subgroup of <span class="math inline">\(G^\prime\)</span> if and only if <span class="math inline">\(\phi^{-1}(H^\prime)\)</span> is a normal subgroup of <span class="math inline">\(G\)</span>.</p></li>
+<li><p>(<em>bijectivity of the correspondence</em>) <span class="math inline">\(\phi(\phi^{-1}(H^\prime)) =H^\prime\)</span> and <span class="math inline">\(\phi^{-1}(\phi(H))=H\)</span></p></li>
+<li><p><span class="math inline">\(|(\phi^{-1} (H^\prime)| = |H^\prime||K|\)</span>.</p></li>
+<li><p><strong>Claim 1</strong>: <span class="math inline">\(\phi(H)\)</span> is a subgroup of <span class="math inline">\(G^\prime\)</span>.<br />
+</p>
+<ul>
+<li><em>Closure</em>: Let $<span class="math inline">\(x,y\in phi(H)\)</span>. Then there is <span class="math inline">\(a,b\in H\)</span> such that <span class="math inline">\(\phi(a)=x\)</span> and <span class="math inline">\(\phi(b)=y\)</span>. Since <span class="math inline">\(\phi\)</span> is hormorphism, <span class="math inline">\(xy=\phi(a)\phi(b)=\phi(ab)\)</span>. Sine <span class="math inline">\(H\leq G\)</span>, <span class="math inline">\(ab\in H,~ xy=\phi(ab)\in \phi(H)\)</span>.</li>
+<li><em>Identity</em> : Since <span class="math inline">\(1_G\in H\)</span>, <span class="math inline">\(\phi(1_G)=1_{G^\prime}\in \phi(H)\)</span></li>
+<li><em>Inverse</em> : Let <span class="math inline">\(x\in \phi(H)\)</span>. Then there exist <span class="math inline">\(a\in H\)</span> such that <span class="math inline">\(\phi(a)=x\)</span>. Since <span class="math inline">\(H\leq G\)</span>, <span class="math inline">\(a^{-1}\)</span> exists in <span class="math inline">\(H\)</span>. <span class="math inline">\(\phi(a^{-1})=\phi(a)^{-1}=x^{-1}\in \phi(G)\)</span>.</li>
+</ul></li>
+<li><p><strong>Claim 2</strong>: <span class="math inline">\(\phi^{-1}(H^\prime)\)</span> is a subgroup of <span class="math inline">\(G\)</span>, and it contains <span class="math inline">\(K\)</span>.<br />
+This is true from proportion <a href="group-theory.html#prp:2104">2.2</a></p></li>
+<li><p><strong>Claim 3</strong>: <span class="math inline">\(H^\prime\)</span> is a normal subgroup of <span class="math inline">\(G^\prime\)</span> if and only if <span class="math inline">\(\phi^{-1}(H^\prime)\)</span> is a normal subgroup of <span class="math inline">\(G\)</span>.<br />
+Alreday this prooved in proportion <a href="group-theory.html#prp:2104">2.2</a></p></li>
+<li><p><strong>Claim 4.1</strong>: <span class="math inline">\(\phi(\phi^{-1}(H^\prime))=H^\prime\)</span></p>
+<ul>
+<li><p><span class="math inline">\(\phi(\phi^{-1}(H^\prime))\subset H^\prime\)</span><br />
+Lett <span class="math inline">\(x\in \phi(\phi^{-1}(H^\prime))\)</span>.
+Then there exist <span class="math inline">\(y\in\phi^{-1}(H^\prime)\)</span> such that <span class="math inline">\(\phi(y)=x\)</span>. Then by definiton of the pre image <span class="math inline">\(x=\phi(y)\in H^\prime\)</span>.</p></li>
+<li><p><span class="math inline">\(\phi(\phi^{-1}(H^\prime))\supset H^\prime\)</span><br />
+Let <span class="math inline">\(a\in H^\prime\)</span>. Since <span class="math inline">\(\phi\)</span> is surjective, there exists <span class="math inline">\(b\in G\)</span> such that <span class="math inline">\(\phi(b)=a\in H^\prime\)</span>. Thus <span class="math inline">\(b\in \phi^{-1}(H^\prime)\)</span>. Hence <span class="math inline">\(a=\phi(b)=\phi(\phi^{-1}(H^\prime))\)</span>.</p></li>
+</ul></li>
+</ul>
+<p>Therefore, <span class="math inline">\(\phi(\phi^{-1}(H^\prime))=H^\prime\)</span>.</p>
+<ul>
+<li><strong>Claim 4.2</strong>: <span class="math inline">\(\phi^{-1}(\phi(H))=H\)</span>
+<ul>
+<li><span class="math inline">\(\phi^{-1}(\phi(H))\supset H\)</span><br />
+Let <span class="math inline">\(x\in H\)</span>. Then <span class="math inline">\(\phi(x) \in \phi(H)\)</span>. So, <span class="math inline">\(x\in \phi^{-1}(\phi(H))\)</span>.</li>
+<li><span class="math inline">\(\phi^{-1}(\phi(H))subset H\)</span><br />
+Let <span class="math inline">\(y\in \phi^{-1}(\phi(H))\)</span>. By definition of inverse image, <span class="math inline">\(\phi(y)\in \phi(H)\)</span>. Then there exist <span class="math inline">\(z\in H\)</span> such that <span class="math inline">\(\phi(y)=\phi(z)\)</span>. Then <span class="math inline">\(z^{-1}y\)</span> is in the kernal <span class="math inline">\(K\)</span>.(by Artins book proposition 2.5.8). Since <span class="math inline">\(K \subset H\)</span>, <span class="math inline">\(z^{-1}y\in H\)</span>. So, <span class="math inline">\(a\in H\)</span> and <span class="math inline">\(a^{-1}z\in H\)</span>. Thus, <span class="math inline">\(a(a^{-1}x)=x\in H\)</span>. Hence <span class="math inline">\(\phi^{-1}(\phi(H))\subset H\)</span></li>
+</ul></li>
+</ul>
+<p>Therefore, <span class="math inline">\(\phi^{-1}(\phi(H))=H\)</span>
+- <strong>Claim 5</strong> : <span class="math inline">\(|(\phi^{-1} (H^\prime)| = |H^\prime||K|\)</span>.<br />
+</p>
+</div>
+</div>
+<div id="problem-1" class="section level3 hasAnchor" number="2.10.2">
+<h3><span class="header-section-number">2.10.2</span> Problem<a href="group-theory.html#problem-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="example">
+<p><span id="exm:unnamed-chunk-29" class="example"><strong>Example 2.8  </strong></span>Recall</p>
+<p><span class="math display">\[\begin{aligned}
+S_4 &amp;= \left\{ id, (1 2), (1 3), (1 4), (2 3), (2 4), (3 4), (1 2 3), (1 2 4), (1 3 2), (1 3 4), (1 4 2), (1 4 3), (2 3 4), (1 2 3 4) \right\}\\
+S_3 &amp;= \left\{ id, (1 2), (1 3), (2 3), (1 2 3), (1 3 2) \right\}
+\end{aligned}\]</span></p>
+<p>There are 6 such subgroups of <span class="math inline">\(S_3\)</span>,<span class="math display">\[ &lt;(1 2)&gt;, &lt;(1 3)&gt;, &lt;(2 3)&gt;, &lt;(1 2 3)&gt;= &lt;(1 3 2)&gt;,S_3\]</span>.
+There is one proper subgroup of order 3. That is <span class="math inline">\(&lt;(123)&gt;\)</span>. There are 3 subgroups of order 2. They are <span class="math inline">\(&lt;(1 2)&gt;, &lt;(1 3)&gt;, &lt;(2 3)&gt;\)</span></p>
+<p>The Correspondence Theorem tells us that there are four proper
+subgroups of <span class="math inline">\(S_4\)</span> that contain <span class="math inline">\(K\)</span>.</p>
+</div>
+</div>
+<div id="problem-2" class="section level3 hasAnchor" number="2.10.3">
+<h3><span class="header-section-number">2.10.3</span> Problem<a href="group-theory.html#problem-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="product-groups" class="section level2 hasAnchor" number="2.11">
+<h2><span class="header-section-number">2.11</span> Product Groups<a href="group-theory.html#product-groups" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let <span class="math inline">\(G,G&#39;\)</span> be two groups. The product set <span class="math inline">\(G \times G&#39;\)</span>, the set of pairs of elements <span class="math inline">\((a, a&#39;)\)</span> with
+a in G and a’ in G’, can be made into a group by component-wise multiplication,</p>
+<p>multiplication of pairs is defined by the rule,</p>
+<p><span class="math display">\[(a,a&#39;)\cdot(b,b&#39;)=(ab,a&#39;b&#39;)\quad \text{for } a,b\in  G \text{ and for } a&#39;,b&#39;\in G\]</span>
+Let’s prove that <span class="math inline">\(G\times G&#39;\)</span> is a group.</p>
+<div class="proof">
+<p><span id="unlabeled-div-8" class="proof"><em>Proof</em>. </span>Let Let <span class="math inline">\(G,G&#39;\)</span> be two groups and let <span class="math inline">\(a,b,c\in G\)</span> and <span class="math inline">\(a&#39;,b&#39;,c&#39;\in G&#39;\)</span></p>
+<ul>
+<li><em>Closure</em> : <span class="math inline">\((a,a&#39;)\cdot(b,b&#39;)=(ab,a&#39;b&#39;)\)</span>. So, since $a,bG and <span class="math inline">\(a&#39;,b&#39;\in G&#39;\)</span> and <span class="math inline">\(G\)</span> and <span class="math inline">\(G&#39;\)</span> be a group, then <span class="math inline">\(ab\in G\)</span> and <span class="math inline">\(a&#39;b&#39;\in G\)</span>. Thus, <span class="math inline">\((a,a&#39;)\cdot(b,b&#39;)=(ab,a&#39;b&#39;)\in G \times G&#39;\)</span>.</li>
+<li><em>Asscitivity</em>: We can obtain following using asscivity property of group <span class="math inline">\(G\)</span> and <span class="math inline">\(G&#39;\)</span>.
+<span class="math display">\[((a,a&#39;)\cdot(b,b&#39;))\cdot(c,c&#39;)=(ab,a&#39;b&#39;)\cdot(c,c&#39;)
+=(abc,a&#39;b&#39;c&#39;)=
+(a,a&#39;)\cdot(bc,b&#39;c&#39;)=(a,a&#39;)\cdot((b,b&#39;)\cdot(c,c&#39;))\]</span></li>
+<li><em>identity</em>: (1_G,1_{G’}) is the idenitity<br />
+<span class="math display">\[(1_G,1_{G&#39;})\cdot(b,b&#39;)=(1_Gb,1_{G&#39;}b&#39;)=(b,b&#39;)
+=(b1_G,b&#39;1_{G&#39;})=(b,b&#39;)\cdot(1_G,1_{G&#39;})\]</span></li>
+<li><em>Inverse</em> : The inverse of <span class="math inline">\((a,a&#39;)\)</span> is <span class="math inline">\((a^{-1},(a&#39;)^{-1})\)</span><br />
+<span class="math display">\[(a,a&#39;)\cdot(a^{-1},(a&#39;)^{-1})=(aa^{-1},a&#39;(a&#39;)^{-1})=(1_G,1_{G&#39;})=(a^{-1}a,(a&#39;)^{-1}a&#39;)=(a^{-1},(a&#39;)^{-1})\cdot(a,a&#39;)\]</span></li>
+</ul>
+</div>
+<p>So, The group obtained in this way is called the product of <span class="math inline">\(G\)</span> and <span class="math inline">\(G&#39;\)</span>.</p>
+<p>It is related to the two factors <span class="math inline">\(G\)</span> and <span class="math inline">\(G&#39;\)</span> in a simple way that we can sum up in terms of some homomorphisms.
+<img src="figures/ch_2/fig01.jpg" /><!-- -->
+The homomorphisms are defined as follows,
+<span class="math display">\[\begin{eqnarray}
+i:G &amp;\rightarrow&amp; G \times G&#39; \\
+x &amp;\mapsto&amp; (x,1)\\\\
+i&#39;:G&#39; &amp;\rightarrow&amp; G \times G&#39; \\
+x &amp;\mapsto&amp; (x&#39;,1)\\\\
+p:G \times G&#39; &amp;\rightarrow&amp; G&#39; \\
+(x,x&#39;) &amp;\mapsto&amp; x\\\\
+p&#39;:G&#39; \times G&#39; &amp;\rightarrow&amp; G&#39; \\
+(x,x&#39;) &amp;\mapsto&amp; x&#39;\\\\
+\end{eqnarray}\]</span></p>
+<p>Observe that <span class="math inline">\(i\)</span> and <span class="math inline">\(i&#39;\)</span> are injective and <span class="math display">\[Im(i)=G\times 1_G&#39;\leq G\times G&#39; \text{ and }Im(i&#39;)=1_G\times G&#39;\leq G\times G&#39;\]</span>
+The maps <span class="math inline">\(p\)</span> and <span class="math inline">\(p &#39;\)</span> are called projections and they are surjective.
+<span class="math display">\[\ker(p)=1\times G&#39;\text{ and }\ker(p&#39;)=G\times 1_{G&#39;}\]</span>
+It is obviously desirable to decompose a given group <span class="math inline">\(G\)</span> as a product, that is, to find investigate groups <span class="math inline">\(H\)</span> and <span class="math inline">\(H &#39;\)</span> such that <span class="math inline">\(G\)</span> is isomorphic to the product <span class="math inline">\(H \times H&#39;\)</span>.</p>
+</div>
+<div id="quotient-groups" class="section level2 hasAnchor" number="2.12">
+<h2><span class="header-section-number">2.12</span> Quotient Groups<a href="group-theory.html#quotient-groups" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="exercises-1" class="section level2 hasAnchor" number="2.13">
+<h2><span class="header-section-number">2.13</span> Exercises<a href="group-theory.html#exercises-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lienaer-operators.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-GroupTheory.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

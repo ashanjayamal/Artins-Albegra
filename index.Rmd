@@ -8,26 +8,27 @@ bibliography: [book.bib, packages.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::gitbook,
-  set in the _output.yml file.
+ Artins albgrae
 link-citations: yes
 github-repo: rstudio/bookdown-demo
 ---
+# Matrices 
+## Basic Operations
+Let \( m \) and \( n \) be positive integers. An \( m \times n \) matrix is a collection of \( mn \) numbers arranged in a rectangular array.
 
-# Group Theory
+```{r echo=FALSE,fig.cap='$~$',label='fig01'}
+  knitr::include_graphics('figures/ch_1/fig01.jpg') 
+```
+```{example}
+\[A:=\begin{bmatrix}
+8 & 0 & 3\\
+78 & -5 & 2
+\end{bmatrix}\]
+$A$ is $2 \times 3$ matrix.(two rows and three columns)
 
-## Laws of Compositions
-## Laws of Composition
-## Groups and Subgroups
-## Subgroups of the Additive Group of Integers
-## Cyclic Groups
-## Homomorphisms
-## Isomorphisms
-## Equivalence Relations and Partitions
-## Cosets
-## Modular Arithmetic
-## The Correspondence Theorem
-## Product Groups
-## Quotient Groups
-## Exercises
+```
+The numbers in a matrix are the matrix entries. They may be denoted by \(a_{ij}\), where \(i\) and \(j\) are indices (integers) with \(1 < i < m\) and \(1 < j < n\). The index \(i\) represents the row index, and \(j\) represents the column index. So \(a_{ij}\) is the entry that appears in the \(i\)th row and \(j\)th column of the matrix.
+
+```{r echo=FALSE,fig.cap='$~$',label='fig02'}
+  knitr::include_graphics('figures/ch_1/fig02.png') 
+```
