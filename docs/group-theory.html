@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2024-02-23" />
+<meta name="date" content="2024-03-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -107,7 +107,13 @@
 </ul></li>
 <li class="chapter" data-level="2.11" data-path="group-theory.html"><a href="group-theory.html#product-groups"><i class="fa fa-check"></i><b>2.11</b> Product Groups</a></li>
 <li class="chapter" data-level="2.12" data-path="group-theory.html"><a href="group-theory.html#quotient-groups"><i class="fa fa-check"></i><b>2.12</b> Quotient Groups</a></li>
-<li class="chapter" data-level="2.13" data-path="group-theory.html"><a href="group-theory.html#exercises-1"><i class="fa fa-check"></i><b>2.13</b> Exercises</a></li>
+<li class="chapter" data-level="2.13" data-path="group-theory.html"><a href="group-theory.html#exercises-1"><i class="fa fa-check"></i><b>2.13</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="2.13.1" data-path="group-theory.html"><a href="group-theory.html#groups-and-subgroups-1"><i class="fa fa-check"></i><b>2.13.1</b> Groups and Subgroups</a></li>
+<li class="chapter" data-level="2.13.2" data-path="group-theory.html"><a href="group-theory.html#subgroups-of-the-additive-group-of-integers-1"><i class="fa fa-check"></i><b>2.13.2</b> Subgroups of the Additive Group of Integers</a></li>
+<li class="chapter" data-level="2.13.3" data-path="group-theory.html"><a href="group-theory.html#cyclic-group"><i class="fa fa-check"></i><b>2.13.3</b> Cyclic group</a></li>
+<li class="chapter" data-level="2.13.4" data-path="group-theory.html"><a href="group-theory.html#product-group"><i class="fa fa-check"></i><b>2.13.4</b> Product Group</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="lienaer-operators.html"><a href="lienaer-operators.html"><i class="fa fa-check"></i><b>3</b> Lienaer Operators</a></li>
 <li class="chapter" data-level="4" data-path="vector-spaces..html"><a href="vector-spaces..html"><i class="fa fa-check"></i><b>4</b> Vector spaces.</a></li>
@@ -565,14 +571,811 @@ p&#39;:G&#39; \times G&#39; &amp;\rightarrow&amp; G&#39; \\
 <p>Observe that <span class="math inline">\(i\)</span> and <span class="math inline">\(i&#39;\)</span> are injective and <span class="math display">\[Im(i)=G\times 1_G&#39;\leq G\times G&#39; \text{ and }Im(i&#39;)=1_G\times G&#39;\leq G\times G&#39;\]</span>
 The maps <span class="math inline">\(p\)</span> and <span class="math inline">\(p &#39;\)</span> are called projections and they are surjective.
 <span class="math display">\[\ker(p)=1\times G&#39;\text{ and }\ker(p&#39;)=G\times 1_{G&#39;}\]</span>
-It is obviously desirable to decompose a given group <span class="math inline">\(G\)</span> as a product, that is, to find investigate groups <span class="math inline">\(H\)</span> and <span class="math inline">\(H &#39;\)</span> such that <span class="math inline">\(G\)</span> is isomorphic to the product <span class="math inline">\(H \times H&#39;\)</span>.</p>
+It is obviously desirable to decompose a given group <span class="math inline">\(G\)</span> as a product, that is, to find investigate groups <span class="math inline">\(H\)</span> and <span class="math inline">\(H &#39;\)</span> such that <span class="math inline">\(G\)</span> is isomorphic to the product <span class="math inline">\(H \times H&#39;\)</span>. The groups <span class="math inline">\(H\)</span> and <span class="math inline">\(H&#39;\)</span> will be simpler, and the relation between <span class="math inline">\(H\times H&#39;\)</span> and its factors is easily understood. It is rare that a group is a product, but it does happen occasionally</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-31" class="example"><strong>Example 2.9  </strong></span>Consider a cyclicgroup of order <span class="math inline">\(6\)</span> can be decomposed. It migheted be suprised you. A cyclic group <span class="math inline">\(C_6\)</span> of order <span class="math inline">\(6\)</span> isisomorphic to the product <span class="math inline">\(C_2 \times C_3\)</span> of cyclic groups of orders <span class="math inline">\(2\)</span> and <span class="math inline">\(3\)</span>.
+<span class="math display">\[C_6\equiv C_2 \times C_3\]</span>
+Let say</p>
+<p><span class="math display">\[\begin{eqnarray}
+C_2&amp;=&amp;&lt;y&gt;=\{1,y\},\text{ with } y^2=1\\
+C_3&amp;=&amp;&lt;z&gt;=\{1,z,z^2\}, \text{ with } y^3=1
+\end{eqnarray}\]</span></p>
+<p>Let <span class="math inline">\(x\in C_2\times c_3\)</span>. Then there exist <span class="math inline">\(p\in C_2\)</span> and <span class="math inline">\(q\in C_3\)</span> such that <span class="math inline">\(x=(p, q)\)</span>. Let’s find order of <span class="math inline">\(x\)</span>, that is the smallest positive integer <span class="math inline">\(k\)</span> such that <span class="math inline">\(x^k =(y^k,z^k)\)</span> is the identity <span class="math inline">\((1, 1)\)</span>.</p>
+<ul>
+<li><em>Case-I</em>: <span class="math inline">\(k=1, x^1=(y^1,z^1)=(y,z)\)</span></li>
+<li><em>Case-II</em>: <span class="math inline">\(k=2, x^2=(y^2,z^2)=(1,z^2)\)</span></li>
+<li><em>Case-III</em>: <span class="math inline">\(k=3, x^3=(y^3,z^3)=(y,1)\)</span></li>
+<li><em>Case-IV</em>: <span class="math inline">\(k=4, x^4=(y^4,z^4)=(1,z)\)</span></li>
+<li><em>Case-V</em>: <span class="math inline">\(k=5, x^5=(y^5,z^5)=(1,z^2)\)</span></li>
+<li><em>Case-VI</em>: <span class="math inline">\(k=6, x^5=(y^6,z^6)=(1,1)\)</span></li>
+</ul>
+<p>Thus, the smallest positive integer <span class="math inline">\(k\)</span> such that <span class="math inline">\(x^k=(1, 1)\)</span> is 6. So, order of <span class="math inline">\(x\)</span> is <span class="math inline">\(6\)</span>. Since <span class="math inline">\(C_2\times C_3\)</span> has order <span class="math inline">\(6\)</span>. Furthur,
+<span class="math display">\[C_2\times C_3 =&lt;x&gt;\]</span>
+The powers of <span class="math inline">\(x\)</span> are
+<span class="math display">\[(1,1),(y,z),(1,z^2),(y,1),(1,z),(y,z^2)\]</span></p>
+</div>
+<p><img src="figures/ch_2/fig02.png" /><!-- -->
+Here <span class="math inline">\(i=0,1,2...5\)</span></p>
+<p>So let’s try to see above result more generally.</p>
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-32" class="proposition"><strong>Proposition 2.3  </strong></span>Let <span class="math inline">\(r\)</span> and <span class="math inline">\(s\)</span> be relatively prime integers.
+A cyclic group of order <span class="math inline">\(rs\)</span> is isomorphic to the product of a cyclic group of order <span class="math inline">\(r\)</span> and a cyclic group of order <span class="math inline">\(s\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-33" class="example"><strong>Example 2.10  (s) </strong></span>On the other hand, a cyclic group of order <span class="math inline">\(4\)</span> is not isomorphic to a product of two cyclic
+groups of order <span class="math inline">\(2\)</span>.
+<span class="math display">\[C_4\not\equiv C2 \times C_2\]</span>
+Because , every element of <span class="math inline">\(C_2 \times C_2\)</span> has order <span class="math inline">\(1\)</span> or <span class="math inline">\(2\)</span>,whereasa cyclic group of order
+<span class="math inline">\(4\)</span> contains two elements of order <span class="math inline">\(4\)</span>.</p>
+</div>
+<p>The next proposition describes product groups.</p>
+<div class="proposition">
+<p><span id="prp:prp2114" class="proposition"><strong>Proposition 2.4  </strong></span>Let <span class="math inline">\(G\)</span> be a group and let <span class="math inline">\(H,K\leq G\)</span>, and let <span class="math inline">\(f: H \times K \rightarrow G\)</span> be the multiplication map, defined by <span class="math inline">\(f(h, k) = hk\)</span>. Its image is the set <span class="math inline">\(HK = \{hk | h \in H, k \in K\}\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(f\)</span> is injective if and only if <span class="math inline">\(H \cap K = \{1\}\)</span>.</li>
+<li><span class="math inline">\(f\)</span> is a homomorphism from the product group <span class="math inline">\(H \times K\)</span> to <span class="math inline">\(G\)</span> if and only if elements of <span class="math inline">\(K\)</span> commute with elements of <span class="math inline">\(H\)</span>: <span class="math inline">\(hk = kh\)</span>.</li>
+<li>If <span class="math inline">\(H\)</span> is a normal subgroup of <span class="math inline">\(G\)</span>, then <span class="math inline">\(HK\)</span> is a subgroup of <span class="math inline">\(G\)</span>.</li>
+<li><span class="math inline">\(f\)</span> is an isomorphism from the product group <span class="math inline">\(H \times K\)</span> to <span class="math inline">\(G\)</span> if and only if <span class="math inline">\(H \cap K = \{1\}\)</span>, <span class="math inline">\(HK = G\)</span>, and also <span class="math inline">\(H\)</span> and <span class="math inline">\(K\)</span> are normal subgroups of <span class="math inline">\(G\)</span>.</li>
+</ol>
+<p>It is important to note that the multiplication map may be bijective though it isn’t a group homomorphism. This happens, for instance, when <span class="math inline">\(G = S_3\)</span>, and with the usual notation, <span class="math inline">\(H = \langle x \rangle\)</span> and <span class="math inline">\(K = \langle y \rangle\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-9" class="proof"><em>Proof</em>. </span></p>
+<ol style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<ul>
+<li>(<span class="math inline">\(\Longrightarrow\)</span>) We are going to use proof by contrapositive. So, suppose that <span class="math inline">\(x\in H\cap K\)</span> such that <span class="math inline">\(x \neq 1\)</span>. Since <span class="math inline">\(x\in H\)</span> then <span class="math inline">\(x^{-1} \in H\)</span>.
+<span class="math display">\[f(x^{-1},x)=x^{-1}\cdot x=1=1\cdot 1=f(1,1)\]</span>
+Thus, <span class="math inline">\(f\)</span> is not injective. Thus, if <span class="math inline">\(f\)</span> is injective then <span class="math inline">\(H \cap K = \{1\}\)</span>.
+-(<span class="math inline">\(\Longleftarrow\)</span>)
+Now Suppose that <span class="math inline">\(H \cap K = \{1\}\)</span>. Let <span class="math inline">\((h_1, k_1),(h_2, k_2)\in H \times K\)</span> such that <span class="math inline">\(h_1k_1 = h_2k_2\)</span>. Now multiply both sides of this equation on the left by <span class="math inline">\(h_1^{-1}\)</span> and on the right by <span class="math inline">\(k_2^{-1}\)</span>,
+<span class="math display">\[\begin{eqnarray}
+h_1k_1 &amp;=&amp; h_2k_2\\
+h_1^{-1}(h_1k_1)k_2^{-1} &amp;=&amp; h_1^{-1}(h_2k_2)k_2^{-1}\\
+(h_1^{-1}h_1)k_1k_2^{-1} &amp;=&amp; h_1^{-1}h_2(k_2k_2^{-1})\\
+k_1k_2^{-1} &amp;=&amp; h_1^{-1}h_2
+\end{eqnarray}\]</span>
+Note that <span class="math inline">\((k_1k_2^{-1})\in K\)</span> and <span class="math inline">\(h_1^{-1}h_2\in H\)</span>. Since <span class="math inline">\(H \cap K = \{1\}\)</span>, <span class="math display">\[k_1k_2^{-1} = h_1^{-1}h_2 = 1\]</span>. Then,
+<span class="math display">\[
+k_1=k_2~~\text{and}~~~~h_1=h_2.
+\]</span>
+Then <span class="math display">\[(h_1, k_1) = (h_2, k_2)\]</span></li>
+</ul>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Let <span class="math inline">\((h_1, k_1),(h_2, k_2)\in H \times K\)</span>. Now consider,
+<span class="math display">\[\begin{eqnarray}
+f((h_1,k_1)\cdot (h_2,k_2))&amp;=&amp;f((h_1h_2,k_1k_2))=h_1h_2k_1k_2\\
+f((h_1,k_1))\cdot f((h_2,k_2))&amp;=&amp; (h_1k_1)\cdot(h_2k_2)=h_1k_1h_2k_2
+\end{eqnarray}\]</span>
+<span class="math display">\[\begin{eqnarray}
+f\text{ is homorphism} &amp;\iff &amp;
+f((h_1,k_1)\cdot (h_2,k_2))=f((h_1,k_1))\cdot f((h_2,k_2))\\
+&amp;\iff &amp; h_1h_2k_1k_2=h_1k_1h_2k_2\\
+&amp;\iff &amp; h_1^{-1}(h_1h_2k_1k_2)k_2^{-1}=h_1^{-1}(h_1k_1h_2k_2)k_2^{-1}\\
+&amp;\iff &amp; (h_1^{-1}h_1)h_2k_1(k_2k_2^{-1})=(h_1^{-1}h_1)k_1h_2(k_2k_2^{-1})\\
+&amp;\iff &amp; (h_1^{-1}h_1)h_2k_1(k_2k_2^{-1})=(h_1^{-1}h_1)k_1h_2(k_2k_2^{-1})\\
+&amp;\iff &amp; h_2k_1=k_1h_2
+\end{eqnarray}\]</span></li>
+<li></li>
+</ol>
+<ul>
+<li><p>Suppose that <span class="math inline">\(H\)</span> is a normal sub group of G. Note that <span class="math display">\[KH=\bigcup_{k\in K}kH~~\text{   and     } ~~HK=\bigcup_{k\in K}Hk\]</span>
+Since, <span class="math inline">\(H\)</span> is normal, <span class="math inline">\(kH=Hk\)</span> for all <span class="math inline">\(k\in K\)</span>. So, <span class="math inline">\(HK=KH\)</span>. We are going to use sub group test,</p>
+<ul>
+<li><em>non-emptyness</em>: Clearly, <span class="math inline">\(1=1\cdot 1\in HK\)</span> (because <span class="math inline">\(1\in H\)</span> and <span class="math inline">\(1\in K\)</span></li>
+<li><em>closure</em>:
+<span class="math display">\[HKHK=HHKK=HK\]</span>
+Thus, <span class="math inline">\(HK\)</span> is closed under multiplication.</li>
+<li><em>closed under inverse</em>: Let <span class="math inline">\(hk\in HK\)</span>. Then
+<span class="math display">\[(hk)^{-1} = k^{-1}\cdot h^{-1} \in KH=HK \]</span>
+This proves closure of <span class="math inline">\(HK\)</span> under inverses.</li>
+</ul></li>
+</ul>
+<ol start="4" style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<ul>
+<li><span class="math inline">\((\Longleftarrow)\)</span>: Suppose that <span class="math inline">\(H \cap K = \{1\}\)</span>, <span class="math inline">\(HK = G\)</span>, and also <span class="math inline">\(H,K \trianglelefteq G\)</span>. According to the (b), <span class="math inline">\(f\)</span> is a homomorphism from <span class="math inline">\(H \times K\)</span> to <span class="math inline">\(G\)</span> if and only if <span class="math inline">\(hk = kh\)</span> for all <span class="math inline">\(h\in H\)</span>. Consider,
+<span class="math display">\[(hkh^{-1})k^{-1}=h(kh^{-1}k^{-1}).\]</span>
+Note that, Since <span class="math inline">\(K \trianglelefteq G\)</span>, <span class="math inline">\(hkh^{-1}\in K\)</span>. So,<span class="math inline">\((hkh^{-1})k^{-1}\in K\)</span>. Similary we can show that <span class="math inline">\(h(kh^{-1}k^{-1})\in H\)</span>.Thus,<span class="math display">\[(hkh^{-1})k^{-1}=h(kh^{-1}k^{-1})\in H\cap K.\]</span> But from our hypothesis, <span class="math inline">\(H\cap K=\{1\}\)</span>. Hence,
+<span class="math display">\[\begin{eqnarray}
+hkh^{-1}k^{-1}&amp;=&amp;1\\
+hk&amp;=&amp; kh
+\end{eqnarray}\]</span>
+Therefore, by (b) we can <span class="math inline">\(f\)</span> is hormorphism. Now we have to proove bijectivity,
+<ul>
+<li><em>Injectivity</em>: Already prooved in <a href="group-theory.html#prp:prp2114">2.4</a> (a)</li>
+<li><em>Surjectivity</em>: For any <span class="math inline">\(g \in G\)</span>, we can write <span class="math inline">\(g = hk\)</span> for some <span class="math inline">\(h \in H\)</span> and <span class="math inline">\(k \in K\)</span> (since <span class="math inline">\(Im(f)=HK = G\)</span>). Thus, <span class="math inline">\(f(h, k) = hk = g\)</span>, so <span class="math inline">\(f\)</span> is surjective.</li>
+</ul></li>
+</ul>
+<p>Therefore <span class="math inline">\(f\)</span> is an isomorphism.</p>
+<ul>
+<li><p><span class="math inline">\((\Longrightarrow)\)</span> Now suppose that <span class="math inline">\(f\)</span> is isomorphism.</p>
+<ul>
+<li><p><strong>Claim i</strong>: <span class="math inline">\(H \cap K = \{1\}\)</span>.<br />
+Suppose that <span class="math inline">\(x\in H \cap K\)</span>. Then,
+<span class="math display">\[f(1,x)=x=f(x,1)\]</span>
+Since <span class="math inline">\(f\)</span> is an isomorphism (and hence injective), we must have <span class="math inline">\(x = 1\)</span>. Therefore, <span class="math inline">\(H \cap K = \{1\}\)</span>.</p></li>
+<li><p><strong>Claim ii</strong> :<span class="math inline">\(HK = G\)</span>.<br />
+Since <span class="math inline">\(f\)</span> is surjective, for any <span class="math inline">\(g \in G\)</span>, there exist <span class="math inline">\(h \in H\)</span> and <span class="math inline">\(k \in K\)</span> such that <span class="math inline">\(f(h, k) = hk = g\)</span>. Therefore, <span class="math inline">\(HK = G\)</span>.</p></li>
+<li><p><strong>Claim iii</strong> : <span class="math inline">\(H\)</span> and <span class="math inline">\(K\)</span> are normal in <span class="math inline">\(G\)</span>.<br />
+For any <span class="math inline">\(h \in H\)</span> and <span class="math inline">\(g \in G\)</span>, we can write <span class="math inline">\(g = hk\)</span> for some <span class="math inline">\(k \in K\)</span>. Then
+<span class="math display">\[ghg^{-1} = (hk)h(hk)^{-1}
+=hk(hh^{-1})k^{-1}=h(kk^{-1})=h\in H.\]</span>
+Thus, <span class="math inline">\(H\trianglelefteq G\)</span>.
+Similarly, we can show that <span class="math inline">\(K\trianglelefteq G\)</span>.</p></li>
+</ul></li>
+</ul>
+</div>
+<p><br />
+</p>
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-35" class="proposition"><strong>Proposition 2.5  </strong></span>There are two isomorphism classes of groups of order <span class="math inline">\(4\)</span>, the class of the cyclic group <span class="math inline">\(C_4\)</span> of order <span class="math inline">\(4\)</span> and the class of the Klein Four Group,which is isomorphic to the product <span class="math inline">\(C_2 \times C_2\)</span> of two groups of order <span class="math inline">\(2\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-10" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(G\)</span> be a group of order 4. The order of any element <span class="math inline">\(x\)</span> of <span class="math inline">\(G\)</span> divides 4, so there are two cases to consider:</p>
+<ul>
+<li>Case 1: <span class="math inline">\(G\)</span> contains an element of order 4 (|G|=4). Then <span class="math inline">\(G\)</span> is a cyclic group of order 4.</li>
+<li>Case 2: Every element of <span class="math inline">\(G\)</span> except the identity has order 2.<br />
+In this case, <span class="math inline">\(x = x^{-1}\)</span> for every element <span class="math inline">\(x\)</span> of <span class="math inline">\(G\)</span>. Let <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> be two elements of <span class="math inline">\(G\)</span>. Then <span class="math inline">\(xy\)</span> has order 2, so <span class="math inline">\((xy)(x^{-1}y^{-1}) = (xy)(xy) = 1\)</span>. This shows that <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> commute,
+<span class="math display">\[\begin{eqnarray}
+xyx^{-1}y^{-1} &amp;=&amp; 1\\
+xyx^{-1}(y^{-1} y)&amp;=&amp; y\\
+xyx^{-1}&amp;=&amp; y\\
+xy(x^{-1}x)&amp;=&amp; yx\\
+xy &amp;=&amp; yx
+\end{eqnarray}\]</span>
+since <span class="math inline">\(x,y\)</span> are arbitrary elements, <span class="math inline">\(G\)</span> is abelian. So every subgroup is normal. We choose distinct elements <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> in <span class="math inline">\(G\)</span>, and we let <span class="math inline">\(H\)</span> and <span class="math inline">\(K\)</span> be the cyclic groups of order 2 that they generate. Proposition <a href="group-theory.html#prp:prp2114">2.4</a> (d) shows that <span class="math inline">\(G\)</span> is isomorphic to the product group <span class="math inline">\(H \times K\)</span>.</li>
+</ul>
+</div>
 </div>
 <div id="quotient-groups" class="section level2 hasAnchor" number="2.12">
 <h2><span class="header-section-number">2.12</span> Quotient Groups<a href="group-theory.html#quotient-groups" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-37" class="definition"><strong>Definition 2.5  </strong></span>The set of cosets of a normal subgroup <span class="math inline">\(N\)</span> of a group <span class="math inline">\(G\)</span> is often denoted by <span class="math inline">\(G / N\)</span>.
+<span class="math display">\[G / N \text{ is the set of cosets of $N$ in} G\]</span></p>
+</div>
+<p><strong>Notation</strong>: When we regard a coset <span class="math inline">\(C\)</span> as an element of the set of cosets, the bracket notation <span class="math inline">\([C]\)</span>
+may be used.
+If <span class="math inline">\(C = aN\)</span>, we may also use the bar notation to denote the element <span class="math inline">\([C]\)</span> by <span class="math inline">\(\overline{a}\)</span>,
+and then we would denote the set of cosets by <span class="math inline">\(\overline{G}\)</span>:
+<span class="math display">\[\overline{G} = G /N\]</span></p>
+<div class="theorem">
+<p><span id="thm:2122" class="theorem"><strong>Theorem 2.2  </strong></span>Let <span class="math inline">\(N\)</span> be a normal subgroup of a group <span class="math inline">\(G\)</span>, and let <span class="math inline">\(G\)</span> denote the set of cosets of <span class="math inline">\(N\)</span> in <span class="math inline">\(G\)</span>. There is a law of composition on <span class="math inline">\(G\)</span> that makes this set into a group, such that the map <span class="math inline">\(\pi: G \to \overline{G}\)</span> defined by <span class="math inline">\(\pi(a) = \overline{a}\)</span> is a surjective homomorphism whose kernel is <span class="math inline">\(N\)</span>.</p>
+</div>
+<p><img src="figures/ch_2/fig29.png" /><!-- -->
+::: {.remark}
+The map is often referred to as the canonical map from <span class="math inline">\(G\)</span> to <span class="math inline">\(\overline{G}\)</span>. The word “<strong>canonical</strong>”
+indicates that this is the only map that we might reasonably be talking about
+:::
+The next corollary is very simple, but it is important enough to single out:</p>
+<div class="corollary">
+<p><span id="cor:unnamed-chunk-39" class="corollary"><strong>Corollary 2.1  </strong></span>Let <span class="math inline">\(N \trianglelefteq G\)</span>, and let <span class="math inline">\(\overline{G}\)</span> denote the set of cosets of <span class="math inline">\(N\)</span> in <span class="math inline">\(G\)</span>. Let <span class="math inline">\(\pi: G \to \overline{G}=G/N\)</span> be the canonical homomorphism. Let <span class="math inline">\(a_1, \ldots, a_k\in G\)</span> such that the product <span class="math inline">\(a_1 \cdots a_k\in N\)</span>. Then <span class="math inline">\(\overline{a_1} \cdots \overline{a_k} = \overline{1}\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-11" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(p=a_1 \cdots a_k\in N\)</span>. This implies
+<span class="math inline">\(\pi(p)=\overline{p}=\overline{1}\)</span>.<br />
+Since is <span class="math inline">\(pi\)</span> a homomorphism, <span class="math inline">\(\pi(p)=\pi(a_1 \cdots a_k)=\pi(a_1)\cdots \pi(a_k)=\overline{a_1}\cdots\overline{a_n}\)</span></p>
+</div>
+<p><em>Proof of <a href="group-theory.html#thm:2122">2.2</a></em>
+There are several things to be done. We must</p>
+<ul>
+<li>define a law of composition on <span class="math inline">\(\overline{G}\)</span>,</li>
+<li>prove that the law makes $ into a group,</li>
+<li>prove that <span class="math inline">\(\pi\)</span> is a surjective homomorphism, and</li>
+<li>prove that the kernel of <span class="math inline">\(\pi\)</span> is <span class="math inline">\(N\)</span>.</li>
+</ul>
+<div class="remark">
+<p><span id="unlabeled-div-12" class="remark"><em>Remark</em>. </span>If <span class="math inline">\(A,B \subseteq G\)</span> then <span class="math inline">\(AB\)</span> denotes the set of products <span class="math inline">\(ab\)</span>:
+<span class="math display">\[AB:=\{x\in G: x=ab, a\in A, b\in B\}\]</span></p>
+<ul>
+<li>We will call this a product set, though in some other contexts the phrase “product set” refers
+to the set <span class="math inline">\(A \times B\)</span> of pairs of elements</li>
+</ul>
+</div>
+<div class="lemma">
+<p><span id="lem:unnamed-chunk-42" class="lemma"><strong>Lemma 2.1  </strong></span>Let <span class="math inline">\(N\)</span> be a normal subgroup of a group <span class="math inline">\(G\)</span>, and let <span class="math inline">\(a N\)</span> and <span class="math inline">\(b N\)</span> be cosets of <span class="math inline">\(N\)</span>. The product set <span class="math inline">\((aN )(bN )\)</span> is also a coset and <span class="math display">\[(aN )(bN )=\{x\in G: x=anbn&#39; ~\&amp; ~ n,n&#39;\in N\}=abN\]</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-13" class="proof"><em>Proof</em>. </span>Since <span class="math inline">\(N\)</span> is a subgroup, <span class="math inline">\(N N = N\)</span>.<br />
+Since <span class="math inline">\(N\)</span> is normal, left and right cosets are equal:
+<span class="math inline">\(N b = bN\)</span>.
+<span class="math display">\[(aN )(bN ) = a (N b )N = a (b N )N = a b N N = abN\]</span></p>
+</div>
+<ul>
+<li>This lemma allows us to define multiplication on the set <span class="math inline">\(\overline{G} = G / N\)</span>.</li>
+<li>Using the bracket
+notation, the definition is this: If <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> are cosets, then <span class="math inline">\([C_1][C_2] = [C_1 C_2]\)</span>,
+Where <span class="math inline">\(C_1 C_2\)</span> is the product set.</li>
+<li>The lemma shows that this product set is another coset.<br />
+</li>
+<li>To compute the product <span class="math inline">\([C_1][C_2]\)</span>, take any elements <span class="math inline">\(a \in C_1\)</span> and <span class="math inline">\(b \in C_2\)</span>. Then <span class="math inline">\(C_1 = aN\)</span> ,
+<span class="math inline">\(C_2 = bN\)</span> , and <span class="math inline">\(C_1 C_2\)</span> is the coset <span class="math inline">\(a b N\)</span> that contains <span class="math inline">\(ab\)</span>. So,
+<span class="math display">\[[aN][bN] = [abN] \text{ or } \overline{a}\overline{b} = \overline{ab}.\]</span>
+Then by definition of the map <span class="math inline">\(\pi\)</span> in theorm <a href="group-theory.html#thm:2122">2.2</a>,
+<span class="math display">\[\pi(ab)=\overline{a}\overline{b} = \overline{ab}=\pi(a)\pi(b)\]</span>
+The fact that <span class="math inline">\(\pi\)</span> is a homomorphism will follow, once we show that G is a group.
+Since the canonical map <span class="math inline">\(\pi\)</span> is surjective , the next lemma proves this</li>
+</ul>
+<div class="lemma">
+<p><span id="lem:unnamed-chunk-44" class="lemma"><strong>Lemma 2.2  </strong></span>Let <span class="math inline">\(G\)</span> be a group, and let <span class="math inline">\(Y\)</span> be a set with a law of composition (both laws written with multiplicative notation). Consider a surjective map <span class="math inline">\(\varphi : G \to Y\)</span> with the homomorphism property: <span class="math inline">\(\varphi(ab) = \varphi(a)\varphi(b)\)</span> for all <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> in <span class="math inline">\(G\)</span>. Then <span class="math inline">\(Y\)</span> is a group, and <span class="math inline">\(\varphi\)</span> is a homomorphism.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-14" class="proof"><em>Proof</em>. </span>The group axioms that are true in <span class="math inline">\(G\)</span> are carried over to <span class="math inline">\(Y\)</span> by the surjective map <span class="math inline">\(\varphi\)</span>.</p>
+<ul>
+<li><p><strong>Closure</strong> : Let <span class="math inline">\(y_1,y_2\in Y\)</span>. Since <span class="math inline">\(\varphi\)</span> is surjective, <span class="math inline">\(y_1=\varphi(x_1),y_2=\varphi(x_2)\)</span> for some <span class="math inline">\(x_1,x_2\in G\)</span>.
+<span class="math display">\[y_1y_2=\varphi(x_1)\varphi(x_2)=\varphi(x_1x_2)\in Y\]</span></p></li>
+<li><p><strong>Assciativity Property</strong> :<br />
+Let <span class="math inline">\(y_1\)</span>, <span class="math inline">\(y_2\)</span>, and <span class="math inline">\(y_3\)</span> be elements of <span class="math inline">\(Y\)</span>. Since <span class="math inline">\(\varphi\)</span> is surjective, <span class="math inline">\(y_i = \varphi(x_i)\)</span> for some <span class="math inline">\(x_i\)</span> in <span class="math inline">\(G\)</span>. Then</p></li>
+</ul>
+<p><span class="math display">\[\begin{eqnarray}
+(y_1 y_2) y_3 &amp;=&amp; (\varphi(x_1) \varphi(x_2)) \varphi(x_3) = \varphi(x_1 x_2) \varphi(x_3) = \varphi((x_1 x_2) x_3) \\
+&amp;=^*&amp; \varphi(x_1 (x_2 x_3)) = \varphi(x_1) \varphi(x_2 x_3) = y_1 (y_2 y_3)
+\end{eqnarray}\]</span></p>
+<p>The equality marked with an asterisk <span class="math inline">\((=^*)\)</span> is the associative law in <span class="math inline">\(G\)</span>. The other equalities follow from the homomorphism property of <span class="math inline">\(\varphi\)</span>.</p>
+<ul>
+<li><p><strong>Identity</strong>
+Let <span class="math inline">\(y\in Y\)</span>. Since <span class="math inline">\(\varphi\)</span> is surjective, there exist <span class="math inline">\(x\in G\)</span> such that <span class="math inline">\(y=\varphi(x)\)</span>. Let <span class="math inline">\(1_G\)</span> be identity of <span class="math inline">\(G\)</span> Then,
+<span class="math display">\[y\varphi(1_G)=\varphi(x)\varphi(1_G)=\varphi(x1_G)=\varphi(x)=y=
+  \varphi(1_Gx)=\varphi(1_G)\varphi(x)=\varphi(1_G)y\]</span>
+Thus, <span class="math inline">\(\varphi(1_G)\)</span> is the identity of <span class="math inline">\(Y\)</span>.</p></li>
+<li><p><strong>Inverse</strong> : Let <span class="math inline">\(y\in G\)</span>. Since <span class="math inline">\(\varphi\)</span> is surjective, there exist <span class="math inline">\(x\in G\)</span> such that <span class="math inline">\(y=\varphi(x)\)</span>,
+<span class="math display">\[y\varphi(x^{-1}=\varphi(x)\varphi(x^{-1})
+         =\varphi(xx^{-1})=\varphi(1_G)=\varphi(x^{-1}x)=\varphi(x^{-1})\varphi(x)=\varphi(x^{-1})y\]</span>
+Thus, <span class="math inline">\(y^{-1}=\varphi(x)\)</span></p></li>
+</ul>
+</div>
+<p>The only thing remaining to be verified is that the kernel of the homomorphism <span class="math inline">\(\pi\)</span> is the subgroup <span class="math inline">\(N\)</span>.</p>
+<p><span class="math display">\[\begin{eqnarray}
+\pi (a) =\pi(1) &amp;\iff &amp; \bar{a}= \bar{1}\\
+&amp; \iff &amp; [aN] = [1N]\\
+&amp; \iff &amp; a \in N.
+\end{eqnarray}\]</span>
+Thus, <span class="math inline">\(\ker(\pi)=N\)</span></p>
 </div>
 <div id="exercises-1" class="section level2 hasAnchor" number="2.13">
 <h2><span class="header-section-number">2.13</span> Exercises<a href="group-theory.html#exercises-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="groups-and-subgroups-1" class="section level3 hasAnchor" number="2.13.1">
+<h3><span class="header-section-number">2.13.1</span> Groups and Subgroups<a href="group-theory.html#groups-and-subgroups-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-46" class="exercise"><strong>Exercise 2.6  </strong></span>Make a multiplication table for the symmetric group <span class="math inline">\(S_3\)</span>.</p>
+</div>
+<p><strong>Solution</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\circ\)</span></th>
+<th><strong>e</strong></th>
+<th>(12)</th>
+<th>(13)</th>
+<th>(23)</th>
+<th>(123)</th>
+<th>(132)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>e</strong></td>
+<td>e</td>
+<td>(12)</td>
+<td>(13)</td>
+<td>(23)</td>
+<td>(123)</td>
+<td>(132)</td>
+</tr>
+<tr class="even">
+<td><strong>(12)</strong></td>
+<td>(12)</td>
+<td>e</td>
+<td>(123)</td>
+<td>(132)</td>
+<td>(13)</td>
+<td>(23)</td>
+</tr>
+<tr class="odd">
+<td><strong>(13)</strong></td>
+<td>(13)</td>
+<td>(123)</td>
+<td>e</td>
+<td>(132)</td>
+<td>(23)</td>
+<td>(12)</td>
+</tr>
+<tr class="even">
+<td><strong>(23)</strong></td>
+<td>(23)</td>
+<td>(132)</td>
+<td>(123)</td>
+<td>e</td>
+<td>(12)</td>
+<td>(13)</td>
+</tr>
+<tr class="odd">
+<td><strong>(123)</strong></td>
+<td>(123)</td>
+<td>(13)</td>
+<td>(23)</td>
+<td>(12)</td>
+<td>(132)</td>
+<td>e</td>
+</tr>
+<tr class="even">
+<td><strong>(132)</strong></td>
+<td>(132)</td>
+<td>(23)</td>
+<td>(12)</td>
+<td>(13)</td>
+<td>e</td>
+<td>(123)</td>
+</tr>
+</tbody>
+</table>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-47" class="exercise"><strong>Exercise 2.7  </strong></span>Let <span class="math inline">\(S\)</span> be a se t with an associative law of composition and with an identity element. Prove that the subset consisting of the invertible elements in <span class="math inline">\(S\)</span> is a group.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-15" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(S^*\subseteq S\)</span> with consisting of the invertible elements in <span class="math inline">\(S\)</span>.</p>
+<ul>
+<li><p><em>identity</em> : We are given identity element <span class="math inline">\(1 \in S\)</span> and <span class="math inline">\((1^{−1})(1)=1 \implies 1 \in S^∗\)</span></p></li>
+<li><p><em>Closure</em> :
+So let <span class="math inline">\(a,b\in S^∗\)</span>. Then <span class="math inline">\(a,b\)</span> are invertible. Let <span class="math inline">\(a^{−1},b^{−1}\in S^∗\)</span> be inverses of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> respectively. Now we need to check <span class="math inline">\(ab\in S^*\)</span>.<br />
+</p></li>
+</ul>
+<p><span class="math display">\[(b^{−1}a^{−1})(ab)=b^{−1}(a^{−1}a)b=b^{−1}b=e=
+  aa^{-1}=a(bb^{−1})a^{−1}=(ab)(b^{−1}a^{−1})\]</span></p>
+</div>
+<p>Thus, <span class="math inline">\((ab)^{−1}=b^{−1}a^{−1}\)</span>. So, <span class="math inline">\(ab\in S^*\)</span>
+Therefore, <span class="math inline">\(S^*\)</span> is closed under the composition.</p>
+<ul>
+<li><em>Associativity</em>: The associativity property inherit from the group <span class="math inline">\(S\)</span>.</li>
+</ul>
+<p>Therefore, <span class="math inline">\(S^*\)</span> is a group.</p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-49" class="exercise"><strong>Exercise 2.8  </strong></span>Let <span class="math inline">\(G\)</span> be a group.Let <span class="math inline">\(x, y, z,w \in G\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Solve for <span class="math inline">\(y\)</span>, given that <span class="math inline">\(xyz^{-1}w = 1\)</span>.</li>
+<li>Suppose that <span class="math inline">\(xyz = 1\)</span>. Does it follow that <span class="math inline">\(yzx = 1\)</span>? Does it follow that <span class="math inline">\(yxz = 1\)</span>?</li>
+</ol>
+</div>
+<p><strong>Solution</strong>:</p>
+<ol style="list-style-type: lower-alpha">
+<li><img src="figures/ch_2/fig17.jpg" /><!-- --></li>
+<li></li>
+</ol>
+<ul>
+<li><br />
+<img src="figures/ch_2/fig18.jpg" /><!-- --></li>
+<li>The given statement is false.
+<span class="math display">\[\begin{eqnarray}
+        xyz&amp;=&amp;1\\
+x^{-1}(xyz)&amp;=&amp;x^{-1} \cdot 1\\
+(x^{-1}x)(yz)&amp;=&amp;x^{-1}\\
+1 \cdot(yz)&amp;=&amp;x^{-1}\\
+(yz)&amp;=&amp;x^{-1}\\
+(yz)z^{-1}&amp;=&amp;x^{-1}z^{-1}\\
+y(zz^{-1})&amp;=&amp;x^{-1}z^{-1}\\
+y \cdot 1&amp;=&amp;x^{-1}z^{-1}\\
+yx&amp;=&amp;x^{-1}z^{-1}x\\
+yxz&amp;=&amp;x^{-1}z^{-1}xz\\
+\end{eqnarray}\]</span>
+If <span class="math inline">\(G\)</span> is not abelian or <span class="math inline">\(z\neq x\)</span>. <span class="math inline">\(xyz=1 \nRightarrow yxz=1\)</span>.</li>
+</ul>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-50" class="exercise"><strong>Exercise 2.9  </strong></span>In which of the following cases is <span class="math inline">\(H\)</span> a subgroup of <span class="math inline">\(G\)</span>?</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(G = GL_n(\mathbb{C})\)</span> and <span class="math inline">\(H = GL_n(\mathbb{R})\)</span>.</p></li>
+<li><p><span class="math inline">\(G = \mathbb{R}^\times\)</span> and <span class="math inline">\(H = \{1, -1\}\)</span>.</p></li>
+<li><p><span class="math inline">\(G = \mathbb{Z}^+\)</span> and <span class="math inline">\(H\)</span> is the set of positive integers.</p></li>
+<li><p><span class="math inline">\(G = \mathbb{R}^+\)</span> and <span class="math inline">\(H\)</span> is the set of positive reals.</p></li>
+<li><p><span class="math inline">\(G = GL_2(\mathbb{R})\)</span> and <span class="math inline">\(H\)</span> is the set of matrices <span class="math inline">\(\begin{bmatrix} a &amp; 0 \\ 0 &amp; 0 \end{bmatrix}\)</span> with all entries equal to 0.</p></li>
+</ol>
+</div>
+<p><strong>Solution</strong>:<br />
+</p>
+<ol style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<ul>
+<li><p><em>Subset ?</em> : Since every matrix with real entries can be interpreted as a matrix with complex entries, we conclude that <span class="math inline">\(H \subset G\)</span>.</p></li>
+<li><p><em>Closure ?</em> : For every <span class="math inline">\(A, B \in GL_n(\mathbb{R})\)</span> we have <span class="math inline">\(AB \in GL_n(\mathbb{R})\)</span> since Product of invertible matrices is invertible. I proved this result in chapter 1.</p></li>
+<li><p><em>Identity ?</em> :The identity in <span class="math inline">\(G\)</span> is <span class="math inline">\(I_n\)</span>, the identity <span class="math inline">\(n x n\)</span> matrix. Observe that <span class="math inline">\(I_n\in H=GL_n(\mathbb{R})\)</span>. (Because every entry of <span class="math inline">\(I_n\)</span> is 1 or 0)</p></li>
+<li><p><em>Inverse ?</em>: <span class="math inline">\(GL_n(\mathbb{R})\)</span> is the set of <span class="math inline">\(n \times n\)</span> invertible matrices with real entries. So, all the elements in <span class="math inline">\(H\)</span> is invertible.</p></li>
+</ul>
+<p>Therefore, <span class="math inline">\(H \leq G\)</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<ul>
+<li><p><em>Subset ?</em> : This is trivial <span class="math inline">\(\{-1,1\}\subset \mathbb{R}^\times\)</span></p></li>
+<li><p><em>Closure ?</em> :
+<span class="math display">\[\begin{eqnarray}
+1 \times 1 &amp;=&amp; 1\in H\\
+(-1) \times 1 &amp;=&amp; (-1)\in H\\
+1 \times (-1) &amp;=&amp; (-1)\in H\\
+(-1) \times (-1) &amp;=&amp; -1\in H\\
+\end{eqnarray}\]</span>
+Thus, <span class="math inline">\(H\)</span> is closed.</p></li>
+<li><p><em>Identity ?</em> : The identity in <span class="math inline">\(G\)</span> is <span class="math inline">\(1\)</span>, which is also in <span class="math inline">\(H\)</span>.</p></li>
+<li><p><em>Inverse ?</em> :
+<span class="math display">\[\begin{eqnarray}
+1 \times 1 = 1   &amp;\implies &amp; (1)^{-1}=1\in H\\
+(-1) \times (-1) = 1 &amp;\implies &amp; (-1)^{-1}=(-1)\in H
+\end{eqnarray}\]</span>
+x`Therefore, <span class="math inline">\(H\)</span> is sub group of <span class="math inline">\(G\)</span>.</p></li>
+</ul>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><p>Note that <span class="math inline">\(2\in H\)</span>, but inverse of <span class="math inline">\(2\)</span> in <span class="math inline">\(\mathbb{Z}^+\)</span> is <span class="math inline">\((-2) \not \in H\)</span>.<br />
+Therefore, <span class="math inline">\(H\)</span> is not a subgroup of <span class="math inline">\(G\)</span>.</p></li>
+<li></li>
+</ol>
+<ul>
+<li><p><em>Subset ?</em> : This is trivial. <span class="math inline">\(H \subset \mathbb{R}^\times\)</span></p></li>
+<li><p><em>Closure ?</em> : Product of positive real number is positive. Thus, <span class="math inline">\(H\)</span> is closed.</p></li>
+<li><p><em>Identity ?</em> : <span class="math inline">\(1\)</span> is the identity of <span class="math inline">\(G\)</span>, which is in <span class="math inline">\(H\)</span>.</p></li>
+<li><p><em>Inverse ?</em> : Let <span class="math inline">\(a\in H\)</span>. Then,
+<span class="math display">\[a\cdot \frac{1}{a}=\frac{1}{a}\cdot a=1\]</span>
+So, <span class="math inline">\(\frac{1}{a}\in H\)</span> is the inverse of <span class="math inline">\(a\)</span>. Thus, <span class="math inline">\(H\)</span> is closed under inverses.</p></li>
+</ul>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Let <span class="math inline">\(A=\begin{bmatrix} 2 &amp; 0 \\ 0 &amp; 0 \end{bmatrix}\)</span> Then <span class="math inline">\(A\in H\)</span>. But observe that <span class="math inline">\(det(A)=0\implies A\)</span> is not invertible. Thus, <span class="math inline">\(A\not\in H\)</span>. Thus, this <span class="math inline">\(H \not\subseteq G\)</span>.</li>
+</ol>
+<p>Therefore, <span class="math inline">\(H\)</span> is not a subgroup of <span class="math inline">\(G\)</span>.</p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-51" class="exercise"><strong>Exercise 2.10  </strong></span>In the definition of a subgroup, the identity element in <span class="math inline">\(H\)</span> is required to be the identity
+of <span class="math inline">\(G\)</span>. One might require only that H have an identity element, not that it need be the
+same as the identity in <span class="math inline">\(G\)</span>.
+- Show that if <span class="math inline">\(H\)</span> has an identity at all, then it is the identity in <span class="math inline">\(G\)</span>.
+- Show that the analogous statement is true for inverses.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-52" class="exercise"><strong>Exercise 2.11  </strong></span>Let <span class="math inline">\(G\)</span> be a group. We define an opposite group <span class="math inline">\(G^{\circ}\)</span> with the law of composition <span class="math inline">\(a * b\)</span> as follows:
+- The underlying set is the same as <span class="math inline">\(G\)</span>,
+- but the law of composition is <span class="math inline">\(a * b = ba\)</span>.</p>
+<p>Prove that <span class="math inline">\(G^{\circ}\)</span> is a group.</p>
+</div>
+<p><strong>Solution</strong>:</p>
+<p><img src="figures/ch_2/fig19.jpg" /><!-- --></p>
+</div>
+<div id="subgroups-of-the-additive-group-of-integers-1" class="section level3 hasAnchor" number="2.13.2">
+<h3><span class="header-section-number">2.13.2</span> Subgroups of the Additive Group of Integers<a href="group-theory.html#subgroups-of-the-additive-group-of-integers-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-53" class="exercise"><strong>Exercise 2.12  </strong></span>Let <span class="math inline">\(a = 123\)</span> and <span class="math inline">\(b = 321\)</span>.
+Compute <span class="math inline">\(d = gcd(a, b)\)</span>, and express <span class="math inline">\(d\)</span> as an integer
+combination <span class="math inline">\(ra + bs\)</span>.</p>
+</div>
+<p><strong>Solution</strong>:
+<img src="figures/ch_2/fig20.jpg" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-54" class="exercise"><strong>Exercise 2.13  </strong></span>Prove that if <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are positive integers whose sum is a prime <span class="math inline">\(p\)</span>, their greatest common
+divisor is <span class="math inline">\(1\)</span>.</p>
+</div>
+<p><strong>Solution</strong>:
+<img src="figures/ch_2/fig21.jpg" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-55" class="exercise"><strong>Exercise 2.14  </strong></span>Define the greatest common divisor of a set <span class="math inline">\(\{a_1, ..., a_n\}\)</span> of <span class="math inline">\(n\)</span> integers. Prove that it
+exists, and that it is an integer combination of <span class="math inline">\(a_1, ..., a_n\)</span>.</p>
+</div>
+</div>
+<div id="cyclic-group" class="section level3 hasAnchor" number="2.13.3">
+<h3><span class="header-section-number">2.13.3</span> Cyclic group<a href="group-theory.html#cyclic-group" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-56" class="exercise"><strong>Exercise 2.15  </strong></span>Let <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> be elements of a group <span class="math inline">\(G\)</span>. Assume that a has order <span class="math inline">\(7\)</span> and that <span class="math inline">\(a^3b = ba^3\)</span>.
+Prove that <span class="math inline">\(a b = ba\)</span>.</p>
+</div>
+<p><strong>Solution</strong>:
+<img src="figures/ch_2/fig22.png" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-57" class="exercise"><strong>Exercise 2.16  </strong></span>An <span class="math inline">\(n\)</span>th root of unity is a complex number <span class="math inline">\(z\)</span> such that <span class="math inline">\(z^n = 1\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Prove that the nth roots of unity form a cyclic subgroup of <span class="math inline">\(\mathbb{C}^\times\)</span> of order <span class="math inline">\(n\)</span>.</li>
+<li>Determine the product of all the <span class="math inline">\(n\)</span>th roots of unity.</li>
+</ol>
+</div>
+<p><strong>Solution</strong>:
+<img src="figures/ch_2/fig23.png" /><!-- -->
+<img src="figures/ch_2/fig24.png" /><!-- -->
+<img src="figures/ch_2/fig25.png" /><!-- -->
+<img src="figures/ch_2/fig26.png" /><!-- -->
+<img src="figures/ch_2/fig27.png" /><!-- -->
+<img src="figures/ch_2/fig28.png" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-58" class="exercise"><strong>Exercise 2.17  </strong></span>Let <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> be elements of a group <span class="math inline">\(G\)</span>. Prove that <span class="math inline">\(ab\)</span> and <span class="math inline">\(ba\)</span> have the same order</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-16" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> be elements in a group <span class="math inline">\(G\)</span> with identity <span class="math inline">\(e\)</span>.</p>
+<p>Suppose that <span class="math inline">\(ab\)</span> has finite order <span class="math inline">\(n\)</span>. Then <span class="math inline">\((ab)^n = e\)</span> and <span class="math inline">\(n\)</span> is the smallest positive integer for which this equation is true. We also have that <span class="math display">\[ (ba)^{n+1} = (ba)(ba) \cdots (ba) = b\underbrace{(ab) \cdots (ab)}_{n \text{ times}}a =b(ab)^na=a(ba)^m b =bea = ba. \]</span></p>
+<p>Thus, since <span class="math inline">\((ba)^{n+1} = (ba)^n(ba)\)</span> we can conclude that <span class="math inline">\((ba)^n(ba) = ba\)</span> and then by the cancellation law, we have that <span class="math inline">\((ba)^n = e.\)</span></p>
+<p>Now, to show that the order of <span class="math inline">\(ba\)</span> is <span class="math inline">\(n\)</span>, we need to demonstrate that <span class="math inline">\(n\)</span> is the smallest positive integer such that <span class="math inline">\((ba\)</span>^n = e. )</p>
+<p>Suppose there exists a positive integer <span class="math inline">\(m &lt; n\)</span> such that <span class="math inline">\((ba)^m = e.\)</span>
+Then,<span class="math display">\[
+(ab)^{m+1} =(ab)(ab)\cdots(ab)=a\underbrace{(ba)\cdots(ba)}_{m \text{ times}}b=a(ba)^m b=aeb= ab.
+\]</span></p>
+<p>Thus, since<span class="math inline">\((ab)^{m+1} =(ab)^m(ab)\)</span>
+we have that
+<span class="math inline">\((ab)^m(ab)= ab\)</span>
+and then by the cancellation law, we have that
+<span class="math inline">\((ab\)</span>^m=e )
+which contradicts the fact that <span class="math inline">\(n\)</span> is the smallest positive integer such that
+<span class="math inline">\((ab)^n=e.\)</span></p>
+<p>Hence, <span class="math inline">\(n\)</span> is the smallest positive integer such that
+<span class="math inline">\((ba)^n=e\)</span>
+and therefore
+<span class="math inline">\((ba)\)</span> has finite order <span class="math inline">\(n\)</span>.</p>
+</div>
+<!------------------------------------------>
+</div>
+<div id="product-group" class="section level3 hasAnchor" number="2.13.4">
+<h3><span class="header-section-number">2.13.4</span> Product Group<a href="group-theory.html#product-group" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-60" class="exercise"><strong>Exercise 2.18  </strong></span>Let <span class="math inline">\(x\)</span> be an element of order <span class="math inline">\(r\)</span> of a group <span class="math inline">\(G\)</span>, and let <span class="math inline">\(y\)</span> be an element of <span class="math inline">\(G&#39;\)</span> of order <span class="math inline">\(s\)</span>. What is the order of <span class="math inline">\((x, y)\)</span> in the product group <span class="math inline">\(G \times G&#39;\)</span>?</p>
+</div>
+<p><strong>Solution</strong>: The order of <span class="math inline">\((x, y)\)</span> in the product group <span class="math inline">\(G \times G&#39;\)</span> is <strong><span class="math inline">\(lcm(r,s)\)</span></strong><br />
+Let <span class="math inline">\(n\in \mathbb{Z}^+\)</span> such that <span class="math display">\[(x,y)^n=(x^n,y^n)=(1_G,1_{G&#39;}).\]</span>
+This implies, <span class="math inline">\(x^n=1_G\)</span> and <span class="math inline">\(y^n=1_{G&#39;}\)</span>. Since order of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are <span class="math inline">\(r\)</span> and <span class="math inline">\(s\)</span> respectively,
+<span class="math display">\[r|n~~~\text{ and }~~~s|n\]</span>
+So, we know that the least positive integer such that above property holds is <span class="math inline">\(lcm(r,s)\)</span>. Hence,The order of <span class="math inline">\((x, y)\)</span> in the product group <span class="math inline">\(G \times G&#39;\)</span> is <strong><span class="math inline">\(lcm(r,s)\)</span></strong>.</p>
+<p><br />
+<br />
+<br />
+</p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-61" class="exercise"><strong>Exercise 2.19  </strong></span>What does Proposition <a href="group-theory.html#prp:prp2114">2.4</a> tell us when, with the usual notation for the symmetric
+group <span class="math inline">\(S_3,K\)</span> and <span class="math inline">\(H\)</span> are the subgroups <span class="math inline">\(&lt;y&gt;\)</span> and <span class="math inline">\(&lt;x&gt;\)</span>?</p>
+</div>
+<p>Recall: <span class="math inline">\(y^2=1\)</span> and <span class="math inline">\(x^3=1\)</span>. Then
+<span class="math display">\[H=&lt;x&gt;=\{1,x,x^2\}~~~\text{ and }~~~ K=&lt;y&gt;=\{1,y\}\]</span>
+Let the multiplication map, <span class="math inline">\(f:H\times K \to S_3\)</span> defined by <span class="math inline">\(f(h,k)=hk\)</span>. Then,
+<span class="math inline">\(Im(f)=HK=\{hk:h\in &lt;x&gt;, k\in &lt;y&gt;\}=\{1,x,x^2,y,xy,x^2y\}\)</span>.</p>
+<p><strong>Claim 1</strong>: <span class="math inline">\(f\)</span> is injective.<br />
+Observe that <span class="math inline">\(H \cap K=\{1\}\)</span>. by <a href="group-theory.html#prp:prp2114">2.4</a> a) <span class="math inline">\(f\)</span> is injective.</p>
+<p><strong>Claim 2</strong>: <span class="math inline">\(f\)</span> is surjective.<br />
+Observe that <span class="math inline">\(S_3=HK=\{1,x,x^2,y,xy,x^2y\}\)</span>. Thus, <span class="math inline">\(f\)</span> is surjective.</p>
+<p><strong>Claim 3</strong> : <span class="math inline">\(f\)</span> is not hormorphism.<br />
+<span class="math display">\[\begin{eqnarray}
+f((x,y)\cdot (x,1))&amp;=&amp; f(x^2,y^2)=f(x^2,1)=x^2\cdot 1=x^2\\
+f(x,y)\cdot f(x,1)&amp;=&amp; (x\cdot y)\cdot (x\cdot 1)=(xy)\cdot x=y
+\end{eqnarray}\]</span>
+Thus, <span class="math inline">\(f\)</span> is not a homomorphism.</p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-62" class="exercise"><strong>Exercise 2.20  </strong></span>Prove that the product of two infinite cyclic groups is not infinite cyclic.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-17" class="proof"><em>Proof</em>. </span><br />
+</p>
+<ul>
+<li><p><strong>Claim 1</strong> : Infinite cyclic groups are isomorphic to <span class="math inline">\(Z\)</span>.<br />
+Let <span class="math inline">\(G\)</span> be a infinte cyclic group and <span class="math inline">\(&lt;a&gt;=G\)</span>.
+We can define a function <span class="math inline">\(f: \mathbb{Z} \rightarrow G\)</span> by <span class="math inline">\(f(n) = a^n\)</span> for all integers <span class="math inline">\(n\)</span>. We need to show that <span class="math inline">\(f\)</span> is an isomorphism, which means it is bijective.</p>
+<ul>
+<li><strong>Subclaim 1.1</strong> : <span class="math inline">\(f\)</span> is a hormorphism.<br />
+<span class="math display">\[f(n+m)=a^{n+m}=a^n \cdot a^m =f(n)\cdot f(m)\]</span>
+Thus, <span class="math inline">\(f\)</span> is a hormorphism.</li>
+<li><strong>Subclaim 1.2</strong> :<span class="math inline">\(f\)</span> is a injective<br />
+Suppose that <span class="math inline">\(f(n)=f(m)\)</span>
+<span class="math display">\[\begin{eqnarray}
+  f(n)&amp;=&amp;f(m)\\
+  a^n &amp;=&amp; a^m \\
+  n&amp;=&amp; m ~~(\text{Since order is infinite})
+\end{eqnarray}\]</span></li>
+<li><strong>Subclaim 1.3</strong> : <span class="math inline">\(f\)</span> is surjective.<br />
+Let <span class="math inline">\(x\in G=&lt;a&gt;\)</span>. Then, <span class="math inline">\(x=a^k\)</span> for some <span class="math inline">\(k\in \mathbb{Z}\)</span>. Then, observe that
+<span class="math display">\[f(k)=a^k=a \]</span>.
+Thus, <span class="math inline">\(f\)</span> is surjective.</li>
+</ul></li>
+</ul>
+<p>Therefore, <span class="math inline">\(f\)</span> is an isomorphism. Thus, the infinite cyclic groups are isomorphic to <span class="math inline">\(\mathbb{Z}\)</span>.</p>
+<p><br />
+<br />
+We can consider $. Suppose that <span class="math inline">\((a, b)\)</span> generate the product group. But then, we see that <span class="math inline">\((2a, b)\)</span> cannot be obtained from adding <span class="math inline">\((a, b)\)</span> to itself, which implies that $ is not infinite cyclic.</p>
+</div>
+<p><br />
+<br />
+<br />
+</p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-64" class="exercise"><strong>Exercise 2.21  </strong></span>In each of the following cases, determine whether or not <span class="math inline">\(G\)</span> is isomorphic to the product group <span class="math inline">\(H \times K\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(G = \mathbb{R}^\times\)</span>, <span class="math inline">\(H = \{\pm 1\}\)</span>, <span class="math inline">\(K = \{\)</span>positive real numbers<span class="math inline">\(\}\)</span>.</p></li>
+<li><p><span class="math inline">\(G = \{\)</span>invertible upper triangular <span class="math inline">\(2 \times 2\)</span> matrices<span class="math inline">\(\}\)</span>, <span class="math inline">\(H = \{\)</span>invertible diagonal matrices<span class="math inline">\(\}\)</span>, <span class="math inline">\(K = \{\)</span>upper triangular matrices with diagonal entries <span class="math inline">\(1\}\)</span>.</p></li>
+<li><p><span class="math inline">\(G = e^x\)</span>, <span class="math inline">\(H = \{\)</span>unit circle<span class="math inline">\(\}\)</span>, <span class="math inline">\(K = \{\)</span>positive real numbers<span class="math inline">\(\}\)</span>.</p></li>
+</ol>
+</div>
+<p><strong>Solution</strong>:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Observe that <span class="math inline">\(G=\mathbb{R}^\times=\mathbb{R}\setminus\{0\}\)</span> is abelian. Then <span class="math inline">\(H,K \trianglelefteq G\)</span>. Further, observe that <span class="math inline">\(H\cap K=\{1\}\)</span> and <span class="math inline">\(HK=\mathbb{R}^\times=G\)</span>. Thus, by proposition <a href="group-theory.html#prp:prp2114">2.4</a> <span class="math inline">\(G \cong H \times K\)</span>.</p></li>
+<li></li>
+</ol>
+<ul>
+<li><p><strong>Claim b.1</strong>: <span class="math inline">\(K\trianglelefteq G\)</span>.<br />
+Let <span class="math inline">\(g = \begin{bmatrix} a &amp; b \\ &amp; c \end{bmatrix}\)</span> be an arbitary matrix in <span class="math inline">\(G\)</span> and <span class="math inline">\(k = \begin{bmatrix} 1 &amp; d \\ &amp; 1 \end{bmatrix}\in K\)</span>.
+Then,
+<span class="math display">\[ g^{-1} = \begin{bmatrix}
+a^{-1} &amp; -ba^{-1}c^{-1} \\
+&amp; c^{-1}
+\end{bmatrix}\]</span>
+Then
+<span class="math display">\[gkg^{-1} = \begin{bmatrix}
+a &amp; b \\
+&amp; c
+\end{bmatrix}\begin{bmatrix}
+1 &amp; d \\
+&amp; 1
+\end{bmatrix}\begin{bmatrix}
+a^{-1} &amp; -ba^{-1}c^{-1} \\
+&amp; c^{-1}
+\end{bmatrix}\]</span>
+<span class="math display">\[= \begin{bmatrix}
+a &amp; b \\
+&amp; c
+\end{bmatrix}\begin{bmatrix}
+a^{-1} &amp; dc^{-1} - ba^{-1}c^{-1} \\
+&amp; c^{-1}
+\end{bmatrix} = \begin{bmatrix}
+1 &amp; adc^{-1} \\
+&amp; 1
+\end{bmatrix} \in K\]</span>
+Thus, <span class="math inline">\(H\trianglelefteq G\)</span>.</p></li>
+<li><p><strong>Claim b.2</strong> : <span class="math inline">\(H=Z(G)\)</span> (<span class="math inline">\(H\)</span> is in the center of <span class="math inline">\(G\)</span>).</p>
+<ul>
+<li><em>subclaim b.2.1</em> : <span class="math inline">\(H \subseteq Z(G)\)</span>.<br />
+Let <span class="math inline">\(h=\begin{bmatrix} x &amp; 0 \\ &amp; x \end{bmatrix} \in H\)</span>. Then,
+<span class="math display">\[B=\begin{bmatrix}
+x &amp; 0 \\
+&amp; x
+\end{bmatrix}=x\begin{bmatrix}
+1 &amp;  \\
+&amp; 1
+\end{bmatrix}=BI\]</span>
+Then observe that, for any <span class="math inline">\(A\in G\)</span>,
+<span class="math display">\[BA=(xI)A = xA = Ax = A(xI)=AB\]</span></li>
+<li><em>subclaim b.2.2</em> : <span class="math inline">\(H \supseteq Z(G)\)</span>.<br />
+Let <span class="math inline">\(\begin{bmatrix} p &amp; q \\ r &amp; s \end{bmatrix}\in Z(G)\)</span>, then,</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[\begin{eqnarray}
+\begin{bmatrix}
+p &amp; q \\
+r &amp; s
+\end{bmatrix}\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; -1
+\end{bmatrix} &amp;=&amp; \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; -1
+\end{bmatrix}\begin{bmatrix}
+p &amp; q \\
+r &amp; s
+\end{bmatrix}\\
+\begin{bmatrix}
+p &amp; -q \\
+r &amp; -s
+\end{bmatrix}&amp;=&amp; \begin{bmatrix}
+p &amp; q \\
+-r &amp; -s
+\end{bmatrix}\\
+\end{eqnarray}\]</span>
+This yields <span class="math inline">\(−q = q\)</span> and <span class="math inline">\(r = −r\)</span> which imply <span class="math inline">\(q = r = 0\)</span>. Now considering,</p>
+<p><span class="math display">\[\begin{eqnarray}
+\begin{bmatrix}
+p &amp; 0 \\
+0 &amp; s
+\end{bmatrix}\begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{bmatrix} &amp;=&amp; \begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{bmatrix}\begin{bmatrix}
+p &amp; 0 \\
+0 &amp; s
+\end{bmatrix}\\
+\begin{bmatrix}
+0 &amp; p \\
+q &amp; 0
+\end{bmatrix}&amp;=&amp; \begin{bmatrix}
+0 &amp; q \\
+p &amp; 0
+\end{bmatrix}\\
+\end{eqnarray}\]</span>
+This implies that <span class="math inline">\(a = d\)</span> and since the matrix is invertible, <span class="math inline">\(a\neq 0\)</span>. Thus, <span class="math inline">\(H \supseteq Z(G)\)</span>.</p>
+<p>Therefore, <span class="math inline">\(H = Z(G)\)</span>. In other words, <span class="math inline">\(H\)</span> is in the center of <span class="math inline">\(G\)</span>.</p>
+<ul>
+<li><p><strong>Claim b.2</strong> : <span class="math inline">\(H\trianglelefteq G\)</span>.<br />
+Since, <span class="math inline">\(H\)</span> is in the center of <span class="math inline">\(G\)</span>, then <span class="math inline">\(H\)</span> is normal.</p></li>
+<li><p><strong>Claim b.3</strong> : <span class="math inline">\(H\cap K=\{I\}\)</span>.<br />
+This is trivial.</p></li>
+<li><p><strong>Claim b.4</strong> : <span class="math inline">\(HK=G\)</span>
+Clearly, <span class="math inline">\(HK\subseteq G\)</span>. Conversly,
+for any <span class="math inline">\(g\in G\)</span>, <span class="math inline">\(a\neq 0, b\neq 0\)</span>,
+<span class="math display">\[g=\begin{bmatrix}
+a &amp; b \\
+&amp; c
+\end{bmatrix}=\begin{bmatrix}
+a &amp;  \\
+&amp; c
+\end{bmatrix}\begin{bmatrix}
+1 &amp; a^{-1}b \\
+&amp; 1
+\end{bmatrix}\in HK\]</span>.
+Thus, <span class="math inline">\(HK=G\)</span>.</p></li>
+</ul>
+<p>Therefore, by proposition <a href="group-theory.html#prp:prp2114">2.4</a> <span class="math inline">\(G\cong HK\)</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Since <span class="math inline">\(C^\times\)</span> is abelian, then <span class="math inline">\(H\)</span> and <span class="math inline">\(K\)</span> are normal. And, <span class="math inline">\(H \cap K = \left\lbrace 1 \right\rbrace\)</span>.</li>
+</ol>
+<p><img src="figures/ch_2/fig03.png" /><!-- --></p>
+<p>Consider <span class="math inline">\(a + bi \in C^\times\)</span>. Then
+<span class="math display">\[a + bi = \left(\frac{a}{\sqrt{a^2+b^2}} + \frac{b}{\sqrt{a^2+b^2}}i\right)\sqrt{a^2+b^2} \in HK\]</span>
+So, <span class="math inline">\(HK = G\)</span>. So, by proposition <a href="group-theory.html#prp:prp2114">2.4</a> <span class="math inline">\(G \cong H \times K\)</span>.</p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-65" class="exercise"><strong>Exercise 2.22  </strong></span>Let <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span> be groups, and let <span class="math inline">\(Z_i\)</span> be the center of <span class="math inline">\(G_i\)</span>. Prove that the center of the product group <span class="math inline">\(G_1 \times G_2\)</span> is <span class="math inline">\(Z_1 \times Z_2\)</span>.</p>
+</div>
+<p><img src="figures/ch_2/fig04.jpg" /><!-- --></p>
+<p><img src="figures/ch_2/fig05.jpg" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-66" class="exercise"><strong>Exercise 2.23  </strong></span>Let <span class="math inline">\(G\)</span> be a group that contains normal subgroups of orders <span class="math inline">\(3\)</span> and <span class="math inline">\(5\)</span>, respectively. Prove that <span class="math inline">\(G\)</span> contains an element of order <span class="math inline">\(15\)</span>.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-67" class="exercise"><strong>Exercise 2.24  </strong></span>Let <span class="math inline">\(H\)</span> be a subgroup of a group <span class="math inline">\(G\)</span>, let <span class="math inline">\(\phi:G \to H\)</span> be a homomorphism whose restriction to <span class="math inline">\(H\)</span> is the identity map, and let <span class="math inline">\(N\)</span> be its kernel. What can one say about the product map <span class="math inline">\(H \times N \to G\)</span>?</p>
+</div>
+<p><img src="figures/ch_2/fig06.png" /><!-- -->
+<img src="figures/ch_2/fig07.jpg" /><!-- -->
+<img src="figures/ch_2/fig09.png" /><!-- -->
+<img src="figures/ch_2/fig08.jpg" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-68" class="exercise"><strong>Exercise 2.25  </strong></span>Let <span class="math inline">\(G\)</span>, <span class="math inline">\(G&#39;\)</span>, and <span class="math inline">\(H\)</span> be groups. Establish a bijective correspondence between homomorphisms <span class="math inline">\(\phi : H \to G \times G&#39;\)</span> from <span class="math inline">\(H\)</span> to the product group and pairs <span class="math inline">\((\varphi, \varphi&#39;)\)</span> consisting of a homomorphism <span class="math inline">\(\varphi:H \to G\)</span> and a homomorphism <span class="math inline">\(\varphi&#39;:H \to G&#39;\)</span>.</p>
+</div>
+<p><img src="figures/ch_2/fig10.png" /><!-- --></p>
+<p><img src="figures/ch_2/fig11.jpg" /><!-- -->
+<img src="figures/ch_2/fig12.jpg" /><!-- -->
+<img src="figures/ch_2/fig13.jpg" /><!-- -->
+<img src="figures/ch_2/fig14.jpg" /><!-- -->
+<img src="figures/ch_2/fig15.jpg" /><!-- -->
+<img src="figures/ch_2/fig16.jpg" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-69" class="exercise"><strong>Exercise 2.26  </strong></span>Let <span class="math inline">\(H\)</span> and <span class="math inline">\(K\)</span> be subgroups of a group <span class="math inline">\(G\)</span>. Prove that the product set <span class="math inline">\(HK\)</span> is a subgroup of <span class="math inline">\(G\)</span> if and only if <span class="math inline">\(HK = KH\)</span>.</p>
+</div>
+<p><strong>Solution</strong> :</p>
+<div class="proof">
+<p><span id="unlabeled-div-18" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(G\)</span> be group and <span class="math inline">\(H,K\leq G\)</span>.</p>
+<ul>
+<li><p><span class="math inline">\((\Longrightarrow)\)</span>: <strong>Claim </strong>: if <span class="math inline">\(HK\leq G\)</span> then <span class="math inline">\(HK=KH\)</span>.<br />
+</p>
+<p>Suppose <span class="math inline">\(HK\leq G\)</span>.</p>
+<ul>
+<li><strong>sub claim</strong>:
+Let <span class="math inline">\(x\in KH\)</span>. Then <span class="math inline">\(x=kh\)</span> for some <span class="math inline">\(h\in H\)</span> and <span class="math inline">\(k\in K\)</span>,
+<span class="math display">\[x=kh=1kh1=(1k)(h1)\in HK\]</span>
+(Since <span class="math inline">\(1\in H\)</span> and <span class="math inline">\(1\in K\)</span>). Thus, <span class="math inline">\(KH \subseteq HK\)</span>.<br />
+</li>
+<li><strong>sub claim</strong>: <span class="math inline">\(KH \supseteq HK\)</span>.<br />
+We can not use previous method.Because we still do not know <span class="math inline">\(KH\)</span> is sub group or not.<br />
+Let <span class="math inline">\(y\in HK\)</span>. Since <span class="math inline">\(HK\leq G\)</span>, <span class="math inline">\(y^{-1}\in HK\)</span>. Then <span class="math inline">\(y^{-1}=hk\)</span> for some <span class="math inline">\(h_0\in H\)</span> and <span class="math inline">\(k_0\in K\)</span>. \
+<span class="math display">\[y=(y^{-1})^{-1}=(h_0k_0)^{-1}=k_0h_0\in KH\]</span>
+Thus, <span class="math inline">\(KH \supseteq HK\)</span>.</li>
+</ul></li>
+</ul>
+<p>Therefore, <span class="math inline">\(KH=HK\)</span>.</p>
+<ul>
+<li><span class="math inline">\((\Longleftarrow)\)</span>: <strong>Claim </strong>: If <span class="math inline">\(HK=KH\)</span> then <span class="math inline">\(HK\leq G\)</span>.<br />
+</li>
+</ul>
+<p>Now suppose that <span class="math inline">\(HK=KH\)</span>.Suppose that <span class="math inline">\(HK=KH\)</span> is empty. Then, <span class="math inline">\(H,K\)</span> is empty. Now we use sub group test.<br />
+- <em>Closure</em>: Let <span class="math inline">\(x,y\in HK\)</span>. Then <span class="math inline">\(x=h_1k_1\)</span> and <span class="math inline">\(y=h_2k_2\)</span> for some <span class="math inline">\(h_1,h_2\in H\)</span> and <span class="math inline">\(k_1,k_2\in K\)</span>.
+<span class="math display">\[\begin{eqnarray}
+  xy&amp;=&amp;(h_1k_1)(h_2k_2)\\
+  &amp;=&amp; h_1(k_1h_2)k_2) ~~(\text{By associavity property})\\
+  &amp;=&amp; h_1(h_3k_3)k_2) ~\text{for some  }h_3\in H \text{ and } k_3\in K ~(\text{Since} KH=HK)\\
+  &amp;=&amp; (h_1h_3)(k_3k_2)\in HK
+\end{eqnarray}\]</span>
+- <em>Inverse</em>: Let Let <span class="math inline">\(x\in HK\)</span>. Then <span class="math inline">\(x=h&#39;k&#39;\)</span> for some <span class="math inline">\(h&#39;\in H\)</span> and <span class="math inline">\(k&#39;\in K\)</span>.
+<span class="math display">\[x^{-1}=(h&#39;k&#39;)^{-1}=k&#39;h&#39;\in KH=HK\]</span>
+Thus, <span class="math inline">\(HK\leq G\)</span>.</p>
+<p>Therefore, the product set <span class="math inline">\(HK\)</span> is a subgroup of <span class="math inline">\(G\)</span> if and only if <span class="math inline">\(HK = KH\)</span></p>
+</div>
 
+</div>
 </div>
 </div>
             </section>
