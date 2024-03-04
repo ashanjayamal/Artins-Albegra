@@ -1,21 +1,15 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Group Theory
 
 ## Laws of Compositions
 
 
 
-### Exercises 
-```{exercise}
-Let \( S \) be a set. Prove that the law of composition defined by \( ab = a \) for all \( a \) and \( b \) in \( S \) is associative? For which sets does this law have an identity?
-```
-**Solution**: Let $a,b,c\in S$.
-Now consider following
-\[(ab)c=(ac)=a=(ab)=a(bc)\]
-Thus, the given law of composition is associative.
 
-If the given law of composition  has an identity element whenever every element $a\in S$ has a multiplicative inverse./
-In other words, for every element $a\in S$, there exists an element $e \in S$ such that \[ae = ea = a.\] 
-Thus, $ae=a=ea=e$. So, the identity element is the same as every element in S, and the law has an identity for all sets S. Thus, only singletons sets have this given law of compositions have identity.
 
 
 
@@ -27,7 +21,7 @@ A group is a set \(G\) together with a law of composition that has the following
 - \(G\) contains an identity element \(1\), such that \(la = a\) and \(al = a\) for all \(a\) in \(G\).
 - Every element \(a\) of \(G\) has an inverse, an element \(b\) such that \(ab = 1\) and \(ba = 1\).
 ```
-**Noatation**: If set '$G$' with composition '$\ccdot$' is a group, then we denote it by $(G,\cdot)$
+**Notation**: If set $G$ with composition $\cdot$ is a group, then we denote it by $(G,\cdot)$
 ```{definition,name='Ableian Group'}
 Group G is called abliean if its law of composition is commutative. i.e.
 \[\forall x\in G, xy=yx\]
@@ -137,25 +131,25 @@ Let $(G, *)$ and $(G', \odot)$ be groups. A **homomorphism** $\phi: G \rightarro
     \phi(a * b) = \phi(a) \odot \phi(b).
 \end{equation}
 ```
-### Examples of Homomorphisms
+ **Examples of Homomorphisms**
 
 1. **Determinant Function**: $\text{det}: GL_n(\mathbb{R}) \to \mathbb{R}^\times$
 2. **Exponential Map**: $\text{exp}: (\mathbb{R}, +) \to (\mathbb{R}^\times, \times)$ defined by $x \mapsto e^x$
 3. **Map $\phi$**: $(\mathbb{Z}, +) \to G$ defined by $\phi(n) = a^n$, where $a$ is a given element of $G$
 4. **Absolute Value Map**: $|\cdot| : (\mathbb{C}^\times, \times) \to (\mathbb{R}^\times, \times)$
 
-### Trivial Homomorphism
+**Trivial Homomorphism**
 
 The trivial homomorphism $\phi: G \rightarrow G'$ between any two groups maps every element of $G$ to the identity in $G'$.
 
-### Inclusion Map
+**Inclusion Map**
 
 If $H$ is a subgroup of $G$, the inclusion map $i: H \rightarrow G$ defined by $i(x) = x$ for $x$ in $H$ is a homomorphism.
 
----
 
-**Proposition 5.1.1**
 
+
+```{proposition}
 Let $\phi: G \rightarrow G'$ be a group homomorphism.
 
 (a) If $a_i, \ldots, a_k$ are elements of $G$, then $\phi(a_i \ldots a_k) = \phi(a_i) \ldots \phi(a_k)$.
@@ -163,6 +157,32 @@ Let $\phi: G \rightarrow G'$ be a group homomorphism.
 (b) $\phi$ maps the identity to the identity: $\phi(1_G) = 1_{G'}$.
 
 (c) $\phi$ maps inverses to inverses: $\phi(a^{-1}) = \phi(a)^{-1}$.
+```
+
+```{proposition,label='258'}
+Let $\phi : G \rightarrow G'$ be a homomorphism of groups, and 
+let $a,b\in G$. Let $K\ker(\phi)$.
+Then following conditions are equivalent:
+
+- $\phi(a) = \phi(b)$,  
+- $a^{-1}b$ is in $K$,
+- $b$ is in the coset $aK$,
+- The cosets $bK$ and $aK$ are equal.
+
+```
+
+```{proof}
+- $(1)\implies (2)$.\\
+        Suppose $\phi(a) = \phi(b)$. Now consider
+        \[\phi(a^{-1}b)=\phi(a^{-1})\phi(b)=\phi(a^{-1} )\phi(b)=1\]
+        Thus, $a^{-1}b\in K$.
+- $(2)\implies (1)$\\ If $a^{-1}b \in K$
+        \[1=\phi(a^{-1}b)=\phi(a^{-1})\phi(b)=\phi(a^{-1} )\phi(b)\].
+        Thus, $\phi(a)=\phi(b)$. 
+        $(3) \implies (4)$
+- Suppose $b$ is in the coset $aK$. Then $b=ak$ for some 
+
+```
 
 
 
@@ -213,100 +233,246 @@ Let $\phi: G \rightarrow G'$ be a group homomorphism.
 
 ## Isomorphisms
 ## Equivalence Relations and Partitions
+```{definition}
+Sure, here is the LaTeX version of your statement:
+
+A partition $n$ of a set $S$ is a subdivision of $S$ into nonoverlapping, nonempty subsets:
+$$S = \bigcup_{i} A_i$$
+,where $A_i$ are disjoint nonempty subsets of $S$.
+```
+```{r echo=FALSE,label='fig2-32'}
+  knitr::include_graphics('figures/ch_2/fig32.png') 
+```
+
+```{example}
+The two sets _Even_ and _Odd_ partition the set of integers.
+```
+
+```{example}
+With the usual notation, the sets 
+\[\{1\}, \{y, xy, x^2y\}, \{x, x^2\}\]
+form a partition of the symmetric group $S_3$.
+```
+
+```{definition}
+An equivalence relation on a set $S$ is a relation that holds between certain pairs of elements.
+
+- Reflexive: For all $a$, $a \sim a$.
+- Symmetric: If $a \sim b$ , then $b \sim a$.
+- Transitive: If $a \sim b$ and $b \sim c$ , then $a \sim c$.
+
+
+```
+
+```{example}
+Two triangles are said to be congruent if their sides have the same length and angles have same measure. \
+Congruence of triangles is an example of an equivalence relation on the set of triangles in the plane. If $A , B,$ and $C$ are triangles, and if $A$ is congruent to $B$ and $B$ is congruent to $C$, then $A$ is congruent to $C$. It is very easy to check three equivalnace propoties. I am not going to do this.
+
+```
+
+```{example}
+Conjugacy is an equivalence relation on a group. 
+Let $G$ be garoup Two group elements are conjugate, $a\sim b$, if $b = gag^{- 1}$ for some $g\in G$.
+
+- _Reflexive_: Observe that $a=aaa^{-1}$ then, $a\sim a$.
+- _Symmetric_: Suppose that $a\sim b$, then $b=gag^{-1}$. Thus,
+$a=g^{-1}bg$. Hence, $b \sim a$.
+- _Transitive_:  Suppose that $a\sim b$ and $b \sim c$. This means that $b = g_1ag_1^{-1}$ and $c = g_2bg_2^{-1}$ for some group elements $g_1$ and $g_2$. 
+Then $c = g_2(g_1ag_1^{-1})g_2^{-1} = (g_2 g_1)a (g_2 g_1),$ \ so $a \sim c$
+```
+
+
+```{proposition}
+An equivalence relation on a set S determines a partition of S, and conversely.
+```
+```{proof}
+- ($\Longrightarrow$): Given a partition of $S$, the corresponding equivalence relation is defined by the rule 
+that $a \sim b$ if $a$ and $b$ lie in the same subset of the partition. The axioms for an equivalence relation are obviously satisfied.
+- ($\Longrightarrow$): Given an equivalence relation ($\sim$), one defines a partition this way: \
+The subset that contains $a$ is the set of all elements $b$ such that $a \sim b$. This subset is called the **equivalence class** of a. We’ll denote it by $C_a$ here
+\[C_a = \{b \in S | a\sim b\}\]
+The next lemma completes the proof of the proposition
+```
+
+```{lemma}
+Given an equivalence relation on a set $S$, the subsets of $S$ that are equivalence classes partition $S$.
+```
+
+```{proof}
+This is an important point, so we will check it carefully. We must remember that the notation $C_a$ stands for a subset defined in a certain way. The partition consists of the subsets, and several notations may describe the same subset.
+
+- _Non-emptyness_: The reflexive axiom tells us that $a$ is in its equivalence class. Therefore, the class $C_a$ is nonempty.
+- _Union is whole set_: Since $a$ can be any element, the union of the equivalence classes is the whole set $S$. 
+- _Disjoint property_: To show this, we prove follwoing calim:
+
+    - **Claim**: $\text{If } C_a \text{ and } C_b \text{ have an element in common, then } C_a = C_b$.\
+Since we can interchange the roles of $a$ and $b$, it will suffice to show that if $C_a$ and $C_b$ have an element, say $d$, in common, then $C_b \subseteq C_a$.\
+Sippose that $x$ is in $C_b$, then $b \sim x$. Since $d$ is in both sets, $a \sim d$ and $b \sim d$, and the symmetry property tells us that $d \sim b$. So we have $a \sim d$, $d \sim b$, and $b \sim x$. Two applications of transitivity show that $a \sim x$, and therefore, $x$ is in $C_a$.
+
+```
+
+```{example,label='272'}
+The relation on a group defined by $a ~ b$ if $a$ and $b$ are elements of the same order is an equivalence relation. ( Trivial.)
+
+
+The corresponding partition for the symmetric group S3 are 
+\[\{1\}, \{y, xy, x^2y\}, \{x, x^2\}.\]
+```
+
+If a partition of a set $S$ is given, we may construct a new set $\overline{S}$ whose elements are the subsets. We imagine putting the subsets into separate piles, and we regard the piles as the elements of our new set $\overline{S}$. It seems advisable to have a notation to distinguish a subset from the element of the set $S$ (the pile) that it represents. If $U$ is a subset, we will denote by $[U]$ the corresponding element of $S$. 
+
+```{example}
+If $S$ is the set of integers and if $\text{Even}$ and $\text{Odd}$ denote the subsets of even and odd integers, respectively, then $\overline{S}$ contains the two elements $[\text{Even}]$ and $[\text{Odd}]$.
+```
+We will use this notation more generally. When we want to regard a subset $U$ of $S$ as an element of a set of subsets of $S$, we denote it by $[U]$.
+
+When an equivalence relation on $S$ is given, the equivalence classes form a partition, and we obtain a new set $\overline{S}$ whose elements are the equivalence classes $[C_a]$. We can think of the elements of this new set in another way, as the set obtained by changing what we mean by equality among elements. If $a$ and $b$ are in $S$, we interpret $a \sim b$ to mean that $a$ and $b$ become equal in $\overline{S}$, because $C_a = C_b$. With this way of looking at it, the difference between the two sets $S$ and $\overline{S}$ is that in $\overline{S}$ more elements have been declared “equal,” i.e., equivalent. It seems to me that we often treat congruent triangles this way in school.
+
+For any equivalence relation, there is a natural surjective map
+\begin{equation}
+ \quad \pi : S \to \overline{S}
+\end{equation}
+that maps an element $a$ of $S$ to its equivalence class: $\pi(a) = [C_a]$. When we want to regard $\overline{S}$ as the set obtained from $S$ by changing the notion of equality, it will be convenient to denote the element $[C_a]$ of $\overline{S}$ by the symbol $a$. Then the map $\pi$ becomes
+\begin{equation}
+\pi(a) = \overline{a}
+\end{equation}
+
+We can work in $\overline{S}$ with the symbols used for elements of $S$, but with bars over them to remind us of the new rule:
+\begin{equation}
+\text{If } a \text{ and } b \text{ are in } S, \text{ then } \overline{a} = \overline{b} \text{ means } a \sim b.
+\end{equation}
+
+A disadvantage of this bar notation is that many symbols represent the same element of $S$. Sometimes this disadvantage can be overcome by choosing a particular element, a representative element, in each equivalence class. For example, the even and the odd integers are often represented by $\overline{0}$ and $\overline{1}$:
+\begin{equation}
+\{[\text{Even}], [\text{Odd}]\} = \{ \overline{0}, \overline{1}\}.
+\end{equation}
+
+Though the pile picture may be easier to grasp at first, the second way of viewing $S$ is often better because the bar notation is easier to manipulate algebraically.
+
+### The Equivalence Relation Defined by a Map
+Any map of sets $f : S \to T$ gives us an equivalence relation on its domain $S$. It is defined by the rule: $a \sim b$ if $f(a) = f(b)$.
+
+
+```{definition,name='Inverse Image  and Fibers'}
+The inverse image of an element $t$ of $T$ is the subset of $S$ consisting of all elements $s$ such that $f(s) = t$. It is denoted symbolically as
+\begin{equation}
+f^{-1}(t) = \{s \in S \mid f(s) = t\}.
+\end{equation}
+
+The inverse images are also called the fibres of the map $f$ , and the fibres that are not empty are the equivalence classes for the relation defined above.
+```
+
+```{remark}
+This is symbolic notation. Please remember that **unless $f$ is bijective, $f^{-1}$ will not be a map**.
+```
+Here the set S of equivalence classes has another incarnation, as the image of the map. 
+The elements of the image correspond bijectively to the nonempty fibres, which are the 
+equivalence classes
+
+```{example}
+Let's consider the absolute value map from the complex numbers $\mathbb{C}^\times$ to the positive real numbers $\mathbb{R}^+$:
+
+\[ f: \mathbb{C}^\times \to \mathbb{R}^+, \quad f(z) = |z| \]
+
+The fiber of an element $t$ in $\mathbb{R}^+$ is the subset of $\mathbb{C}^\times$ consisting of all complex numbers $z$ such that $f(z) = |z| = t$. Symbolically, we denote the fiber as:
+
+\[ f^{-1}(t) = \{ z \in \mathbb{C}^\times : |z| = t \} \]
+
+This fiber represents all complex numbers with the same absolute value $t$. Thus, fibers are circles in Complex plane.
+
+
+Note that the absolute value map is surjective, so each positive real number $t$ corresponds to a unique fiber in $\mathbb{C}^\times$.
+```
+
+```{r echo=FALSE,label='fig2-33'}
+  knitr::include_graphics('figures/ch_2/fig33.png') 
+```
+
+```{example}
+If $G$ is a finite group, we can define a map $f : G \to \mathbb{N}$ to the set $\{1, 2, 3, \ldots\}$ of natural numbers, letting $f(a)$ be the order of the element $a$ in $G$. The fibers of this map are the sets of elements with the same order (see example \@ref(exm:272)).
+
+```
+
+```{r echo=FALSE,label='fig2-34'}
+  knitr::include_graphics('figures/ch_2/fig34.png') 
+```
+
+```{definition,name='congruence'}
+Let $G,G'$ be a groups and \(\phi: G \rightarrow G'\) be a group group homomorphism. The equivalence relation on \(G\) defined by \(\phi\) is usually denoted by \(\equiv\), rather than by \(\sim\), and is referred to as congruence.
+\[a \equiv b \text{ if }\phi(a) = \phi(b)\]
+
+```
+
+We have seen that elements $a$ and $b$ of $G$ are congruent, i.e., $\phi(a) = \phi(b)$, if and only if $b$ is 
+in the coset $a K$ of the kernel $K$ (See proposition \@ref(prp:258))
+
+```{proposition}
+Let $K$ be the kernel of a homomorphism $\varphi: G \to G'$. The fibre of  that contains an element $a$ of $G$ is the coset $a K$ of $K$. These cosets partition the group $G$, and they correspond to elements of the image of $\varphi$. 
+```
+
+```{r echo=FALSE,label='fig2-35'}
+  knitr::include_graphics('figures/ch_2/fig35.png') 
+```
+
+
+```{proof}
+The fibre of $\varphi$ over an element $g' \in G'$ is the set of all elements $a \in G$ such that $\varphi(a) = g'$. Let's denote this fibre as 
+\[F_{g'} = \{a \in G : \varphi(a) = g'\}\].
+
+Now, let's take an arbitrary element $a \in G$ and consider the left coset $aK = \{ak : k \in K\}$. 
+
+We know that $K$ is the kernel of $\varphi$, so for any $k \in K$, we have $\varphi(k) = 1_{G'}$ where $1_{G'}$ is the identity element in $G'$. 
+  
+- Claim 1: $aK=F_{\varphi(a)}$.  
+  - sub claim 1.1: $aK \subseteq F_{\varphi(a)}$.\
+For any $ak \in aK$, we have $\varphi(ak) = \varphi(a)\varphi(k) = \varphi(a)1_{G'} = \varphi(a)$.This shows that every element in the coset $aK$ is mapped to the same element under $\varphi$ as $a$ itself. Therefore, the coset $aK$ is a subset of the fibre $F_{\varphi(a)}$.
+
+   - sub claim 1.2 : $F_{\varphi(a)}\subseteq aK$.\
+If $a' \in F_{\varphi(a)}$, then $\varphi(a') = \varphi(a)$, which implies that $\varphi((a')^{-1}a) = 1_{G'}$. 
+This means that $(a')^{-1}a \in K$, or equivalently, $a' \in aK$. (by proposition \@ref(prp:258))Therefore, the fibre $F_{\varphi(a)}$ is a subset of the coset $aK$.
+
+Since $aK$ is a subset of $F_{\varphi(a)}$ and $F_{\varphi(a)}$ is a subset of $aK$, we conclude that $aK = F_{\varphi(a)}$. So, the fibre of $\varphi$ that contains an element $a$ of $G$ is indeed the coset $aK$ of $K$.
+
+- Claim 2: The cosets of a subgroup $K$ partition the group $G$.
+
+A partition of a set is a collection of non-empty subsets such that every element in the set is in exactly one of these subsets. 
+
+To show that the cosets of $K$ partition $G$, we need to show two things:
+
+ - sub claim 2.1: Every element of $G$ is in at least one coset of $K$.\
+Given any $g \in G$, $g$ is in the coset $gK$. So, every element of $G$ is in at least one coset of $K$.
+
+  - sub claim 2.2: No element of $G$ is in more than one coset of $K$\
+Suppose $gK$ and $hK$ are two cosets of $K$ and there is some element $x \in G$ that is in both $gK$ and $hK$. This means that there exist $k_1, k_2 \in K$ such that $x = gk_1 = hk_2$ (by proposition \@ref(prp:258). Then $g = hk_2k_1^{-1}$. Thus, g\in gK, which implies that $gK = hK$. 
+So, no element of $G$ is in more than one coset of $K$.
+
+Therefore, the cosets of $K$ partition the group $G$.
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Cosets
 ## Modular Arithmetic
-
-
-```{exercise}
-What are the possible values of $a^2$ modulo 4? modulo 8?
-```
-**solution**
-\_In modulo 4_\
-\begin{eqnarray*}
-    \overline{0}^2&\equiv & 0 \pmod{4}\\
-    \overline{1}^2&\equiv & 1 \pmod{4}\\
-    \overline{2}^2&\equiv & 0 \pmod{4}\\
-    \overline{3}^2&\equiv & 1 \pmod{4}\\
-\end{eqnarray*}
-The possible values of $a^2\pmod{4}$ are 0 and 1. 
-
-\_In modulo 8_\
-\begin{eqnarray*}
-    \overline{0}^2&\equiv & 0 \pmod{8}\\
-    \overline{1}^2&\equiv & 1 \pmod{8}\\
-    \overline{2}^2&\equiv & 4 \pmod{8}\\
-    \overline{3}^2&\equiv & 1 \pmod{8}\\
-    \overline{4}^2&\equiv & 0 \pmod{8}\\
-    \overline{5}^2&\equiv & 1 \pmod{8}\\
-    \overline{6}^2&\equiv & 4 \pmod{8}\\
-    \overline{7}^2&\equiv & 1 \pmod{8}\\
-\end{eqnarray*}
-The possible values of $a^2\pmod{8}$ are 0,1 and 4.
-
-
-
-
-```{exercise}
-Prove that every integer $a$ is congruent to the sum of its decimal digits modulo 9.
-```
-```{proof}
-    Let $x\in  \mathbb{Z}$. Now we can represent x as follows
-    \[x=a_010^0+a_110^1+\cdots +a_n10^n=\sum_{i=0}^n a_{i}10^i\text{  forsome } n\in \mathbb{Z},\text{ and }a_i\in \{0,1,...,9\}\]
-    
-    We need to show $x \equiv  \sum_{i=0}^na_i\pmod{9$}.So, now consider,
-    \begin{eqnarray*}
-        x-\sum_{i=0}^n a_{i}&=&\sum_{i=0}^n a_{i}10^i-\sum_{i=0}^n a_{i}\\
-        &=& \sum_{i=0}^n (a_{i}10^i- a_{i})\\
-        &=& \sum_{i=0}^n a_{i}(10^i- 1)
-    \end{eqnarray*}
-    By follwing calim we can get that,
-\begin{eqnarray*}
-    x-\sum_{i=0}^n a_i &equiv & 0 \pmod{9}\\
-    x &\equiv & \sum_{i=0}^na_i\pmod{9}
-\end{eqnarray*}
-```
-\textbf{Claim}: $9|(10^k-1)$ for any $k\in \mathbb{N}$.
-
-
-```{proof}
-We use mathematical induction.\
-_$k=1$_\
-This case is trivial. Because $9|10-1$.\
-_$k=n\in\mathbb{Z}$_\
-Now asuume when $n=k, 9|(10^n-1)$.\
-_$k=n+1$_
-\[10^{n+1}-1 =10\cdot 10^{n}-1=9\cdot 10^n + (10^n - 1) \]
-Thus $9\vert (10^{n+1}-1)$. \
-Therefore,by mathematical induction, $9|(10^n-1)$ for any $n\in \mathbb{N}$.
-```
-
-
-```{exercise}
-Solve the congruence $2x \equiv 5$ modulo 9 and modulo 6.
-```
-Done Later add.
-```{exercise}
-Determine the integers $n$ for which the pair of congruences $2x - y \equiv 1$ and $4x + 3y \equiv 2$ modulo $n$ has a solution.
-```
-Done Later add.
-```{exercise}
-Prove the Chinese Remainder Theorem: Let $a, b, u, v$ be integers, and assume that the greatest common divisor of $a$ and $b$ is 1. Then there is an integer $x$ such that $x \equiv u$ modulo $a$ and $X \equiv v$ modulo $b$. \
-Hint: Do the case $u = 0$ and $v = 1$ first.
-```
-
-```{exercise}
-Determine the order of each of the matrices A and B when the matrix entries are interpreted modulo 3.
-```
-
-
-
-
-
-
-
-
-
-
 ## The Correspondence Theorem
 
 ```{definition}
@@ -333,7 +499,7 @@ There is no need to prove this. This is trivial by definition of kernel.
 \begin{eqnarray}
 |Im(\phi_H)|&\biggr |&|H|\\
 |Im(\phi_H)|&\biggr |& |G'|
-\end{eqnarray}, Thus,, if $|H|$ and $|G'|$ have no common factors,$|Im(\phi_H)|=|\phi(H)| =1.$ So, $Im(\phi_H)=\phi(H)= \{1\}$)
+\end{eqnarray}, Thus, if $|H|$ and $|G'|$ have no common factors,$|Im(\phi_H)|=|\phi(H)| =1.$ So, $Im(\phi_H)=\phi(H)= \{1\}$
 
 Now let's see an example.
 
@@ -347,7 +513,9 @@ Let $H=\{x \in S_n : \text{if $x$ has odd order}\}$. Then $H$ is a subgroup. So,
 Furthur, The sub group of $S_n$ with even permutations is called _Alternating group_ ($A_n$).
 
 ```
-### **PROBLEM**
+
+### PROBLEM
+
 ```{proposition,label='2104'}
 Let \(\phi:G \to G^{\prime}\) be a homomorphism with kernel \(K\), and let \(H^\prime\leq G^\prime\). Denote the inverse image \(\phi^{-1}(H^\prime)\) by \(H\). i.e.: 
 
@@ -371,9 +539,9 @@ Let $x\in K$. Then $\phi(x)=1_{G^\prime}$. Since $1_{G^\prime}\in H^\prime$. Thu
 
 - **Claim 3**: If \(H^\prime\) is a normal subgroup of \(G^\prime\), then \(\phi^{-1}(H^\prime)\) is also a normal subgroup of \(G\).\
 Now suppose that \(H^\prime\) is a normal subgroup of \(G^\prime\). Let $x\in H$ and $g\in G$. Then, since $\phi$ is hormorphism,
-\[\phi(gxg^{-1})=\phi(g)\phi(x)\phi(g^{-1})=\phi(g)\phi(x)(\phi(g))^{-1}\]
+\[\phi(-1)=\phi(g)\phi(x)\phi(g^{-1})=\phi(g)\phi(x)(\phi(g))^{-1}\]
 So, \(\phi(gxg^{-1})\) is conjugate of $\phi(x)$. Since $x\in H=\phi^{-1}(H^\prime)$,the $\phi(x)\in H^\prime$. Thus, \(\phi(gxg^{-1})=\phi(g)\phi(x)(\phi(g))^{-1}\in H^\prime\). Hence,
-$gxg^{-1}\in \phi^{-1}(H^\prime)=H\)$.
+$gxg^{-1}\in \phi^{-1}(H^\prime)=H$.
 - **Claim 4**: If \(\phi\) is surjective and \(H\) is a normal subgroup of \(G\), then \(\phi^{-1}(H^\prime)\) is a normal subgroup of \(G^\prime\).\
 Suppose that \(\phi\) is surjective and \(H\) is a normal subgroup of \(G\). Let $a\in H^\prime$ and $b\in G^\prime$. Since $\phi$ is surjcetive, There are elements $x\in H$ and $y\in G$ such that $\phi(x) = a$ and $\phi(y) = b$. Since $H$ is normal  $yxy^{- 1}\in H$, thus $\phi(yxy^{-1})=bab^{-1}\in H^\prime$.
 ```
@@ -705,6 +873,14 @@ since $x,y$ are arbitrary elements, $G$ is abelian. So every subgroup is normal.
 
 
 
+
+
+
+
+
+
+
+
 ## Quotient Groups
 ```{definition}
 The set of cosets of a normal subgroup $N$ of a group $G$ is often denoted by $G / N$.
@@ -719,13 +895,16 @@ and then we would denote the set of cosets by $\overline{G}$:
 ```{theorem,label='2122'}
 Let $N$ be a normal subgroup of a group $G$, and let $G$ denote the set of cosets of $N$ in $G$. There is a law of composition on $G$ that makes this set into a group, such that the map $\pi: G \to \overline{G}$ defined by $\pi(a) = \overline{a}$ is a surjective homomorphism whose kernel is $N$.
 ```
+
 ```{r echo=FALSE,label='fig2-29'}
   knitr::include_graphics('figures/ch_2/fig29.png') 
 ```
+
 ```{remark}
  The map is often referred to as the canonical map from $G$ to $\overline{G}$. The word “**canonical**” 
 indicates that this is the only map that we might reasonably be talking about
 ```
+
 The next corollary is very simple, but it is important enough to single out:
 
 ```{corollary}
@@ -742,7 +921,7 @@ _Proof of \@ref(thm:2122)_
 There are several things to be done. We must
 
 - define a law of composition on $\overline{G}$,
-- prove that the law makes $\overline{G} into a group,
+- prove that the law makes $\overline{G}$ into a group,
 - prove that $\pi$ is a surjective homomorphism, and
 - prove that the kernel of $\pi$ is $N$.
 
@@ -754,7 +933,7 @@ If $A,B \subseteq G$ then $AB$  denotes the set of products $ab$:
 to the set $A \times B$ of pairs of elements
 ```
 
-```{lemma}
+```{lemma,label='2125'}
 Let $N$ be a normal subgroup of a group $G$, and let $a N$ and $b N$ be cosets of $N$. The product set $(aN )(bN )$ is also a coset and \[(aN )(bN )=\{x\in G: x=anbn' ~\& ~ n,n'\in N\}=abN\].
 ```
 ```{proof}
@@ -819,9 +998,40 @@ The only thing remaining to be verified is that the kernel of the homomorphism $
 \end{eqnarray}
 Thus, $\ker(\pi)=N$
 
+```{r echo=FALSE,fig.cap="A Schematic Diagram of Coset Multiplication.",label='fig2-30',}
+  knitr::include_graphics('figures/ch_2/fig30.png') 
+```
+
+```{remark}
+Our assumption that \(N\) is a **normal** subgroup of \(G\) is crucial to lemma \@ref(lem:2125). If \(H\) is **not** normal, there will be left cosets \(C_1\) and \(C_2\) of \(H\) in \(G\) such that the product set \(C_1 C_2\) does not lie in a single left cosets. 
+
+Let's see an example for this. Going back once more to the subgroup \(H = \langle y \rangle\) of \(S_3\).
+Note that the subgroup \(H\) is not normal.\
+The product set \((1H)(xH)\) contains four elements: \[(1H)(xH)=\{1, y\}\{x, xy\} = \{x, xy, x^2y, x^2\}\]. It is not a coset. 
+
+```
+The next theorem relates the quotient group construction to a general group homomorphism, and it provides a fundamental method of identifying quotient groups.
+
+```{theorem,name='First Isomorphism Theorem'}
+Let $\varphi: G \to G'$ be a surjective group homomorphism with kernel $N$. The quotient group $\overline{G}=G/N$ is isomorphic to the image $G'$. To be precise, let $\pi: G \to \overline{G}=G/N$ be the canonical map. There exists a unique isomorphism $\overline{\varphi}: G/N \to G'$ such that $\varphi = \psi \circ \pi$.
+
+```
+
+```{r echo=FALSE,out.width="50%",label='fig2-31',fig.align='center'}
+  knitr::include_graphics('figures/ch_2/fig31.png',) 
+```
+
+```{proof}
+The elements of $\overline{G}=G/N$ are the cosets of $N$, and they are also the fibres of the map $\varphi$. The map $\overline{\varphi}$  referred to in the theorem is the one that sends a non-empty fibre to its image: $\overline{\varphi}(\overline{x})=\varphi(x)$. For any surjective map of sets $\varphi: G \to  G'$, one can form the set $\overline{G}$ of fibres, and then one obtains a diagram as above, in which $\overline{\phi}$ is the bijective map that  sends a fibre to its image. When $\phi$ is a group homomorphism, $\overline{\phi}$ is an isomorphism because 
+\[\overline{\phi}(\overline{ab}) = \phi(ab) = \phi(a)\phi(b) = \overline{\phi}(\overline{a})\overline{\phi}(\overline{b}).\] 
+```
 
 
+\
 
+```{corollary} 
+Let $\varphi: G \rightarrow G'$ be a group homomorphism with kernel $N$ and image $H'$. The quotient group $\overline{G}=G/N$ is isomorphic to the image $H'$.
+```
 
 
 
@@ -842,7 +1052,19 @@ Thus, $\ker(\pi)=N$
 
 
 ## Exercises
+### Laws of composition
 
+```{exercise}
+Let \( S \) be a set. Prove that the law of composition defined by \( ab = a \) for all \( a \) and \( b \) in \( S \) is associative? For which sets does this law have an identity?
+```
+**Solution**: Let $a,b,c\in S$.
+Now consider following
+\[(ab)c=(ac)=a=(ab)=a(bc)\]
+Thus, the given law of composition is associative.
+
+If the given law of composition  has an identity element whenever every element $a\in S$ has a multiplicative inverse./
+In other words, for every element $a\in S$, there exists an element $e \in S$ such that \[ae = ea = a.\] 
+Thus, $ae=a=ea=e$. So, the identity element is the same as every element in S, and the law has an identity for all sets S. Thus, only singletons sets have this given law of compositions have identity.
 ### Groups and Subgroups
 ```{exercise}
 Make a multiplication table for the symmetric group $S_3$.
@@ -1047,6 +1269,7 @@ Let $a$ and $b$ be elements of a group $G$. Assume that a has order $7$ and that
 Prove that $a b = ba$.
 ```
 **Solution**:
+
 ```{r echo=FALSE,label='fig2-22'}
   knitr::include_graphics('figures/ch_2/fig22.png') 
 ```
@@ -1061,9 +1284,11 @@ An $n$th root of unity is a complex number $z$ such that $z^n = 1$.
 ```{r echo=FALSE,label='fig2-23'}
   knitr::include_graphics('figures/ch_2/fig23.png') 
 ```
+
 ```{r echo=FALSE,label='fig2-24'}
   knitr::include_graphics('figures/ch_2/fig24.png') 
 ```
+
 ```{r echo=FALSE,label='fig2-25'}
   knitr::include_graphics('figures/ch_2/fig25.png') 
 ```
@@ -1109,30 +1334,129 @@ and therefore
 \((ba)\) has finite order \(n\).
 ```
 
+### Modular Arthmetic
+
+```{exercise}
+What are the possible values of $a^2$ modulo 4? modulo 8?
+```
+**solution**
+\_In modulo 4_\
+\begin{eqnarray*}
+    \overline{0}^2&\equiv & 0 \pmod{4}\\
+    \overline{1}^2&\equiv & 1 \pmod{4}\\
+    \overline{2}^2&\equiv & 0 \pmod{4}\\
+    \overline{3}^2&\equiv & 1 \pmod{4}\\
+\end{eqnarray*}
+The possible values of $a^2\pmod{4}$ are 0 and 1. 
+
+\_In modulo 8_\
+\begin{eqnarray*}
+    \overline{0}^2&\equiv & 0 \pmod{8}\\
+    \overline{1}^2&\equiv & 1 \pmod{8}\\
+    \overline{2}^2&\equiv & 4 \pmod{8}\\
+    \overline{3}^2&\equiv & 1 \pmod{8}\\
+    \overline{4}^2&\equiv & 0 \pmod{8}\\
+    \overline{5}^2&\equiv & 1 \pmod{8}\\
+    \overline{6}^2&\equiv & 4 \pmod{8}\\
+    \overline{7}^2&\equiv & 1 \pmod{8}\\
+\end{eqnarray*}
+The possible values of $a^2\pmod{8}$ are 0,1 and 4.
+
+
+
+
+```{exercise}
+Prove that every integer $a$ is congruent to the sum of its decimal digits modulo 9.
+```
+
+```{proof}
+Let $x\in \mathbb{Z}$. Now we can represent $x$ as follows
+
+\[x=a_010^0+a_110^1+\cdots +a_n10^n=\sum_{i=0}^n a_{i}10^i\text{  forsome } n\in \mathbb{Z},\text{ and }a_i\in \{0,1,...,9\}\]
+    
+We need to show $x \equiv  \sum_{i=0}^na_i\pmod{9}$. So, now consider,
+
+\begin{eqnarray}
+x-\sum_{i=0}^n a_{i}&=&\sum_{i=0}^n a_{i}10^i-\sum_{i=0}^n a_{i}\\
+&=& \sum_{i=0}^n (a_{i}10^i- a_{i})\\
+&=& \sum_{i=0}^n a_{i}(10^i- 1)
+\end{eqnarray}
+
+By follwing calim we can get that,
+
+\begin{eqnarray}
+x-\sum_{i=0}^n a_i &\equiv & 0 \pmod{9}\\
+x &\equiv & \sum_{i=0}^na_i\pmod{9}
+\end{eqnarray}
+```
+
+\textbf{Claim}: $9|(10^k-1)$ for any $k\in \mathbb{N}$.
+
+
+```{proof}
+We use mathematical induction.\
+_$k=1$_\
+This case is trivial. Because $9|10-1$.\
+_$k=n\in\mathbb{Z}$_\
+Now asuume when $n=k, 9|(10^n-1)$.\
+_$k=n+1$_
+\[10^{n+1}-1 =10\cdot 10^{n}-1=9\cdot 10^n + (10^n - 1) \]
+Thus $9\vert (10^{n+1}-1)$. \
+Therefore,by mathematical induction, $9|(10^n-1)$ for any $n\in \mathbb{N}$.
+```
+
+
+```{exercise}
+Solve the congruence $2x \equiv 5$ modulo 9 and modulo 6.
+```
+
+Done Later add.
+
+
+```{exercise}
+Determine the integers $n$ for which the pair of congruences $2x - y \equiv 1$ and $4x + 3y \equiv 2$ modulo $n$ has a solution.
+```
+
+Done Later add.
+
+
+```{exercise}
+Prove the Chinese Remainder Theorem: Let $a, b, u, v$ be integers, and assume that the greatest common divisor of $a$ and $b$ is 1. Then there is an integer $x$ such that $x \equiv u$ modulo $a$ and $X \equiv v$ modulo $b$. \
+Hint: Do the case $u = 0$ and $v = 1$ first.
+```
+
+
+```{exercise}
+Determine the order of each of the matrices A and B when the matrix entries are interpreted modulo 3.
+```
+
 
 
 
 
 
 <!------------------------------------------>
+
 ### Product Group
+
+
 ```{exercise}
 Let $x$ be an element of order $r$ of a group $G$, and let $y$ be an element of $G'$ of order $s$. What is the order of $(x, y)$ in the product group $G \times G'$?
 ```
-**Solution**: The order of $(x, y)$ in the product group $G \times G'$ is **$lcm(r,s)$**\
+
+**Solution**: The order of $(x, y)$ in the product group $G \times G'$ is $lcm(r,s)$\
 Let $n\in \mathbb{Z}^+$  such that \[(x,y)^n=(x^n,y^n)=(1_G,1_{G'}).\]
 This implies, $x^n=1_G$ and $y^n=1_{G'}$. Since order of $x$ and $y$ are $r$ and $s$ respectively, 
 \[r|n~~~\text{ and }~~~s|n\]
-So, we know that the least positive integer such that above property holds is $lcm(r,s)$. Hence,The order of $(x, y)$ in the product group $G \times G'$ is **$lcm(r,s)$**.
+So, we know that the least positive integer such that above property holds is $lcm(r,s)$. Hence,The order of $(x, y)$ in the product group $G \times G'$ is $lcm(r,s)$.
 
-\
-\
-\
+
 
 ```{exercise}
 What does Proposition \@ref(prp:prp2114) tell us when, with the usual notation for the symmetric
 group $S_3,K$ and $H$ are the subgroups $<y>$ and $<x>$?
 ```
+
 Recall: $y^2=1$ and $x^3=1$. Then 
 \[H=<x>=\{1,x,x^2\}~~~\text{ and }~~~ K=<y>=\{1,y\}\]
 Let the multiplication map, $f:H\times K \to S_3$ defined by $f(h,k)=hk$. Then, 
@@ -1145,7 +1469,7 @@ Observe that $H \cap K=\{1\}$. by \@ref(prp:prp2114) a) $f$ is injective.
 Observe that $S_3=HK=\{1,x,x^2,y,xy,x^2y\}$. Thus, $f$ is surjective.
 
 
-**Claim 3** : $f$ is not hormorphism.\
+**Claim 3** : $f$ is not homomorphism.\
 \begin{eqnarray}
 f((x,y)\cdot (x,1))&=& f(x^2,y^2)=f(x^2,1)=x^2\cdot 1=x^2\\
 f(x,y)\cdot f(x,1)&=& (x\cdot y)\cdot (x\cdot 1)=(xy)\cdot x=y
@@ -1158,7 +1482,6 @@ Prove that the product of two infinite cyclic groups is not infinite cyclic.
 
 
 ```{proof}
-\
 
 - **Claim 1** : Infinite cyclic groups are isomorphic to $Z$.\
 Let $G$ be a infinte cyclic group and $<a>=G$.
@@ -1182,13 +1505,13 @@ Let $x\in G=<a>$. Then, $x=a^k$ for some $k\in \mathbb{Z}$.  Then, observe that
 Therefore, $f$ is an isomorphism. Thus, the infinite cyclic groups are isomorphic to $\mathbb{Z}$. 
 
 
-\
-\
-We can consider $\mathbb{Z}\times \mathbb{Z}. Suppose that $(a, b)$ generate the product group. But then, we see that $(2a, b)$ cannot be obtained from adding $(a, b)$ to itself, which implies that  $\mathbb{Z}\times \mathbb{Z} is not infinite cyclic.
+
+
+We can consider $\mathbb{Z}\times \mathbb{Z}$. Suppose that $(a, b)$ generate the product group. But then, we see that $(2a, b)$ cannot be obtained from adding $(a, b)$ to itself, which implies that  $\mathbb{Z}\times \mathbb{Z}$ is not infinite cyclic.
 ```
-\
-\
-\
+
+
+
 
 ```{exercise}
 In each of the following cases, determine whether or not $G$ is isomorphic to the product group $H \times K$.
@@ -1356,6 +1679,7 @@ So, $HK = G$. So,  by proposition \@ref(prp:prp2114) $G \cong H \times K$.
 ```{exercise}
 Let $G_1$ and $G_2$ be groups, and let $Z_i$ be the center of $G_i$. Prove that the center of the product group $G_1 \times G_2$ is $Z_1 \times Z_2$.
 ```
+
 ```{r echo=FALSE,label='fig2-4'}
   knitr::include_graphics('figures/ch_2/fig04.jpg') 
 
@@ -1368,6 +1692,7 @@ Let $G_1$ and $G_2$ be groups, and let $Z_i$ be the center of $G_i$. Prove that 
 
 ```{exercise}
 Let $G$ be a group that contains normal subgroups of orders $3$ and $5$, respectively. Prove that $G$ contains an element of order $15$.
+```
 
 ```{exercise}
 Let $H$ be a subgroup of a group $G$, let $\phi:G \to H$ be a homomorphism whose restriction to $H$ is the identity map, and let $N$ be its kernel. What can one say about the product map $H \times N \to G$?
@@ -1453,3 +1778,244 @@ Now suppose that $HK=KH$.Suppose that $HK=KH$ is empty. Then, $H,K$ is empty. No
   
 Therefore, the product set \(HK\) is a subgroup of \(G\) if and only if \(HK = KH\)
 ```
+
+
+### Quotient Groups
+
+```{exercise}
+Show that if a subgroup $H$ of a group $G$ is not normal, there are left cosets $aH$ and $bH$ 
+whose product is not a coset.
+```
+
+```{proof}
+Suppose that $H \leq G$ but $H \not\trianglelefteq G$. We are going to use indirect proof. So, assume that  $(aH)(bH)$ is a coset for all $a,b\in G$. Then,
+\[aHbH=abH\]
+then for all $h_1,h_2,h_3\in H$, So,
+\[ah_1bh_2=abh_3\]
+\begin{eqnarray}
+ah_1bh_2 &= & abh_3\\
+a^{-1}(ah_1bh_2) &=& a^{-1}(abh_3)\\
+(a^{-1}a)(h_1bh_2) &=& (a^{-1}a)(bh_3)\\
+h_1bh_2 &=& bh_3\\
+b^{-1}(h_1bh_2)h_2^{-1} &=& b^{-1}(bh_3)h_2^{-1}\\
+b^{-1}h_1b(h_2h_2^{-1}) &=& (b^{-1}b)h_3h_2^{-1}\\
+b^{-1}h_1b &=& h_3h_2^{-1}\in H\\
+\end{eqnarray}
+Thus, $b^{-1}h_1b\in H$. and since $b\in G$ and $h_1\in H$ is arbitary, $H$ is normal subgroup, which contradict the our hypothesis.  Thus, there exist left cosets $aH$ and $bH$ whose product is not a coset.
+```
+
+```{exercise}
+In the general linear group \(GL_3(\mathbb{R})\), consider the subsets:
+
+\[ H = \left\{ \begin{pmatrix} 1 & * & * \\ 0 & 1 & * \\ 0 & 0 & 1 \end{pmatrix} \mid * \text{ represents an arbitrary real number} \right\} \]
+
+and
+
+\[ K = \left\{ \begin{pmatrix} 1 & 0 & * \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \mid * \text{ represents an arbitrary real number} \right\} \]
+
+Show that \(H\) is a subgroup of \(GL_3\), that \(K\) is a normal subgroup of \(H\), and identify the quotient group \(H/K\). Determine the center of \(H\).
+```
+- **Claim 1**: $H \leq G$.\
+Certainly! Let's prove that the subset \(H\) is a subgroup of the general linear group \(GL_3(\mathbb{R})\).
+
+  - _Non-emptiness_: We start by showing that \(H\) is non-empty. The identity matrix \(\mathbf{I}_3\) belongs to \(H\) since it satisfies the conditions for \(H\):
+\[ \mathbf{I}_3 = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \]
+Therefore, \(H\) is non-empty.
+
+  - _Closure under matrix multiplication_: Let \(\mathbf{A}\) and \(\mathbf{B}\) be matrices in \(H\). We need to show that their product \(\mathbf{AB}\) is also in \(H\). Consider:
+\[ \mathbf{A} = \begin{pmatrix} 1 & a & b \\ 0 & 1 & c \\ 0 & 0 & 1 \end{pmatrix} \quad \text{and} \quad \mathbf{B} = \begin{pmatrix} 1 & x & y \\ 0 & 1 & z \\ 0 & 0 & 1 \end{pmatrix} \]
+The product \(\mathbf{AB}\) is:
+\[ \mathbf{AB} = \begin{pmatrix} 1 & a+x & by+az+b \\ 0 & 1 & c+z \\ 0 & 0 & 1 \end{pmatrix} \]               `````
+Since \(a+x\), \(y+az+b\), and \(c+z\) are arbitrary real numbers, \(\mathbf{AB}\) satisfies the conditions for \(H\). Hence, \(H\) is closed under matrix multiplication.
+
+  - _Closure under taking inverses_: Let \(\mathbf{A}\) be a matrix in \(H\). We need to show that its inverse \(\mathbf{A}^{-1}\) is also in \(H\). The inverse of \(\mathbf{A}\) is:
+
+\[ \mathbf{A}^{-1} = \begin{pmatrix} 1 & -a & ac-b \\ 0 & 1 & -c \\ 0 & 0 & 1 \end{pmatrix} \]
+Again, since \(-a\), \(ac-b\), and \(-c\) are arbitrary real numbers, \(\mathbf{A}^{-1}\) satisfies the conditions for \(H\). Therefore, \(H\) is closed under taking inverses.
+Hence, we have shown that \(H\) is a subgroup of \(GL_3(\mathbb{R})\).
+
+- **Claim 2** : $K\leq H$.\
+I am not going to prove that this case, because this is exhausting. This is very easy.
+
+- **Claim 3** : $K$ is normal sub group of $H$.\
+Let $A:=\begin{bmatrix} 1 & a & b \\0 & 1 & c\\ 0 & 0  & 1\end{bmatrix}\in H$ and $B:=\begin{bmatrix} 1 & 0 & d \\0 & 1 & 0\\ 0 & 0  & 1\end{bmatrix}\in K$, where $a,b,c,d\in \mathbb{R}$.
+Then,
+
+\begin{eqnarray}
+ABA^{-1}& =& \begin{bmatrix} 1 & a & b \\0 & 1 & c\\ 0 & 0  & 1\end{bmatrix}
+\begin{bmatrix} 1 & 0 & d \\0 & 1 & 0\\ 0 & 0  & 1\end{bmatrix}
+\begin{bmatrix} 1 & -a & ac-b \\ 0 & 1 & -c \\ 0 & 0 & 1 \end{bmatrix} \\
+&=&\begin{bmatrix} 1 & a & d+b \\0 & 1 & c\\ 0 & 0  & 1\end{bmatrix}
+\begin{bmatrix} 1 & -a & ac-b \\ 0 & 1 & -c \\ 0 & 0 & 1 \end{bmatrix} \\ 
+&=& \begin{bmatrix} 1 & 0 & d \\0 & 1 & 0\\ 0 & 0  & 1\end{bmatrix}\in K
+\end{eqnarray}
+Thus, $K$ is normal sub group of $H$.
+
+- **Quotient group $H/K$** :\
+Let $h_1,h_2\in H$ be such that 
+\[h_1=\begin{bmatrix} 1 & a_1 & b_1 \\0 & 1 & c_1\\ 0 & 0  & 1\end{bmatrix} \text{ and } 
+h_2=\begin{bmatrix} 1 & a_2 & b_2 \\0 & 1 & c_2\\ 0 & 0  & 1\end{bmatrix}.\]
+Suppose that $h_1K=h_2K$. By Artin's book 2.85, $h_1^{-1}h_2\in K$.
+\[h_1^{-1}h_2=
+\begin{bmatrix} 1 & -a_1 & a_1c_1-b_1 \\0 & 1 & -c_1\\ 0 & 0  & 1\end{bmatrix}
+\begin{bmatrix} 1 & a_2 & b_2 \\0 & 1 & c_2\\ 0 & 0  & 1\end{bmatrix}
+=\begin{bmatrix} 1 & -a_1+a_2 & b_2-a_1c_2+a_1c_1-b_1 \\0 & 1 & -c_1+c_2\\ 0 & 0  & 1\end{bmatrix}\]
+Since,
+
+\begin{eqnarray}
+h_1K=h_2K & \iff & h_1^{-1}h_2\in K\\
+& \iff &  -a_1+a_2=0 \text{ and }-c_2-c_1\\
+& \iff &  a_1=a_2\text{ and }c_1=c_2
+\end{eqnarray} 
+
+Thus,
+\[H/K=\left\{hK\Biggr | \begin{bmatrix} 1 & a & 0 \\0 & 1 & c\\ 0 & 0  & 1\end{bmatrix}, a,c\in \mathbb{R}\right\}\]
+
+- **Center of Group H**\
+\[Z(H)=\left\{A\in H\biggr | AX=XA \text{ for all } X\in H\right\}\]
+Let's find center. We need to find $a,b,c\in \mathbb{R}$ such that 
+\begin{eqnarray}
+\begin{bmatrix} 1 & a & b \\0 & 1 & c\\ 0 & 0  & 1\end{bmatrix}
+\begin{bmatrix} 1 & x & y \\0 & 1 & z\\ 0 & 0  & 1\end{bmatrix}
+&=&
+\begin{bmatrix} 1 & x & y \\0 & 1 & z\\ 0 & 0  & 1\end{bmatrix}
+\begin{bmatrix} 1 & a & b \\0 & 1 & c\\ 0 & 0  & 1\end{bmatrix}
+\text{ for all } x,y,z\in \mathbb{R}\\
+\begin{bmatrix} 1 & a+x & b+y+az \\0 & 1 & c+z\\ 0 & 0  & 1\end{bmatrix}
+&=&
+\begin{bmatrix} 1 & a+x & b+y+xc \\0 & 1 & c+z\\ 0 & 0  & 1\end{bmatrix}
+\end{eqnarray}
+By comparing $1 \times 3$ index, we need to find that $a,b,c\in \mathbb{R}$ $az=xc$ for all $x,y,z\mathbb{R}$. SO, the only possibility is $a=c=0$. Thus,
+\[Z(H)=\left\{\begin{bmatrix} 1 & 0 & b \\0 & 1 & 0\\ 0 & 0  & 1\end{bmatrix}\Biggr | b\in \mathbb{R}\right\}\]
+
+```{exercise}
+Let \(P\) be a partition of a group \(G\) with the property that for any pair of elements \(A\), \(B\) of the partition, the product set \(AB\) is contained entirely within another element \(C\) of the partition. Let \(N\) be the element of \(P\) that contains 1. Prove that \(N\) is a normal subgroup of \(G\) and that \(P\) is the set of its cosets.
+```
+
+```{proof}
+- **Claim 1**: The product set $NN=N$.\
+Let $x\in N$, Then $x=x\cdot 1 \in NN$. Thus, $N \subseteq NN$. We know that the product set $NN$ is contained entirely within in an element of pratition, but $N$ is a partion. The only way this happen $N=NN$.
+
+- **Claim 2**: $N \leq G$.\
+  - _Subset_: It is very clear that $N \subseteq G$.
+  - _Closure_: Let $x,y\in N$. Then $(xy)\in NN=N$. So, $N$ is closed under composition.
+  - _Identity_: Given that $1\in N$.
+  - _Inverse_: Let $x\in N$. We have to show that $x^{-1}$ is contained in $N$. We use proof by contardiction. So, Assume contary, $x^{-1}\in M$, $M$  is an elemenet of partion $P$ such that $N\neq M$. 
+
+\[xx^{-1}\in NM, xx^{-1}=1 \in  N\]
+So, we would have $NM \subseteq N$ (since the product set is contained entirely wiithin one of the sets of partition). On the other hand,
+\[1x^{-1}\in NM, 1x^{-1}=x^{-1} \in N\]
+So, $NM\subseteq N$a contradiction.
+
+Therefore, conclude that our assumption that $x^{-1}\not\in N$ was wrong, that we must have $x^{-1}\in N$
+  
+- **Claim 3**: $N\trianglelefteq$\
+Let $a\in G$ and $n\in N$. Let $a\in A$ and $a^{-1}\in B$, where $A,B\in P$.
+\[ana^{-1}=ANB\],
+But also, $1\in N$,
+\[g\cdot 1 \cdot g ^{-1}=1\in ANB\]
+Since P spilts into disjoint  subsets and the only one element of partion that containn $1$ is $N$.
+\[ANB=N\]
+and but also $gng^{-1}\in N$. Thefeore, $N$ is normal sub group.
+
+-**Claim 4**:  P is the set of its cosets.\
+Let $A$ be some element Of partition, and let $a \in A$.
+
+Need to prove: $A=aN$
+  
+  - Subclaim 4.1: $A\subseteq aN$.\
+Let $b\in A$. Let B\in B, where $B$ is elmenet of partion.
+Then $b^{-l}b\in BA$, \quad b^{-l = 1 \in N$
+So, $BA \subseteq N$. Specially,
+\[b^{-1}a \in N\]
+So there exists some $n \in  N$ such that
+\[b^{-1}a = n \quad \iff \quad a =bn \quad \iff \quad b=an^{-1}\]
+Since $N\leq G$. $n^{-1}\in N$. Thus, $b \in aN$, so $A \subset aN$.
+
+  - Subcliam 4.2 : $A\supseteq aN$.\
+      - subclaim 4.2.1: $AN \subseteq A$,
+
+Note that  $a \in A$ and $1 \in N$, Thus,
+\[a\cdot 1\in AN, \quad a\cdot 1=a\in A\]
+Since, the product set is contained entirely in one element
+partition.  Thus, $AN\subseteq A$ 
+  
+Now,
+\[aN=\{an | n \in N\} \subseteq \{an : a\in A, n\in N\} = AN \subseteq  A \]
+Thus, $ax \in A$, as required. Thus $aN\subseteq A$
+
+Hence, we can conclude that $A =aN$.
+```
+
+
+```{exercise}
+Let $H = \{\pm1, \pm i\}$ be the subgroup of $G = C^{\times}$ of fourth roots of unity. Describe the cosets of $H$ in $G$ explicitly. Is $G / H$ isomorphic to $G$?
+  
+```
+
+```{r echo=FALSE,label='fig2-36'}
+  knitr::include_graphics('figures/ch_2/fig36.png') 
+```
+
+```{r echo=FALSE,label='fig2-37'}
+  knitr::include_graphics('figures/ch_2/fig37.png') 
+```
+
+```{r echo=FALSE,label='fig2-38'}
+  knitr::include_graphics('figures/ch_2/fig38.png') 
+```
+
+```{r echo=FALSE,label='fig2-39'}
+  knitr::include_graphics('figures/ch_2/fig39.png') 
+```
+
+
+```{exercise}
+Let $G$ be the group of upper triangular real matrices $\begin{bmatrix} a & b \\ 0 & d \end{bmatrix}$ with $a$ and $d$ different from zero. For each of the following subsets, determine whether or not $S$ is a subgroup, and whether or not $S$ is a normal subgroup. If $S$ is a normal subgroup, identify the quotient group $G /S$.
+
+1. $S$ is the subset defined by $b = 0$.
+1. $S$ is the subset defined by $d = 1$.
+1. $S$ is the subset defined by $a = d$.
+
+```
+
+```{r echo=FALSE,label='fig2-40'}
+  knitr::include_graphics('figures/ch_2/fig40.png') 
+```
+```{r echo=FALSE,label='fig2-41'}
+  knitr::include_graphics('figures/ch_2/fig41.png') 
+```
+
+```{r echo=FALSE,label='fig2-42'}
+  knitr::include_graphics('figures/ch_2/fig42.png') 
+```
+
+```{r echo=FALSE,label='fig2-43'}
+  knitr::include_graphics('figures/ch_2/fig43.png') 
+```
+
+```{r echo=FALSE,label='fig2-44'}
+  knitr::include_graphics('figures/ch_2/fig44.png') 
+```
+
+```{r echo=FALSE,label='fig2-45'}
+  knitr::include_graphics('figures/ch_2/fig45.png') 
+```
+
+```{r echo=FALSE,label='fig2-46'}
+  knitr::include_graphics('figures/ch_2/fig46.png') 
+```
+
+### Miscellaneous Problems
+```{exercise,name='M1'}
+Describe the column vectors $(a, c)^T$ that occur as the first column of an integer matrix $A$ whose inverse is also an integer matrix.
+```
+
+```{r echo=FALSE,label='fig2-47'}
+  knitr::include_graphics('figures/ch_2/fig47.png') 
+```
+
+```{r echo=FALSE,label='fig2-48'}
+  knitr::include_graphics('figures/ch_2/fig48.png') 
+```
+
