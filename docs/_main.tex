@@ -80,7 +80,7 @@
 
 \title{Artin's Algebra}
 \author{Ashan Jayamal}
-\date{2024-03-04}
+\date{2024-03-05}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -2362,6 +2362,41 @@ Let \(G\) be the group of upper triangular real matrices \(\begin{bmatrix} a & b
 \includegraphics{figures/ch_2/fig47.png}
 
 \includegraphics{figures/ch_2/fig48.png}
+
+\begin{exercise}[M.2]
+\protect\hypertarget{exr:unnamed-chunk-102}{}\label{exr:unnamed-chunk-102}\leavevmode
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  Prove that every group of even order contains an element of order \(2\).
+\item
+  Prove that every group of order \(21\) contains an element of order \(3\).
+\end{enumerate}
+
+\end{exercise}
+
+\textbf{Claim a} : Let \(G\) be a group whose identity is \(e\).Let \(G\) be of even order.Then,\(\exists x \in G: |x| = 2\)
+
+\begin{proof}
+(Claim a) In any group \(G\), the identity element \(e\) is self-inverse with the property that the identity is the only group element of order 1, and is the only such element.
+
+That leaves an odd number of elements.
+
+Each element in \(x \in G: |x| > 2\) can be paired off with its inverse, as \(|x^{-1}| = |x| > 2\) (Since order of a group element equals the order of its inverse.)
+
+Hence there must be at least one element which has not been paired off with any of the others which is therefore self-inverse. Let's say it , `y'.
+
+\textbackslash begin\{eqnarray\}
+y\^{}\{-1\} =y \&\iff\& x\cdot y=e\textbackslash{}
+\&\iff \& \textbar y\textbar{} =2
+\textbackslash end\{eqnarraay\}
+
+Thus, every group of even order contains an element of order \(2\).
+\end{proof}
+
+\textbf{Claim b}: Let \(G\) be a group whose identity is \(e\).Let \(G\) be of order \(21\).(\textbar G=21\textbar) Then,\(\exists x \in G: |x| = 3\)
 
 \hypertarget{lienaer-operators}{%
 \chapter{Lienaer Operators}\label{lienaer-operators}}
