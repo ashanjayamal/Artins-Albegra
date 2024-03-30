@@ -5,13 +5,17 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
+url: https://ashanjayamal.github.io/Artins-Albegra
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
- Artins albgrae
+ Artins Algebra
 link-citations: yes
 github-repo: rstudio/bookdown-demo
+output:
+  pdf_document: default
+  html_document: default
 ---
+
 # Matrices 
 ## Basic Operations
 Let \( m \) and \( n \) be positive integers. An \( m \times n \) matrix is a collection of \( mn \) numbers arranged in a rectangular array.
