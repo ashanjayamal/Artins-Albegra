@@ -6,6 +6,7 @@
 ```{definition,name='Law of Composition'}
 A law o f composition on a set $S$ is any rule for combining pairs $a, b$ of elements of $S$ to get another element, say $p$, of $S$.
 ```
+
 ```{example}
 - Some models for this concept are addition and multiplication 
 of real numbers. 
@@ -96,6 +97,7 @@ The permutations of a set $\{1, 2\}$ of two elements are the identity $i$ and th
 |$id$   |$id$|$(12)$|
 |$(12)$|$(12)$|$id$|
 |------|------|-----|
+
 - $n=3$\
 $S_3$ has order $3!=6$. $S_3$ serves as a convenient example because it is the smallest group whose law of composition isn’t commutative. We will refer to it often. To describe it, we pick two particular permutations in terms of which we can write all others. We take the cyclic permutation $(123)$, and the transposition $(12)$, and label them as $x$ and $y$, respectively.Then
 \begin{eqnarray}
@@ -131,7 +133,39 @@ As a summary,
 
 
 ## Subgroups of the Additive Group of Integers
+We review some elementary number theory here, in terms of subgroups of the additive group $\mathbb{Z}^+$ of integers. To begin, we list the axioms for a subgroup when additive notation is used in the group: A subset $S$ of a group $G$ with law of composition written additively is a subgroup if it has these properties:
+
+
+- _Closure_ : If $a$ and $b$ are in $S$, then $a + b$ is in $S$.
+- _Identity_ : $0$ is in $S$.
+- _Inverses_ : If $a$ is in $S$ then $-a$ is in $S$.
+
+Let $a$ be an integer different from $O$. 
+We denote the subset of $\mathbb{Z}$ that consists of all 
+multiples of $a$ by $a\mathbb{Z}$:
+\[a\mathbb{Z} := \{n \in \mathbb{ Z} | n = ka \text{ for some } k\in \mathbb{Z}\} \].
+
+This is a subgroup of $\mathbb{Z}^+$. Its elements can also be described as the integers divisible by $a$.
+
+```{theorem}
+Let $S$ be a subgroup of the additive group $\mathbb{Z}^+$. Either $S$ is the trivial subgroup 
+$\{0\}$, or else it has the form $a\mathbb{Z}$, where $a$ is the smallest positive integer in $S$.
+```
+```{proof}
+Let $S$ be a subgroup of $\mathbb{Z}^+$. Then $0\in S$, and if $0$ is the only element of $S$ then $S$ is the trivial subgroup. ie.: $S=\{0\}$So that case is settled. 
+
+Otherwise, $S$ contains an integer $n$ different from $0$, and either $n$ or $-n$ is positive. The third property of a subgroup tells us that $-n$ is in $S$, so in either case, $S$ contains a positive integer. We must show that $S$ is equal to $a\mathbb{Z}$, when $a$ is the smallest positive integer in $S$.
+
+We first show that $a\mathbb{Z}$ is a subset of $S$, in other words, that $ka$ is in $S$ for every integer $k$. If $k$ is a positive integer, then $ka = a + a + \cdots + a$ ($k$ terms). Since $a$ is in $S$, closure and induction show that $ka$ is in $S$. Since inverses are in $S$, $-ka$ is in $S$. Finally, $0 = 0a$ is in $S$.
+
+Next we show that $S$ is a subset of $Za$, that is, every element $n$ of $S$ is an integer multiple of $a$. We use division with remainder to write $n = qa + r$, where $q$ and $r$ are integers and where the remainder $r$ is in the range $0 < r < a$. Since $Za$ is contained in $S$, $qa$ is in $S$, and of course $n$ is in $S$. Since $S$ is a subgroup, $r = n - qa$ is in $S$ too. Now by our choice, $a$ is the smallest positive integer in $S$, while the remainder $r$ is in the range $0 < r < a$. The only remainder that can be in $S$ is $0$. So $r = 0$ and $n$ is the integer multiple $qa$ of $a$.
+
+
+```
+
+
 ## Cyclic Groups
+
 ## Homomorphisms
 ```{definition}
 Let $(G, *)$ and $(G', \odot)$ be groups. A **homomorphism** $\phi: G \rightarrow G'$ is a map from $G$ to $G'$ such that for all $a$ and $b$ in $G$:
@@ -513,7 +547,7 @@ There is no need to prove this. This is trivial by definition of kernel.
 Now let's see an example.
 
 ```{example}
-Define sign homorphism $\sigma: S_n \to \{\pm 1\}$ by $\sigma(x)=1$ if $x$ is even, and  $\sigma (x)=−1$ if $x$ is odd. Then the image of the sign homomorphism is,
+Define sign homorphism $\sigma: S_n \to \{\pm 1\}$ by $\sigma(x)=1$ if $x$ is even, and  $\sigma (x)=-1$ if $x$ is odd. Then the image of the sign homomorphism is,
 \[Im(\sigma)=\{\pm 1\}\]
 it has order $2$. 
 
@@ -682,9 +716,9 @@ multiplication of pairs is defined by the  rule,
 Let's prove that $G\times G'$ is a group.
 
 ```{proof}
-Let Let $G,G'$ be two groups and let $a,b,c\in G$ and $a',b',c'\in G'$
+Let $G,G'$ be two groups and let $a,b,c\in G$ and $a',b',c'\in G'$
   
-- _Closure_ : $(a,a')\cdot(b,b')=(ab,a'b')$. So, since $a,b\in G and $a',b'\in G'$ and $G$ and $G'$ be a group, then $ab\in G$ and $a'b'\in G$. Thus, $(a,a')\cdot(b,b')=(ab,a'b')\in G \times G'$.
+- _Closure_ : $(a,a')\cdot (b,b')=(ab,a'b')$. So, since $a,b\in G$ and $a',b'\in G'$ and $G$ and $G'$ be a group, then $ab\in G$ and $a'b'\in G$. Thus, $(a,a')\cdot(b,b')=(ab,a'b')\in G \times G'$.
 - _Asscitivity_:  We can obtain following using asscivity property of group $G$ and $G'$.
 \[((a,a')\cdot(b,b'))\cdot(c,c')=(ab,a'b')\cdot(c,c')
 =(abc,a'b'c')=
@@ -805,6 +839,7 @@ b. Let $(h_1, k_1),(h_2, k_2)\in H \times K$.  Now consider,
 f((h_1,k_1)\cdot (h_2,k_2))&=&f((h_1h_2,k_1k_2))=h_1h_2k_1k_2\\
 f((h_1,k_1))\cdot f((h_2,k_2))&=& (h_1k_1)\cdot(h_2k_2)=h_1k_1h_2k_2
 \end{eqnarray}
+
 \begin{eqnarray}
 f\text{ is homorphism} &\iff & 
 f((h_1,k_1)\cdot (h_2,k_2))=f((h_1,k_1))\cdot f((h_2,k_2))\\
@@ -814,7 +849,10 @@ f((h_1,k_1)\cdot (h_2,k_2))=f((h_1,k_1))\cdot f((h_2,k_2))\\
 &\iff & (h_1^{-1}h_1)h_2k_1(k_2k_2^{-1})=(h_1^{-1}h_1)k_1h_2(k_2k_2^{-1})\\
 &\iff & h_2k_1=k_1h_2
 \end{eqnarray}
+
 c. 
+
+
   - Suppose that $H$ is a normal sub group of G. Note that \[KH=\bigcup_{k\in K}kH~~\text{   and     } ~~HK=\bigcup_{k\in K}Hk\] 
 Since, $H$ is normal, $kH=Hk$ for all $k\in K$. So, $HK=KH$. We are going to use sub group test,
     
@@ -829,10 +867,12 @@ d.
   - $(\Longleftarrow)$: Suppose that $H \cap K = \{1\}$, $HK = G$, and also $H,K \trianglelefteq  G$. According to the (b),  $f$ is a homomorphism from $H \times K$ to $G$ if and only if $hk = kh$ for all $h\in H$. Consider,
 \[(hkh^{-1})k^{-1}=h(kh^{-1}k^{-1}).\]
 Note that, Since $K \trianglelefteq G$, $hkh^{-1}\in K$. So,$(hkh^{-1})k^{-1}\in K$. Similary we can  show that $h(kh^{-1}k^{-1})\in H$.Thus,\[(hkh^{-1})k^{-1}=h(kh^{-1}k^{-1})\in H\cap K.\]  But from our hypothesis, $H\cap K=\{1\}$. Hence,
+
 \begin{eqnarray}
 hkh^{-1}k^{-1}&=&1\\
 hk&=& kh
 \end{eqnarray}
+
 Therefore, by (b) we can $f$ is hormorphism. Now we have to proove bijectivity,
       - _Injectivity_: Already prooved in \@ref(prp:prp2114) (a)
       - _Surjectivity_: For any $g \in G$, we can write $g = hk$ for some $h \in H$ and $k \in K$ (since $Im(f)=HK = G$). Thus, $f(h, k) = hk = g$, so $f$ is surjective.
@@ -866,16 +906,18 @@ There are two isomorphism classes of groups of order $4$, the class of the cycli
 Let $G$ be a group of order 4. The order of any element $x$ of $G$ divides 4, so there are two cases to consider:
 
 
-- Case 1: $G$ contains an element of order 4 (|G|=4). Then $G$ is a cyclic group of order 4.
-- Case 2: Every element of $G$ except the identity has order 2.\
-In this case, $x = x^{-1}$ for every element $x$ of $G$. Let $x$ and $y$ be two elements of $G$. Then $xy$ has order 2, so $(xy)(x^{-1}y^{-1}) = (xy)(xy) = 1$. This shows that $x$ and $y$ commute,
+- Case 1: $G$ contains an element of order $4 (|G|=4)$. Then $G$ is a cyclic group of order $4$.
+- Case 2: Every element of $G$ except the identity has order $2$.\
+In this case, $x = x^{-1}$ for every element $x$ of $G$. Let $x$ and $y$ be two elements of $G$. Then $xy$ has order $2$, so $(xy)(x^{-1}y^{-1}) = (xy)(xy) = 1$. This shows that $x$ and $y$ commute,
+
 \begin{eqnarray}
 xyx^{-1}y^{-1} &=& 1\\
-xyx^{-1}(y^{-1} y)&=& y\\
-xyx^{-1}&=& y\\
-xy(x^{-1}x)&=& yx\\
+xyx^{-1}(y^{-1} y) &=& y\\
+xyx^{-1} &=& y\\
+xy(x^{-1}x) &=& yx\\
 xy &=& yx
 \end{eqnarray}
+
 since $x,y$ are arbitrary elements, $G$ is abelian. So every subgroup is normal. We choose distinct elements $x$ and $y$ in $G$, and we let $H$ and $K$ be the cyclic groups of order 2 that they generate. Proposition \@ref(prp:prp2114) (d) shows that $G$ is isomorphic to the product group $H \times K$.
 
 ```

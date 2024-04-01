@@ -61,15 +61,15 @@ Let $S$ be a se t with an associative law of composition and with an identity el
 ```{proof}
 Let $S^*\subseteq S$ with consisting of the invertible elements in $S$.
 
-- _identity_ : We are given identity element $1 \in S$ and $(1^{−1})(1)=1 \implies 1 \in S^∗$
+- _identity_ : We are given identity element $1 \in S$ and $(1^{-1})(1)=1 \implies 1 \in S^*$.
 
 - _Closure_ :
-So let $a,b\in S^∗$. Then $a,b$ are invertible. Let $a^{−1},b^{−1}\in S^∗$ be inverses of $a$ and $b$ respectively. Now we need to check $ab\in S^*$.\
+So let $a,b\in S^*$. Then $a,b$ are invertible. Let $a^{-1},b^{-1}\in S^*$ be inverses of $a$ and $b$ respectively. Now we need to check $ab\in S^*$.\
 
-\[(b^{−1}a^{−1})(ab)=b^{−1}(a^{−1}a)b=b^{−1}b=e=
-  aa^{-1}=a(bb^{−1})a^{−1}=(ab)(b^{−1}a^{−1})\]
+\[(b^{-1}a^{-1})(ab)=b^{-1}(a^{-1}a)b=b^{-1}b=e=
+  aa^{-1}=a(bb^{-1})a^{-1}=(ab)(b^{-1}a^{-1})\]
 ```
-Thus, $(ab)^{−1}=b^{−1}a^{−1}$. So, $ab\in S^*$
+Thus, $(ab)^{-1}=b^{-1}a^{-1}$. So, $ab\in S^*$
 Therefore, $S^*$ is closed under the composition.
 
 - _Associativity_: The associativity property inherit from the group $S$.
@@ -142,6 +142,7 @@ Therefore, $H \leq G$
 - _Subset ?_ : This is trivial $\{-1,1\}\subset \mathbb{R}^\times$
 
 - _Closure ?_ : 
+
 \begin{eqnarray}
 1 \times 1 &=& 1\in H\\
 (-1) \times 1 &=& (-1)\in H\\
@@ -212,7 +213,7 @@ Prove that \( G^{\circ} \) is a group.
 
 ### Subgroups of the Additive Group of Integers
 
-```{exercise}
+```{exercise,name='Artin 2.3.1'}
  Let $a = 123$ and $b = 321$. 
 Compute $d = gcd(a, b)$, and express $d$ as an integer 
 combination $ra + bs$.
@@ -223,7 +224,7 @@ combination $ra + bs$.
   knitr::include_graphics('figures/ch_2/fig20.jpg') 
 ```
 
-```{exercise}
+```{exercise,,name='Artin 2.3.2'}
 Prove that if $a$ and $b$ are positive integers whose sum is a prime $p$, their greatest common 
 divisor is $1$.
 ```
@@ -232,12 +233,27 @@ divisor is $1$.
   knitr::include_graphics('figures/ch_2/fig21.jpg') 
 ```
 
-```{exercise}
-Define the greatest common divisor of a set $\{a_1, ..., a_n\}$ of $n$ integers. Prove that it
-exists, and that it is an integer combination of $a_1, ..., a_n$.
+```{exercise,name='Artin 2.3.3'}
+
+a. Define the greatest common divisor of a set $\{a_1, ..., a_n\}$ of $n$ integers. Prove that it exists, and that it is an integer combination of $a_1, ..., a_n$.
+b. Prove that if the greatest common divisor of $\{a_1, ..., a_n\}$ is $d$, then the greatest common divisor of $\{a_1/d, ..., a_n/d)$ is $1$. 
 ```
 
+**Solution**:
 
+a. 
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig51.png') 
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig52.png') 
+```
+b. 
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig53.png') 
+```
 
 
 
@@ -247,7 +263,7 @@ exists, and that it is an integer combination of $a_1, ..., a_n$.
 
 
 ### Cyclic group
-```{exercise}
+```{exercise,name='Artin 2.4.1'}
 Let $a$ and $b$ be elements of a group $G$. Assume that a has order $7$ and that $a^3b = ba^3$. 
 Prove that $a b = ba$.
 ```
@@ -257,7 +273,7 @@ Prove that $a b = ba$.
   knitr::include_graphics('figures/ch_2/fig22.png') 
 ```
 
-```{exercise}
+```{exercise,name='Artin 2.4.2'}
 An $n$th root of unity is a complex number $z$ such that $z^n = 1$.
 
 (a) Prove that the nth roots of unity form a cyclic subgroup of $\mathbb{C}^\times$ of order $n$.
@@ -285,7 +301,7 @@ An $n$th root of unity is a complex number $z$ such that $z^n = 1$.
   knitr::include_graphics('figures/ch_2/fig28.png') 
 ```
 
-```{exercise}
+```{exercise,,name='Artin 2.4.3'}
 Let $a$ and $b$ be elements of a group $G$. Prove that $ab$ and $ba$ have the same order
 ```
 
@@ -305,9 +321,9 @@ Then,\[
 
 Thus, since\((ab)^{m+1} =(ab)^m(ab) \)
 we have that
-\((ab)^m(ab)= ab \)
+$(ab)^m(ab)= ab$
 and then by the cancellation law, we have that
-\((ab\)^m=e \)
+$(ab)^m=e$
 which contradicts the fact that \(n\) is the smallest positive integer such that
 \((ab)^n=e.\)
 
@@ -317,13 +333,110 @@ and therefore
 \((ba)\) has finite order \(n\).
 ```
 
+
+```{exercise,name='Artin 2.4.4'}
+Describe all groups G that contain no proper subgroup
+```
+
+**Solution**:
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig54.png') 
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig55.png') 
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig56.png') 
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig57.png') 
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig58.png') 
+```
+
+```{exercise,name='Artin 2.4.5'}
+Prove that every subgroup of a cyclic group is cyclic. Do this by working with exponents, and use the description of the subgroups of $(\mathbb{Z},+)$.
+
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig59.png') 
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig60.png') 
+```
+
+```{exercise,name='Artin 2.4.6'}
+(a) Let $G$ be a cyclic group of order 6. How many of its elements generate $G$?\
+Answer the same question for cyclic groups of orders 5 and 8.
+(a) Describe the number of elements that generate a cyclic group of arbitrary order $n$.
+```
+
+**Solution**:
+
+a)
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig61.png') 
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig62.png') 
+```
+b)
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig63.png') 
+```
+
+```{exercise,name='Artin 2.4.7'}
+Let $x$ and $y$ be elements of a group $G$. Assume that each of the elements $x$, $y$, and $xy$ has order 2. Prove that the set $H = \{I, x, y, xy\}$ is a subgroup of $G$, and that it has order 4.
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig64.png') 
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig65.png') 
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig66.png') 
+```
+
+```{exercise,name='Artin 2.4.8'}
+a) Prove that the elementary matrices of the first and third types (1.2.4) generate $GL_n(\mathbb{R})$.
+a) Prove that the elementary matrices of the first type generate $SL_n(K)$. Do the $2 \times 2$ case first.
+```
+Recall the types of elementary matrices,
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig67.png') 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+### Homomorphisms
+
+### Isomorphisms
+
+### Equivalence Relations and Partitions
+
+### Cosets
+
 ### Modular Arthmetic
 
 ```{exercise}
 What are the possible values of $a^2$ modulo 4? modulo 8?
 ```
-**solution**
-\_In modulo 4_\
+**solution**:
+
+- _In modulo 4_\
 \begin{eqnarray*}
     \overline{0}^2&\equiv & 0 \pmod{4}\\
     \overline{1}^2&\equiv & 1 \pmod{4}\\
@@ -332,7 +445,7 @@ What are the possible values of $a^2$ modulo 4? modulo 8?
 \end{eqnarray*}
 The possible values of $a^2\pmod{4}$ are 0 and 1. 
 
-\_In modulo 8_\
+- _In modulo 8_\
 \begin{eqnarray*}
     \overline{0}^2&\equiv & 0 \pmod{8}\\
     \overline{1}^2&\equiv & 1 \pmod{8}\\
@@ -592,7 +705,7 @@ p & q \\
 -r & -s
 \end{bmatrix}\\
 \end{eqnarray}
-This yields $−q = q$ and $r = −r$ which imply $q = r = 0$. Now considering,
+This yields $-q = q$ and $r = -r$ which imply $q = r = 0$. Now considering,
 
 
 \begin{eqnarray}
@@ -907,8 +1020,8 @@ Let $A$ be some element Of partition, and let $a \in A$.
 Need to prove: $A=aN$
   
   - Subclaim 4.1: $A\subseteq aN$.\
-Let $b\in A$. Let B\in B, where $B$ is elmenet of partion.
-Then $b^{-l}b\in BA$, \quad b^{-l = 1 \in N$
+Let $a\in A$. Let $b\in B$, where $B$ is elmenet of partion.
+Then $b^{-l}b\in BA, \quad b^{-l} = 1 \in N$
 So, $BA \subseteq N$. Specially,
 \[b^{-1}a \in N\]
 So there exists some $n \in  N$ such that
@@ -1017,12 +1130,12 @@ That leaves an odd number of elements.
 
 Each element in $x \in G: |x| > 2$ can be paired off with its inverse, as $|x^{-1}| = |x| > 2$  (Since order of a group element equals the order of its inverse.)
 
-Hence there must be at least one element which has not been paired off with any of the others which is therefore self-inverse. Let's say it , 'y'.
+Hence there must be at least one element which has not been paired off with any of the others which is therefore self-inverse. Let's say it , $'y'$.
 
 \begin{eqnarray}
-y^{-1} =y &\iff& x\cdot y=e\\
+y^{-1} =y &\iff & x\cdot y=e\\
 &\iff & |y| =2 
-\end{eqnarraay}
+\end{eqnarray}
 
 Thus,  every group of even order contains an element of order $2$.
 ```
