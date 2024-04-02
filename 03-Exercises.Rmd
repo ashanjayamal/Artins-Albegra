@@ -1,10 +1,13 @@
 # Exercises
+
 ## Chapter 2
+
 ### Laws of composition
 
 ```{exercise,name= 'Artin 2.1.1'}
 Let \( S \) be a set. Prove that the law of composition defined by \( ab = a \) for all \( a \) and \( b \) in \( S \) is associative? For which sets does this law have an identity?
 ```
+
 **Solution**: Let $a,b,c\in S$.
 Now consider following
 \[(ab)c=(ac)=a=(ab)=a(bc)\]
