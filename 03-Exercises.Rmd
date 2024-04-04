@@ -413,10 +413,30 @@ Recall the types of elementary matrices,
   knitr::include_graphics('figures/ch_2/fig67.png') 
 ```
 
+```{exercise,name='Artin 2.4.9'}
+ How many elements of order $2$ does the symmetric group $S_4$ contain?
+```
 
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig68.png') 
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig69.png') 
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig70.png') 
+```
 
+```{exercise,name='Artin 2.4.10'}
+Show by example that the product of elementsof finite order in a group need not have finite order. What if the group is abelian?
+```
 
-
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig71.png') 
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig72.png') 
+```
 
 
 
@@ -425,8 +445,109 @@ Recall the types of elementary matrices,
 
 
 ### Homomorphisms
+```{exercise,name='Artin 2.5.1'}
+Let $\varphi: G \rightarrow G'$ be a surjective homomorphism. Prove that if $G$ is cyclic, then $G'$ is cyclic, and if $G$ is abelian, then $G'$ is abelian.
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig73.png') 
+```
+
+```{exercise,name='Artin 2.5.2'}
+Prove that the intersection $K \cap H$ ofsubgroupsof a group $G$ is a subgroup of $H$, and that if $K$ is a normal subgroup of $G$, then $K \cap H$ is a normal subgroup of $H$.
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig74.png') 
+```
+
+```{exercise,name='Artin 2.5.3'}
+Let $U$ denote the group of invertible upper triangular $2 \times 2$ matrices $A = \begin{bmatrix} a & b \\ 0 & d \end{bmatrix}$, and let $\varphi : U \rightarrow \mathbb{R}^{\times}$ be the map that sends $A$ to $a^2$. Prove that $\varphi$ is a homomorphism, and determine its kernel and image.
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig75.png') 
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig76.png') 
+```
+
+```{exercise,name='Artin 2.5.4'}
+Let $f: (\mathbb{R},+) \rightarrow (\mathbb{C},\times)$ be the map $f(x) = e^{ix}$. Prove that $f$ is a homomorphism, and determine its kernel and image.
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig77.png') 
+```
+
+
+```{exercise,name='Artin 2.5.5'}
+Prove that the \(n \times n\) matrices that have the block form \(M = \begin{bmatrix} A & B \\ 0 & D \end{bmatrix}\), with \(A \in GL_r(\mathbb{R})\) and \(D \in GL_{n-r}(\mathbb{R})\), form a subgroup \(H\) of \(GL_n(\mathbb{R})\), and that the map \(H \rightarrow GL_r(\mathbb{R})\) that sends \(M \mapsto A\) is a homomorphism. What is its kernel?
+```
+
+```{exercise,name='Artin 2.5.6'}
+Determine the center of \(GL_n (\mathbb{R})\).
+
+*Hint:* You are asked to determine the invertible matrices \(A\) that commute with every invertible matrix \(B\). Do not test with a general matrix \(B\). Test with elementary matrices.
+```
 
 ### Isomorphisms
+
+```{exercise,name='Artin 2.6.1'}
+Let \(G'\) be the group of real matrices of the form
+\(\begin{bmatrix}1 & x \\ & 1\end{bmatrix}\)
+Is the map \(\phi: (\mathbb{R},+) \rightarrow G'\) that sends \(x\) to this matrix an isomorphism?
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig78.png') 
+```
+
+```{exercise,name='Artin 2.6.2'}
+Describe all homomorphisms \(\phi : (\mathbb{Z},+) \rightarrow (\mathbb{Z},+)\). Determine which are injective, which are surjective, and which are isomorphisms.
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig79.png') 
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig80.png') 
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig81.png') 
+```
+
+```{exercise,name='Artin 2.6.3'}
+ Show that the functions \(f = \frac{1}{x}\), \(g = \frac{x - 1}{x}\) generate a group of functions, the law of composition being composition of functions, that is isomorphic to the symmetric group \(S_3\).
+```
+
+```{exercise,name='Artin 2.6.4'}
+Prove that in a group, the products \(ab\) and \(ba\) are conjugate elements.
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig82.png') 
+```
+
+```{exercise,name='Artin 2.6.5'}
+Decide whether or not the two matrices \(A = \begin{bmatrix} 3 & 0 \\ 0 & 2 \end{bmatrix}\) and \(B = \begin{bmatrix} 1 & 1 \\ -2 & 4 \end{bmatrix}\) are conjugate elements of the general linear group \(GL_2(\mathbb{R})\).
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig83.png') 
+```
+
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig84.png') 
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig85.png') 
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig86.png') 
+```
 
 ### Equivalence Relations and Partitions
 
@@ -1144,5 +1265,48 @@ Thus,  every group of even order contains an element of order $2$.
 ```
 
 **Claim b**: Let $G$ be a group whose identity is $e$.Let $G$ be of order $21$.(|G=21|) Then,$\exists x \in G: |x| = 3$
+
+
+
+```{exercise,name='Artin 2.M.9'}
+(Double Cosets) Let $H$ and $K$ be subgroups of a group $G$, and let $g$ be an element of $G$. \\
+The set $HgK = \{x \in G | x = hgk$ for some $h \in H, k \in K\}$ is called a double coset. \\
+Do the double cosets partition $G$?
+```
+They partition G. The proof is similar to the proof that left cosets of one subgroup partition G.
+
+On G, define the relation $\sim$ as
+\[ a \sim b \text{ iff } b = hak; \text{ for some } h \in H, k \in K\]
+Let's prove that this is an equivalence relation.
+Let $a,b,c\in G$.
+- Reflexive?: 
+Let \(g \in G\). Then we can write
+\[ g = 1g1\]
+Moreover, \(1 \in H\) and \(1 \in K\), so \(g \sim g\).
+Therefore, for every \(g \in G\) we have that \(g \sim g\). so $\sim$ is reflexive.
+
+- Symmetric?: 
+Suppose that \(a \sim b.\) Then \(b = hak,\) for some \(h \in H, k \in K.\) Multiplying by\(h^{-1}\) from the left and\(k^{-1}\) from the right we get
+\[ a = h^{-1}ak^{-1}\]
+Since\(H\) is a subgroup of\(G,h^{-1} \in H.\) Similarly,\(k^{-1} \in K.\) Thus,\(b \sim a.\)
+So, for every\(a,b \in G\) such that \(a \sim b\implies b \sim a,\). Thus, $\sim$ is symmetric.
+
+- Transitive?:
+Suppose that \(a \sim b\) and \(b \sim c\).Then\(b = hak\)for some\(h \in H,k \in K\),and \(c=h'b'k'\) for some \(h' \in H,k' \in K\).Therefore,
+\[c=h'hbk'=hhakkk'= (hh')a(kk')\]
+Thus, $a\sim b$ and $b\sim c$ then $a\sim c$. Therefore $\sim$ is transitive.
+
+By Artin's book Proposition 2.7.4, double cosets partition G?
+
+```{exercise,name='Artin 2.M.10'}
+Let $H$ be a subgroup of a group $G$. Show that the double cosets (see Exercise M.9))
+\[HgH = \{h_1gh_2 | h_1, h_2 \in H\}\] 
+are the left cosets $gH$ if and only if $H$ is normal.
+```
+
+```{proof}
+- $(\implies)$: Suppose that $gH=HgH$. Let $g\in G$ and $h\in H$.
+$ghg^{-1}\in H?$.
+```
 
 ### Problem

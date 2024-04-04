@@ -80,7 +80,7 @@
 
 \title{Artin's Algebra}
 \author{Ashan Jayamal}
-\date{2024-04-02}
+\date{2024-04-04}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -1886,11 +1886,99 @@ Recall the types of elementary matrices,
 
 \includegraphics{figures/ch_2/fig67.png}
 
+\begin{exercise}[Artin 2.4.9]
+\protect\hypertarget{exr:unnamed-chunk-107}{}\label{exr:unnamed-chunk-107}How many elements of order \(2\) does the symmetric group \(S_4\) contain?
+\end{exercise}
+
+\includegraphics{figures/ch_2/fig68.png}
+\includegraphics{figures/ch_2/fig69.png}
+\includegraphics{figures/ch_2/fig70.png}
+
+\begin{exercise}[Artin 2.4.10]
+\protect\hypertarget{exr:unnamed-chunk-111}{}\label{exr:unnamed-chunk-111}Show by example that the product of elementsof finite order in a group need not have finite order. What if the group is abelian?
+\end{exercise}
+
+\includegraphics{figures/ch_2/fig71.png}
+\includegraphics{figures/ch_2/fig72.png}
+
 \hypertarget{homomorphisms-1}{%
 \subsection{Homomorphisms}\label{homomorphisms-1}}
 
+\begin{exercise}[Artin 2.5.1]
+\protect\hypertarget{exr:unnamed-chunk-114}{}\label{exr:unnamed-chunk-114}Let \(\varphi: G \rightarrow G'\) be a surjective homomorphism. Prove that if \(G\) is cyclic, then \(G'\) is cyclic, and if \(G\) is abelian, then \(G'\) is abelian.
+\end{exercise}
+
+\includegraphics{figures/ch_2/fig73.png}
+
+\begin{exercise}[Artin 2.5.2]
+\protect\hypertarget{exr:unnamed-chunk-116}{}\label{exr:unnamed-chunk-116}Prove that the intersection \(K \cap H\) ofsubgroupsof a group \(G\) is a subgroup of \(H\), and that if \(K\) is a normal subgroup of \(G\), then \(K \cap H\) is a normal subgroup of \(H\).
+\end{exercise}
+
+\includegraphics{figures/ch_2/fig74.png}
+
+\begin{exercise}[Artin 2.5.3]
+\protect\hypertarget{exr:unnamed-chunk-118}{}\label{exr:unnamed-chunk-118}Let \(U\) denote the group of invertible upper triangular \(2 \times 2\) matrices \(A = \begin{bmatrix} a & b \\ 0 & d \end{bmatrix}\), and let \(\varphi : U \rightarrow \mathbb{R}^{\times}\) be the map that sends \(A\) to \(a^2\). Prove that \(\varphi\) is a homomorphism, and determine its kernel and image.
+\end{exercise}
+
+\includegraphics{figures/ch_2/fig75.png}
+\includegraphics{figures/ch_2/fig76.png}
+
+\begin{exercise}[Artin 2.5.4]
+\protect\hypertarget{exr:unnamed-chunk-121}{}\label{exr:unnamed-chunk-121}Let \(f: (\mathbb{R},+) \rightarrow (\mathbb{C},\times)\) be the map \(f(x) = e^{ix}\). Prove that \(f\) is a homomorphism, and determine its kernel and image.
+\end{exercise}
+
+\includegraphics{figures/ch_2/fig77.png}
+
+\begin{exercise}[Artin 2.5.5]
+\protect\hypertarget{exr:unnamed-chunk-123}{}\label{exr:unnamed-chunk-123}Prove that the \(n \times n\) matrices that have the block form \(M = \begin{bmatrix} A & B \\ 0 & D \end{bmatrix}\), with \(A \in GL_r(\mathbb{R})\) and \(D \in GL_{n-r}(\mathbb{R})\), form a subgroup \(H\) of \(GL_n(\mathbb{R})\), and that the map \(H \rightarrow GL_r(\mathbb{R})\) that sends \(M \mapsto A\) is a homomorphism. What is its kernel?
+\end{exercise}
+
+\begin{exercise}[Artin 2.5.6]
+\protect\hypertarget{exr:unnamed-chunk-124}{}\label{exr:unnamed-chunk-124}Determine the center of \(GL_n (\mathbb{R})\).
+
+\emph{Hint:} You are asked to determine the invertible matrices \(A\) that commute with every invertible matrix \(B\). Do not test with a general matrix \(B\). Test with elementary matrices.
+\end{exercise}
+
 \hypertarget{isomorphisms-1}{%
 \subsection{Isomorphisms}\label{isomorphisms-1}}
+
+\begin{exercise}[Artin 2.6.1]
+\protect\hypertarget{exr:unnamed-chunk-125}{}\label{exr:unnamed-chunk-125}Let \(G'\) be the group of real matrices of the form
+\(\begin{bmatrix}1 & x \\ & 1\end{bmatrix}\)
+Is the map \(\phi: (\mathbb{R},+) \rightarrow G'\) that sends \(x\) to this matrix an isomorphism?
+\end{exercise}
+
+\includegraphics{figures/ch_2/fig78.png}
+
+\begin{exercise}[Artin 2.6.2]
+\protect\hypertarget{exr:unnamed-chunk-127}{}\label{exr:unnamed-chunk-127}Describe all homomorphisms \(\phi : (\mathbb{Z},+) \rightarrow (\mathbb{Z},+)\). Determine which are injective, which are surjective, and which are isomorphisms.
+\end{exercise}
+
+\includegraphics{figures/ch_2/fig79.png}
+\includegraphics{figures/ch_2/fig80.png}
+\includegraphics{figures/ch_2/fig81.png}
+
+\begin{exercise}[Artin 2.6.3]
+\protect\hypertarget{exr:unnamed-chunk-131}{}\label{exr:unnamed-chunk-131}Show that the functions \(f = \frac{1}{x}\), \(g = \frac{x - 1}{x}\) generate a group of functions, the law of composition being composition of functions, that is isomorphic to the symmetric group \(S_3\).
+\end{exercise}
+
+\begin{exercise}[Artin 2.6.4]
+\protect\hypertarget{exr:unnamed-chunk-132}{}\label{exr:unnamed-chunk-132}Prove that in a group, the products \(ab\) and \(ba\) are conjugate elements.
+\end{exercise}
+
+\includegraphics{figures/ch_2/fig82.png}
+
+\begin{exercise}[Artin 2.6.5]
+\protect\hypertarget{exr:unnamed-chunk-134}{}\label{exr:unnamed-chunk-134}Decide whether or not the two matrices \(A = \begin{bmatrix} 3 & 0 \\ 0 & 2 \end{bmatrix}\) and \(B = \begin{bmatrix} 1 & 1 \\ -2 & 4 \end{bmatrix}\) are conjugate elements of the general linear group \(GL_2(\mathbb{R})\).
+\end{exercise}
+
+\includegraphics{figures/ch_2/fig83.png}
+
+\includegraphics{figures/ch_2/fig84.png}
+
+\includegraphics{figures/ch_2/fig85.png}
+
+\includegraphics{figures/ch_2/fig86.png}
 
 \hypertarget{equivalence-relations-and-partitions-1}{%
 \subsection{Equivalence Relations and Partitions}\label{equivalence-relations-and-partitions-1}}
@@ -1902,7 +1990,7 @@ Recall the types of elementary matrices,
 \subsection{Modular Arthmetic}\label{modular-arthmetic}}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-107}{}\label{exr:unnamed-chunk-107}What are the possible values of \(a^2\) modulo 4? modulo 8?
+\protect\hypertarget{exr:unnamed-chunk-139}{}\label{exr:unnamed-chunk-139}What are the possible values of \(a^2\) modulo 4? modulo 8?
 \end{exercise}
 
 \textbf{solution}:
@@ -1933,7 +2021,7 @@ Recall the types of elementary matrices,
 \end{itemize}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-108}{}\label{exr:unnamed-chunk-108}Prove that every integer \(a\) is congruent to the sum of its decimal digits modulo 9.
+\protect\hypertarget{exr:unnamed-chunk-140}{}\label{exr:unnamed-chunk-140}Prove that every integer \(a\) is congruent to the sum of its decimal digits modulo 9.
 \end{exercise}
 
 \begin{proof}
@@ -1972,31 +2060,31 @@ Therefore,by mathematical induction, \(9|(10^n-1)\) for any \(n\in \mathbb{N}\).
 \end{proof}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-111}{}\label{exr:unnamed-chunk-111}Solve the congruence \(2x \equiv 5\) modulo 9 and modulo 6.
+\protect\hypertarget{exr:unnamed-chunk-143}{}\label{exr:unnamed-chunk-143}Solve the congruence \(2x \equiv 5\) modulo 9 and modulo 6.
 \end{exercise}
 
 Done Later add.
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-112}{}\label{exr:unnamed-chunk-112}Determine the integers \(n\) for which the pair of congruences \(2x - y \equiv 1\) and \(4x + 3y \equiv 2\) modulo \(n\) has a solution.
+\protect\hypertarget{exr:unnamed-chunk-144}{}\label{exr:unnamed-chunk-144}Determine the integers \(n\) for which the pair of congruences \(2x - y \equiv 1\) and \(4x + 3y \equiv 2\) modulo \(n\) has a solution.
 \end{exercise}
 
 Done Later add.
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-113}{}\label{exr:unnamed-chunk-113}Prove the Chinese Remainder Theorem: Let \(a, b, u, v\) be integers, and assume that the greatest common divisor of \(a\) and \(b\) is 1. Then there is an integer \(x\) such that \(x \equiv u\) modulo \(a\) and \(X \equiv v\) modulo \(b\).\\
+\protect\hypertarget{exr:unnamed-chunk-145}{}\label{exr:unnamed-chunk-145}Prove the Chinese Remainder Theorem: Let \(a, b, u, v\) be integers, and assume that the greatest common divisor of \(a\) and \(b\) is 1. Then there is an integer \(x\) such that \(x \equiv u\) modulo \(a\) and \(X \equiv v\) modulo \(b\).\\
 Hint: Do the case \(u = 0\) and \(v = 1\) first.
 \end{exercise}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-114}{}\label{exr:unnamed-chunk-114}Determine the order of each of the matrices A and B when the matrix entries are interpreted modulo 3.
+\protect\hypertarget{exr:unnamed-chunk-146}{}\label{exr:unnamed-chunk-146}Determine the order of each of the matrices A and B when the matrix entries are interpreted modulo 3.
 \end{exercise}
 
 \hypertarget{product-group}{%
 \subsection{Product Group}\label{product-group}}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-115}{}\label{exr:unnamed-chunk-115}Let \(x\) be an element of order \(r\) of a group \(G\), and let \(y\) be an element of \(G'\) of order \(s\). What is the order of \((x, y)\) in the product group \(G \times G'\)?
+\protect\hypertarget{exr:unnamed-chunk-147}{}\label{exr:unnamed-chunk-147}Let \(x\) be an element of order \(r\) of a group \(G\), and let \(y\) be an element of \(G'\) of order \(s\). What is the order of \((x, y)\) in the product group \(G \times G'\)?
 \end{exercise}
 
 \textbf{Solution}: The order of \((x, y)\) in the product group \(G \times G'\) is \(lcm(r,s)\)\\
@@ -2006,7 +2094,7 @@ This implies, \(x^n=1_G\) and \(y^n=1_{G'}\). Since order of \(x\) and \(y\) are
 So, we know that the least positive integer such that above property holds is \(lcm(r,s)\). Hence,The order of \((x, y)\) in the product group \(G \times G'\) is \(lcm(r,s)\).
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-116}{}\label{exr:unnamed-chunk-116}What does Proposition \ref{prp:prp2114} tell us when, with the usual notation for the symmetric
+\protect\hypertarget{exr:unnamed-chunk-148}{}\label{exr:unnamed-chunk-148}What does Proposition \ref{prp:prp2114} tell us when, with the usual notation for the symmetric
 group \(S_3,K\) and \(H\) are the subgroups \(<y>\) and \(<x>\)?
 \end{exercise}
 
@@ -2029,7 +2117,7 @@ f(x,y)\cdot f(x,1)&=& (x\cdot y)\cdot (x\cdot 1)=(xy)\cdot x=y
 Thus, \(f\) is not a homomorphism.
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-117}{}\label{exr:unnamed-chunk-117}Prove that the product of two infinite cyclic groups is not infinite cyclic.
+\protect\hypertarget{exr:unnamed-chunk-149}{}\label{exr:unnamed-chunk-149}Prove that the product of two infinite cyclic groups is not infinite cyclic.
 \end{exercise}
 
 \begin{proof}
@@ -2070,7 +2158,7 @@ We can consider \(\mathbb{Z}\times \mathbb{Z}\). Suppose that \((a, b)\) generat
 \end{proof}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-119}{}\label{exr:unnamed-chunk-119}
+\protect\hypertarget{exr:unnamed-chunk-151}{}\label{exr:unnamed-chunk-151}
 
 In each of the following cases, determine whether or not \(G\) is isomorphic to the product group \(H \times K\).
 
@@ -2240,7 +2328,7 @@ Consider \(a + bi \in C^\times\). Then
 So, \(HK = G\). So, by proposition \ref{prp:prp2114} \(G \cong H \times K\).
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-120}{}\label{exr:unnamed-chunk-120}Let \(G_1\) and \(G_2\) be groups, and let \(Z_i\) be the center of \(G_i\). Prove that the center of the product group \(G_1 \times G_2\) is \(Z_1 \times Z_2\).
+\protect\hypertarget{exr:unnamed-chunk-152}{}\label{exr:unnamed-chunk-152}Let \(G_1\) and \(G_2\) be groups, and let \(Z_i\) be the center of \(G_i\). Prove that the center of the product group \(G_1 \times G_2\) is \(Z_1 \times Z_2\).
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig04.jpg}
@@ -2248,11 +2336,11 @@ So, \(HK = G\). So, by proposition \ref{prp:prp2114} \(G \cong H \times K\).
 \includegraphics{figures/ch_2/fig05.jpg}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-121}{}\label{exr:unnamed-chunk-121}Let \(G\) be a group that contains normal subgroups of orders \(3\) and \(5\), respectively. Prove that \(G\) contains an element of order \(15\).
+\protect\hypertarget{exr:unnamed-chunk-153}{}\label{exr:unnamed-chunk-153}Let \(G\) be a group that contains normal subgroups of orders \(3\) and \(5\), respectively. Prove that \(G\) contains an element of order \(15\).
 \end{exercise}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-122}{}\label{exr:unnamed-chunk-122}Let \(H\) be a subgroup of a group \(G\), let \(\phi:G \to H\) be a homomorphism whose restriction to \(H\) is the identity map, and let \(N\) be its kernel. What can one say about the product map \(H \times N \to G\)?
+\protect\hypertarget{exr:unnamed-chunk-154}{}\label{exr:unnamed-chunk-154}Let \(H\) be a subgroup of a group \(G\), let \(\phi:G \to H\) be a homomorphism whose restriction to \(H\) is the identity map, and let \(N\) be its kernel. What can one say about the product map \(H \times N \to G\)?
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig06.png}
@@ -2261,7 +2349,7 @@ So, \(HK = G\). So, by proposition \ref{prp:prp2114} \(G \cong H \times K\).
 \includegraphics{figures/ch_2/fig08.jpg}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-123}{}\label{exr:unnamed-chunk-123}Let \(G\), \(G'\), and \(H\) be groups. Establish a bijective correspondence between homomorphisms \(\phi : H \to G \times G'\) from \(H\) to the product group and pairs \((\varphi, \varphi')\) consisting of a homomorphism \(\varphi:H \to G\) and a homomorphism \(\varphi':H \to G'\).
+\protect\hypertarget{exr:unnamed-chunk-155}{}\label{exr:unnamed-chunk-155}Let \(G\), \(G'\), and \(H\) be groups. Establish a bijective correspondence between homomorphisms \(\phi : H \to G \times G'\) from \(H\) to the product group and pairs \((\varphi, \varphi')\) consisting of a homomorphism \(\varphi:H \to G\) and a homomorphism \(\varphi':H \to G'\).
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig10.png}
@@ -2274,7 +2362,7 @@ So, \(HK = G\). So, by proposition \ref{prp:prp2114} \(G \cong H \times K\).
 \includegraphics{figures/ch_2/fig16.jpg}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-124}{}\label{exr:unnamed-chunk-124}Let \(H\) and \(K\) be subgroups of a group \(G\). Prove that the product set \(HK\) is a subgroup of \(G\) if and only if \(HK = KH\).
+\protect\hypertarget{exr:unnamed-chunk-156}{}\label{exr:unnamed-chunk-156}Let \(H\) and \(K\) be subgroups of a group \(G\). Prove that the product set \(HK\) is a subgroup of \(G\) if and only if \(HK = KH\).
 \end{exercise}
 
 \textbf{Solution} :
@@ -2331,7 +2419,7 @@ Therefore, the product set \(HK\) is a subgroup of \(G\) if and only if \(HK = K
 \subsection{Quotient Groups}\label{quotient-groups-1}}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-126}{}\label{exr:unnamed-chunk-126}Show that if a subgroup \(H\) of a group \(G\) is not normal, there are left cosets \(aH\) and \(bH\)
+\protect\hypertarget{exr:unnamed-chunk-158}{}\label{exr:unnamed-chunk-158}Show that if a subgroup \(H\) of a group \(G\) is not normal, there are left cosets \(aH\) and \(bH\)
 whose product is not a coset.
 \end{exercise}
 
@@ -2353,7 +2441,7 @@ Thus, \(b^{-1}h_1b\in H\). and since \(b\in G\) and \(h_1\in H\) is arbitary, \(
 \end{proof}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-128}{}\label{exr:unnamed-chunk-128}In the general linear group \(GL_3(\mathbb{R})\), consider the subsets:
+\protect\hypertarget{exr:unnamed-chunk-160}{}\label{exr:unnamed-chunk-160}In the general linear group \(GL_3(\mathbb{R})\), consider the subsets:
 
 \[ H = \left\{ \begin{pmatrix} 1 & * & * \\ 0 & 1 & * \\ 0 & 0 & 1 \end{pmatrix} \mid * \text{ represents an arbitrary real number} \right\} \]
 
@@ -2455,7 +2543,7 @@ Thus,
 \end{itemize}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-129}{}\label{exr:unnamed-chunk-129}Let \(P\) be a partition of a group \(G\) with the property that for any pair of elements \(A\), \(B\) of the partition, the product set \(AB\) is contained entirely within another element \(C\) of the partition. Let \(N\) be the element of \(P\) that contains 1. Prove that \(N\) is a normal subgroup of \(G\) and that \(P\) is the set of its cosets.
+\protect\hypertarget{exr:unnamed-chunk-161}{}\label{exr:unnamed-chunk-161}Let \(P\) be a partition of a group \(G\) with the property that for any pair of elements \(A\), \(B\) of the partition, the product set \(AB\) is contained entirely within another element \(C\) of the partition. Let \(N\) be the element of \(P\) that contains 1. Prove that \(N\) is a normal subgroup of \(G\) and that \(P\) is the set of its cosets.
 \end{exercise}
 
 \begin{proof}
@@ -2540,7 +2628,7 @@ Hence, we can conclude that \(A =aN\).
 \end{proof}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-131}{}\label{exr:unnamed-chunk-131}Let \(H = \{\pm1, \pm i\}\) be the subgroup of \(G = C^{\times}\) of fourth roots of unity. Describe the cosets of \(H\) in \(G\) explicitly. Is \(G / H\) isomorphic to \(G\)?
+\protect\hypertarget{exr:unnamed-chunk-163}{}\label{exr:unnamed-chunk-163}Let \(H = \{\pm1, \pm i\}\) be the subgroup of \(G = C^{\times}\) of fourth roots of unity. Describe the cosets of \(H\) in \(G\) explicitly. Is \(G / H\) isomorphic to \(G\)?
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig36.png}
@@ -2552,7 +2640,7 @@ Hence, we can conclude that \(A =aN\).
 \includegraphics{figures/ch_2/fig39.png}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-132}{}\label{exr:unnamed-chunk-132}
+\protect\hypertarget{exr:unnamed-chunk-164}{}\label{exr:unnamed-chunk-164}
 
 Let \(G\) be the group of upper triangular real matrices \(\begin{bmatrix} a & b \\ 0 & d \end{bmatrix}\) with \(a\) and \(d\) different from zero. For each of the following subsets, determine whether or not \(S\) is a subgroup, and whether or not \(S\) is a normal subgroup. If \(S\) is a normal subgroup, identify the quotient group \(G /S\).
 
@@ -2586,7 +2674,7 @@ Let \(G\) be the group of upper triangular real matrices \(\begin{bmatrix} a & b
 \subsection{Miscellaneous Problems}\label{miscellaneous-problems}}
 
 \begin{exercise}[M1]
-\protect\hypertarget{exr:unnamed-chunk-133}{}\label{exr:unnamed-chunk-133}Describe the column vectors \((a, c)^T\) that occur as the first column of an integer matrix \(A\) whose inverse is also an integer matrix.
+\protect\hypertarget{exr:unnamed-chunk-165}{}\label{exr:unnamed-chunk-165}Describe the column vectors \((a, c)^T\) that occur as the first column of an integer matrix \(A\) whose inverse is also an integer matrix.
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig47.png}
@@ -2594,7 +2682,7 @@ Let \(G\) be the group of upper triangular real matrices \(\begin{bmatrix} a & b
 \includegraphics{figures/ch_2/fig48.png}
 
 \begin{exercise}[M.2]
-\protect\hypertarget{exr:unnamed-chunk-134}{}\label{exr:unnamed-chunk-134}\leavevmode
+\protect\hypertarget{exr:unnamed-chunk-166}{}\label{exr:unnamed-chunk-166}\leavevmode
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
@@ -2627,6 +2715,58 @@ Thus, every group of even order contains an element of order \(2\).
 \end{proof}
 
 \textbf{Claim b}: Let \(G\) be a group whose identity is \(e\).Let \(G\) be of order \(21\).(\textbar G=21\textbar) Then,\(\exists x \in G: |x| = 3\)
+
+\begin{exercise}[Artin 2.M.9]
+\protect\hypertarget{exr:unnamed-chunk-168}{}\label{exr:unnamed-chunk-168}(Double Cosets) Let \(H\) and \(K\) be subgroups of a group \(G\), and let \(g\) be an element of \(G\). \textbackslash{}
+The set \(HgK = \{x \in G | x = hgk\) for some \(h \in H, k \in K\}\) is called a double coset. \textbackslash{}
+Do the double cosets partition \(G\)?
+\end{exercise}
+
+They partition G. The proof is similar to the proof that left cosets of one subgroup partition G.
+
+On G, define the relation \(\sim\) as
+\[ a \sim b \text{ iff } b = hak; \text{ for some } h \in H, k \in K\]
+Let's prove that this is an equivalence relation.
+Let \(a,b,c\in G\).
+- Reflexive?:
+Let \(g \in G\). Then we can write
+\[ g = 1g1\]
+Moreover, \(1 \in H\) and \(1 \in K\), so \(g \sim g\).
+Therefore, for every \(g \in G\) we have that \(g \sim g\). so \(\sim\) is reflexive.
+
+\begin{itemize}
+\item
+  Symmetric?:
+  Suppose that \(a \sim b.\) Then \(b = hak,\) for some \(h \in H, k \in K.\) Multiplying by\(h^{-1}\) from the left and\(k^{-1}\) from the right we get
+  \[ a = h^{-1}ak^{-1}\]
+  Since\(H\) is a subgroup of\(G,h^{-1} \in H.\) Similarly,\(k^{-1} \in K.\) Thus,\(b \sim a.\)
+  So, for every\(a,b \in G\) such that \(a \sim b\implies b \sim a,\). Thus, \(\sim\) is symmetric.
+\item
+  Transitive?:
+  Suppose that \(a \sim b\) and \(b \sim c\).Then\(b = hak\)for some\(h \in H,k \in K\),and \(c=h'b'k'\) for some \(h' \in H,k' \in K\).Therefore,
+  \[c=h'hbk'=hhakkk'= (hh')a(kk')\]
+  Thus, \(a\sim b\) and \(b\sim c\) then \(a\sim c\). Therefore \(\sim\) is transitive.
+\end{itemize}
+
+By Artin's book Proposition 2.7.4, double cosets partition G?
+
+\begin{exercise}[Artin 2.M.10]
+\protect\hypertarget{exr:unnamed-chunk-169}{}\label{exr:unnamed-chunk-169}Let \(H\) be a subgroup of a group \(G\). Show that the double cosets (see Exercise M.9))
+\[HgH = \{h_1gh_2 | h_1, h_2 \in H\}\]
+are the left cosets \(gH\) if and only if \(H\) is normal.
+\end{exercise}
+
+\begin{proof}
+\leavevmode
+
+\begin{itemize}
+\tightlist
+\item
+  \((\implies)\): Suppose that \(gH=HgH\). Let \(g\in G\) and \(h\in H\).
+  \(ghg^{-1}\in H?\).
+\end{itemize}
+
+\end{proof}
 
 \hypertarget{problem-3}{%
 \subsection{Problem}\label{problem-3}}

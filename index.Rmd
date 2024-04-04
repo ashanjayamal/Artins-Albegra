@@ -10,6 +10,7 @@ url: https://ashanjayamal.github.io/Artins-Albegra
 description: |
  Artins Algebra
 link-citations: yes
+favicon: favicon.ico
 github-repo: rstudio/bookdown-demo
 output:
   pdf_document: default

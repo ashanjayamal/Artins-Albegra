@@ -24,13 +24,13 @@
 \contentsline {subsection}{\numberline {4.1.2}Groups and Subgroups}{40}{subsection.4.1.2}%
 \contentsline {subsection}{\numberline {4.1.3}Subgroups of the Additive Group of Integers}{48}{subsection.4.1.3}%
 \contentsline {subsection}{\numberline {4.1.4}Cyclic group}{52}{subsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.1.5}Homomorphisms}{70}{subsection.4.1.5}%
-\contentsline {subsection}{\numberline {4.1.6}Isomorphisms}{70}{subsection.4.1.6}%
-\contentsline {subsection}{\numberline {4.1.7}Equivalence Relations and Partitions}{70}{subsection.4.1.7}%
-\contentsline {subsection}{\numberline {4.1.8}Cosets}{70}{subsection.4.1.8}%
-\contentsline {subsection}{\numberline {4.1.9}Modular Arthmetic}{70}{subsection.4.1.9}%
-\contentsline {subsection}{\numberline {4.1.10}Product Group}{73}{subsection.4.1.10}%
-\contentsline {subsection}{\numberline {4.1.11}Quotient Groups}{87}{subsection.4.1.11}%
-\contentsline {subsection}{\numberline {4.1.12}Miscellaneous Problems}{102}{subsection.4.1.12}%
-\contentsline {subsection}{\numberline {4.1.13}Problem}{104}{subsection.4.1.13}%
-\contentsline {chapter}{\numberline {5}Vector spaces.}{105}{chapter.5}%
+\contentsline {subsection}{\numberline {4.1.5}Homomorphisms}{75}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6}Isomorphisms}{81}{subsection.4.1.6}%
+\contentsline {subsection}{\numberline {4.1.7}Equivalence Relations and Partitions}{88}{subsection.4.1.7}%
+\contentsline {subsection}{\numberline {4.1.8}Cosets}{88}{subsection.4.1.8}%
+\contentsline {subsection}{\numberline {4.1.9}Modular Arthmetic}{88}{subsection.4.1.9}%
+\contentsline {subsection}{\numberline {4.1.10}Product Group}{90}{subsection.4.1.10}%
+\contentsline {subsection}{\numberline {4.1.11}Quotient Groups}{104}{subsection.4.1.11}%
+\contentsline {subsection}{\numberline {4.1.12}Miscellaneous Problems}{119}{subsection.4.1.12}%
+\contentsline {subsection}{\numberline {4.1.13}Problem}{122}{subsection.4.1.13}%
+\contentsline {chapter}{\numberline {5}Vector spaces.}{123}{chapter.5}%

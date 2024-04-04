@@ -23,13 +23,13 @@
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2024-04-02" />
+<meta name="date" content="2024-04-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
-  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="prev" href="lienaer-operators.html"/>
 <link rel="next" href="vector-spaces..html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -510,12 +510,73 @@ b)
 </div>
 <p>Recall the types of elementary matrices,</p>
 <p><img src="figures/ch_2/fig67.png" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-107" class="exercise"><strong>Exercise 4.20  (Artin 2.4.9) </strong></span>How many elements of order <span class="math inline">\(2\)</span> does the symmetric group <span class="math inline">\(S_4\)</span> contain?</p>
+</div>
+<p><img src="figures/ch_2/fig68.png" /><!-- -->
+<img src="figures/ch_2/fig69.png" /><!-- -->
+<img src="figures/ch_2/fig70.png" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-111" class="exercise"><strong>Exercise 4.21  (Artin 2.4.10) </strong></span>Show by example that the product of elementsof finite order in a group need not have finite order. What if the group is abelian?</p>
+</div>
+<p><img src="figures/ch_2/fig71.png" /><!-- -->
+<img src="figures/ch_2/fig72.png" /><!-- --></p>
 </div>
 <div id="homomorphisms-1" class="section level3 hasAnchor" number="4.1.5">
 <h3><span class="header-section-number">4.1.5</span> Homomorphisms<a href="exercises.html#homomorphisms-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-114" class="exercise"><strong>Exercise 4.22  (Artin 2.5.1) </strong></span>Let <span class="math inline">\(\varphi: G \rightarrow G&#39;\)</span> be a surjective homomorphism. Prove that if <span class="math inline">\(G\)</span> is cyclic, then <span class="math inline">\(G&#39;\)</span> is cyclic, and if <span class="math inline">\(G\)</span> is abelian, then <span class="math inline">\(G&#39;\)</span> is abelian.</p>
+</div>
+<p><img src="figures/ch_2/fig73.png" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-116" class="exercise"><strong>Exercise 4.23  (Artin 2.5.2) </strong></span>Prove that the intersection <span class="math inline">\(K \cap H\)</span> ofsubgroupsof a group <span class="math inline">\(G\)</span> is a subgroup of <span class="math inline">\(H\)</span>, and that if <span class="math inline">\(K\)</span> is a normal subgroup of <span class="math inline">\(G\)</span>, then <span class="math inline">\(K \cap H\)</span> is a normal subgroup of <span class="math inline">\(H\)</span>.</p>
+</div>
+<p><img src="figures/ch_2/fig74.png" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-118" class="exercise"><strong>Exercise 4.24  (Artin 2.5.3) </strong></span>Let <span class="math inline">\(U\)</span> denote the group of invertible upper triangular <span class="math inline">\(2 \times 2\)</span> matrices <span class="math inline">\(A = \begin{bmatrix} a &amp; b \\ 0 &amp; d \end{bmatrix}\)</span>, and let <span class="math inline">\(\varphi : U \rightarrow \mathbb{R}^{\times}\)</span> be the map that sends <span class="math inline">\(A\)</span> to <span class="math inline">\(a^2\)</span>. Prove that <span class="math inline">\(\varphi\)</span> is a homomorphism, and determine its kernel and image.</p>
+</div>
+<p><img src="figures/ch_2/fig75.png" /><!-- -->
+<img src="figures/ch_2/fig76.png" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-121" class="exercise"><strong>Exercise 4.25  (Artin 2.5.4) </strong></span>Let <span class="math inline">\(f: (\mathbb{R},+) \rightarrow (\mathbb{C},\times)\)</span> be the map <span class="math inline">\(f(x) = e^{ix}\)</span>. Prove that <span class="math inline">\(f\)</span> is a homomorphism, and determine its kernel and image.</p>
+</div>
+<p><img src="figures/ch_2/fig77.png" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-123" class="exercise"><strong>Exercise 4.26  (Artin 2.5.5) </strong></span>Prove that the <span class="math inline">\(n \times n\)</span> matrices that have the block form <span class="math inline">\(M = \begin{bmatrix} A &amp; B \\ 0 &amp; D \end{bmatrix}\)</span>, with <span class="math inline">\(A \in GL_r(\mathbb{R})\)</span> and <span class="math inline">\(D \in GL_{n-r}(\mathbb{R})\)</span>, form a subgroup <span class="math inline">\(H\)</span> of <span class="math inline">\(GL_n(\mathbb{R})\)</span>, and that the map <span class="math inline">\(H \rightarrow GL_r(\mathbb{R})\)</span> that sends <span class="math inline">\(M \mapsto A\)</span> is a homomorphism. What is its kernel?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-124" class="exercise"><strong>Exercise 4.27  (Artin 2.5.6) </strong></span>Determine the center of <span class="math inline">\(GL_n (\mathbb{R})\)</span>.</p>
+<p><em>Hint:</em> You are asked to determine the invertible matrices <span class="math inline">\(A\)</span> that commute with every invertible matrix <span class="math inline">\(B\)</span>. Do not test with a general matrix <span class="math inline">\(B\)</span>. Test with elementary matrices.</p>
+</div>
 </div>
 <div id="isomorphisms-1" class="section level3 hasAnchor" number="4.1.6">
 <h3><span class="header-section-number">4.1.6</span> Isomorphisms<a href="exercises.html#isomorphisms-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-125" class="exercise"><strong>Exercise 4.28  (Artin 2.6.1) </strong></span>Let <span class="math inline">\(G&#39;\)</span> be the group of real matrices of the form
+<span class="math inline">\(\begin{bmatrix}1 &amp; x \\ &amp; 1\end{bmatrix}\)</span>
+Is the map <span class="math inline">\(\phi: (\mathbb{R},+) \rightarrow G&#39;\)</span> that sends <span class="math inline">\(x\)</span> to this matrix an isomorphism?</p>
+</div>
+<p><img src="figures/ch_2/fig78.png" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-127" class="exercise"><strong>Exercise 4.29  (Artin 2.6.2) </strong></span>Describe all homomorphisms <span class="math inline">\(\phi : (\mathbb{Z},+) \rightarrow (\mathbb{Z},+)\)</span>. Determine which are injective, which are surjective, and which are isomorphisms.</p>
+</div>
+<p><img src="figures/ch_2/fig79.png" /><!-- -->
+<img src="figures/ch_2/fig80.png" /><!-- -->
+<img src="figures/ch_2/fig81.png" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-131" class="exercise"><strong>Exercise 4.30  (Artin 2.6.3) </strong></span>Show that the functions <span class="math inline">\(f = \frac{1}{x}\)</span>, <span class="math inline">\(g = \frac{x - 1}{x}\)</span> generate a group of functions, the law of composition being composition of functions, that is isomorphic to the symmetric group <span class="math inline">\(S_3\)</span>.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-132" class="exercise"><strong>Exercise 4.31  (Artin 2.6.4) </strong></span>Prove that in a group, the products <span class="math inline">\(ab\)</span> and <span class="math inline">\(ba\)</span> are conjugate elements.</p>
+</div>
+<p><img src="figures/ch_2/fig82.png" /><!-- --></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-134" class="exercise"><strong>Exercise 4.32  (Artin 2.6.5) </strong></span>Decide whether or not the two matrices <span class="math inline">\(A = \begin{bmatrix} 3 &amp; 0 \\ 0 &amp; 2 \end{bmatrix}\)</span> and <span class="math inline">\(B = \begin{bmatrix} 1 &amp; 1 \\ -2 &amp; 4 \end{bmatrix}\)</span> are conjugate elements of the general linear group <span class="math inline">\(GL_2(\mathbb{R})\)</span>.</p>
+</div>
+<p><img src="figures/ch_2/fig83.png" /><!-- --></p>
+<p><img src="figures/ch_2/fig84.png" /><!-- --></p>
+<p><img src="figures/ch_2/fig85.png" /><!-- --></p>
+<p><img src="figures/ch_2/fig86.png" /><!-- --></p>
 </div>
 <div id="equivalence-relations-and-partitions-1" class="section level3 hasAnchor" number="4.1.7">
 <h3><span class="header-section-number">4.1.7</span> Equivalence Relations and Partitions<a href="exercises.html#equivalence-relations-and-partitions-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -526,7 +587,7 @@ b)
 <div id="modular-arthmetic" class="section level3 hasAnchor" number="4.1.9">
 <h3><span class="header-section-number">4.1.9</span> Modular Arthmetic<a href="exercises.html#modular-arthmetic" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-107" class="exercise"><strong>Exercise 4.20  </strong></span>What are the possible values of <span class="math inline">\(a^2\)</span> modulo 4? modulo 8?</p>
+<p><span id="exr:unnamed-chunk-139" class="exercise"><strong>Exercise 4.33  </strong></span>What are the possible values of <span class="math inline">\(a^2\)</span> modulo 4? modulo 8?</p>
 </div>
 <p><strong>solution</strong>:</p>
 <ul>
@@ -552,7 +613,7 @@ The possible values of <span class="math inline">\(a^2\pmod{4}\)</span> are 0 an
 The possible values of <span class="math inline">\(a^2\pmod{8}\)</span> are 0,1 and 4.</p></li>
 </ul>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-108" class="exercise"><strong>Exercise 4.21  </strong></span>Prove that every integer <span class="math inline">\(a\)</span> is congruent to the sum of its decimal digits modulo 9.</p>
+<p><span id="exr:unnamed-chunk-140" class="exercise"><strong>Exercise 4.34  </strong></span>Prove that every integer <span class="math inline">\(a\)</span> is congruent to the sum of its decimal digits modulo 9.</p>
 </div>
 <div class="proof">
 <p><span id="unlabeled-div-27" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(x\in \mathbb{Z}\)</span>. Now we can represent <span class="math inline">\(x\)</span> as follows</p>
@@ -582,26 +643,26 @@ Thus <span class="math inline">\(9\vert (10^{n+1}-1)\)</span>.<br />
 Therefore,by mathematical induction, <span class="math inline">\(9|(10^n-1)\)</span> for any <span class="math inline">\(n\in \mathbb{N}\)</span>.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-111" class="exercise"><strong>Exercise 4.22  </strong></span>Solve the congruence <span class="math inline">\(2x \equiv 5\)</span> modulo 9 and modulo 6.</p>
+<p><span id="exr:unnamed-chunk-143" class="exercise"><strong>Exercise 4.35  </strong></span>Solve the congruence <span class="math inline">\(2x \equiv 5\)</span> modulo 9 and modulo 6.</p>
 </div>
 <p>Done Later add.</p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-112" class="exercise"><strong>Exercise 4.23  </strong></span>Determine the integers <span class="math inline">\(n\)</span> for which the pair of congruences <span class="math inline">\(2x - y \equiv 1\)</span> and <span class="math inline">\(4x + 3y \equiv 2\)</span> modulo <span class="math inline">\(n\)</span> has a solution.</p>
+<p><span id="exr:unnamed-chunk-144" class="exercise"><strong>Exercise 4.36  </strong></span>Determine the integers <span class="math inline">\(n\)</span> for which the pair of congruences <span class="math inline">\(2x - y \equiv 1\)</span> and <span class="math inline">\(4x + 3y \equiv 2\)</span> modulo <span class="math inline">\(n\)</span> has a solution.</p>
 </div>
 <p>Done Later add.</p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-113" class="exercise"><strong>Exercise 4.24  </strong></span>Prove the Chinese Remainder Theorem: Let <span class="math inline">\(a, b, u, v\)</span> be integers, and assume that the greatest common divisor of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is 1. Then there is an integer <span class="math inline">\(x\)</span> such that <span class="math inline">\(x \equiv u\)</span> modulo <span class="math inline">\(a\)</span> and <span class="math inline">\(X \equiv v\)</span> modulo <span class="math inline">\(b\)</span>.<br />
+<p><span id="exr:unnamed-chunk-145" class="exercise"><strong>Exercise 4.37  </strong></span>Prove the Chinese Remainder Theorem: Let <span class="math inline">\(a, b, u, v\)</span> be integers, and assume that the greatest common divisor of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is 1. Then there is an integer <span class="math inline">\(x\)</span> such that <span class="math inline">\(x \equiv u\)</span> modulo <span class="math inline">\(a\)</span> and <span class="math inline">\(X \equiv v\)</span> modulo <span class="math inline">\(b\)</span>.<br />
 Hint: Do the case <span class="math inline">\(u = 0\)</span> and <span class="math inline">\(v = 1\)</span> first.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-114" class="exercise"><strong>Exercise 4.25  </strong></span>Determine the order of each of the matrices A and B when the matrix entries are interpreted modulo 3.</p>
+<p><span id="exr:unnamed-chunk-146" class="exercise"><strong>Exercise 4.38  </strong></span>Determine the order of each of the matrices A and B when the matrix entries are interpreted modulo 3.</p>
 </div>
 <!------------------------------------------>
 </div>
 <div id="product-group" class="section level3 hasAnchor" number="4.1.10">
 <h3><span class="header-section-number">4.1.10</span> Product Group<a href="exercises.html#product-group" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-115" class="exercise"><strong>Exercise 4.26  </strong></span>Let <span class="math inline">\(x\)</span> be an element of order <span class="math inline">\(r\)</span> of a group <span class="math inline">\(G\)</span>, and let <span class="math inline">\(y\)</span> be an element of <span class="math inline">\(G&#39;\)</span> of order <span class="math inline">\(s\)</span>. What is the order of <span class="math inline">\((x, y)\)</span> in the product group <span class="math inline">\(G \times G&#39;\)</span>?</p>
+<p><span id="exr:unnamed-chunk-147" class="exercise"><strong>Exercise 4.39  </strong></span>Let <span class="math inline">\(x\)</span> be an element of order <span class="math inline">\(r\)</span> of a group <span class="math inline">\(G\)</span>, and let <span class="math inline">\(y\)</span> be an element of <span class="math inline">\(G&#39;\)</span> of order <span class="math inline">\(s\)</span>. What is the order of <span class="math inline">\((x, y)\)</span> in the product group <span class="math inline">\(G \times G&#39;\)</span>?</p>
 </div>
 <p><strong>Solution</strong>: The order of <span class="math inline">\((x, y)\)</span> in the product group <span class="math inline">\(G \times G&#39;\)</span> is <span class="math inline">\(lcm(r,s)\)</span><br />
 Let <span class="math inline">\(n\in \mathbb{Z}^+\)</span> such that <span class="math display">\[(x,y)^n=(x^n,y^n)=(1_G,1_{G&#39;}).\]</span>
@@ -609,7 +670,7 @@ This implies, <span class="math inline">\(x^n=1_G\)</span> and <span class="math
 <span class="math display">\[r|n~~~\text{ and }~~~s|n\]</span>
 So, we know that the least positive integer such that above property holds is <span class="math inline">\(lcm(r,s)\)</span>. Hence,The order of <span class="math inline">\((x, y)\)</span> in the product group <span class="math inline">\(G \times G&#39;\)</span> is <span class="math inline">\(lcm(r,s)\)</span>.</p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-116" class="exercise"><strong>Exercise 4.27  </strong></span>What does Proposition <a href="group-theory.html#prp:prp2114">2.8</a> tell us when, with the usual notation for the symmetric
+<p><span id="exr:unnamed-chunk-148" class="exercise"><strong>Exercise 4.40  </strong></span>What does Proposition <a href="group-theory.html#prp:prp2114">2.8</a> tell us when, with the usual notation for the symmetric
 group <span class="math inline">\(S_3,K\)</span> and <span class="math inline">\(H\)</span> are the subgroups <span class="math inline">\(&lt;y&gt;\)</span> and <span class="math inline">\(&lt;x&gt;\)</span>?</p>
 </div>
 <p>Recall: <span class="math inline">\(y^2=1\)</span> and <span class="math inline">\(x^3=1\)</span>. Then
@@ -627,7 +688,7 @@ f(x,y)\cdot f(x,1)&amp;=&amp; (x\cdot y)\cdot (x\cdot 1)=(xy)\cdot x=y
 \end{eqnarray}\]</span>
 Thus, <span class="math inline">\(f\)</span> is not a homomorphism.</p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-117" class="exercise"><strong>Exercise 4.28  </strong></span>Prove that the product of two infinite cyclic groups is not infinite cyclic.</p>
+<p><span id="exr:unnamed-chunk-149" class="exercise"><strong>Exercise 4.41  </strong></span>Prove that the product of two infinite cyclic groups is not infinite cyclic.</p>
 </div>
 <div class="proof">
 <p><span id="unlabeled-div-29" class="proof"><em>Proof</em>. </span></p>
@@ -656,7 +717,7 @@ Thus, <span class="math inline">\(f\)</span> is surjective.</li>
 <p>We can consider <span class="math inline">\(\mathbb{Z}\times \mathbb{Z}\)</span>. Suppose that <span class="math inline">\((a, b)\)</span> generate the product group. But then, we see that <span class="math inline">\((2a, b)\)</span> cannot be obtained from adding <span class="math inline">\((a, b)\)</span> to itself, which implies that <span class="math inline">\(\mathbb{Z}\times \mathbb{Z}\)</span> is not infinite cyclic.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-119" class="exercise"><strong>Exercise 4.29  </strong></span>In each of the following cases, determine whether or not <span class="math inline">\(G\)</span> is isomorphic to the product group <span class="math inline">\(H \times K\)</span>.</p>
+<p><span id="exr:unnamed-chunk-151" class="exercise"><strong>Exercise 4.42  </strong></span>In each of the following cases, determine whether or not <span class="math inline">\(G\)</span> is isomorphic to the product group <span class="math inline">\(H \times K\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(G = \mathbb{R}^\times\)</span>, <span class="math inline">\(H = \{\pm 1\}\)</span>, <span class="math inline">\(K = \{\)</span>positive real numbers<span class="math inline">\(\}\)</span>.</p></li>
 <li><p><span class="math inline">\(G = \{\)</span>invertible upper triangular <span class="math inline">\(2 \times 2\)</span> matrices<span class="math inline">\(\}\)</span>, <span class="math inline">\(H = \{\)</span>invertible diagonal matrices<span class="math inline">\(\}\)</span>, <span class="math inline">\(K = \{\)</span>upper triangular matrices with diagonal entries <span class="math inline">\(1\}\)</span>.</p></li>
@@ -791,22 +852,22 @@ Thus, <span class="math inline">\(HK=G\)</span>.</p></li>
 <span class="math display">\[a + bi = \left(\frac{a}{\sqrt{a^2+b^2}} + \frac{b}{\sqrt{a^2+b^2}}i\right)\sqrt{a^2+b^2} \in HK\]</span>
 So, <span class="math inline">\(HK = G\)</span>. So, by proposition <a href="group-theory.html#prp:prp2114">2.8</a> <span class="math inline">\(G \cong H \times K\)</span>.</p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-120" class="exercise"><strong>Exercise 4.30  </strong></span>Let <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span> be groups, and let <span class="math inline">\(Z_i\)</span> be the center of <span class="math inline">\(G_i\)</span>. Prove that the center of the product group <span class="math inline">\(G_1 \times G_2\)</span> is <span class="math inline">\(Z_1 \times Z_2\)</span>.</p>
+<p><span id="exr:unnamed-chunk-152" class="exercise"><strong>Exercise 4.43  </strong></span>Let <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span> be groups, and let <span class="math inline">\(Z_i\)</span> be the center of <span class="math inline">\(G_i\)</span>. Prove that the center of the product group <span class="math inline">\(G_1 \times G_2\)</span> is <span class="math inline">\(Z_1 \times Z_2\)</span>.</p>
 </div>
 <p><img src="figures/ch_2/fig04.jpg" /><!-- --></p>
 <p><img src="figures/ch_2/fig05.jpg" /><!-- --></p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-121" class="exercise"><strong>Exercise 4.31  </strong></span>Let <span class="math inline">\(G\)</span> be a group that contains normal subgroups of orders <span class="math inline">\(3\)</span> and <span class="math inline">\(5\)</span>, respectively. Prove that <span class="math inline">\(G\)</span> contains an element of order <span class="math inline">\(15\)</span>.</p>
+<p><span id="exr:unnamed-chunk-153" class="exercise"><strong>Exercise 4.44  </strong></span>Let <span class="math inline">\(G\)</span> be a group that contains normal subgroups of orders <span class="math inline">\(3\)</span> and <span class="math inline">\(5\)</span>, respectively. Prove that <span class="math inline">\(G\)</span> contains an element of order <span class="math inline">\(15\)</span>.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-122" class="exercise"><strong>Exercise 4.32  </strong></span>Let <span class="math inline">\(H\)</span> be a subgroup of a group <span class="math inline">\(G\)</span>, let <span class="math inline">\(\phi:G \to H\)</span> be a homomorphism whose restriction to <span class="math inline">\(H\)</span> is the identity map, and let <span class="math inline">\(N\)</span> be its kernel. What can one say about the product map <span class="math inline">\(H \times N \to G\)</span>?</p>
+<p><span id="exr:unnamed-chunk-154" class="exercise"><strong>Exercise 4.45  </strong></span>Let <span class="math inline">\(H\)</span> be a subgroup of a group <span class="math inline">\(G\)</span>, let <span class="math inline">\(\phi:G \to H\)</span> be a homomorphism whose restriction to <span class="math inline">\(H\)</span> is the identity map, and let <span class="math inline">\(N\)</span> be its kernel. What can one say about the product map <span class="math inline">\(H \times N \to G\)</span>?</p>
 </div>
 <p><img src="figures/ch_2/fig06.png" /><!-- -->
 <img src="figures/ch_2/fig07.jpg" /><!-- -->
 <img src="figures/ch_2/fig09.png" /><!-- -->
 <img src="figures/ch_2/fig08.jpg" /><!-- --></p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-123" class="exercise"><strong>Exercise 4.33  </strong></span>Let <span class="math inline">\(G\)</span>, <span class="math inline">\(G&#39;\)</span>, and <span class="math inline">\(H\)</span> be groups. Establish a bijective correspondence between homomorphisms <span class="math inline">\(\phi : H \to G \times G&#39;\)</span> from <span class="math inline">\(H\)</span> to the product group and pairs <span class="math inline">\((\varphi, \varphi&#39;)\)</span> consisting of a homomorphism <span class="math inline">\(\varphi:H \to G\)</span> and a homomorphism <span class="math inline">\(\varphi&#39;:H \to G&#39;\)</span>.</p>
+<p><span id="exr:unnamed-chunk-155" class="exercise"><strong>Exercise 4.46  </strong></span>Let <span class="math inline">\(G\)</span>, <span class="math inline">\(G&#39;\)</span>, and <span class="math inline">\(H\)</span> be groups. Establish a bijective correspondence between homomorphisms <span class="math inline">\(\phi : H \to G \times G&#39;\)</span> from <span class="math inline">\(H\)</span> to the product group and pairs <span class="math inline">\((\varphi, \varphi&#39;)\)</span> consisting of a homomorphism <span class="math inline">\(\varphi:H \to G\)</span> and a homomorphism <span class="math inline">\(\varphi&#39;:H \to G&#39;\)</span>.</p>
 </div>
 <p><img src="figures/ch_2/fig10.png" /><!-- --></p>
 <p><img src="figures/ch_2/fig11.jpg" /><!-- -->
@@ -816,7 +877,7 @@ So, <span class="math inline">\(HK = G\)</span>. So, by proposition <a href="gro
 <img src="figures/ch_2/fig15.jpg" /><!-- -->
 <img src="figures/ch_2/fig16.jpg" /><!-- --></p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-124" class="exercise"><strong>Exercise 4.34  </strong></span>Let <span class="math inline">\(H\)</span> and <span class="math inline">\(K\)</span> be subgroups of a group <span class="math inline">\(G\)</span>. Prove that the product set <span class="math inline">\(HK\)</span> is a subgroup of <span class="math inline">\(G\)</span> if and only if <span class="math inline">\(HK = KH\)</span>.</p>
+<p><span id="exr:unnamed-chunk-156" class="exercise"><strong>Exercise 4.47  </strong></span>Let <span class="math inline">\(H\)</span> and <span class="math inline">\(K\)</span> be subgroups of a group <span class="math inline">\(G\)</span>. Prove that the product set <span class="math inline">\(HK\)</span> is a subgroup of <span class="math inline">\(G\)</span> if and only if <span class="math inline">\(HK = KH\)</span>.</p>
 </div>
 <p><strong>Solution</strong> :</p>
 <div class="proof">
@@ -860,7 +921,7 @@ Thus, <span class="math inline">\(HK\leq G\)</span>.</p>
 <div id="quotient-groups-1" class="section level3 hasAnchor" number="4.1.11">
 <h3><span class="header-section-number">4.1.11</span> Quotient Groups<a href="exercises.html#quotient-groups-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-126" class="exercise"><strong>Exercise 4.35  </strong></span>Show that if a subgroup <span class="math inline">\(H\)</span> of a group <span class="math inline">\(G\)</span> is not normal, there are left cosets <span class="math inline">\(aH\)</span> and <span class="math inline">\(bH\)</span>
+<p><span id="exr:unnamed-chunk-158" class="exercise"><strong>Exercise 4.48  </strong></span>Show that if a subgroup <span class="math inline">\(H\)</span> of a group <span class="math inline">\(G\)</span> is not normal, there are left cosets <span class="math inline">\(aH\)</span> and <span class="math inline">\(bH\)</span>
 whose product is not a coset.</p>
 </div>
 <div class="proof">
@@ -880,7 +941,7 @@ b^{-1}h_1b &amp;=&amp; h_3h_2^{-1}\in H\\
 Thus, <span class="math inline">\(b^{-1}h_1b\in H\)</span>. and since <span class="math inline">\(b\in G\)</span> and <span class="math inline">\(h_1\in H\)</span> is arbitary, <span class="math inline">\(H\)</span> is normal subgroup, which contradict the our hypothesis. Thus, there exist left cosets <span class="math inline">\(aH\)</span> and <span class="math inline">\(bH\)</span> whose product is not a coset.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-128" class="exercise"><strong>Exercise 4.36  </strong></span>In the general linear group <span class="math inline">\(GL_3(\mathbb{R})\)</span>, consider the subsets:</p>
+<p><span id="exr:unnamed-chunk-160" class="exercise"><strong>Exercise 4.49  </strong></span>In the general linear group <span class="math inline">\(GL_3(\mathbb{R})\)</span>, consider the subsets:</p>
 <p><span class="math display">\[ H = \left\{ \begin{pmatrix} 1 &amp; * &amp; * \\ 0 &amp; 1 &amp; * \\ 0 &amp; 0 &amp; 1 \end{pmatrix} \mid * \text{ represents an arbitrary real number} \right\} \]</span></p>
 <p>and</p>
 <p><span class="math display">\[ K = \left\{ \begin{pmatrix} 1 &amp; 0 &amp; * \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{pmatrix} \mid * \text{ represents an arbitrary real number} \right\} \]</span></p>
@@ -958,7 +1019,7 @@ By comparing <span class="math inline">\(1 \times 3\)</span> index, we need to f
 <span class="math display">\[Z(H)=\left\{\begin{bmatrix} 1 &amp; 0 &amp; b \\0 &amp; 1 &amp; 0\\ 0 &amp; 0  &amp; 1\end{bmatrix}\Biggr | b\in \mathbb{R}\right\}\]</span></li>
 </ul>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-129" class="exercise"><strong>Exercise 4.37  </strong></span>Let <span class="math inline">\(P\)</span> be a partition of a group <span class="math inline">\(G\)</span> with the property that for any pair of elements <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> of the partition, the product set <span class="math inline">\(AB\)</span> is contained entirely within another element <span class="math inline">\(C\)</span> of the partition. Let <span class="math inline">\(N\)</span> be the element of <span class="math inline">\(P\)</span> that contains 1. Prove that <span class="math inline">\(N\)</span> is a normal subgroup of <span class="math inline">\(G\)</span> and that <span class="math inline">\(P\)</span> is the set of its cosets.</p>
+<p><span id="exr:unnamed-chunk-161" class="exercise"><strong>Exercise 4.50  </strong></span>Let <span class="math inline">\(P\)</span> be a partition of a group <span class="math inline">\(G\)</span> with the property that for any pair of elements <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> of the partition, the product set <span class="math inline">\(AB\)</span> is contained entirely within another element <span class="math inline">\(C\)</span> of the partition. Let <span class="math inline">\(N\)</span> be the element of <span class="math inline">\(P\)</span> that contains 1. Prove that <span class="math inline">\(N\)</span> is a normal subgroup of <span class="math inline">\(G\)</span> and that <span class="math inline">\(P\)</span> is the set of its cosets.</p>
 </div>
 <div class="proof">
 <p><span id="unlabeled-div-32" class="proof"><em>Proof</em>. </span></p>
@@ -1017,14 +1078,14 @@ Thus, <span class="math inline">\(ax \in A\)</span>, as required. Thus <span cla
 <p>Hence, we can conclude that <span class="math inline">\(A =aN\)</span>.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-131" class="exercise"><strong>Exercise 4.38  </strong></span>Let <span class="math inline">\(H = \{\pm1, \pm i\}\)</span> be the subgroup of <span class="math inline">\(G = C^{\times}\)</span> of fourth roots of unity. Describe the cosets of <span class="math inline">\(H\)</span> in <span class="math inline">\(G\)</span> explicitly. Is <span class="math inline">\(G / H\)</span> isomorphic to <span class="math inline">\(G\)</span>?</p>
+<p><span id="exr:unnamed-chunk-163" class="exercise"><strong>Exercise 4.51  </strong></span>Let <span class="math inline">\(H = \{\pm1, \pm i\}\)</span> be the subgroup of <span class="math inline">\(G = C^{\times}\)</span> of fourth roots of unity. Describe the cosets of <span class="math inline">\(H\)</span> in <span class="math inline">\(G\)</span> explicitly. Is <span class="math inline">\(G / H\)</span> isomorphic to <span class="math inline">\(G\)</span>?</p>
 </div>
 <p><img src="figures/ch_2/fig36.png" /><!-- --></p>
 <p><img src="figures/ch_2/fig37.png" /><!-- --></p>
 <p><img src="figures/ch_2/fig38.png" /><!-- --></p>
 <p><img src="figures/ch_2/fig39.png" /><!-- --></p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-132" class="exercise"><strong>Exercise 4.39  </strong></span>Let <span class="math inline">\(G\)</span> be the group of upper triangular real matrices <span class="math inline">\(\begin{bmatrix} a &amp; b \\ 0 &amp; d \end{bmatrix}\)</span> with <span class="math inline">\(a\)</span> and <span class="math inline">\(d\)</span> different from zero. For each of the following subsets, determine whether or not <span class="math inline">\(S\)</span> is a subgroup, and whether or not <span class="math inline">\(S\)</span> is a normal subgroup. If <span class="math inline">\(S\)</span> is a normal subgroup, identify the quotient group <span class="math inline">\(G /S\)</span>.</p>
+<p><span id="exr:unnamed-chunk-164" class="exercise"><strong>Exercise 4.52  </strong></span>Let <span class="math inline">\(G\)</span> be the group of upper triangular real matrices <span class="math inline">\(\begin{bmatrix} a &amp; b \\ 0 &amp; d \end{bmatrix}\)</span> with <span class="math inline">\(a\)</span> and <span class="math inline">\(d\)</span> different from zero. For each of the following subsets, determine whether or not <span class="math inline">\(S\)</span> is a subgroup, and whether or not <span class="math inline">\(S\)</span> is a normal subgroup. If <span class="math inline">\(S\)</span> is a normal subgroup, identify the quotient group <span class="math inline">\(G /S\)</span>.</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(S\)</span> is the subset defined by <span class="math inline">\(b = 0\)</span>.</li>
 <li><span class="math inline">\(S\)</span> is the subset defined by <span class="math inline">\(d = 1\)</span>.</li>
@@ -1042,12 +1103,12 @@ Thus, <span class="math inline">\(ax \in A\)</span>, as required. Thus <span cla
 <div id="miscellaneous-problems" class="section level3 hasAnchor" number="4.1.12">
 <h3><span class="header-section-number">4.1.12</span> Miscellaneous Problems<a href="exercises.html#miscellaneous-problems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-133" class="exercise"><strong>Exercise 4.40  (M1) </strong></span>Describe the column vectors <span class="math inline">\((a, c)^T\)</span> that occur as the first column of an integer matrix <span class="math inline">\(A\)</span> whose inverse is also an integer matrix.</p>
+<p><span id="exr:unnamed-chunk-165" class="exercise"><strong>Exercise 4.53  (M1) </strong></span>Describe the column vectors <span class="math inline">\((a, c)^T\)</span> that occur as the first column of an integer matrix <span class="math inline">\(A\)</span> whose inverse is also an integer matrix.</p>
 </div>
 <p><img src="figures/ch_2/fig47.png" /><!-- --></p>
 <p><img src="figures/ch_2/fig48.png" /><!-- --></p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-134" class="exercise"><strong>Exercise 4.41  (M.2) </strong></span></p>
+<p><span id="exr:unnamed-chunk-166" class="exercise"><strong>Exercise 4.54  (M.2) </strong></span></p>
 <ol style="list-style-type: lower-alpha">
 <li>Prove that every group of even order contains an element of order <span class="math inline">\(2\)</span>.</li>
 <li>Prove that every group of order <span class="math inline">\(21\)</span> contains an element of order <span class="math inline">\(3\)</span>.</li>
@@ -1066,6 +1127,45 @@ y^{-1} =y &amp;\iff &amp; x\cdot y=e\\
 <p>Thus, every group of even order contains an element of order <span class="math inline">\(2\)</span>.</p>
 </div>
 <p><strong>Claim b</strong>: Let <span class="math inline">\(G\)</span> be a group whose identity is <span class="math inline">\(e\)</span>.Let <span class="math inline">\(G\)</span> be of order <span class="math inline">\(21\)</span>.(|G=21|) Then,<span class="math inline">\(\exists x \in G: |x| = 3\)</span></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-168" class="exercise"><strong>Exercise 4.55  (Artin 2.M.9) </strong></span>(Double Cosets) Let <span class="math inline">\(H\)</span> and <span class="math inline">\(K\)</span> be subgroups of a group <span class="math inline">\(G\)</span>, and let <span class="math inline">\(g\)</span> be an element of <span class="math inline">\(G\)</span>. \
+The set <span class="math inline">\(HgK = \{x \in G | x = hgk\)</span> for some <span class="math inline">\(h \in H, k \in K\}\)</span> is called a double coset. \
+Do the double cosets partition <span class="math inline">\(G\)</span>?</p>
+</div>
+<p>They partition G. The proof is similar to the proof that left cosets of one subgroup partition G.</p>
+<p>On G, define the relation <span class="math inline">\(\sim\)</span> as
+<span class="math display">\[ a \sim b \text{ iff } b = hak; \text{ for some } h \in H, k \in K\]</span>
+Let’s prove that this is an equivalence relation.
+Let <span class="math inline">\(a,b,c\in G\)</span>.
+- Reflexive?:
+Let <span class="math inline">\(g \in G\)</span>. Then we can write
+<span class="math display">\[ g = 1g1\]</span>
+Moreover, <span class="math inline">\(1 \in H\)</span> and <span class="math inline">\(1 \in K\)</span>, so <span class="math inline">\(g \sim g\)</span>.
+Therefore, for every <span class="math inline">\(g \in G\)</span> we have that <span class="math inline">\(g \sim g\)</span>. so <span class="math inline">\(\sim\)</span> is reflexive.</p>
+<ul>
+<li><p>Symmetric?:
+Suppose that <span class="math inline">\(a \sim b.\)</span> Then <span class="math inline">\(b = hak,\)</span> for some <span class="math inline">\(h \in H, k \in K.\)</span> Multiplying by<span class="math inline">\(h^{-1}\)</span> from the left and<span class="math inline">\(k^{-1}\)</span> from the right we get
+<span class="math display">\[ a = h^{-1}ak^{-1}\]</span>
+Since<span class="math inline">\(H\)</span> is a subgroup of<span class="math inline">\(G,h^{-1} \in H.\)</span> Similarly,<span class="math inline">\(k^{-1} \in K.\)</span> Thus,<span class="math inline">\(b \sim a.\)</span>
+So, for every<span class="math inline">\(a,b \in G\)</span> such that <span class="math inline">\(a \sim b\implies b \sim a,\)</span>. Thus, <span class="math inline">\(\sim\)</span> is symmetric.</p></li>
+<li><p>Transitive?:
+Suppose that <span class="math inline">\(a \sim b\)</span> and <span class="math inline">\(b \sim c\)</span>.Then<span class="math inline">\(b = hak\)</span>for some<span class="math inline">\(h \in H,k \in K\)</span>,and <span class="math inline">\(c=h&#39;b&#39;k&#39;\)</span> for some <span class="math inline">\(h&#39; \in H,k&#39; \in K\)</span>.Therefore,
+<span class="math display">\[c=h&#39;hbk&#39;=hhakkk&#39;= (hh&#39;)a(kk&#39;)\]</span>
+Thus, <span class="math inline">\(a\sim b\)</span> and <span class="math inline">\(b\sim c\)</span> then <span class="math inline">\(a\sim c\)</span>. Therefore <span class="math inline">\(\sim\)</span> is transitive.</p></li>
+</ul>
+<p>By Artin’s book Proposition 2.7.4, double cosets partition G?</p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-169" class="exercise"><strong>Exercise 4.56  (Artin 2.M.10) </strong></span>Let <span class="math inline">\(H\)</span> be a subgroup of a group <span class="math inline">\(G\)</span>. Show that the double cosets (see Exercise M.9))
+<span class="math display">\[HgH = \{h_1gh_2 | h_1, h_2 \in H\}\]</span>
+are the left cosets <span class="math inline">\(gH\)</span> if and only if <span class="math inline">\(H\)</span> is normal.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-34" class="proof"><em>Proof</em>. </span></p>
+<ul>
+<li><span class="math inline">\((\implies)\)</span>: Suppose that <span class="math inline">\(gH=HgH\)</span>. Let <span class="math inline">\(g\in G\)</span> and <span class="math inline">\(h\in H\)</span>.
+<span class="math inline">\(ghg^{-1}\in H?\)</span>.</li>
+</ul>
+</div>
 </div>
 <div id="problem-3" class="section level3 hasAnchor" number="4.1.13">
 <h3><span class="header-section-number">4.1.13</span> Problem<a href="exercises.html#problem-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
