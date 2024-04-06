@@ -549,6 +549,50 @@ Decide whether or not the two matrices \(A = \begin{bmatrix} 3 & 0 \\ 0 & 2 \end
   knitr::include_graphics('figures/ch_2/fig86.png') 
 ```
 
+```{exercise,name='Artin 2.6.7'}
+Let $H$ be a subgroup of $G$, and let $g$ be a fixed element of $G$. The conjugate subgroup $gHg^{-1}$ is defined to be the set of all conjugates $ghg^{-1}$, with $h$ in $H$. Prove that $gHg^{-1}$ is a subgroup of $G$.
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig87.png') 
+```
+
+```{exercise,name='Artin 2.6.8'}
+Prove that the map $A \mapsto (A^{t})^{-1}$ is an automorphism of $GL_{n}(\mathbb{R})$.
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig88.png') 
+```
+
+```{exercise,name='Artin 2.6.9'}
+Prove that a group $G$ and its opposite group $G^{o}$ (Exercise 2.2.6) are isomorphic.
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig89.png') 
+```
+
+```{exercise,name='Artin 2.6.10'}
+Find all automorphisms of 
+
+(a) a cyclic group of order 10, 
+(b) the symmetric group $S_{3}$.
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig90.png') 
+```
+
+```{exercise,name='Artin 2.6.11'}
+Let $a$ be an element of a group $G$. Prove that if the set $\{1, a\}$ is a normal subgroup of $G$, then $a$ is in the center of $G$.
+```
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig91.png') 
+```
+
+
+
 ### Equivalence Relations and Partitions
 
 ### Cosets
