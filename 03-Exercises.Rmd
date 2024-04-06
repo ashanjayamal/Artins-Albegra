@@ -1,6 +1,6 @@
 # Exercises
 
-##Chapter 1
+## Chapter 1
 
 ## Chapter 2
 
@@ -991,6 +991,13 @@ Therefore, $G$ is a normal subgroup.
 **Example**: Consider $S_3 = \{id, (12), (13), (23), (123), (132)\}$ 
 and $H = <(12)> = \{id, (12)\} \leq S_3$. Let's find the index using the counting formula
 
+
+
+\begin{align*}
+    |G| &= |H| \cdot [G:H] \\
+    6 &= 2 \cdot [G:H] \\
+    [G:H] &= 3
+\end{align*}
 
 
 
