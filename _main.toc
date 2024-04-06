@@ -26,11 +26,12 @@
 \contentsline {subsection}{\numberline {4.1.4}Cyclic group}{52}{subsection.4.1.4}%
 \contentsline {subsection}{\numberline {4.1.5}Homomorphisms}{75}{subsection.4.1.5}%
 \contentsline {subsection}{\numberline {4.1.6}Isomorphisms}{81}{subsection.4.1.6}%
-\contentsline {subsection}{\numberline {4.1.7}Equivalence Relations and Partitions}{92}{subsection.4.1.7}%
-\contentsline {subsection}{\numberline {4.1.8}Cosets}{92}{subsection.4.1.8}%
-\contentsline {subsection}{\numberline {4.1.9}Modular Arthmetic}{92}{subsection.4.1.9}%
-\contentsline {subsection}{\numberline {4.1.10}Product Group}{94}{subsection.4.1.10}%
-\contentsline {subsection}{\numberline {4.1.11}Quotient Groups}{109}{subsection.4.1.11}%
-\contentsline {subsection}{\numberline {4.1.12}Miscellaneous Problems}{124}{subsection.4.1.12}%
-\contentsline {subsection}{\numberline {4.1.13}Problem}{127}{subsection.4.1.13}%
-\contentsline {chapter}{\numberline {5}Vector spaces.}{129}{chapter.5}%
+\contentsline {subsection}{\numberline {4.1.7}Equivalence Relations and Partitions}{94}{subsection.4.1.7}%
+\contentsline {subsection}{\numberline {4.1.8}Cosets}{103}{subsection.4.1.8}%
+\contentsline {subsection}{\numberline {4.1.9}Modular Arthmetic}{109}{subsection.4.1.9}%
+\contentsline {subsection}{\numberline {4.1.10}The Correspondence Theorem}{113}{subsection.4.1.10}%
+\contentsline {subsection}{\numberline {4.1.11}Product Group}{114}{subsection.4.1.11}%
+\contentsline {subsection}{\numberline {4.1.12}Quotient Groups}{129}{subsection.4.1.12}%
+\contentsline {subsection}{\numberline {4.1.13}Miscellaneous Problems}{144}{subsection.4.1.13}%
+\contentsline {subsection}{\numberline {4.1.14}Problem}{147}{subsection.4.1.14}%
+\contentsline {chapter}{\numberline {5}Vector spaces.}{149}{chapter.5}%

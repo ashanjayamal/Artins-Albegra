@@ -1,5 +1,7 @@
 # Exercises
 
+##Chapter 1
+
 ## Chapter 2
 
 ### Laws of composition
@@ -509,9 +511,11 @@ Describe all homomorphisms \(\phi : (\mathbb{Z},+) \rightarrow (\mathbb{Z},+)\).
 ```{r echo=FALSE}
   knitr::include_graphics('figures/ch_2/fig79.png') 
 ```
+
 ```{r echo=FALSE}
   knitr::include_graphics('figures/ch_2/fig80.png') 
 ```
+
 ```{r echo=FALSE}
   knitr::include_graphics('figures/ch_2/fig81.png') 
 ```
@@ -519,6 +523,55 @@ Describe all homomorphisms \(\phi : (\mathbb{Z},+) \rightarrow (\mathbb{Z},+)\).
 ```{exercise,name='Artin 2.6.3'}
  Show that the functions \(f = \frac{1}{x}\), \(g = \frac{x - 1}{x}\) generate a group of functions, the law of composition being composition of functions, that is isomorphic to the symmetric group \(S_3\).
 ```
+
+There are 6 elemenst in the $S_3$. 
+Let G be the group that define in the question.
+First find the all 6 elements group.
+Let's do some rough works. 
+\begin{eqnarray*}
+    f(x)&=\frac{1}{x}\\\\
+    g(x)&=&\frac{x - 1}{x}\\\\
+    f\circ f(x)&=& \frac{1}{1/x}=x\\\\
+    g\circ g (x) &=& \frac{((x-1)/x)-1}{(x-1)/x}=\frac{1}{x-1}\\\\
+    f\circ g (x) &=& \frac{x}{x-1}\\\\
+    g\circ f (x) &=& \frac{(1/x)-1}{(1/x)}=1-x
+\end{eqnarray*}
+Now let's define 
+\[f_1=\frac{1}{x},~~f_2=\frac{x - 1}{x},~~ f_3=x,~~ f_4=\frac{1}{x-1},
+~~ f_5=\frac{x}{x-1}, ~~ , f_6=1-x\].
+Now let's construct multiplication table.
+
+| $\circ$ | $f_1$ | $f_2$ | $f_3$ | $f_4$ | $f_5$ | $f_6$ |
+|---------|-------|-------|-------|-------|-------|-------|
+| $f_1$   | $f_3$ | $f_5$ | $f_1$ | $f_6$ | $f_2$ | $f_4$ |
+| $f_2$   | $f_6$ | $f_4$ | $f_2$ | $f_3$ | $f_1$ | $f_5$ |
+| $f_3$   | $f_1$ | $f_3$ | $f_3$ | $f_4$ | $f_5$ | $f_6$ |
+| $f_4$   | $f_5$ | $f_3$ | $f_4$ | $f_2$ | $f_6$ | $f_1$ |
+| $f_5$   | $f_4$ | $f_6$ | $f_5$ | $f_1$ | $f_3$ | $f_2$ |
+| $f_6$   | $f_2$ | $f_1$ | $f_6$ | $f_5$ | $f_4$ | $f_3$ |
+
+This table proves the closure property. 
+According to the table $f_3$ is the identity. Further,
+\begin{eqnarray*}
+    \left(f_1\right)^{-1}&=&f_1\\
+    \left(f_2\right)^{-1}&=&f_4\\
+    \left(f_3\right)^{-1}&=&f_3\\
+    \left(f_4\right)^{-1}&=&f_2\\
+    \left(f_5\right)^{-1}&=&f_5\\
+    \left(f_6\right)^{-1}&=&f_6\\
+\end{eqnarray*}
+The associativity property holds for the composition of rational functions are associative.
+To see the isomorphism let's rearrange rows and columns in this table.
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig101.png') 
+```
+  
+By looking at the table we can tell that $G\cong S_3$.
+$G$ is isomorphic to $S_3$.
+
+Let $\phi:G\to S_3$ ide defined by $\phi(f)=(23)$ and $\phi(g)=(132)$
+
 
 ```{exercise,name='Artin 2.6.4'}
 Prove that in a group, the products \(ab\) and \(ba\) are conjugate elements.
@@ -587,6 +640,7 @@ Find all automorphisms of
 ```{exercise,name='Artin 2.6.11'}
 Let $a$ be an element of a group $G$. Prove that if the set $\{1, a\}$ is a normal subgroup of $G$, then $a$ is in the center of $G$.
 ```
+
 ```{r echo=FALSE}
   knitr::include_graphics('figures/ch_2/fig91.png') 
 ```
@@ -595,11 +649,410 @@ Let $a$ be an element of a group $G$. Prove that if the set $\{1, a\}$ is a norm
 
 ### Equivalence Relations and Partitions
 
+```{exercise,name='Artin 2.7.1'}
+Let $G$ be a group. Prove that the relation $a \sim b$ if $b = gag^{-1}$ for some $g$ in $G$ is an equivalence relation on $G$.
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig92.png') 
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig93.png') 
+```
+
+```{exercise,name='Artin 2.7.2'}
+An equivalence relation on $S$ is determined by the subset $R$ of the set $S \times S$ consisting of those pairs $(a, b)$ such that $a \sim b$. Write the axioms for an equivalence relation in terms of the subset $R$.
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig94.png') 
+```
+
+```{exercise,name='Artin 2.7.3'}
+With the notation of Exercise 2.7.2, is the intersection $R \cap R'$ of two equivalence relations $R$ and $R'$ an equivalence relation? Is the union?
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig95.png') 
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig96.png') 
+```
+
+```{exercise,name='Artin 2.7.4'}
+A relation $R$ on the set of real numbers can be thought of as a subset of the $(x, y)$-plane. With the notation of Exercise 7.2, explain the geometric meaning of the reflexive and symmetric properties.
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig97.png') 
+```
+
+```{exercise,name='Artin 2.7.5'}
+With the notation of Exercise 7.2, each of the following subsets $R$ of the $(x, y)$-plane defines a relation on the set $\mathbb{R}$ of real numbers. Determine which of the axioms (2.7.3) are satisfied: 
+  
+(a) the set $\{(s, s) | s \in \mathbb{R}\}$, 
+(b) the empty set, 
+(c) the locus $\{xy + 1 = 0\}$,
+(d) the locus $\{x^2y - xy^2 - x + y = 0\}$.
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig100.png') 
+``` 
+
+```{exercise,name='Artin 2.7.5'}
+How many different equivalence relations can be defined on a set of five elements?
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig98.png') 
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig99.png') 
+```
+
+
+
 ### Cosets
+
+```{exercise,name='Artin 2.8.1'}
+Let $H$ be the cyclic subgroup of the alternating group $A_4$ generated by the permutation $(123)$. Exhibit the left and the right cosets of $H$ explicitly.
+```
+
+First let's see the elements in the $A_4$. 
+There are $\frac{4!}{2}=\frac{1\times 2\times 3\times 4}{2}=\frac{24}{2}=12$ elements in the $A_4$.
+$$    A_4 = \{id, (12)(34), (13)(24), (14)(23), (123), (132), (124), (142), (134), (143), (234), (243) \}$$
+let $H=<(1 2 3)>=\{id, (1 2 3), (1 3 2) \}$
+Let's find the left cosets, we apply the elements of $A_4$ to $H$,
+
+- $id ~H = \{ id \cdot id, id \cdot (123), id \cdot (132)\} = \{ id, (123), (132) \}=H$
+- $(12)(34)H = \{ (12)(34) \cdot id, (12)(34) \cdot (123), (12)(34) \cdot (132)\}=\{(12)(34),(2 4 3),(1 4 3)\}$
+- $(13)(24)H = \{ (13)(24) \cdot id, (13)(24) \cdot (123), (13)(24) \cdot (132)\}= \{(13)(24),(142),(234)\}$
+- $(14)(23)H = \{ (14)(23) \cdot id, (14)(23) \cdot (123), (14)(23) \cdot (132)\}=\{(14)(23),(134),(1 2 4)\}$
+- $(123)H = \{ (123) \cdot id, (123) \cdot (123), (123) \cdot (132)\} =\{(123),(132),id\}=H$
+- $(132)H = \{ (132) \cdot id, (132) \cdot (123), (132) \cdot (132)\} =\{(132),id,(123)\}= H$
+- $(124)H = \{ (124) \cdot id, (124) \cdot (123), (124) \cdot (132)\}=\{(124),(14)(23),(134)\}$
+- $(142)H = \{ (142) \cdot id, (142) \cdot (123), (142) \cdot (132)\}=\{(142),(234),(13)(24)\}$
+- $(134)H = \{ (134) \cdot id, (134) \cdot (123), (134) \cdot (132)\}=\{(134),(124),(14)(23)\}$
+- $(143)H = \{ (143) \cdot id, (143) \cdot (123), (143) \cdot (132)\}=\{(143),(12)(34),(243)\}$
+- $(234)H = \{ (234) \cdot id, (234) \cdot (123), (234) \cdot (132)\}=\{(234),(13)(24),(142)\}$
+- $(243)H = \{ (243) \cdot id, (243) \cdot (123), (243) \cdot (132)\}=\{(243),(143),(12)(34)\}$
+
+
+
+As a summary,
+\begin{eqnarray*}
+    id~H&=&(123)H=(132)H=\{id,(123),(132)\}=H\\
+    (12)(34)H&=&(243)H=(143)H=\{(12)(34),(243),(143)\}\\
+    (13)(24)H&=&(142)H=(234)H=\{(13)(24),(142),(234)\}\\
+    (14)(23)H&=&(134)H=(124)H=\{(14)(23),(134),(124)\}
+\end{eqnarray*}
+Futhur, $A_4=H\sqcup(12)(34)H\sqcup(13)(24)H\sqcup(14)(23)H$.
+Similarly, 
+\begin{eqnarray*}
+    H~id&=&H(123)=H(132)=\{ id, (123), (132) \}=H\\
+    H(12)(34)&=& H (134)= H(234)=\{(12)(34),(134),(234)\}\\
+    H(13)(24)&=&H(243)=H(124)=\{(13)(24),(243),(124)\}\\
+    H(14)(23)&=&H(142)=H(143)=\{(14)(23),(142),(143)\}
+\end{eqnarray*}
+$A_4=H\sqcup H(12)(34)\sqcup H (13)(24)\sqcup H(14)(23)$.\\\\
+Further, note that $(12)(34)H\neq H(12)(34)$
+
+
+```{exercise,name='Artin 2.8.2'}
+In the additive group $\mathbb{R}^m$ of vectors, let $W$ be the set of solutions of a system of homogeneous linear equations $AX = 0$. Show that the set of solutions of an inhomogeneous system $AX = B$ is either empty, or else it is an (additive) coset of $W$.
+```
+
+
+**Solution (Method I)**:\
+Let $W=\{\underline{x}\in\mathbb{R}^n:A\underline{x}=0\}$
+ and $W'=\{\underline{x}\in\mathbb{R}^n:A\underline{x}=B\}$\\
+\underline{Need to show}: Either $W'=\emptyset$ or $W'=\underline{v_0} +W$ for some $\underline{v_0}\in \mathbb{R}^n$\\
+Suppose that $W'\neq \emptyset$.
+
+Let $\underline{x_1}\in W'$, then $A\underline{x_1}=B$.
+Now consider following $$\underline{x_1}+W=\{\underline{x_1}+\omega:\omega\in W\}$$
+First of all, we are going to show that $\underline{x_1}+W \subseteq W'$.
+Let $\underline{x_1}+\underline{\omega_1}\in \underline{x_1}+W$. Now consider
+\[A(\underline{x_1}+\underline{\omega_1})=A(\underline{x_1})+A(\underline{\omega_1})=B+0=B\].
+Thus, $\underline{x_1}+\underline{\omega_1}\in W'$. Therefore, $\underline{x_1}+W\subseteq W'$.\\
+Now we need to show that reverse inclusion.
+Let $\underline{y_1}\in W'$. Now let $\underline{\omega_2}=\underline{y_1}-\underline{x_1}$.Then 
+$A(\underline{\omega_2})=A(\underline{y_1}-\underline{x_1})=A(\underline{y_1})-A(\underline{x_1})=B-B=0$. Hence $\underline{\omega_2}\in W$.
+$$ \underline{x_1}+\underline{\omega_2}=\underline{x_1}+(\underline{y_1}-\underline{x_1}) =y \in  \underline{x_1}+W $$
+Hence, $W'\subseteq \underline{x_1}+W$. Therefore, $W'=\underline{x_1}+W$.
+
+
+```{exercise,name='Artin 2.8.4'}
+Does a group of order $35$ contain an element of order $5$? of order $7$?
+```
+**Claim**: Let $G$ be a group with order $35$. $G$ contains elements of order  5 & 7.
+
+```{proof}
+(proof of the claim.)
+Let $x \in G$. By Artin's book Corollary 2.8.10, $Ord(x)$ should be a divisor of $35$.
+In other words, $Ord(x) \in \{1,5,7,35\}$.
+
+- Case-I: Existence of group elements with order 5
+We are going to use proof by contradiction method.
+Assume that there is no any element with order 5.
+	- Sub claim:
+All non-identity elements have order 7.
+If $e \neq p \in G$ with $Ord(p) = 35$ then $q = p^7$ has order 5 ($\because q^5 = (p^{7})^5 = p^35 = e$). 
+This contradicts our hypothesis. Thus, in case-I all non-identity elements have order 7.
+Let $h \in G$ with $Ord(h) = 7$. Now consider cyclic subgroup generated from $<h> = H$.
+Then $|H| = 7$. Choose $e \neq g \not \in H$. 
+Then by above subclaim $g$ has order 7.
+Now consider left cosets $H, gH, g^2H, g^3H, g^4H, g^5H, g^6H$.
+Note that those cosets are disjoint.
+Because if cosets are disjoint then there exist elements such as,
+$g^ah^n = g^bh^m$ for some $1 \leq a, b \leq 6$ and $1 \leq n, m \leq 6$. Then
+
+\begin{eqnarray*}
+    g^ah^n &=& g^bh^m \\
+    g^{a-b} &=& h^{m-n} \\
+\end{eqnarray*}
+
+
+So, we can choose $r \in \mathbb{Z}^+$ such that $r(a-b) \equiv 1 \pmod{7}$.
+Thus,
+
+$$
+g = g^{r(a-b)} = h^{r(m-n)} \in H
+$$
+
+This contradicts selection of $g$.
+Thus, $H, gH, g^2H, g^3H, g^4H, g^5H, g^6H$ left cosets are disjoint.
+Recall the counting formula
+
+
+\begin{eqnarray*}
+\text{(order of G)} &=& \text{(order of H)} \cdot \text{(number of cosets)} \\
+|G| &=& |H| \cdot [G:H]
+\end{eqnarray*}
+
+
+But observe that $|G| = 35 \neq 49 = 7 \cdot 7 = |H| \cdot [G:H]$. 
+This contradicts our first hypothesis. 
+Thus $G$ contains an element of order 5.
+
+- Case-II: Existence of group elements with order 7
+This case is also similar to previous one. But I am going to do it.
+Now assume that there is no any element with order 7. 
+It is very similar to previous case we can prove that all non-identity elements have order 5.
+Let $h \in G$ with order 5.  We can choose $g$ very similar to previous case.
+Further we can consider left cosets $H, gH, g^2H, g^3H, g^4H$.
+So, we can prove that above cosets are disjoint. Then again we use counting formula,
+$|G| = 35 \neq 25 = 5 \cdot 5 = |H| \cdot [G:H]$. This is a contradiction.
+Thus $G$ contains an element of order 7.
+
+```
+
+
+
+```{exercise,name='Artin 2.8.5'}
+A finite group contains an element $x$ of order $10$ and also an element $y$ of order $6$. What can be said about the order of $G$?
+```
+
+Let $G$ b group, with $|G|<\infty$.
+Let $x,y\in G$ with $|x|=10$ and $|y|=6$.
+By Artin's book Corollary 2.8.10 , $|x|\biggr | |G|=10\biggr ||G|$ and $|y|\biggr |G|=6\biggr | |G|$. Hence, $$LCM(|x|,|y|)\biggr |G|=LCM(10,6)\biggr | |G|=30\biggr  | |G|$$.
+
+```{exercise,name='Artin 2.8.6'}
+Let $\phi: G \rightarrow G'$ be a group homomorphism. Suppose that $|G| = 18$, $|G'| = 15$, and that $\phi$ is not the trivial homomorphism. What is the order of the kernel?
+```
+
+Then possibilities for $Img(\phi)$ are as follows. We use Artin's Algbera book Corollary 2.8.13,
+\begin{eqnarray*}
+|img(\phi)| \biggr ||G|~~~~&\text{and}&~~~~|img(\phi)| \biggr | |G'|\\
+|img(\phi)| \biggr |  18~~~~&\text{and}&~~~~|img(\phi)| \biggr | 15\\
+|img(\phi)| =1,2,3,6,9 \text{ or } 18~~~~&\text{and}&~~~~|img(\phi)| = 1,3,5\text{ or }15.
+\end{eqnarray*}
+Thus, $|img(\phi)| =1,3$. But given that $\phi$ is not the trivial homomorphism.
+Hence, $|img(\phi)| \neq 1$. Therefore, $|img(\phi)| =3$.\
+Now let's find the order of the kernel. By Corollary 2.8.13,
+\begin{eqnarray*}
+    |G | &=& |\ker(\phi)| \cdot |im(\phi)|\\
+    18 &=& |\ker(\phi)| \cdot 3\\
+    |\ker(\phi)| &=& 6
+\end{eqnarray*}
+
+```{exercise,name='Artin 2.8.7'}
+A group $G$ of order 22 contains elements $x$ and $y$, where $x \neq 1$ and $y$ is not a power of $x$. Prove that the subgroup generated by these elements is the whole group $G$.
+```
+
+```{proof}
+Let $G$ of order 22 contains elements $x$ and $y$, where $x \neq 1$ and $y$ is not a power of $x$. Let $G'=<x,y>$.
+
+_Need to show_: $|H|=22$.\
+    By Largrage Therom, $|G'| \biggr | |G|=|G'| \biggr | 22$.
+    So, $|H|=1,2,11,22$. Let's condier each and evrry cases.
+
+- $|H|\neq 1$. Beacuse $1\neq x\in H$. So, $H$ can not be happen trivial group.
+- $|H|\neq 2$. If $|H|=2$ then $y=1$ or $y=x$.  
+        But both cases can not happen.So, $|H|\neq 2$. 
+        Beacuse that contrduct that $y$ is not a power of $x$.
+- $|H|\neq 11$. Beacuse if $|H|= 11$ and 11 is prime, then $H$ is cyclic. (By Corollary 2.8.11) Furthur, $H=<x>$. Then  $y$ is a power of $x$, but it can not happen. So, $|H|\neq 11$. 
+- Therefore, $|H|=|<x,y>|=22$.
+```
+
+```{exercise,name='Artin 2.8.8'}
+Let $G$ be a group of order $25$. Prove that $G$ has at least one subgroup of order $5$, and that if it contains only one subgroup of order $5$, then it is a cyclic group.
+```
+
+**Claim 1**: Let $G$ be a group of order 25.  Then $G$ has at least one subgroup of order 5.
+
+```{proof}
+Let $G$ be a group of order 25. Let $1 \neq x \in G$. 
+By corollary 2.8.10, $|x|$ divides $|x| = |G'|$ which divides $25$.
+So, $|x| = 5, 25$. Let's consider each and every case.
+
+- If $|x| = 5$ then $H = <x>$.
+Then $|H| = |<x>| = 5$ (By corollary 2.8.11), $G$ has at least one subgroup of order 5.
+- Suppose that $|x| = 25$, let $y = x^5$.
+
+*Subclaim*: $|y| = 5$.
+
+$y^5 = (x^5)^5 = x^{25} = 1$.
+
+Let $m \in \mathbb{Z}$ such that $y^m = 1$. 
+Then $y^m = (x^5)^m = x^{5m}$. Then $25 \geq 5m \implies 5 \geq m$.
+Thus, $|y| = 5$.
+
+Hence $<y> = <x^5>$ is a subgroup of order 5.
+```
+
+**Claim 2** :If it contains only one subgroup of order 5, then it is a cyclic group.
+```{proof}
+Suppose that $G$ contains only one subgroup of order 5. 
+Let's call that subgroup $G'$.
+Let $y \not\in G'$ and $1 \neq y \in G$.
+By corollary 2.8.10, $|y|$ divides $|G| = |y|$ which divides $25$.
+So, $|y| = 5, 25$.
+
+- If $|y| = 5$, then $|<y>| = 5$. 
+But $G'$ is the only one subgroup of order 5. 
+$G' = <y>$. But it contradicts the selection of $y$.
+- If $|y| = 25$, then $|<y>| = 25$, so $<y> = G$. 
+Therefore, $G = <x>$ is cyclic.  
+```
+
+```{exercise,name='Artin 2.8.9'}
+Let $G$ be a finite group. Under what circumstances is the map $f: G \to G$ defined by $f(x) = x^2$ an automorphism of $G$?
+```
+
+- **Claim 1**: The map  $f:G\to G$ is a homomorphism if and only if G is abelian.
+
+```{proof}
+$f$ is a homomorphism if and only if for all $x, y \in G$, $f(xy) = f(x)f(y)$.
+This is equivalent to for all $x, y \in G$, $(xy)^2 = (xy)(xy) = x^2y^2$.
+This is equivalent to for all $x, y \in G$, $xyxy = xxyy$.
+This is equivalent to for all $x, y \in G$, $xy = yx$.
+This is equivalent to $G$ is abelian.
+```
+
+- **Claim 2**: $f$ is injective if and only if no element in $G$ has order $2$.
+```{proof}
+$f$ is injective if and only if $\ker(f) \neq \{1\}$.
+This is equivalent to for all $x \in G$ with $1 \neq x$, $f(x) = x^2 \neq 1$.
+This is equivalent to no element having order 2.
+This is equivalent to all elements of $G$ having odd order (By following sub claim).
+
+  - _Sub Claim 2.1_: Group $H$ has no element having order $2$ is if and only if all elements of H having odd order.
+  
+
+First let's prove the backward direction. 
+We use proof of contradiction.
+Assume the contrary. There are some elements of $H$ having even order.
+So, $|x| = 2k$ for some $k \in \mathbb{Z}^+$.
+Then $|x^k| = 2$ has order $2$. 
+```
+
+```{exercise,name='Artin 2.8.10'}
+Prove that every subgroup of index $2$ is a normal subgroup, and show by example that a subgroup of index $3$ need not be normal.
+```
+
+```{proof}
+Let $G$ be a group and let $H \leq G$ with $[G:H] = 2$.
+So, $H$ has only two left cosets. 
+Then left cosets are $H$ and $G \setminus H$ and the cosets partition $G$. 
+Let $x \in G$.
+
+- If $x \in H$, then $gH = H = Hg$. 
+- If $x \notin H$, then $gH = G \setminus H$ and $Hg = G \setminus H$. Thus, $gH = Hg$.
+
+Therefore, $G$ is a normal subgroup.
+```
+**Claim**: A subgroup of index 3 need not be normal.
+
+**Example**: Consider $S_3 = \{id, (12), (13), (23), (123), (132)\}$ 
+and $H = <(12)> = \{id, (12)\} \leq S_3$. Let's find the index using the counting formula
+
+
+
+
+
+Let's take $g = (13)$ and $h = (12)$, then $ghg^{-1} = (13)(12)(13) = (23)$.
+But $(23) \notin H$, so $H$ is not a normal subgroup of $S_3$.
+Therefore, we have proven that $H$ is not a normal subgroup of $S_3$.
+Thus, $H$ is not a normal subgroup.
+
+```{exercise,name='Artin 2.8.11'}
+Let $G$ and $H$ be the following subgroups of $GL_2 (\mathbb{R})$:
+\[ G =\left\{ \begin{bmatrix} x & y \\ 0 & 1 \end{bmatrix}\right\}, 
+H = \left\{\begin{bmatrix} x & 0 \\ 0 & 1 \end{bmatrix}\right\}  \]
+with $x$ and $y$ real and $x > 0$. An element of $G$ can be represented by a point in the right 
+half plane. Make sketches showing the partitions of the half plane into left cosets and into 
+right cosets of $H$.
+```
+
+
+```{exercise,name='Artin 2.8.12'}
+Let $S$ be a subset of a group $G$ that contains the identity element 1, and such that the left cosets $aS$, with $a$ in $G$, partition $G$. Prove that $S$ is a subgroup of $G$.
+```
+
+```{proof}
+Let $1 \in S \subseteq G$, and such that  $\Pi = \{aS : a \in G\}$, is a partition of $G$.
+-_Subset_ : This is trivial.(Given in the problem in already.)
+- _Identity_ : $1 \in S$.
+- _Closure and Inversion_ : Let $x, y \in S$. Since $\Pi$ is part of $G$, there exists $g \in G$ such that $xy^{-1} \in gS$. So, $xy^{-1} = gr$ for some $r \in S$. Then $x = gry \in grS$ (since $y \in S$). Thus, $x \in S \cap grS$. This implies $S \cap grS \neq \emptyset$. But $\Pi$ is a partition of $G$. Thus, $S = grS$. Now observe that $gr \in gS$ (since $r \in S$) and $gr \in grS$. Hence $gr \in gS \cap grS$. Thus, $gS = grS$. Hence, $xy^{-1} = S = gS = grS$.
+
+By the subgroup test, $S$ is a subgroup of $G$.
+
+```
+
+```{exercise,name='Artin2.8.13'}
+Let $S$ be a set with a law of composition: A partition 
+$\Pi_1 \cup \Pi_2 \cup \cdots$ of $S$ is compatible
+with the law of composition if for all $i$ and $j$, 
+the product 
+\[\Pi_i \Pi_j =\{ xy: x\in \Pi_i , y\in  \Pi_j\}\]
+set is contained in a single subset $\Pi_k$ 
+of the partition.
+
+a) The set $Z$ of integers can be partitioned into the three sets [Pos] , [Neg], [{0}]. Discuss  the extent to which the laws of composition $+$ and $\times$ are compatible with this  partition.
+b) Describe all partitions of the integers that are compatible with the operation $+$
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Modular Arthmetic
 
-```{exercise}
+```{exercise,name='Artin 2.9.2'}
 What are the possible values of $a^2$ modulo 4? modulo 8?
 ```
 **solution**:
@@ -629,7 +1082,7 @@ The possible values of $a^2\pmod{8}$ are 0,1 and 4.
 
 
 
-```{exercise}
+```{exercise,name='Artin 2.9.3'}
 Prove that every integer $a$ is congruent to the sum of its decimal digits modulo 9.
 ```
 
@@ -670,32 +1123,66 @@ Therefore,by mathematical induction, $9|(10^n-1)$ for any $n\in \mathbb{N}$.
 ```
 
 
-```{exercise}
+```{exercise,name='Artin 2.9.4'}
 Solve the congruence $2x \equiv 5$ modulo 9 and modulo 6.
 ```
 
-Done Later add.
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig102.jpg') 
+```
 
 
-```{exercise}
+```{exercise,name='Artin 2.9.5'}
 Determine the integers $n$ for which the pair of congruences $2x - y \equiv 1$ and $4x + 3y \equiv 2$ modulo $n$ has a solution.
 ```
 
-Done Later add.
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig103.jpg') 
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig104.jpg') 
+```
 
 
-```{exercise}
+```{exercise,name='Artin 2.9.6'}
 Prove the Chinese Remainder Theorem: Let $a, b, u, v$ be integers, and assume that the greatest common divisor of $a$ and $b$ is 1. Then there is an integer $x$ such that $x \equiv u$ modulo $a$ and $X \equiv v$ modulo $b$. \
 Hint: Do the case $u = 0$ and $v = 1$ first.
 ```
 
 
-```{exercise}
-Determine the order of each of the matrices A and B when the matrix entries are interpreted modulo 3.
+```{exercise,name='Artin 2.9.7'}
+Determine the order of each of the matrices $A=\begin{bmatrix}1 & 1 \\ 0 & 1\end{bmatrix}$ and $B=\begin{bmatrix}1 & 1 \\ 1 & 0\end{bmatrix}$ when the matrix entries are interpreted modulo 3.
 ```
 
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig105.png') 
+```
 
+### The Correspondence Theorem
 
+```{exercise,name='Artin 2.10.1'}
+Describe how to tell from the cycle decomposition whether a permutation is odd or even.
+```
+
+```{exercise,name='Artin 2.10.2'}
+Let H and K be subgroups of a group G.
+
+a)Prove that the intersection xH n yK of two cosets of H and K is either empty or else is a coset of the subgroup H n K.
+b) Prove that if H and K have finite index in G then H n K also has finite index in G.
+```
+
+```{exercise,name='Artin 2.10.3'}
+Let $G$ and $G'$ be cyclic groups of orders $12$ and $6$, generated by elements $x$ and $y$, respectively, and let $\phi : G \to G'$ be the map defined by $\phi(x^i) = y^i$. Exhibit the correspondence referred to in the Correspondence Theorem explicitly.
+```
+
+```{exercise,name='Artin 2.10.4'}
+With the notation of the Correspondence Theorem, let $H$ and $H'$ be corresponding subgroups. Prove that \[[G : H] = [G' : H']\].
+```
+
+```{exercise,name='Artin 2.10.5'}
+With reference to the homomorphism S4 -> S3 described in Example 2.5.13, determine the six subgroups of S4 that contain K.
+```
 
 
 
