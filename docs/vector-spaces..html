@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Vector spaces. | Artin’s Algebra</title>
+  <title>Chapter 6 Vector spaces. | Artin’s Algebra</title>
   <meta name="description" content="Artins Algebra" />
   <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Vector spaces. | Artin’s Algebra" />
+  <meta property="og:title" content="Chapter 6 Vector spaces. | Artin’s Algebra" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Artins Algebra" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Vector spaces. | Artin’s Algebra" />
+  <meta name="twitter:title" content="Chapter 6 Vector spaces. | Artin’s Algebra" />
   
   <meta name="twitter:description" content="Artins Algebra" />
   
@@ -23,14 +23,14 @@
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2024-04-06" />
+<meta name="date" content="2024-04-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="exercises.html"/>
+<link rel="prev" href="tempoarray-files-for-exercises.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -103,7 +103,11 @@
 <li class="chapter" data-level="2.11" data-path="group-theory.html"><a href="group-theory.html#product-groups"><i class="fa fa-check"></i><b>2.11</b> Product Groups</a></li>
 <li class="chapter" data-level="2.12" data-path="group-theory.html"><a href="group-theory.html#quotient-groups"><i class="fa fa-check"></i><b>2.12</b> Quotient Groups</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="lienaer-operators.html"><a href="lienaer-operators.html"><i class="fa fa-check"></i><b>3</b> Lienaer Operators</a></li>
+<li class="chapter" data-level="3" data-path="vector-space.html"><a href="vector-space.html"><i class="fa fa-check"></i><b>3</b> Vector Space</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="vector-space.html"><a href="vector-space.html#subspace-of-mathbbrn"><i class="fa fa-check"></i><b>3.1</b> Subspace of <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
+<li class="chapter" data-level="3.2" data-path="vector-space.html"><a href="vector-space.html#fields"><i class="fa fa-check"></i><b>3.2</b> Fields</a></li>
+</ul></li>
 <li class="chapter" data-level="4" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i><b>4</b> Exercises</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="exercises.html"><a href="exercises.html#chapter-1"><i class="fa fa-check"></i><b>4.1</b> Chapter 1</a></li>
@@ -125,7 +129,15 @@
 <li class="chapter" data-level="4.2.14" data-path="exercises.html"><a href="exercises.html#problem-3"><i class="fa fa-check"></i><b>4.2.14</b> Problem</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="vector-spaces..html"><a href="vector-spaces..html"><i class="fa fa-check"></i><b>5</b> Vector spaces.</a></li>
+<li class="chapter" data-level="5" data-path="tempoarray-files-for-exercises.html"><a href="tempoarray-files-for-exercises.html"><i class="fa fa-check"></i><b>5</b> Tempoarray files for exercises</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tempoarray-files-for-exercises.html"><a href="tempoarray-files-for-exercises.html#chapter-3"><i class="fa fa-check"></i><b>5.1</b> Chapter 3</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="tempoarray-files-for-exercises.html"><a href="tempoarray-files-for-exercises.html#fields-1"><i class="fa fa-check"></i><b>5.1.1</b> Fields</a></li>
+<li class="chapter" data-level="5.1.2" data-path="tempoarray-files-for-exercises.html"><a href="tempoarray-files-for-exercises.html#vectorspaces"><i class="fa fa-check"></i><b>5.1.2</b> VectorSpaces</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="vector-spaces..html"><a href="vector-spaces..html"><i class="fa fa-check"></i><b>6</b> Vector spaces.</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/ashanjayamal/Artins-Albegra.git" target="blank">Property of Ashan Jaymal</a></li>
 
@@ -146,8 +158,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="vector-spaces." class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Vector spaces.<a href="vector-spaces..html#vector-spaces." class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="vector-spaces." class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Vector spaces.<a href="vector-spaces..html#vector-spaces." class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
 </div>
             </section>
@@ -155,7 +167,7 @@
           </div>
         </div>
       </div>
-<a href="exercises.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tempoarray-files-for-exercises.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>

@@ -1,0 +1,145 @@
+# Vector Space
+
+## Subspace of $\mathbb{R}^n$
+
+Vector spaces, which are the focus of this chapter, can be thought of as subsets within the realm of \( \mathbb{R}^n \), where \( n \) represents the number of dimensions in real-numbered vector space. This topic is explored further in the current section, with a formal definition provided in Section 3.3.
+
+While row vectors are more compact, column vectors are preferred due to their compatibility with matrix multiplication. For efficiency in written form, we often represent a column vector as \( (a_1, \ldots, a_n)^t \) using the transpose operation. As established in Chapter 1, we treat a column vector and a point in \( \mathbb{R}^n \) with identical coordinates as equivalent. Typically, column vectors are indicated by lower-case letters like \( v \) or \( w \). When \( v \) corresponds to \( (a_1, \ldots, a_n)^t \), this particular representation is referred to as the coordinate vector of \( v \).
+
+We consider two operations on vectors:
+\begin{align*}
+& \text{vector addition: } & \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} &+ \begin{bmatrix} b_1 \\ \vdots \\ b_n \end{bmatrix} &= \begin{bmatrix} a_1 + b_1 \\ \vdots \\ a_n + b_n \end{bmatrix}, \\
+& \text{scalar multiplication: } & c &\cdot \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} &= \begin{bmatrix} ca_1 \\ \vdots \\ ca_n \end{bmatrix}.
+\end{align*}
+These operations make \(\mathbb{R}^n\) into a vector space.
+
+```{definition,name='Subspace'}
+A subset \( W \) of \( \mathbb{R}^n \) is a subspace if it has these properties:
+
+a. If \( w \) and \( w' \) are in \( W \), then \( w + w' \) is in \( W \).
+a. If \( w \) is in \( W \) and \( c \) is in \( \mathbb{R} \), then \( cw \) is in \( W \).
+a. The zero vector is in \( W \).
+
+There is another way to state the conditions for a subspace,
+
+Let \( W \) be a non-empty set. If \( w_1, w_2, \ldots, w_n \) are elements of \( W \) and \( c_1, c_2, \ldots, c_n \) are scalars, then the linear combination \( c_1w_1 + c_2w_2 + \ldots + c_nw_n \) is also in \( W \).
+```
+
+```{definition,name='Nullspace'}
+Given an $m \times n$ matrix $A$ with coefficients in $\mathbb{R}$, the set of vectors in $\mathbb{R}^n$ whose coordinate vectors solve the homogeneous equation $AX = 0$ is called the nullspace of $A$.
+```
+
+```{example}
+(Example for subspaces) Systems of homogeneous linear equations.
+
+Given an $m \times n$ matrix $A$ with coefficients in $\mathbb{R}$, the set of vectors in $\mathbb{R}^n$ whose coordinate vectors solve the homogeneous equation $AX = 0$ is a subspace, called the nullspace of $A$. Though this is very simple, we will check the conditions for a subspace:
+
+- Suppose that $X$ and $Y$ be solutions of given homogenous sysmstem. Then $AX=0$ and $AY=0$. Thus, 
+\[A(X+Y)=AX+AY=0+0=0\]
+Thus, $(X+Y)$ is a solution. 
+- If $X$ and $Y$ be solutions of given homogenous sysmstem.  Then $AX=0$. Let $c\in \mathbb{R}$. 
+\[A(cX)=c(AX)=c\cdot 0=0\]
+Thus, $cX$ is a solution. 
+- $A0=0$. Thus, the zero vector $0$ is solution.
+
+Therfore  nullspace of $A$ is a subspace.
+```
+
+```{example}
+The zerospace $W = \{0\}$ and the whole space $W = \mathbb{R}^n$ are subspaces.
+```
+
+
+
+```{definition,name='Proper Subspace'}
+A subspace is called a proper subspace if it's not the entire space
+```
+
+The next proposition describes the proper subspaces of $\mathbb{R}^2$.
+
+```{proposition}
+Let $W$ be a proper subspace of the space $\mathbb{R}^2$, and let $w$ be a non-zero vector in $W$. Then $W$ consists of the scalar multiples $cw$ of $w$. Distinct proper subspaces have only the zero vector in common.
+```
+
+```{definition}
+The subspace consisting of the scalar multiples $cw$ of a given nonzero vector $w$ is called the subs pace **spanned by $w$**. \
+Geometrically, it is a line through the origin in the plane $\mathbb{R}^2$.
+```
+
+```{proof}
+(Proof of the proportion)
+Redo it.
+```
+
+```{r echo=FALSE}
+  knitr::include_graphics('figures/ch_2/fig100.png') 
+```
+
+## Fields
+
+```{definition} 
+
+A field $F$ is a set together with two laws of composition: 
+  
+1. Addition:
+\begin{eqnarray}
++:F \times  F & \rightarrow & F \\
+(a,b) & \mapsto  & a+b
+\end{eqnarray}
+2. Multiplication 
+\begin{eqnarray}
+\times:F \times  F & \rightarrow & F \\
+(a,b) & \mapsto  & ab
+\end{eqnarray}
+
+
+which satisfy these axioms:
+
+- **(F1)** Addition makes $F$ into an abelian group $(F,+)$;\
+its identity element is denoted by $0$.
+
+- **(F2)** Multiplication is commutative, and it makes the set of nonzero elements of $F$ into an abelian group $F^{\times}$; its identity element is denoted by $1$.
+
+- **(F3)** Distributive law:
+  \[\text{For all } a, b,\text{ and } c \in F,~ a(b + c) = ab + ac\].
+```
+The first two axioms describe properties of the two laws of composition, addition and multiplication, separately. The third axiom, the distributive law, relates the two laws.
+
+we will be familiar with the fact that the real numbers satisfy these axioms, but the fact that they are the only ones needed for the usual algebraic operations can only be understood after some experience.
+
+The next lemma explains how the zero element multiplies.
+
+```{lemma}
+Let $F$ be a field.
+
+(a) The elements 0 and 1 of $F$ are distinct.
+
+(b) For all $a$ in $F$, $a0 = 0$ and $0a = 0$.
+
+(c) Multiplication in $F$ is associative, and 1 is an identity element.
+```
+
+```{proof} 
+(a) Axiom (ii) implies that 1 is not equal to 0.
+
+(b) Since 0 is the identity for addition, $0 + 0 = 0$. Then $a0 + a0 = a(0 + 0)= a0$. Since $(F,+)$ is a group, we can cancel $a0$ to obtain $a0 = 0$, and then $0a = 0$ as well.
+
+(c) Since $F \setminus \{0\}$ is an abelian group, multiplication is associative when restricted to this subset. We need to show that $a(bc) = (ab)c$ when at least one of the elements is zero. In that case, (b) shows that the products in question are equal to zero. Finally, the element 1 is an identity on $F \setminus \{0\}$. Setting $a = 1$ in (b) shows that 1 is an identity on all of $F$.
+```
+
+```{example}
+- Real numbers ($\mathbb{R}$)\
+Easy to verify
+- Complex Numbers ($\mathbb{C}$)\
+Easy to verify
+- Prime field 
+\[\mathbb{F}_p:={\overline{0},\overline{1},...,\overline{p-1}}=\mathbb{Z}/p\mathbb{Z}\]
+We saw in the previous chapter that the set $\mathbb{Z}/n\mathbb{Z}$ of congruence classes modulo an integer $n$ has laws of addition and multiplication derived from addition and multiplication of integers. All of the axioms for a field hold for the integers, except for the existence of multiplicative inverses. And as noted in previous chapters, such axioms carry over to addition and multiplication of congruence classes. But the integers are not closed under division, so there is no reason to suppose that congruence classes have multiplicative inverses. The class of 2, for example, has no multiplicative inverse modulo $6$. It is somewhat surprising that when $p$ is a prime integer, all nonzero congruence classes modulo $p$ have inverses, and therefore the set $\mathbb{Z}/ p \mathbb{Z}$ is a field. In the next theorem, we prove the existence of multiplicative inverse of non-zero element in prime field.
+
+```
+
+```{theorem}
+Let $p$ be a prime integer. Every nonzero congruence class modulo $p$ has a multiplicative inverse, and therefore $\mathbb{F}_p$ is a field of order $p$.
+```
+
+We discuss the theorem before giving the proof.

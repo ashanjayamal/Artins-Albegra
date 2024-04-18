@@ -767,7 +767,7 @@ In the additive group $\mathbb{R}^m$ of vectors, let $W$ be the set of solutions
 ```
 
 
-**Solution (Method I)**:\
+**Solution**:\
 Let $W=\{\underline{x}\in\mathbb{R}^n:A\underline{x}=0\}$
  and $W'=\{\underline{x}\in\mathbb{R}^n:A\underline{x}=B\}$\\
 \underline{Need to show}: Either $W'=\emptyset$ or $W'=\underline{v_0} +W$ for some $\underline{v_0}\in \mathbb{R}^n$\\
@@ -784,6 +784,33 @@ Let $\underline{y_1}\in W'$. Now let $\underline{\omega_2}=\underline{y_1}-\unde
 $A(\underline{\omega_2})=A(\underline{y_1}-\underline{x_1})=A(\underline{y_1})-A(\underline{x_1})=B-B=0$. Hence $\underline{\omega_2}\in W$.
 $$ \underline{x_1}+\underline{\omega_2}=\underline{x_1}+(\underline{y_1}-\underline{x_1}) =y \in  \underline{x_1}+W $$
 Hence, $W'\subseteq \underline{x_1}+W$. Therefore, $W'=\underline{x_1}+W$.
+
+
+```{exercise,name='Artin 2.8.3'}
+Does every group whose order is a power of a prime $p$ contain an element of order $p$?
+```
+
+**Yes**. \
+Let's prove following.\
+**Claim** :Every group whose order is a power of a prime $p$ contain an element of order $p$.
+
+```{proof}
+(Prooo of Claim)
+Let $G$ be group with $|G|=p^k<\infty$ for some $k\in \mathbb{Z}^+$, where $p$ is a prime number.
+Let $e\neq x \in G$. Then by Artin's book Corollary 2.8.10,
+$Ord(x)|p^k$. Thus, $Ord(x)\cdot q=p^k$ forsome $q\in \mathbb{Z}$. 
+Since $p$ is a prime, $Ord(x)=p^m$ for some $1\leq m\leq k$.
+Choose $y:=x^{(p^{m-1})}$. Now we are going to proove that $Ord(y)=p$.
+\[y^p=\left(x^{(p^{m-1})}\right)^p=x^{(p^{m-1})\cdot p^1}=x^{p^m}=1\]
+If $q\in \mathbb{Z}^+$ such that $y^q=1$, then
+\[1=y^q=\left(x^{(p^{m-1})}\right)^q=x^{(q \cdot p^{(m-1)})}\]
+Since $ord(x)=p^m$ then 
+\begin{eqnarray*}
+    q\cdot p^{(m-1)}&\geq & p^m  \\
+    q &\geq & p
+\end{eqnarray*}
+Hence $Ord(y)=p$. The group $G$ whose order is a power of a prime $p$ contain an element of order $p$.
+```
 
 
 ```{exercise,name='Artin 2.8.4'}
