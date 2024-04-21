@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2024-04-18" />
+<meta name="date" content="2024-04-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -161,7 +161,7 @@
 <div id="header">
 <h1 class="title">Artin’s Algebra</h1>
 <p class="author"><em>Ashan Jayamal</em></p>
-<p class="date"><em>2024-04-18</em></p>
+<p class="date"><em>2024-04-21</em></p>
 </div>
 <div id="matrices" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Matrices<a href="index.html#matrices" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -187,6 +187,75 @@ Figure 1.1: <span class="math inline">\(~\)</span>
 <p class="caption">
 Figure 1.2: <span class="math inline">\(~\)</span>
 </p>
+</div>
+<p>In the above example, $a_{11} = 8, a_{3} = 0, and a_{23} = -5.</p>
+<p>We sometimes denote the matrix whose entries are <span class="math inline">\(a_{ij}\)</span> by <span class="math inline">\((a_{ij})\)</span>.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-2" class="definition"><strong>Definition 1.1  </strong></span></p>
+<ul>
+<li><p>An <span class="math inline">\(n \times n\)</span> matrix is called a <strong>square matrix</strong>. A <span class="math inline">\(1 \times 1\)</span> matrix <span class="math inline">\([a]\)</span> contains a single number, and we do not distinguish such a matrix from its entry.</p></li>
+<li><p>A <span class="math inline">\(1 \times n\)</span> matrix is an <span class="math inline">\(n\)</span>-dimensional <strong>row vector</strong>. We drop the index <span class="math inline">\(i\)</span> when <span class="math inline">\(m = 1\)</span> and write a row vector as <span class="math display">\[[a_1 \ldots a_n], \text{or as }(a_1,\ldots, a_n)\]</span>. Commas in such a row vector are optional.</p></li>
+<li><p>Similarly, an <span class="math inline">\(m \times 1\)</span> matrix is an <span class="math inline">\(m\)</span>-dimensional <strong>column vector</strong>:
+<span class="math display">\[
+\begin{bmatrix}
+b_1 \\
+\vdots \\
+b_m
+\end{bmatrix}
+\]</span></p></li>
+</ul>
+</div>
+<p>In most of this book, we won’t make a distinction between an n-dimensional column vector
+and the point of n-dimensional space with the same coordinates.In the few places where the distinction is useful, we will state this clearly.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-3" class="definition"><strong>Definition 1.2  (Addition of matrices) </strong></span>Addition of matrices is defined in the same way as vector addition. Let <span class="math inline">\(A = (a_{ij})\)</span> and <span class="math inline">\(B = (b_{ij})\)</span> be two <span class="math inline">\(m \times n\)</span> matrices. Their sum <span class="math inline">\(A + B\)</span> is the <span class="math inline">\(m \times n\)</span> matrix <span class="math inline">\(S = (s_{ij})\)</span> defined by <span class="math inline">\(s_{ij} = a_{ij} + b_{ij}\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-4" class="example"><strong>Example 1.2  </strong></span><span class="math display">\[\begin{bmatrix} 2 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 3 \end{bmatrix} +
+  \begin{bmatrix}  1 &amp; 3 &amp; 5\\3 &amp; 1 &amp; 3 \end{bmatrix}=\begin{bmatrix} 3 &amp; 4 &amp; 5\\4 &amp; 1 &amp; 6 \end{bmatrix}\]</span></p>
+</div>
+<p>Addition is defined only when the matrices to be added have the same shape — when they are <span class="math inline">\(m \times n\)</span> matrices with the same <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span>.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 1.3  (Non Example) </strong></span><span class="math display">\[\begin{bmatrix} 2 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 3 \end{bmatrix} +
+  \begin{bmatrix}  1 &amp; 3 &amp; 5\\3 &amp; 1 &amp; 3 \\ 3 &amp; 4 &amp; 5 \end{bmatrix}\]</span>
+This two matrices can not be added.</p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-6" class="definition"><strong>Definition 1.3  (Scaler Multiplication) </strong></span>Scalar multiplication of a matrix by a number is also defined as with vectors. The result of multiplying an <span class="math inline">\(m \times n\)</span> matrix <span class="math inline">\(A\)</span> by a number <span class="math inline">\(c\)</span> is another <span class="math inline">\(m \times n\)</span> matrix <span class="math inline">\(B = (b_{ij})\)</span>, where <span class="math inline">\(b_{ij} = c \cdot a_{ij}\)</span> for all <span class="math inline">\(i, j\)</span>. Thus,</p>
+<p><span class="math display">\[
+2 \cdot \begin{bmatrix} 2 &amp; 1 &amp; 0 \\ 1 &amp; 3 &amp; 5 \end{bmatrix}  = \begin{bmatrix} 4 &amp; 2 &amp; 0 \\ 2 &amp; 6 &amp; 10 \end{bmatrix}
+\]</span></p>
+</div>
+<p>Let’sassume for now that the scalars are real numbers. In later chapters other scalars will appear. Just keep in mind that, except for occasional reference to the geometry of real two- or three-dimensional space, everything in this chapter continues to hold when the scalars are complexnumbers.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-7" class="definition"><strong>Definition 1.4  (Matrix Multiplictaion) </strong></span>If <span class="math inline">\(A\)</span> is an <span class="math inline">\(m \times n\)</span> matrix and <span class="math inline">\(B\)</span> is an <span class="math inline">\(n \times p\)</span> matrix,
+<span class="math display">\[A = \begin{pmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} \end{pmatrix}, \quad B = \begin{pmatrix} b_{11} &amp; b_{12} &amp; \cdots &amp; b_{1p} \\ b_{21} &amp; b_{22} &amp; \cdots &amp; b_{2p} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ b_{n1} &amp; b_{n2} &amp; \cdots &amp; b_{np} \end{pmatrix}\]</span>
+the matrix product <span class="math inline">\(C = AB\)</span> (denoted without multiplication signs or dots) is defined to be the <span class="math inline">\(m \times p\)</span> matrix
+<span class="math display">\[C = \begin{pmatrix} c_{11} &amp; c_{12} &amp; \cdots &amp; c_{1p} \\ c_{21} &amp; c_{22} &amp; \cdots &amp; c_{2p} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ c_{m1} &amp; c_{m2} &amp; \cdots &amp; c_{mp} \end{pmatrix}\]</span>
+such that
+<span class="math display">\[c_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + \cdots + a_{in}b_{nj} = \sum_{k=1}^{n}a_{ik}b_{kj},\]</span>
+for <span class="math inline">\(i = 1, \ldots, m\)</span> and <span class="math inline">\(j = 1, \ldots, p\)</span>.</p>
+<p>That is, the entry <span class="math inline">\(c_{ij}\)</span> of the product is obtained by multiplying term-by-term the entries of the <span class="math inline">\(i\)</span>th row of <span class="math inline">\(A\)</span> and the <span class="math inline">\(j\)</span>th column of <span class="math inline">\(B\)</span>, and summing these <span class="math inline">\(n\)</span> products. In other words, <span class="math inline">\(c_{ij}\)</span> is the dot product of the <span class="math inline">\(i\)</span>th row of <span class="math inline">\(A\)</span> and the <span class="math inline">\(j\)</span>th column of <span class="math inline">\(B\)</span>.</p>
+<p>Therefore, <span class="math inline">\(AB\)</span> can also be written as
+<span class="math display">\[C = \begin{pmatrix} a_{11}b_{11} + \cdots + a_{1n}b_{n1} &amp; a_{11}b_{12} + \cdots + a_{1n}b_{n2} &amp; \cdots &amp; a_{11}b_{1p} + \cdots + a_{1n}b_{np} \\ a_{21}b_{11} + \cdots + a_{2n}b_{n1} &amp; a_{21}b_{12} + \cdots + a_{2n}b_{n2} &amp; \cdots &amp; a_{21}b_{1p} + \cdots + a_{2n}b_{np} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m1}b_{11} + \cdots + a_{mn}b_{n1} &amp; a_{m1}b_{12} + \cdots + a_{mn}b_{n2} &amp; \cdots &amp; a_{m1}b_{1p} + \cdots + a_{mn}b_{np} \end{pmatrix}\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-8" class="example"><strong>Example 1.4  </strong></span><span class="math display">\[
+\begin{bmatrix}
+2 &amp; 1 &amp; 0 \\
+1 &amp; 3 &amp; 5
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+-1 \\
+4
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 \\
+18
+\end{bmatrix}
+\]</span></p>
 </div>
 
 </div>

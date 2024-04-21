@@ -80,7 +80,7 @@
 
 \title{Artin's Algebra}
 \author{Ashan Jayamal}
-\date{2024-04-18}
+\date{2024-04-21}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -131,6 +131,87 @@ The numbers in a matrix are the matrix entries. They may be denoted by \(a_{ij}\
 \caption{\label{fig:fig02}\(~\)}
 \end{figure}
 
+In the above example, \$a\_\{11\} = 8, a\_\{3\} = 0, and a\_\{23\} = -5.
+
+We sometimes denote the matrix whose entries are \(a_{ij}\) by \((a_{ij})\).
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-2}{}\label{def:unnamed-chunk-2}\leavevmode
+
+\begin{itemize}
+\item
+  An \(n \times n\) matrix is called a \textbf{square matrix}. A \(1 \times 1\) matrix \([a]\) contains a single number, and we do not distinguish such a matrix from its entry.
+\item
+  A \(1 \times n\) matrix is an \(n\)-dimensional \textbf{row vector}. We drop the index \(i\) when \(m = 1\) and write a row vector as \[[a_1 \ldots a_n], \text{or as }(a_1,\ldots, a_n)\]. Commas in such a row vector are optional.
+\item
+  Similarly, an \(m \times 1\) matrix is an \(m\)-dimensional \textbf{column vector}:
+  \[
+  \begin{bmatrix}
+  b_1 \\
+  \vdots \\
+  b_m
+  \end{bmatrix}
+  \]
+\end{itemize}
+
+\end{definition}
+
+In most of this book, we won't make a distinction between an n-dimensional column vector
+and the point of n-dimensional space with the same coordinates.In the few places where the distinction is useful, we will state this clearly.
+
+\begin{definition}[Addition of matrices]
+\protect\hypertarget{def:unnamed-chunk-3}{}\label{def:unnamed-chunk-3}Addition of matrices is defined in the same way as vector addition. Let \(A = (a_{ij})\) and \(B = (b_{ij})\) be two \(m \times n\) matrices. Their sum \(A + B\) is the \(m \times n\) matrix \(S = (s_{ij})\) defined by \(s_{ij} = a_{ij} + b_{ij}\).
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-4}{}\label{exm:unnamed-chunk-4}\[\begin{bmatrix} 2 & 1 & 0 \\ 1 & 0 & 3 \end{bmatrix} +
+  \begin{bmatrix}  1 & 3 & 5\\3 & 1 & 3 \end{bmatrix}=\begin{bmatrix} 3 & 4 & 5\\4 & 1 & 6 \end{bmatrix}\]
+\end{example}
+
+Addition is defined only when the matrices to be added have the same shape --- when they are \(m \times n\) matrices with the same \(m\) and \(n\).
+
+\begin{example}[Non Example]
+\protect\hypertarget{exm:unnamed-chunk-5}{}\label{exm:unnamed-chunk-5}\[\begin{bmatrix} 2 & 1 & 0 \\ 1 & 0 & 3 \end{bmatrix} +
+  \begin{bmatrix}  1 & 3 & 5\\3 & 1 & 3 \\ 3 & 4 & 5 \end{bmatrix}\]
+This two matrices can not be added.
+\end{example}
+
+\begin{definition}[Scaler Multiplication]
+\protect\hypertarget{def:unnamed-chunk-6}{}\label{def:unnamed-chunk-6}Scalar multiplication of a matrix by a number is also defined as with vectors. The result of multiplying an \(m \times n\) matrix \(A\) by a number \(c\) is another \(m \times n\) matrix \(B = (b_{ij})\), where \(b_{ij} = c \cdot a_{ij}\) for all \(i, j\). Thus,
+
+\[
+2 \cdot \begin{bmatrix} 2 & 1 & 0 \\ 1 & 3 & 5 \end{bmatrix}  = \begin{bmatrix} 4 & 2 & 0 \\ 2 & 6 & 10 \end{bmatrix}
+\]
+\end{definition}
+
+Let'sassume for now that the scalars are real numbers. In later chapters other scalars will appear. Just keep in mind that, except for occasional reference to the geometry of real two- or three-dimensional space, everything in this chapter continues to hold when the scalars are complexnumbers.
+
+\begin{definition}[Matrix Multiplictaion]
+\protect\hypertarget{def:unnamed-chunk-7}{}\label{def:unnamed-chunk-7}The product of two matrices \(A = (a_{ij})\) and \(B = (b_{ij})\) is defined when the number of columns of \(A\) is equal to the number of rows of \(B\). If \(A\) is an \(l \times m\) matrix and \(B\) is an \(m \times n\) matrix, then the product will be an \(l \times n\) matrix. Symbolically,
+
+\[(l \times m) \cdot (m \times n) = (l \times n)\]
+
+The entries of the product matrix are computed by multiplying all rows of \(A\) by all columns of \(B\). If we denote the product matrix \(AB\) by \(P = (p_{ij})\), then
+
+\begin{equation} \label{eq:2}
+p_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + \ldots + a_{im}b_{mj}
+\end{equation}
+
+This is the product of the \(i\)th row of \(A\) and the \(j\)th column of \(B\).
+
+\[
+\begin{bmatrix}
+a_{i1} & \ldots & a_{im}
+\end{bmatrix}
+\begin{bmatrix}
+b_{1j} \\
+\vdots \\
+b_{mj}
+\end{bmatrix}
+= p_{ij}
+\]
+\end{definition}
+
 \hypertarget{group-theory}{%
 \chapter{Group Theory}\label{group-theory}}
 
@@ -138,11 +219,11 @@ The numbers in a matrix are the matrix entries. They may be denoted by \(a_{ij}\
 \section{Laws of Compositions}\label{laws-of-compositions}}
 
 \begin{definition}[Law of Composition]
-\protect\hypertarget{def:unnamed-chunk-2}{}\label{def:unnamed-chunk-2}A law o f composition on a set \(S\) is any rule for combining pairs \(a, b\) of elements of \(S\) to get another element, say \(p\), of \(S\).
+\protect\hypertarget{def:unnamed-chunk-8}{}\label{def:unnamed-chunk-8}A law o f composition on a set \(S\) is any rule for combining pairs \(a, b\) of elements of \(S\) to get another element, say \(p\), of \(S\).
 \end{definition}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-3}{}\label{exm:unnamed-chunk-3}\leavevmode
+\protect\hypertarget{exm:unnamed-chunk-9}{}\label{exm:unnamed-chunk-9}\leavevmode
 
 \begin{itemize}
 \tightlist
@@ -167,7 +248,7 @@ or whatever, a choice being made for the particular law in question. The element
 \section{Groups and Subgroups}\label{groups-and-subgroups}}
 
 \begin{definition}[Group]
-\protect\hypertarget{def:unnamed-chunk-4}{}\label{def:unnamed-chunk-4}
+\protect\hypertarget{def:unnamed-chunk-10}{}\label{def:unnamed-chunk-10}
 
 A group is a set \(G\) together with a law of composition that has the following properties:
 
@@ -184,13 +265,13 @@ A group is a set \(G\) together with a law of composition that has the following
 \end{definition}
 
 \textbf{Notation}: If set \(G\) with composition \(\cdot\) is a group, then we denote it by \((G,\cdot)\)
-::: \{.definition \#unnamed-chunk-5 name=``Ableian Group''\}
+::: \{.definition \#unnamed-chunk-11 name=``Ableian Group''\}
 Group G is called abliean if its law of composition is commutative. i.e.
 \[\forall x\in G, xy=yx\]
 :::
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-6}{}\label{exm:unnamed-chunk-6}\leavevmode
+\protect\hypertarget{exm:unnamed-chunk-12}{}\label{exm:unnamed-chunk-12}\leavevmode
 
 \begin{itemize}
 \tightlist
@@ -203,7 +284,7 @@ Group G is called abliean if its law of composition is commutative. i.e.
 \end{example}
 
 \begin{definition}[Order of group]
-\protect\hypertarget{def:unnamed-chunk-7}{}\label{def:unnamed-chunk-7}The order of a group \(G\) is the number of elements that it contains. We \[| G | := \text{number of elements of }G=\text{ the order of G}\]
+\protect\hypertarget{def:unnamed-chunk-13}{}\label{def:unnamed-chunk-13}The order of a group \(G\) is the number of elements that it contains. We \[| G | := \text{number of elements of }G=\text{ the order of G}\]
 
 If the order is finite, \(G\) is said to be a finite group. If not, \(G\) is an infinite group.
 \end{definition}
@@ -211,7 +292,7 @@ If the order is finite, \(G\) is said to be a finite group. If not, \(G\) is an 
 Here is our notation for some familiar infinite abelian groups:
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-8}{}\label{exm:unnamed-chunk-8}\leavevmode
+\protect\hypertarget{exm:unnamed-chunk-14}{}\label{exm:unnamed-chunk-14}\leavevmode
 
 \begin{itemize}
 \tightlist
@@ -230,7 +311,7 @@ Here is our notation for some familiar infinite abelian groups:
 \end{example}
 
 \begin{proposition}[Cancellation Law]
-\protect\hypertarget{prp:unnamed-chunk-9}{}\label{prp:unnamed-chunk-9}
+\protect\hypertarget{prp:unnamed-chunk-15}{}\label{prp:unnamed-chunk-15}
 
 Let \(G\) be group and let \(a, b, c \in G\) whose law of composition is written multiplicatively.
 
@@ -253,18 +334,18 @@ As you saw \(a^{-1}\) plays amajor rule in above proof. So the cancelation rule 
 \end{remark}
 
 \begin{example}[Example that not holding the cancelation law]
-\protect\hypertarget{exm:unnamed-chunk-12}{}\label{exm:unnamed-chunk-12}\[\begin{bmatrix} 1 & 1 \\ 0 & 0\end{bmatrix}
+\protect\hypertarget{exm:unnamed-chunk-18}{}\label{exm:unnamed-chunk-18}\[\begin{bmatrix} 1 & 1 \\ 0 & 0\end{bmatrix}
 \begin{bmatrix} 1 & 1 \\ 2 & 0\end{bmatrix}=
 \begin{bmatrix} 1 & 1 \\ 0 & 0\end{bmatrix}
 \begin{bmatrix} 3 & 0 \\ 0 & 1\end{bmatrix}\]
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-13}{}\label{exm:unnamed-chunk-13}Let \(T\) be a set and \(G:=\{f:T\to T: f \text{ is a bijection}\}\). Then \(G\) with composition is a group. We use notation \$sys(T) \$ to denote the
+\protect\hypertarget{exm:unnamed-chunk-19}{}\label{exm:unnamed-chunk-19}Let \(T\) be a set and \(G:=\{f:T\to T: f \text{ is a bijection}\}\). Then \(G\) with composition is a group. We use notation \$sys(T) \$ to denote the
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-14}{}\label{exm:unnamed-chunk-14}
+\protect\hypertarget{exm:unnamed-chunk-20}{}\label{exm:unnamed-chunk-20}
 
 The group of permutations of the set of indices \(\{l, 2, ... , n\}\) is called the \emph{symmetric group},and is denoted by \(S_n\). Then \(|S_n|=n !\). So, \(S_n\) is a finite group of order \(n!\).
 
@@ -329,7 +410,7 @@ multiples of \(a\) by \(a\mathbb{Z}\):
 This is a subgroup of \(\mathbb{Z}^+\). Its elements can also be described as the integers divisible by \(a\).
 
 \begin{theorem}
-\protect\hypertarget{thm:unnamed-chunk-15}{}\label{thm:unnamed-chunk-15}Let \(S\) be a subgroup of the additive group \(\mathbb{Z}^+\). Either \(S\) is the trivial subgroup
+\protect\hypertarget{thm:unnamed-chunk-21}{}\label{thm:unnamed-chunk-21}Let \(S\) be a subgroup of the additive group \(\mathbb{Z}^+\). Either \(S\) is the trivial subgroup
 \(\{0\}\), or else it has the form \(a\mathbb{Z}\), where \(a\) is the smallest positive integer in \(S\).
 \end{theorem}
 
@@ -350,7 +431,7 @@ Next we show that \(S\) is a subset of \(Za\), that is, every element \(n\) of \
 \section{Homomorphisms}\label{homomorphisms}}
 
 \begin{definition}
-\protect\hypertarget{def:unnamed-chunk-17}{}\label{def:unnamed-chunk-17}Let \((G, *)\) and \((G', \odot)\) be groups. A \textbf{homomorphism} \(\phi: G \rightarrow G'\) is a map from \(G\) to \(G'\) such that for all \(a\) and \(b\) in \(G\):
+\protect\hypertarget{def:unnamed-chunk-23}{}\label{def:unnamed-chunk-23}Let \((G, *)\) and \((G', \odot)\) be groups. A \textbf{homomorphism} \(\phi: G \rightarrow G'\) is a map from \(G\) to \(G'\) such that for all \(a\) and \(b\) in \(G\):
 
 \begin{equation}
     \phi(a * b) = \phi(a) \odot \phi(b).
@@ -381,7 +462,7 @@ The trivial homomorphism \(\phi: G \rightarrow G'\) between any two groups maps 
 If \(H\) is a subgroup of \(G\), the inclusion map \(i: H \rightarrow G\) defined by \(i(x) = x\) for \(x\) in \(H\) is a homomorphism.
 
 \begin{proposition}
-\protect\hypertarget{prp:unnamed-chunk-18}{}\label{prp:unnamed-chunk-18}
+\protect\hypertarget{prp:unnamed-chunk-24}{}\label{prp:unnamed-chunk-24}
 
 Let \(\phi: G \rightarrow G'\) be a group homomorphism.
 
@@ -446,7 +527,7 @@ Then following conditions are equivalent:
 \section{Equivalence Relations and Partitions}\label{equivalence-relations-and-partitions}}
 
 \begin{definition}
-\protect\hypertarget{def:unnamed-chunk-20}{}\label{def:unnamed-chunk-20}Sure, here is the LaTeX version of your statement:
+\protect\hypertarget{def:unnamed-chunk-26}{}\label{def:unnamed-chunk-26}Sure, here is the LaTeX version of your statement:
 
 A partition \(n\) of a set \(S\) is a subdivision of \(S\) into nonoverlapping, nonempty subsets:
 \[S = \bigcup_{i} A_i\]
@@ -456,17 +537,17 @@ A partition \(n\) of a set \(S\) is a subdivision of \(S\) into nonoverlapping, 
 \includegraphics{figures/ch_2/fig32.png}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-21}{}\label{exm:unnamed-chunk-21}The two sets \emph{Even} and \emph{Odd} partition the set of integers.
+\protect\hypertarget{exm:unnamed-chunk-27}{}\label{exm:unnamed-chunk-27}The two sets \emph{Even} and \emph{Odd} partition the set of integers.
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-22}{}\label{exm:unnamed-chunk-22}With the usual notation, the sets
+\protect\hypertarget{exm:unnamed-chunk-28}{}\label{exm:unnamed-chunk-28}With the usual notation, the sets
 \[\{1\}, \{y, xy, x^2y\}, \{x, x^2\}\]
 form a partition of the symmetric group \(S_3\).
 \end{example}
 
 \begin{definition}
-\protect\hypertarget{def:unnamed-chunk-23}{}\label{def:unnamed-chunk-23}
+\protect\hypertarget{def:unnamed-chunk-29}{}\label{def:unnamed-chunk-29}
 
 An equivalence relation on a set \(S\) is a relation that holds between certain pairs of elements.
 
@@ -483,12 +564,12 @@ An equivalence relation on a set \(S\) is a relation that holds between certain 
 \end{definition}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-24}{}\label{exm:unnamed-chunk-24}Two triangles are said to be congruent if their sides have the same length and angles have same measure.\\
+\protect\hypertarget{exm:unnamed-chunk-30}{}\label{exm:unnamed-chunk-30}Two triangles are said to be congruent if their sides have the same length and angles have same measure.\\
 Congruence of triangles is an example of an equivalence relation on the set of triangles in the plane. If \(A , B,\) and \(C\) are triangles, and if \(A\) is congruent to \(B\) and \(B\) is congruent to \(C\), then \(A\) is congruent to \(C\). It is very easy to check three equivalnace propoties. I am not going to do this.
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-25}{}\label{exm:unnamed-chunk-25}
+\protect\hypertarget{exm:unnamed-chunk-31}{}\label{exm:unnamed-chunk-31}
 
 Conjugacy is an equivalence relation on a group.
 Let \(G\) be garoup Two group elements are conjugate, \(a\sim b\), if \(b = gag^{- 1}\) for some \(g\in G\).
@@ -508,7 +589,7 @@ Let \(G\) be garoup Two group elements are conjugate, \(a\sim b\), if \(b = gag^
 \end{example}
 
 \begin{proposition}
-\protect\hypertarget{prp:unnamed-chunk-26}{}\label{prp:unnamed-chunk-26}An equivalence relation on a set S determines a partition of S, and conversely.
+\protect\hypertarget{prp:unnamed-chunk-32}{}\label{prp:unnamed-chunk-32}An equivalence relation on a set S determines a partition of S, and conversely.
 \end{proposition}
 
 \begin{proof}
@@ -529,7 +610,7 @@ Let \(G\) be garoup Two group elements are conjugate, \(a\sim b\), if \(b = gag^
 \end{proof}
 
 \begin{lemma}
-\protect\hypertarget{lem:unnamed-chunk-28}{}\label{lem:unnamed-chunk-28}Given an equivalence relation on a set \(S\), the subsets of \(S\) that are equivalence classes partition \(S\).
+\protect\hypertarget{lem:unnamed-chunk-34}{}\label{lem:unnamed-chunk-34}Given an equivalence relation on a set \(S\), the subsets of \(S\) that are equivalence classes partition \(S\).
 \end{lemma}
 
 \begin{proof}
@@ -565,7 +646,7 @@ The corresponding partition for the symmetric group S3 are
 If a partition of a set \(S\) is given, we may construct a new set \(\overline{S}\) whose elements are the subsets. We imagine putting the subsets into separate piles, and we regard the piles as the elements of our new set \(\overline{S}\). It seems advisable to have a notation to distinguish a subset from the element of the set \(S\) (the pile) that it represents. If \(U\) is a subset, we will denote by \([U]\) the corresponding element of \(S\).
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-30}{}\label{exm:unnamed-chunk-30}If \(S\) is the set of integers and if \(\text{Even}\) and \(\text{Odd}\) denote the subsets of even and odd integers, respectively, then \(\overline{S}\) contains the two elements \([\text{Even}]\) and \([\text{Odd}]\).
+\protect\hypertarget{exm:unnamed-chunk-36}{}\label{exm:unnamed-chunk-36}If \(S\) is the set of integers and if \(\text{Even}\) and \(\text{Odd}\) denote the subsets of even and odd integers, respectively, then \(\overline{S}\) contains the two elements \([\text{Even}]\) and \([\text{Odd}]\).
 \end{example}
 
 We will use this notation more generally. When we want to regard a subset \(U\) of \(S\) as an element of a set of subsets of \(S\), we denote it by \([U]\).
@@ -599,7 +680,7 @@ Though the pile picture may be easier to grasp at first, the second way of viewi
 Any map of sets \(f : S \to T\) gives us an equivalence relation on its domain \(S\). It is defined by the rule: \(a \sim b\) if \(f(a) = f(b)\).
 
 \begin{definition}[Inverse Image  and Fibers]
-\protect\hypertarget{def:unnamed-chunk-31}{}\label{def:unnamed-chunk-31}The inverse image of an element \(t\) of \(T\) is the subset of \(S\) consisting of all elements \(s\) such that \(f(s) = t\). It is denoted symbolically as
+\protect\hypertarget{def:unnamed-chunk-37}{}\label{def:unnamed-chunk-37}The inverse image of an element \(t\) of \(T\) is the subset of \(S\) consisting of all elements \(s\) such that \(f(s) = t\). It is denoted symbolically as
 \begin{equation}
 f^{-1}(t) = \{s \in S \mid f(s) = t\}.
 \end{equation}
@@ -616,7 +697,7 @@ The elements of the image correspond bijectively to the nonempty fibres, which a
 equivalence classes
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-33}{}\label{exm:unnamed-chunk-33}Let's consider the absolute value map from the complex numbers \(\mathbb{C}^\times\) to the positive real numbers \(\mathbb{R}^+\):
+\protect\hypertarget{exm:unnamed-chunk-39}{}\label{exm:unnamed-chunk-39}Let's consider the absolute value map from the complex numbers \(\mathbb{C}^\times\) to the positive real numbers \(\mathbb{R}^+\):
 
 \[ f: \mathbb{C}^\times \to \mathbb{R}^+, \quad f(z) = |z| \]
 
@@ -632,13 +713,13 @@ Note that the absolute value map is surjective, so each positive real number \(t
 \includegraphics{figures/ch_2/fig33.png}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-34}{}\label{exm:unnamed-chunk-34}If \(G\) is a finite group, we can define a map \(f : G \to \mathbb{N}\) to the set \(\{1, 2, 3, \ldots\}\) of natural numbers, letting \(f(a)\) be the order of the element \(a\) in \(G\). The fibers of this map are the sets of elements with the same order (see example \ref{exm:272}).
+\protect\hypertarget{exm:unnamed-chunk-40}{}\label{exm:unnamed-chunk-40}If \(G\) is a finite group, we can define a map \(f : G \to \mathbb{N}\) to the set \(\{1, 2, 3, \ldots\}\) of natural numbers, letting \(f(a)\) be the order of the element \(a\) in \(G\). The fibers of this map are the sets of elements with the same order (see example \ref{exm:272}).
 \end{example}
 
 \includegraphics{figures/ch_2/fig34.png}
 
 \begin{definition}[congruence]
-\protect\hypertarget{def:unnamed-chunk-35}{}\label{def:unnamed-chunk-35}Let \(G,G'\) be a groups and \(\phi: G \rightarrow G'\) be a group group homomorphism. The equivalence relation on \(G\) defined by \(\phi\) is usually denoted by \(\equiv\), rather than by \(\sim\), and is referred to as congruence.
+\protect\hypertarget{def:unnamed-chunk-41}{}\label{def:unnamed-chunk-41}Let \(G,G'\) be a groups and \(\phi: G \rightarrow G'\) be a group group homomorphism. The equivalence relation on \(G\) defined by \(\phi\) is usually denoted by \(\equiv\), rather than by \(\sim\), and is referred to as congruence.
 \[a \equiv b \text{ if }\phi(a) = \phi(b)\]
 \end{definition}
 
@@ -646,7 +727,7 @@ We have seen that elements \(a\) and \(b\) of \(G\) are congruent, i.e., \(\phi(
 in the coset \(a K\) of the kernel \(K\) (See proposition \ref{prp:258})
 
 \begin{proposition}
-\protect\hypertarget{prp:unnamed-chunk-36}{}\label{prp:unnamed-chunk-36}Let \(K\) be the kernel of a homomorphism \(\varphi: G \to G'\). The fibre of that contains an element \(a\) of \(G\) is the coset \(a K\) of \(K\). These cosets partition the group \(G\), and they correspond to elements of the image of \(\varphi\).
+\protect\hypertarget{prp:unnamed-chunk-42}{}\label{prp:unnamed-chunk-42}Let \(K\) be the kernel of a homomorphism \(\varphi: G \to G'\). The fibre of that contains an element \(a\) of \(G\) is the coset \(a K\) of \(K\). These cosets partition the group \(G\), and they correspond to elements of the image of \(\varphi\).
 \end{proposition}
 
 \includegraphics{figures/ch_2/fig35.png}
@@ -710,7 +791,7 @@ Therefore, the cosets of \(K\) partition the group \(G\).
 \section{The Correspondence Theorem}\label{the-correspondence-theorem}}
 
 \begin{definition}
-\protect\hypertarget{def:unnamed-chunk-38}{}\label{def:unnamed-chunk-38}Let \(\phi: G \rightarrow G^\prime\) be a group homomorphism, and let \(H\) be a subgroup of \(G\). We may restrict \(\phi\) to \(H\), obtaining a homomorphism
+\protect\hypertarget{def:unnamed-chunk-44}{}\label{def:unnamed-chunk-44}Let \(\phi: G \rightarrow G^\prime\) be a group homomorphism, and let \(H\) be a subgroup of \(G\). We may restrict \(\phi\) to \(H\), obtaining a homomorphism
 \[\phi|_H: H \rightarrow G^\prime\]
 \end{definition}
 
@@ -746,7 +827,7 @@ Further, we can see that follwoing observatons.
 Now let's see an example.
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-39}{}\label{exm:unnamed-chunk-39}Define sign homorphism \(\sigma: S_n \to \{\pm 1\}\) by \(\sigma(x)=1\) if \(x\) is even, and \(\sigma (x)=-1\) if \(x\) is odd. Then the image of the sign homomorphism is,
+\protect\hypertarget{exm:unnamed-chunk-45}{}\label{exm:unnamed-chunk-45}Define sign homorphism \(\sigma: S_n \to \{\pm 1\}\) by \(\sigma(x)=1\) if \(x\) is even, and \(\sigma (x)=-1\) if \(x\) is odd. Then the image of the sign homomorphism is,
 \[Im(\sigma)=\{\pm 1\}\]
 it has order \(2\).
 
@@ -816,7 +897,7 @@ Then,
 \end{proof}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-42}{}\label{exm:unnamed-chunk-42}let denote the determinant homomorphism \[det:GL_n(\mathbb{R})\to \mathbb{R}^\times\]. Note that \(\mathbb{R}^+\unlhd \mathbb{R}^\times\). (It is very clear that \$The set of positive real numbers is a subgroup of \(\mathbb{R}^\times\), and since \(\mathbb{R}^\times\) is abliean, \(\mathbb{R}^+\) is normal.) Now consider the inverse image of \(\mathbb{R}^+\),
+\protect\hypertarget{exm:unnamed-chunk-48}{}\label{exm:unnamed-chunk-48}let denote the determinant homomorphism \[det:GL_n(\mathbb{R})\to \mathbb{R}^\times\]. Note that \(\mathbb{R}^+\unlhd \mathbb{R}^\times\). (It is very clear that \$The set of positive real numbers is a subgroup of \(\mathbb{R}^\times\), and since \(\mathbb{R}^\times\) is abliean, \(\mathbb{R}^+\) is normal.) Now consider the inverse image of \(\mathbb{R}^+\),
 \[det^{-1}(\mathbb{R}^+)=\{A\in GL_n(\mathbb{R}):det(A)\in \mathbb{R}^+\}=SL_n(\mathbb{R})\]. By above proposition we can ge that \(SL_n(\mathbb{R})\) is normal subgroup. (Because \(\mathbb{R}^+\unlhd \mathbb{R}^\times\) and \(det\) is surjective map.)
 \end{example}
 
@@ -915,7 +996,7 @@ Therefore, \(\phi^{-1}(\phi(H))=H\)
 \subsection{Problem}\label{problem-1}}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-44}{}\label{exm:unnamed-chunk-44}Recall
+\protect\hypertarget{exm:unnamed-chunk-50}{}\label{exm:unnamed-chunk-50}Recall
 
 \[\begin{aligned}
 S_4 &= \left\{ id, (1 2), (1 3), (1 4), (2 3), (2 4), (3 4), (1 2 3), (1 2 4), (1 3 2), (1 3 4), (1 4 2), (1 4 3), (2 3 4), (1 2 3 4) \right\}\\
@@ -989,7 +1070,7 @@ The maps \(p\) and \(p '\) are called projections and they are surjective.
 It is obviously desirable to decompose a given group \(G\) as a product, that is, to find investigate groups \(H\) and \(H '\) such that \(G\) is isomorphic to the product \(H \times H'\). The groups \(H\) and \(H'\) will be simpler, and the relation between \(H\times H'\) and its factors is easily understood. It is rare that a group is a product, but it does happen occasionally
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-46}{}\label{exm:unnamed-chunk-46}Consider a cyclicgroup of order \(6\) can be decomposed. It migheted be suprised you. A cyclic group \(C_6\) of order \(6\) isisomorphic to the product \(C_2 \times C_3\) of cyclic groups of orders \(2\) and \(3\).
+\protect\hypertarget{exm:unnamed-chunk-52}{}\label{exm:unnamed-chunk-52}Consider a cyclicgroup of order \(6\) can be decomposed. It migheted be suprised you. A cyclic group \(C_6\) of order \(6\) isisomorphic to the product \(C_2 \times C_3\) of cyclic groups of orders \(2\) and \(3\).
 \[C_6\equiv C_2 \times C_3\]
 Let say
 
@@ -1028,12 +1109,12 @@ Here \(i=0,1,2...5\)
 So let's try to see above result more generally.
 
 \begin{proposition}
-\protect\hypertarget{prp:unnamed-chunk-47}{}\label{prp:unnamed-chunk-47}Let \(r\) and \(s\) be relatively prime integers.
+\protect\hypertarget{prp:unnamed-chunk-53}{}\label{prp:unnamed-chunk-53}Let \(r\) and \(s\) be relatively prime integers.
 A cyclic group of order \(rs\) is isomorphic to the product of a cyclic group of order \(r\) and a cyclic group of order \(s\).
 \end{proposition}
 
 \begin{example}[s]
-\protect\hypertarget{exm:unnamed-chunk-48}{}\label{exm:unnamed-chunk-48}On the other hand, a cyclic group of order \(4\) is not isomorphic to a product of two cyclic
+\protect\hypertarget{exm:unnamed-chunk-54}{}\label{exm:unnamed-chunk-54}On the other hand, a cyclic group of order \(4\) is not isomorphic to a product of two cyclic
 groups of order \(2\).
 \[C_4\not\equiv C2 \times C_2\]
 Because , every element of \(C_2 \times C_2\) has order \(1\) or \(2\),whereasa cyclic group of order
@@ -1194,7 +1275,7 @@ Therefore \(f\) is an isomorphism.
 \hfill\break
 
 \begin{proposition}
-\protect\hypertarget{prp:unnamed-chunk-50}{}\label{prp:unnamed-chunk-50}There are two isomorphism classes of groups of order \(4\), the class of the cyclic group \(C_4\) of order \(4\) and the class of the Klein Four Group,which is isomorphic to the product \(C_2 \times C_2\) of two groups of order \(2\).
+\protect\hypertarget{prp:unnamed-chunk-56}{}\label{prp:unnamed-chunk-56}There are two isomorphism classes of groups of order \(4\), the class of the cyclic group \(C_4\) of order \(4\) and the class of the Klein Four Group,which is isomorphic to the product \(C_2 \times C_2\) of two groups of order \(2\).
 \end{proposition}
 
 \begin{proof}
@@ -1224,7 +1305,7 @@ since \(x,y\) are arbitrary elements, \(G\) is abelian. So every subgroup is nor
 \section{Quotient Groups}\label{quotient-groups}}
 
 \begin{definition}
-\protect\hypertarget{def:unnamed-chunk-52}{}\label{def:unnamed-chunk-52}The set of cosets of a normal subgroup \(N\) of a group \(G\) is often denoted by \(G / N\).
+\protect\hypertarget{def:unnamed-chunk-58}{}\label{def:unnamed-chunk-58}The set of cosets of a normal subgroup \(N\) of a group \(G\) is often denoted by \(G / N\).
 \[G / N \text{ is the set of cosets of $N$ in} G\]
 \end{definition}
 
@@ -1248,7 +1329,7 @@ indicates that this is the only map that we might reasonably be talking about
 The next corollary is very simple, but it is important enough to single out:
 
 \begin{corollary}
-\protect\hypertarget{cor:unnamed-chunk-54}{}\label{cor:unnamed-chunk-54}Let \(N \trianglelefteq G\), and let \(\overline{G}\) denote the set of cosets of \(N\) in \(G\). Let \(\pi: G \to \overline{G}=G/N\) be the canonical homomorphism. Let \(a_1, \ldots, a_k\in G\) such that the product \(a_1 \cdots a_k\in N\). Then \(\overline{a_1} \cdots \overline{a_k} = \overline{1}\).
+\protect\hypertarget{cor:unnamed-chunk-60}{}\label{cor:unnamed-chunk-60}Let \(N \trianglelefteq G\), and let \(\overline{G}\) denote the set of cosets of \(N\) in \(G\). Let \(\pi: G \to \overline{G}=G/N\) be the canonical homomorphism. Let \(a_1, \ldots, a_k\in G\) such that the product \(a_1 \cdots a_k\in N\). Then \(\overline{a_1} \cdots \overline{a_k} = \overline{1}\).
 \end{corollary}
 
 \begin{proof}
@@ -1318,7 +1399,7 @@ Since \(N\) is normal, left and right cosets are equal:
 \end{itemize}
 
 \begin{lemma}
-\protect\hypertarget{lem:unnamed-chunk-58}{}\label{lem:unnamed-chunk-58}Let \(G\) be a group, and let \(Y\) be a set with a law of composition (both laws written with multiplicative notation). Consider a surjective map \(\varphi : G \to Y\) with the homomorphism property: \(\varphi(ab) = \varphi(a)\varphi(b)\) for all \(a\) and \(b\) in \(G\). Then \(Y\) is a group, and \(\varphi\) is a homomorphism.
+\protect\hypertarget{lem:unnamed-chunk-64}{}\label{lem:unnamed-chunk-64}Let \(G\) be a group, and let \(Y\) be a set with a law of composition (both laws written with multiplicative notation). Consider a surjective map \(\varphi : G \to Y\) with the homomorphism property: \(\varphi(ab) = \varphi(a)\varphi(b)\) for all \(a\) and \(b\) in \(G\). Then \(Y\) is a group, and \(\varphi\) is a homomorphism.
 \end{lemma}
 
 \begin{proof}
@@ -1383,7 +1464,7 @@ The product set \((1H)(xH)\) contains four elements: \[(1H)(xH)=\{1, y\}\{x, xy\
 The next theorem relates the quotient group construction to a general group homomorphism, and it provides a fundamental method of identifying quotient groups.
 
 \begin{theorem}[First Isomorphism Theorem]
-\protect\hypertarget{thm:unnamed-chunk-61}{}\label{thm:unnamed-chunk-61}Let \(\varphi: G \to G'\) be a surjective group homomorphism with kernel \(N\). The quotient group \(\overline{G}=G/N\) is isomorphic to the image \(G'\). To be precise, let \(\pi: G \to \overline{G}=G/N\) be the canonical map. There exists a unique isomorphism \(\overline{\varphi}: G/N \to G'\) such that \(\varphi = \psi \circ \pi\).
+\protect\hypertarget{thm:unnamed-chunk-67}{}\label{thm:unnamed-chunk-67}Let \(\varphi: G \to G'\) be a surjective group homomorphism with kernel \(N\). The quotient group \(\overline{G}=G/N\) is isomorphic to the image \(G'\). To be precise, let \(\pi: G \to \overline{G}=G/N\) be the canonical map. There exists a unique isomorphism \(\overline{\varphi}: G/N \to G'\) such that \(\varphi = \psi \circ \pi\).
 \end{theorem}
 
 \begin{center}\includegraphics[width=0.5\linewidth]{figures/ch_2/fig31} \end{center}
@@ -1396,7 +1477,7 @@ The elements of \(\overline{G}=G/N\) are the cosets of \(N\), and they are also 
 \hfill\break
 
 \begin{corollary}
-\protect\hypertarget{cor:unnamed-chunk-63}{}\label{cor:unnamed-chunk-63}Let \(\varphi: G \rightarrow G'\) be a group homomorphism with kernel \(N\) and image \(H'\). The quotient group \(\overline{G}=G/N\) is isomorphic to the image \(H'\).
+\protect\hypertarget{cor:unnamed-chunk-69}{}\label{cor:unnamed-chunk-69}Let \(\varphi: G \rightarrow G'\) be a group homomorphism with kernel \(N\) and image \(H'\). The quotient group \(\overline{G}=G/N\) is isomorphic to the image \(H'\).
 \end{corollary}
 
 \hypertarget{vector-space}{%
@@ -1417,7 +1498,7 @@ We consider two operations on vectors:
 These operations make \(\mathbb{R}^n\) into a vector space.
 
 \begin{definition}[Subspace]
-\protect\hypertarget{def:unnamed-chunk-64}{}\label{def:unnamed-chunk-64}A subset \(W\) of \(\mathbb{R}^n\) is a subspace if it has these properties:
+\protect\hypertarget{def:unnamed-chunk-70}{}\label{def:unnamed-chunk-70}A subset \(W\) of \(\mathbb{R}^n\) is a subspace if it has these properties:
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -1436,11 +1517,11 @@ Let \(W\) be a non-empty set. If \(w_1, w_2, \ldots, w_n\) are elements of \(W\)
 \end{definition}
 
 \begin{definition}[Nullspace]
-\protect\hypertarget{def:unnamed-chunk-65}{}\label{def:unnamed-chunk-65}Given an \(m \times n\) matrix \(A\) with coefficients in \(\mathbb{R}\), the set of vectors in \(\mathbb{R}^n\) whose coordinate vectors solve the homogeneous equation \(AX = 0\) is called the nullspace of \(A\).
+\protect\hypertarget{def:unnamed-chunk-71}{}\label{def:unnamed-chunk-71}Given an \(m \times n\) matrix \(A\) with coefficients in \(\mathbb{R}\), the set of vectors in \(\mathbb{R}^n\) whose coordinate vectors solve the homogeneous equation \(AX = 0\) is called the nullspace of \(A\).
 \end{definition}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-66}{}\label{exm:unnamed-chunk-66}(Example for subspaces) Systems of homogeneous linear equations.
+\protect\hypertarget{exm:unnamed-chunk-72}{}\label{exm:unnamed-chunk-72}(Example for subspaces) Systems of homogeneous linear equations.
 
 Given an \(m \times n\) matrix \(A\) with coefficients in \(\mathbb{R}\), the set of vectors in \(\mathbb{R}^n\) whose coordinate vectors solve the homogeneous equation \(AX = 0\) is a subspace, called the nullspace of \(A\). Though this is very simple, we will check the conditions for a subspace:
 
@@ -1462,21 +1543,21 @@ Therfore nullspace of \(A\) is a subspace.
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-67}{}\label{exm:unnamed-chunk-67}The zerospace \(W = \{0\}\) and the whole space \(W = \mathbb{R}^n\) are subspaces.
+\protect\hypertarget{exm:unnamed-chunk-73}{}\label{exm:unnamed-chunk-73}The zerospace \(W = \{0\}\) and the whole space \(W = \mathbb{R}^n\) are subspaces.
 \end{example}
 
 \begin{definition}[Proper Subspace]
-\protect\hypertarget{def:unnamed-chunk-68}{}\label{def:unnamed-chunk-68}A subspace is called a proper subspace if it's not the entire space
+\protect\hypertarget{def:unnamed-chunk-74}{}\label{def:unnamed-chunk-74}A subspace is called a proper subspace if it's not the entire space
 \end{definition}
 
 The next proposition describes the proper subspaces of \(\mathbb{R}^2\).
 
 \begin{proposition}
-\protect\hypertarget{prp:unnamed-chunk-69}{}\label{prp:unnamed-chunk-69}Let \(W\) be a proper subspace of the space \(\mathbb{R}^2\), and let \(w\) be a non-zero vector in \(W\). Then \(W\) consists of the scalar multiples \(cw\) of \(w\). Distinct proper subspaces have only the zero vector in common.
+\protect\hypertarget{prp:unnamed-chunk-75}{}\label{prp:unnamed-chunk-75}Let \(W\) be a proper subspace of the space \(\mathbb{R}^2\), and let \(w\) be a non-zero vector in \(W\). Then \(W\) consists of the scalar multiples \(cw\) of \(w\). Distinct proper subspaces have only the zero vector in common.
 \end{proposition}
 
 \begin{definition}
-\protect\hypertarget{def:unnamed-chunk-70}{}\label{def:unnamed-chunk-70}The subspace consisting of the scalar multiples \(cw\) of a given nonzero vector \(w\) is called the subs pace \textbf{spanned by \(w\)}.\\
+\protect\hypertarget{def:unnamed-chunk-76}{}\label{def:unnamed-chunk-76}The subspace consisting of the scalar multiples \(cw\) of a given nonzero vector \(w\) is called the subs pace \textbf{spanned by \(w\)}.\\
 Geometrically, it is a line through the origin in the plane \(\mathbb{R}^2\).
 \end{definition}
 
@@ -1491,7 +1572,7 @@ Redo it.
 \section{Fields}\label{fields}}
 
 \begin{definition}
-\protect\hypertarget{def:unnamed-chunk-73}{}\label{def:unnamed-chunk-73}
+\protect\hypertarget{def:unnamed-chunk-79}{}\label{def:unnamed-chunk-79}
 
 A field \(F\) is a set together with two laws of composition:
 
@@ -1534,7 +1615,7 @@ we will be familiar with the fact that the real numbers satisfy these axioms, bu
 The next lemma explains how the zero element multiplies.
 
 \begin{lemma}
-\protect\hypertarget{lem:unnamed-chunk-74}{}\label{lem:unnamed-chunk-74}
+\protect\hypertarget{lem:unnamed-chunk-80}{}\label{lem:unnamed-chunk-80}
 
 Let \(F\) be a field.
 
@@ -1566,7 +1647,7 @@ Let \(F\) be a field.
 \end{proof}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-76}{}\label{exm:unnamed-chunk-76}\leavevmode
+\protect\hypertarget{exm:unnamed-chunk-82}{}\label{exm:unnamed-chunk-82}\leavevmode
 
 \begin{itemize}
 \tightlist
@@ -1579,12 +1660,13 @@ Let \(F\) be a field.
 \item
   Prime field
   \[\mathbb{F}_p:={\overline{0},\overline{1},...,\overline{p-1}}=\mathbb{Z}/p\mathbb{Z}\]
+  We saw in the previous chapter that the set \(\mathbb{Z}/n\mathbb{Z}\) of congruence classes modulo an integer \(n\) has laws of addition and multiplication derived from addition and multiplication of integers. All of the axioms for a field hold for the integers, except for the existence of multiplicative inverses. And as noted in previous chapters, such axioms carry over to addition and multiplication of congruence classes. But the integers are not closed under division, so there is no reason to suppose that congruence classes have multiplicative inverses. The class of 2, for example, has no multiplicative inverse modulo \(6\). It is somewhat surprising that when \(p\) is a prime integer, all nonzero congruence classes modulo \(p\) have inverses, and therefore the set \(\mathbb{Z}/ p \mathbb{Z}\) is a field. In the next theorem, we prove the existence of multiplicative inverse of non-zero element in prime field.
 \end{itemize}
 
 \end{example}
 
 \begin{theorem}
-\protect\hypertarget{thm:unnamed-chunk-77}{}\label{thm:unnamed-chunk-77}Let \(p\) be a prime integer. Every nonzero congruence class modulo \(p\) has a multiplicative inverse, and therefore \(\mathbb{F}_p\) is a field of order \(p\).
+\protect\hypertarget{thm:unnamed-chunk-83}{}\label{thm:unnamed-chunk-83}Let \(p\) be a prime integer. Every nonzero congruence class modulo \(p\) has a multiplicative inverse, and therefore \(\mathbb{F}_p\) is a field of order \(p\).
 \end{theorem}
 
 We discuss the theorem before giving the proof.
@@ -1602,7 +1684,7 @@ We discuss the theorem before giving the proof.
 \subsection{Laws of composition}\label{laws-of-composition}}
 
 \begin{exercise}[Artin 2.1.1]
-\protect\hypertarget{exr:unnamed-chunk-78}{}\label{exr:unnamed-chunk-78}Let \(S\) be a set. Prove that the law of composition defined by \(ab = a\) for all \(a\) and \(b\) in \(S\) is associative? For which sets does this law have an identity?
+\protect\hypertarget{exr:unnamed-chunk-84}{}\label{exr:unnamed-chunk-84}Let \(S\) be a set. Prove that the law of composition defined by \(ab = a\) for all \(a\) and \(b\) in \(S\) is associative? For which sets does this law have an identity?
 \end{exercise}
 
 \textbf{Solution}: Let \(a,b,c\in S\).
@@ -1615,7 +1697,7 @@ In other words, for every element \(a\in S\), there exists an element \(e \in S\
 Thus, \(ae=a=ea=e\). So, the identity element is the same as every element in S, and the law has an identity for all sets S. Thus, only singletons sets have this given law of compositions have identity.
 
 \begin{exercise}[Artin 2.1.2]
-\protect\hypertarget{exr:unnamed-chunk-79}{}\label{exr:unnamed-chunk-79}Prove the properties of inversesthat are listed near the end ofthe section.
+\protect\hypertarget{exr:unnamed-chunk-85}{}\label{exr:unnamed-chunk-85}Prove the properties of inversesthat are listed near the end ofthe section.
 \end{exercise}
 
 \begin{itemize}
@@ -1652,7 +1734,7 @@ In order to show that \(ab\) is invertible, it is enough to exhibit an element t
 \subsection{Groups and Subgroups}\label{groups-and-subgroups-1}}
 
 \begin{exercise}[Artin 2.2.1]
-\protect\hypertarget{exr:unnamed-chunk-83}{}\label{exr:unnamed-chunk-83}Make a multiplication table for the symmetric group \(S_3\).
+\protect\hypertarget{exr:unnamed-chunk-89}{}\label{exr:unnamed-chunk-89}Make a multiplication table for the symmetric group \(S_3\).
 \end{exercise}
 
 \textbf{Solution}
@@ -1673,7 +1755,7 @@ In order to show that \(ab\) is invertible, it is enough to exhibit an element t
 \end{longtable}
 
 \begin{exercise}[Artin 2.2.2]
-\protect\hypertarget{exr:unnamed-chunk-84}{}\label{exr:unnamed-chunk-84}Let \(S\) be a se t with an associative law of composition and with an identity element. Prove that the subset consisting of the invertible elements in \(S\) is a group.
+\protect\hypertarget{exr:unnamed-chunk-90}{}\label{exr:unnamed-chunk-90}Let \(S\) be a se t with an associative law of composition and with an identity element. Prove that the subset consisting of the invertible elements in \(S\) is a group.
 \end{exercise}
 
 \begin{proof}
@@ -1703,7 +1785,7 @@ Therefore, \(S^*\) is closed under the composition.
 Therefore, \(S^*\) is a group.
 
 \begin{exercise}[Artin 2.2.3]
-\protect\hypertarget{exr:unnamed-chunk-86}{}\label{exr:unnamed-chunk-86}
+\protect\hypertarget{exr:unnamed-chunk-92}{}\label{exr:unnamed-chunk-92}
 
 Let \(G\) be a group.Let \(x, y, z,w \in G\).
 
@@ -1747,7 +1829,7 @@ Let \(G\) be a group.Let \(x, y, z,w \in G\).
 If \(G\) is not abelian or \(z\neq x\). \(xyz=1 \nRightarrow yxz=1\).
 
 \begin{exercise}[Artin 2.2.4]
-\protect\hypertarget{exr:unnamed-chunk-87}{}\label{exr:unnamed-chunk-87}
+\protect\hypertarget{exr:unnamed-chunk-93}{}\label{exr:unnamed-chunk-93}
 
 In which of the following cases is \(H\) a subgroup of \(G\)?
 
@@ -1855,7 +1937,7 @@ Thus, \(H\) is closed.
 Therefore, \(H\) is not a subgroup of \(G\).
 
 \begin{exercise}[Artin 2.2.5]
-\protect\hypertarget{exr:unnamed-chunk-88}{}\label{exr:unnamed-chunk-88}
+\protect\hypertarget{exr:unnamed-chunk-94}{}\label{exr:unnamed-chunk-94}
 
 In the definition of a subgroup, the identity element in \(H\) is required to be the identity
 of \(G\). One might require only that H have an identity element, not that it need be the
@@ -1875,7 +1957,7 @@ same as the identity in \(G\).
 \includegraphics{figures/ch_2/fig50.jpg}
 
 \begin{exercise}[Artin 2.2.6]
-\protect\hypertarget{exr:unnamed-chunk-91}{}\label{exr:unnamed-chunk-91}Let \(G\) be a group. We define an opposite group \(G^{\circ}\) with the law of composition \(a * b\) as follows:
+\protect\hypertarget{exr:unnamed-chunk-97}{}\label{exr:unnamed-chunk-97}Let \(G\) be a group. We define an opposite group \(G^{\circ}\) with the law of composition \(a * b\) as follows:
 - The underlying set is the same as \(G\),
 - but the law of composition is \(a * b = ba\).
 
@@ -1890,7 +1972,7 @@ Prove that \(G^{\circ}\) is a group.
 \subsection{Subgroups of the Additive Group of Integers}\label{subgroups-of-the-additive-group-of-integers-1}}
 
 \begin{exercise}[Artin 2.3.1]
-\protect\hypertarget{exr:unnamed-chunk-92}{}\label{exr:unnamed-chunk-92}Let \(a = 123\) and \(b = 321\).
+\protect\hypertarget{exr:unnamed-chunk-98}{}\label{exr:unnamed-chunk-98}Let \(a = 123\) and \(b = 321\).
 Compute \(d = gcd(a, b)\), and express \(d\) as an integer
 combination \(ra + bs\).
 \end{exercise}
@@ -1899,7 +1981,7 @@ combination \(ra + bs\).
 \includegraphics{figures/ch_2/fig20.jpg}
 
 \begin{exercise}[Artin 2.3.2]
-\protect\hypertarget{exr:unnamed-chunk-93}{}\label{exr:unnamed-chunk-93}Prove that if \(a\) and \(b\) are positive integers whose sum is a prime \(p\), their greatest common
+\protect\hypertarget{exr:unnamed-chunk-99}{}\label{exr:unnamed-chunk-99}Prove that if \(a\) and \(b\) are positive integers whose sum is a prime \(p\), their greatest common
 divisor is \(1\).
 \end{exercise}
 
@@ -1907,7 +1989,7 @@ divisor is \(1\).
 \includegraphics{figures/ch_2/fig21.jpg}
 
 \begin{exercise}[Artin 2.3.3]
-\protect\hypertarget{exr:unnamed-chunk-94}{}\label{exr:unnamed-chunk-94}\leavevmode
+\protect\hypertarget{exr:unnamed-chunk-100}{}\label{exr:unnamed-chunk-100}\leavevmode
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -1938,7 +2020,7 @@ b.
 \subsection{Cyclic group}\label{cyclic-group}}
 
 \begin{exercise}[Artin 2.4.1]
-\protect\hypertarget{exr:unnamed-chunk-98}{}\label{exr:unnamed-chunk-98}Let \(a\) and \(b\) be elements of a group \(G\). Assume that a has order \(7\) and that \(a^3b = ba^3\).
+\protect\hypertarget{exr:unnamed-chunk-104}{}\label{exr:unnamed-chunk-104}Let \(a\) and \(b\) be elements of a group \(G\). Assume that a has order \(7\) and that \(a^3b = ba^3\).
 Prove that \(a b = ba\).
 \end{exercise}
 
@@ -1947,7 +2029,7 @@ Prove that \(a b = ba\).
 \includegraphics{figures/ch_2/fig22.png}
 
 \begin{exercise}[Artin 2.4.2]
-\protect\hypertarget{exr:unnamed-chunk-99}{}\label{exr:unnamed-chunk-99}
+\protect\hypertarget{exr:unnamed-chunk-105}{}\label{exr:unnamed-chunk-105}
 
 An \(n\)th root of unity is a complex number \(z\) such that \(z^n = 1\).
 
@@ -1973,7 +2055,7 @@ An \(n\)th root of unity is a complex number \(z\) such that \(z^n = 1\).
 \includegraphics{figures/ch_2/fig28.png}
 
 \begin{exercise}[Artin 2.4.3]
-\protect\hypertarget{exr:unnamed-chunk-100}{}\label{exr:unnamed-chunk-100}Let \(a\) and \(b\) be elements of a group \(G\). Prove that \(ab\) and \(ba\) have the same order
+\protect\hypertarget{exr:unnamed-chunk-106}{}\label{exr:unnamed-chunk-106}Let \(a\) and \(b\) be elements of a group \(G\). Prove that \(ab\) and \(ba\) have the same order
 \end{exercise}
 
 \begin{proof}
@@ -2005,7 +2087,7 @@ and therefore
 \end{proof}
 
 \begin{exercise}[Artin 2.4.4]
-\protect\hypertarget{exr:unnamed-chunk-102}{}\label{exr:unnamed-chunk-102}Describe all groups G that contain no proper subgroup
+\protect\hypertarget{exr:unnamed-chunk-108}{}\label{exr:unnamed-chunk-108}Describe all groups G that contain no proper subgroup
 \end{exercise}
 
 \textbf{Solution}:
@@ -2016,14 +2098,14 @@ and therefore
 \includegraphics{figures/ch_2/fig58.png}
 
 \begin{exercise}[Artin 2.4.5]
-\protect\hypertarget{exr:unnamed-chunk-108}{}\label{exr:unnamed-chunk-108}Prove that every subgroup of a cyclic group is cyclic. Do this by working with exponents, and use the description of the subgroups of \((\mathbb{Z},+)\).
+\protect\hypertarget{exr:unnamed-chunk-114}{}\label{exr:unnamed-chunk-114}Prove that every subgroup of a cyclic group is cyclic. Do this by working with exponents, and use the description of the subgroups of \((\mathbb{Z},+)\).
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig59.png}
 \includegraphics{figures/ch_2/fig60.png}
 
 \begin{exercise}[Artin 2.4.6]
-\protect\hypertarget{exr:unnamed-chunk-111}{}\label{exr:unnamed-chunk-111}\leavevmode
+\protect\hypertarget{exr:unnamed-chunk-117}{}\label{exr:unnamed-chunk-117}\leavevmode
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
@@ -2051,7 +2133,7 @@ b)
 \includegraphics{figures/ch_2/fig63.png}
 
 \begin{exercise}[Artin 2.4.7]
-\protect\hypertarget{exr:unnamed-chunk-115}{}\label{exr:unnamed-chunk-115}Let \(x\) and \(y\) be elements of a group \(G\). Assume that each of the elements \(x\), \(y\), and \(xy\) has order 2. Prove that the set \(H = \{I, x, y, xy\}\) is a subgroup of \(G\), and that it has order 4.
+\protect\hypertarget{exr:unnamed-chunk-121}{}\label{exr:unnamed-chunk-121}Let \(x\) and \(y\) be elements of a group \(G\). Assume that each of the elements \(x\), \(y\), and \(xy\) has order 2. Prove that the set \(H = \{I, x, y, xy\}\) is a subgroup of \(G\), and that it has order 4.
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig64.png}
@@ -2059,7 +2141,7 @@ b)
 \includegraphics{figures/ch_2/fig66.png}
 
 \begin{exercise}[Artin 2.4.8]
-\protect\hypertarget{exr:unnamed-chunk-119}{}\label{exr:unnamed-chunk-119}\leavevmode
+\protect\hypertarget{exr:unnamed-chunk-125}{}\label{exr:unnamed-chunk-125}\leavevmode
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi})}
@@ -2077,7 +2159,7 @@ Recall the types of elementary matrices,
 \includegraphics{figures/ch_2/fig67.png}
 
 \begin{exercise}[Artin 2.4.9]
-\protect\hypertarget{exr:unnamed-chunk-121}{}\label{exr:unnamed-chunk-121}How many elements of order \(2\) does the symmetric group \(S_4\) contain?
+\protect\hypertarget{exr:unnamed-chunk-127}{}\label{exr:unnamed-chunk-127}How many elements of order \(2\) does the symmetric group \(S_4\) contain?
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig68.png}
@@ -2085,7 +2167,7 @@ Recall the types of elementary matrices,
 \includegraphics{figures/ch_2/fig70.png}
 
 \begin{exercise}[Artin 2.4.10]
-\protect\hypertarget{exr:unnamed-chunk-125}{}\label{exr:unnamed-chunk-125}Show by example that the product of elementsof finite order in a group need not have finite order. What if the group is abelian?
+\protect\hypertarget{exr:unnamed-chunk-131}{}\label{exr:unnamed-chunk-131}Show by example that the product of elementsof finite order in a group need not have finite order. What if the group is abelian?
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig71.png}
@@ -2095,36 +2177,36 @@ Recall the types of elementary matrices,
 \subsection{Homomorphisms}\label{homomorphisms-1}}
 
 \begin{exercise}[Artin 2.5.1]
-\protect\hypertarget{exr:unnamed-chunk-128}{}\label{exr:unnamed-chunk-128}Let \(\varphi: G \rightarrow G'\) be a surjective homomorphism. Prove that if \(G\) is cyclic, then \(G'\) is cyclic, and if \(G\) is abelian, then \(G'\) is abelian.
+\protect\hypertarget{exr:unnamed-chunk-134}{}\label{exr:unnamed-chunk-134}Let \(\varphi: G \rightarrow G'\) be a surjective homomorphism. Prove that if \(G\) is cyclic, then \(G'\) is cyclic, and if \(G\) is abelian, then \(G'\) is abelian.
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig73.png}
 
 \begin{exercise}[Artin 2.5.2]
-\protect\hypertarget{exr:unnamed-chunk-130}{}\label{exr:unnamed-chunk-130}Prove that the intersection \(K \cap H\) ofsubgroupsof a group \(G\) is a subgroup of \(H\), and that if \(K\) is a normal subgroup of \(G\), then \(K \cap H\) is a normal subgroup of \(H\).
+\protect\hypertarget{exr:unnamed-chunk-136}{}\label{exr:unnamed-chunk-136}Prove that the intersection \(K \cap H\) ofsubgroupsof a group \(G\) is a subgroup of \(H\), and that if \(K\) is a normal subgroup of \(G\), then \(K \cap H\) is a normal subgroup of \(H\).
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig74.png}
 
 \begin{exercise}[Artin 2.5.3]
-\protect\hypertarget{exr:unnamed-chunk-132}{}\label{exr:unnamed-chunk-132}Let \(U\) denote the group of invertible upper triangular \(2 \times 2\) matrices \(A = \begin{bmatrix} a & b \\ 0 & d \end{bmatrix}\), and let \(\varphi : U \rightarrow \mathbb{R}^{\times}\) be the map that sends \(A\) to \(a^2\). Prove that \(\varphi\) is a homomorphism, and determine its kernel and image.
+\protect\hypertarget{exr:unnamed-chunk-138}{}\label{exr:unnamed-chunk-138}Let \(U\) denote the group of invertible upper triangular \(2 \times 2\) matrices \(A = \begin{bmatrix} a & b \\ 0 & d \end{bmatrix}\), and let \(\varphi : U \rightarrow \mathbb{R}^{\times}\) be the map that sends \(A\) to \(a^2\). Prove that \(\varphi\) is a homomorphism, and determine its kernel and image.
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig75.png}
 \includegraphics{figures/ch_2/fig76.png}
 
 \begin{exercise}[Artin 2.5.4]
-\protect\hypertarget{exr:unnamed-chunk-135}{}\label{exr:unnamed-chunk-135}Let \(f: (\mathbb{R},+) \rightarrow (\mathbb{C},\times)\) be the map \(f(x) = e^{ix}\). Prove that \(f\) is a homomorphism, and determine its kernel and image.
+\protect\hypertarget{exr:unnamed-chunk-141}{}\label{exr:unnamed-chunk-141}Let \(f: (\mathbb{R},+) \rightarrow (\mathbb{C},\times)\) be the map \(f(x) = e^{ix}\). Prove that \(f\) is a homomorphism, and determine its kernel and image.
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig77.png}
 
 \begin{exercise}[Artin 2.5.5]
-\protect\hypertarget{exr:unnamed-chunk-137}{}\label{exr:unnamed-chunk-137}Prove that the \(n \times n\) matrices that have the block form \(M = \begin{bmatrix} A & B \\ 0 & D \end{bmatrix}\), with \(A \in GL_r(\mathbb{R})\) and \(D \in GL_{n-r}(\mathbb{R})\), form a subgroup \(H\) of \(GL_n(\mathbb{R})\), and that the map \(H \rightarrow GL_r(\mathbb{R})\) that sends \(M \mapsto A\) is a homomorphism. What is its kernel?
+\protect\hypertarget{exr:unnamed-chunk-143}{}\label{exr:unnamed-chunk-143}Prove that the \(n \times n\) matrices that have the block form \(M = \begin{bmatrix} A & B \\ 0 & D \end{bmatrix}\), with \(A \in GL_r(\mathbb{R})\) and \(D \in GL_{n-r}(\mathbb{R})\), form a subgroup \(H\) of \(GL_n(\mathbb{R})\), and that the map \(H \rightarrow GL_r(\mathbb{R})\) that sends \(M \mapsto A\) is a homomorphism. What is its kernel?
 \end{exercise}
 
 \begin{exercise}[Artin 2.5.6]
-\protect\hypertarget{exr:unnamed-chunk-138}{}\label{exr:unnamed-chunk-138}Determine the center of \(GL_n (\mathbb{R})\).
+\protect\hypertarget{exr:unnamed-chunk-144}{}\label{exr:unnamed-chunk-144}Determine the center of \(GL_n (\mathbb{R})\).
 
 \emph{Hint:} You are asked to determine the invertible matrices \(A\) that commute with every invertible matrix \(B\). Do not test with a general matrix \(B\). Test with elementary matrices.
 \end{exercise}
@@ -2133,7 +2215,7 @@ Recall the types of elementary matrices,
 \subsection{Isomorphisms}\label{isomorphisms-1}}
 
 \begin{exercise}[Artin 2.6.1]
-\protect\hypertarget{exr:unnamed-chunk-139}{}\label{exr:unnamed-chunk-139}Let \(G'\) be the group of real matrices of the form
+\protect\hypertarget{exr:unnamed-chunk-145}{}\label{exr:unnamed-chunk-145}Let \(G'\) be the group of real matrices of the form
 \(\begin{bmatrix}1 & x \\ & 1\end{bmatrix}\)
 Is the map \(\phi: (\mathbb{R},+) \rightarrow G'\) that sends \(x\) to this matrix an isomorphism?
 \end{exercise}
@@ -2141,7 +2223,7 @@ Is the map \(\phi: (\mathbb{R},+) \rightarrow G'\) that sends \(x\) to this matr
 \includegraphics{figures/ch_2/fig78.png}
 
 \begin{exercise}[Artin 2.6.2]
-\protect\hypertarget{exr:unnamed-chunk-141}{}\label{exr:unnamed-chunk-141}Describe all homomorphisms \(\phi : (\mathbb{Z},+) \rightarrow (\mathbb{Z},+)\). Determine which are injective, which are surjective, and which are isomorphisms.
+\protect\hypertarget{exr:unnamed-chunk-147}{}\label{exr:unnamed-chunk-147}Describe all homomorphisms \(\phi : (\mathbb{Z},+) \rightarrow (\mathbb{Z},+)\). Determine which are injective, which are surjective, and which are isomorphisms.
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig79.png}
@@ -2151,7 +2233,7 @@ Is the map \(\phi: (\mathbb{R},+) \rightarrow G'\) that sends \(x\) to this matr
 \includegraphics{figures/ch_2/fig81.png}
 
 \begin{exercise}[Artin 2.6.3]
-\protect\hypertarget{exr:unnamed-chunk-145}{}\label{exr:unnamed-chunk-145}Show that the functions \(f = \frac{1}{x}\), \(g = \frac{x - 1}{x}\) generate a group of functions, the law of composition being composition of functions, that is isomorphic to the symmetric group \(S_3\).
+\protect\hypertarget{exr:unnamed-chunk-151}{}\label{exr:unnamed-chunk-151}Show that the functions \(f = \frac{1}{x}\), \(g = \frac{x - 1}{x}\) generate a group of functions, the law of composition being composition of functions, that is isomorphic to the symmetric group \(S_3\).
 \end{exercise}
 
 There are 6 elemenst in the \(S_3\).
@@ -2207,13 +2289,13 @@ By looking at the table we can tell that \(G\cong S_3\).
 Let \(\phi:G\to S_3\) ide defined by \(\phi(f)=(23)\) and \(\phi(g)=(132)\)
 
 \begin{exercise}[Artin 2.6.4]
-\protect\hypertarget{exr:unnamed-chunk-147}{}\label{exr:unnamed-chunk-147}Prove that in a group, the products \(ab\) and \(ba\) are conjugate elements.
+\protect\hypertarget{exr:unnamed-chunk-153}{}\label{exr:unnamed-chunk-153}Prove that in a group, the products \(ab\) and \(ba\) are conjugate elements.
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig82.png}
 
 \begin{exercise}[Artin 2.6.5]
-\protect\hypertarget{exr:unnamed-chunk-149}{}\label{exr:unnamed-chunk-149}Decide whether or not the two matrices \(A = \begin{bmatrix} 3 & 0 \\ 0 & 2 \end{bmatrix}\) and \(B = \begin{bmatrix} 1 & 1 \\ -2 & 4 \end{bmatrix}\) are conjugate elements of the general linear group \(GL_2(\mathbb{R})\).
+\protect\hypertarget{exr:unnamed-chunk-155}{}\label{exr:unnamed-chunk-155}Decide whether or not the two matrices \(A = \begin{bmatrix} 3 & 0 \\ 0 & 2 \end{bmatrix}\) and \(B = \begin{bmatrix} 1 & 1 \\ -2 & 4 \end{bmatrix}\) are conjugate elements of the general linear group \(GL_2(\mathbb{R})\).
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig83.png}
@@ -2225,25 +2307,25 @@ Let \(\phi:G\to S_3\) ide defined by \(\phi(f)=(23)\) and \(\phi(g)=(132)\)
 \includegraphics{figures/ch_2/fig86.png}
 
 \begin{exercise}[Artin 2.6.7]
-\protect\hypertarget{exr:unnamed-chunk-154}{}\label{exr:unnamed-chunk-154}Let \(H\) be a subgroup of \(G\), and let \(g\) be a fixed element of \(G\). The conjugate subgroup \(gHg^{-1}\) is defined to be the set of all conjugates \(ghg^{-1}\), with \(h\) in \(H\). Prove that \(gHg^{-1}\) is a subgroup of \(G\).
+\protect\hypertarget{exr:unnamed-chunk-160}{}\label{exr:unnamed-chunk-160}Let \(H\) be a subgroup of \(G\), and let \(g\) be a fixed element of \(G\). The conjugate subgroup \(gHg^{-1}\) is defined to be the set of all conjugates \(ghg^{-1}\), with \(h\) in \(H\). Prove that \(gHg^{-1}\) is a subgroup of \(G\).
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig87.png}
 
 \begin{exercise}[Artin 2.6.8]
-\protect\hypertarget{exr:unnamed-chunk-156}{}\label{exr:unnamed-chunk-156}Prove that the map \(A \mapsto (A^{t})^{-1}\) is an automorphism of \(GL_{n}(\mathbb{R})\).
+\protect\hypertarget{exr:unnamed-chunk-162}{}\label{exr:unnamed-chunk-162}Prove that the map \(A \mapsto (A^{t})^{-1}\) is an automorphism of \(GL_{n}(\mathbb{R})\).
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig88.png}
 
 \begin{exercise}[Artin 2.6.9]
-\protect\hypertarget{exr:unnamed-chunk-158}{}\label{exr:unnamed-chunk-158}Prove that a group \(G\) and its opposite group \(G^{o}\) (Exercise 2.2.6) are isomorphic.
+\protect\hypertarget{exr:unnamed-chunk-164}{}\label{exr:unnamed-chunk-164}Prove that a group \(G\) and its opposite group \(G^{o}\) (Exercise 2.2.6) are isomorphic.
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig89.png}
 
 \begin{exercise}[Artin 2.6.10]
-\protect\hypertarget{exr:unnamed-chunk-160}{}\label{exr:unnamed-chunk-160}
+\protect\hypertarget{exr:unnamed-chunk-166}{}\label{exr:unnamed-chunk-166}
 
 Find all automorphisms of
 
@@ -2261,7 +2343,7 @@ Find all automorphisms of
 \includegraphics{figures/ch_2/fig90.png}
 
 \begin{exercise}[Artin 2.6.11]
-\protect\hypertarget{exr:unnamed-chunk-162}{}\label{exr:unnamed-chunk-162}Let \(a\) be an element of a group \(G\). Prove that if the set \(\{1, a\}\) is a normal subgroup of \(G\), then \(a\) is in the center of \(G\).
+\protect\hypertarget{exr:unnamed-chunk-168}{}\label{exr:unnamed-chunk-168}Let \(a\) be an element of a group \(G\). Prove that if the set \(\{1, a\}\) is a normal subgroup of \(G\), then \(a\) is in the center of \(G\).
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig91.png}
@@ -2270,7 +2352,7 @@ Find all automorphisms of
 \subsection{Equivalence Relations and Partitions}\label{equivalence-relations-and-partitions-1}}
 
 \begin{exercise}[Artin 2.7.1]
-\protect\hypertarget{exr:unnamed-chunk-164}{}\label{exr:unnamed-chunk-164}Let \(G\) be a group. Prove that the relation \(a \sim b\) if \(b = gag^{-1}\) for some \(g\) in \(G\) is an equivalence relation on \(G\).
+\protect\hypertarget{exr:unnamed-chunk-170}{}\label{exr:unnamed-chunk-170}Let \(G\) be a group. Prove that the relation \(a \sim b\) if \(b = gag^{-1}\) for some \(g\) in \(G\) is an equivalence relation on \(G\).
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig92.png}
@@ -2278,13 +2360,13 @@ Find all automorphisms of
 \includegraphics{figures/ch_2/fig93.png}
 
 \begin{exercise}[Artin 2.7.2]
-\protect\hypertarget{exr:unnamed-chunk-167}{}\label{exr:unnamed-chunk-167}An equivalence relation on \(S\) is determined by the subset \(R\) of the set \(S \times S\) consisting of those pairs \((a, b)\) such that \(a \sim b\). Write the axioms for an equivalence relation in terms of the subset \(R\).
+\protect\hypertarget{exr:unnamed-chunk-173}{}\label{exr:unnamed-chunk-173}An equivalence relation on \(S\) is determined by the subset \(R\) of the set \(S \times S\) consisting of those pairs \((a, b)\) such that \(a \sim b\). Write the axioms for an equivalence relation in terms of the subset \(R\).
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig94.png}
 
 \begin{exercise}[Artin 2.7.3]
-\protect\hypertarget{exr:unnamed-chunk-169}{}\label{exr:unnamed-chunk-169}With the notation of Exercise 2.7.2, is the intersection \(R \cap R'\) of two equivalence relations \(R\) and \(R'\) an equivalence relation? Is the union?
+\protect\hypertarget{exr:unnamed-chunk-175}{}\label{exr:unnamed-chunk-175}With the notation of Exercise 2.7.2, is the intersection \(R \cap R'\) of two equivalence relations \(R\) and \(R'\) an equivalence relation? Is the union?
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig95.png}
@@ -2292,13 +2374,13 @@ Find all automorphisms of
 \includegraphics{figures/ch_2/fig96.png}
 
 \begin{exercise}[Artin 2.7.4]
-\protect\hypertarget{exr:unnamed-chunk-172}{}\label{exr:unnamed-chunk-172}A relation \(R\) on the set of real numbers can be thought of as a subset of the \((x, y)\)-plane. With the notation of Exercise 7.2, explain the geometric meaning of the reflexive and symmetric properties.
+\protect\hypertarget{exr:unnamed-chunk-178}{}\label{exr:unnamed-chunk-178}A relation \(R\) on the set of real numbers can be thought of as a subset of the \((x, y)\)-plane. With the notation of Exercise 7.2, explain the geometric meaning of the reflexive and symmetric properties.
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig97.png}
 
 \begin{exercise}[Artin 2.7.5]
-\protect\hypertarget{exr:unnamed-chunk-174}{}\label{exr:unnamed-chunk-174}
+\protect\hypertarget{exr:unnamed-chunk-180}{}\label{exr:unnamed-chunk-180}
 
 With the notation of Exercise 7.2, each of the following subsets \(R\) of the \((x, y)\)-plane defines a relation on the set \(\mathbb{R}\) of real numbers. Determine which of the axioms (2.7.3) are satisfied:
 
@@ -2320,7 +2402,7 @@ With the notation of Exercise 7.2, each of the following subsets \(R\) of the \(
 \includegraphics{figures/ch_2/fig100.png}
 
 \begin{exercise}[Artin 2.7.5]
-\protect\hypertarget{exr:unnamed-chunk-176}{}\label{exr:unnamed-chunk-176}How many different equivalence relations can be defined on a set of five elements?
+\protect\hypertarget{exr:unnamed-chunk-182}{}\label{exr:unnamed-chunk-182}How many different equivalence relations can be defined on a set of five elements?
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig98.png}
@@ -2331,7 +2413,7 @@ With the notation of Exercise 7.2, each of the following subsets \(R\) of the \(
 \subsection{Cosets}\label{cosets-1}}
 
 \begin{exercise}[Artin 2.8.1]
-\protect\hypertarget{exr:unnamed-chunk-179}{}\label{exr:unnamed-chunk-179}Let \(H\) be the cyclic subgroup of the alternating group \(A_4\) generated by the permutation \((123)\). Exhibit the left and the right cosets of \(H\) explicitly.
+\protect\hypertarget{exr:unnamed-chunk-185}{}\label{exr:unnamed-chunk-185}Let \(H\) be the cyclic subgroup of the alternating group \(A_4\) generated by the permutation \((123)\). Exhibit the left and the right cosets of \(H\) explicitly.
 \end{exercise}
 
 First let's see the elements in the \(A_4\).
@@ -2387,7 +2469,7 @@ Similarly,
 Further, note that \((12)(34)H\neq H(12)(34)\)
 
 \begin{exercise}[Artin 2.8.2]
-\protect\hypertarget{exr:unnamed-chunk-180}{}\label{exr:unnamed-chunk-180}In the additive group \(\mathbb{R}^m\) of vectors, let \(W\) be the set of solutions of a system of homogeneous linear equations \(AX = 0\). Show that the set of solutions of an inhomogeneous system \(AX = B\) is either empty, or else it is an (additive) coset of \(W\).
+\protect\hypertarget{exr:unnamed-chunk-186}{}\label{exr:unnamed-chunk-186}In the additive group \(\mathbb{R}^m\) of vectors, let \(W\) be the set of solutions of a system of homogeneous linear equations \(AX = 0\). Show that the set of solutions of an inhomogeneous system \(AX = B\) is either empty, or else it is an (additive) coset of \(W\).
 \end{exercise}
 
 \textbf{Solution}:\\
@@ -2409,7 +2491,7 @@ Let \(\underline{y_1}\in W'\). Now let \(\underline{\omega_2}=\underline{y_1}-\u
 Hence, \(W'\subseteq \underline{x_1}+W\). Therefore, \(W'=\underline{x_1}+W\).
 
 \begin{exercise}[Artin 2.8.3]
-\protect\hypertarget{exr:unnamed-chunk-181}{}\label{exr:unnamed-chunk-181}Does every group whose order is a power of a prime \(p\) contain an element of order \(p\)?
+\protect\hypertarget{exr:unnamed-chunk-187}{}\label{exr:unnamed-chunk-187}Does every group whose order is a power of a prime \(p\) contain an element of order \(p\)?
 \end{exercise}
 
 \textbf{Yes}.\\
@@ -2435,7 +2517,7 @@ Hence \(Ord(y)=p\). The group \(G\) whose order is a power of a prime \(p\) cont
 \end{proof}
 
 \begin{exercise}[Artin 2.8.4]
-\protect\hypertarget{exr:unnamed-chunk-183}{}\label{exr:unnamed-chunk-183}Does a group of order \(35\) contain an element of order \(5\)? of order \(7\)?
+\protect\hypertarget{exr:unnamed-chunk-189}{}\label{exr:unnamed-chunk-189}Does a group of order \(35\) contain an element of order \(5\)? of order \(7\)?
 \end{exercise}
 
 \textbf{Claim}: Let \(G\) be a group with order \(35\). \(G\) contains elements of order 5 \& 7.
@@ -2512,7 +2594,7 @@ Thus \(G\) contains an element of order 5.
 \end{proof}
 
 \begin{exercise}[Artin 2.8.5]
-\protect\hypertarget{exr:unnamed-chunk-185}{}\label{exr:unnamed-chunk-185}A finite group contains an element \(x\) of order \(10\) and also an element \(y\) of order \(6\). What can be said about the order of \(G\)?
+\protect\hypertarget{exr:unnamed-chunk-191}{}\label{exr:unnamed-chunk-191}A finite group contains an element \(x\) of order \(10\) and also an element \(y\) of order \(6\). What can be said about the order of \(G\)?
 \end{exercise}
 
 Let \(G\) b group, with \(|G|<\infty\).
@@ -2520,7 +2602,7 @@ Let \(x,y\in G\) with \(|x|=10\) and \(|y|=6\).
 By Artin's book Corollary 2.8.10 , \(|x|\biggr | |G|=10\biggr ||G|\) and \(|y|\biggr |G|=6\biggr | |G|\). Hence, \[LCM(|x|,|y|)\biggr |G|=LCM(10,6)\biggr | |G|=30\biggr  | |G|\].
 
 \begin{exercise}[Artin 2.8.6]
-\protect\hypertarget{exr:unnamed-chunk-186}{}\label{exr:unnamed-chunk-186}Let \(\phi: G \rightarrow G'\) be a group homomorphism. Suppose that \(|G| = 18\), \(|G'| = 15\), and that \(\phi\) is not the trivial homomorphism. What is the order of the kernel?
+\protect\hypertarget{exr:unnamed-chunk-192}{}\label{exr:unnamed-chunk-192}Let \(\phi: G \rightarrow G'\) be a group homomorphism. Suppose that \(|G| = 18\), \(|G'| = 15\), and that \(\phi\) is not the trivial homomorphism. What is the order of the kernel?
 \end{exercise}
 
 Then possibilities for \(Img(\phi)\) are as follows. We use Artin's Algbera book Corollary 2.8.13,
@@ -2539,7 +2621,7 @@ Now let's find the order of the kernel. By Corollary 2.8.13,
 \end{eqnarray*}
 
 \begin{exercise}[Artin 2.8.7]
-\protect\hypertarget{exr:unnamed-chunk-187}{}\label{exr:unnamed-chunk-187}A group \(G\) of order 22 contains elements \(x\) and \(y\), where \(x \neq 1\) and \(y\) is not a power of \(x\). Prove that the subgroup generated by these elements is the whole group \(G\).
+\protect\hypertarget{exr:unnamed-chunk-193}{}\label{exr:unnamed-chunk-193}A group \(G\) of order 22 contains elements \(x\) and \(y\), where \(x \neq 1\) and \(y\) is not a power of \(x\). Prove that the subgroup generated by these elements is the whole group \(G\).
 \end{exercise}
 
 \begin{proof}
@@ -2567,7 +2649,7 @@ So, \(|H|=1,2,11,22\). Let's condier each and evrry cases.
 \end{proof}
 
 \begin{exercise}[Artin 2.8.8]
-\protect\hypertarget{exr:unnamed-chunk-189}{}\label{exr:unnamed-chunk-189}Let \(G\) be a group of order \(25\). Prove that \(G\) has at least one subgroup of order \(5\), and that if it contains only one subgroup of order \(5\), then it is a cyclic group.
+\protect\hypertarget{exr:unnamed-chunk-195}{}\label{exr:unnamed-chunk-195}Let \(G\) be a group of order \(25\). Prove that \(G\) has at least one subgroup of order \(5\), and that if it contains only one subgroup of order \(5\), then it is a cyclic group.
 \end{exercise}
 
 \textbf{Claim 1}: Let \(G\) be a group of order 25. Then \(G\) has at least one subgroup of order 5.
@@ -2618,7 +2700,7 @@ So, \(|y| = 5, 25\).
 \end{itemize}
 
 \begin{exercise}[Artin 2.8.9]
-\protect\hypertarget{exr:unnamed-chunk-192}{}\label{exr:unnamed-chunk-192}Let \(G\) be a finite group. Under what circumstances is the map \(f: G \to G\) defined by \(f(x) = x^2\) an automorphism of \(G\)?
+\protect\hypertarget{exr:unnamed-chunk-198}{}\label{exr:unnamed-chunk-198}Let \(G\) be a finite group. Under what circumstances is the map \(f: G \to G\) defined by \(f(x) = x^2\) an automorphism of \(G\)?
 \end{exercise}
 
 \begin{itemize}
@@ -2659,7 +2741,7 @@ Then \(|x^k| = 2\) has order \(2\).
 :::
 
 \begin{exercise}[Artin 2.8.10]
-\protect\hypertarget{exr:unnamed-chunk-195}{}\label{exr:unnamed-chunk-195}Prove that every subgroup of index \(2\) is a normal subgroup, and show by example that a subgroup of index \(3\) need not be normal.
+\protect\hypertarget{exr:unnamed-chunk-201}{}\label{exr:unnamed-chunk-201}Prove that every subgroup of index \(2\) is a normal subgroup, and show by example that a subgroup of index \(3\) need not be normal.
 \end{exercise}
 
 \begin{proof}
@@ -2696,7 +2778,7 @@ Therefore, we have proven that \(H\) is not a normal subgroup of \(S_3\).
 Thus, \(H\) is not a normal subgroup.
 
 \begin{exercise}[Artin 2.8.11]
-\protect\hypertarget{exr:unnamed-chunk-197}{}\label{exr:unnamed-chunk-197}Let \(G\) and \(H\) be the following subgroups of \(GL_2 (\mathbb{R})\):
+\protect\hypertarget{exr:unnamed-chunk-203}{}\label{exr:unnamed-chunk-203}Let \(G\) and \(H\) be the following subgroups of \(GL_2 (\mathbb{R})\):
 \[ G =\left\{ \begin{bmatrix} x & y \\ 0 & 1 \end{bmatrix}\right\}, 
 H = \left\{\begin{bmatrix} x & 0 \\ 0 & 1 \end{bmatrix}\right\}  \]
 with \(x\) and \(y\) real and \(x > 0\). An element of \(G\) can be represented by a point in the right
@@ -2705,7 +2787,7 @@ right cosets of \(H\).
 \end{exercise}
 
 \begin{exercise}[Artin 2.8.12]
-\protect\hypertarget{exr:unnamed-chunk-198}{}\label{exr:unnamed-chunk-198}Let \(S\) be a subset of a group \(G\) that contains the identity element 1, and such that the left cosets \(aS\), with \(a\) in \(G\), partition \(G\). Prove that \(S\) is a subgroup of \(G\).
+\protect\hypertarget{exr:unnamed-chunk-204}{}\label{exr:unnamed-chunk-204}Let \(S\) be a subset of a group \(G\) that contains the identity element 1, and such that the left cosets \(aS\), with \(a\) in \(G\), partition \(G\). Prove that \(S\) is a subgroup of \(G\).
 \end{exercise}
 
 \begin{proof}
@@ -2718,7 +2800,7 @@ By the subgroup test, \(S\) is a subgroup of \(G\).
 \end{proof}
 
 \begin{exercise}[Artin2.8.13]
-\protect\hypertarget{exr:unnamed-chunk-200}{}\label{exr:unnamed-chunk-200}
+\protect\hypertarget{exr:unnamed-chunk-206}{}\label{exr:unnamed-chunk-206}
 
 Let \(S\) be a set with a law of composition: A partition
 \(\Pi_1 \cup \Pi_2 \cup \cdots\) of \(S\) is compatible
@@ -2743,7 +2825,7 @@ of the partition.
 \subsection{Modular Arthmetic}\label{modular-arthmetic}}
 
 \begin{exercise}[Artin 2.9.2]
-\protect\hypertarget{exr:unnamed-chunk-201}{}\label{exr:unnamed-chunk-201}What are the possible values of \(a^2\) modulo 4? modulo 8?
+\protect\hypertarget{exr:unnamed-chunk-207}{}\label{exr:unnamed-chunk-207}What are the possible values of \(a^2\) modulo 4? modulo 8?
 \end{exercise}
 
 \textbf{solution}:
@@ -2774,7 +2856,7 @@ of the partition.
 \end{itemize}
 
 \begin{exercise}[Artin 2.9.3]
-\protect\hypertarget{exr:unnamed-chunk-202}{}\label{exr:unnamed-chunk-202}Prove that every integer \(a\) is congruent to the sum of its decimal digits modulo 9.
+\protect\hypertarget{exr:unnamed-chunk-208}{}\label{exr:unnamed-chunk-208}Prove that every integer \(a\) is congruent to the sum of its decimal digits modulo 9.
 \end{exercise}
 
 \begin{proof}
@@ -2813,13 +2895,13 @@ Therefore,by mathematical induction, \(9|(10^n-1)\) for any \(n\in \mathbb{N}\).
 \end{proof}
 
 \begin{exercise}[Artin 2.9.4]
-\protect\hypertarget{exr:unnamed-chunk-205}{}\label{exr:unnamed-chunk-205}Solve the congruence \(2x \equiv 5\) modulo 9 and modulo 6.
+\protect\hypertarget{exr:unnamed-chunk-211}{}\label{exr:unnamed-chunk-211}Solve the congruence \(2x \equiv 5\) modulo 9 and modulo 6.
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig102.jpg}
 
 \begin{exercise}[Artin 2.9.5]
-\protect\hypertarget{exr:unnamed-chunk-207}{}\label{exr:unnamed-chunk-207}Determine the integers \(n\) for which the pair of congruences \(2x - y \equiv 1\) and \(4x + 3y \equiv 2\) modulo \(n\) has a solution.
+\protect\hypertarget{exr:unnamed-chunk-213}{}\label{exr:unnamed-chunk-213}Determine the integers \(n\) for which the pair of congruences \(2x - y \equiv 1\) and \(4x + 3y \equiv 2\) modulo \(n\) has a solution.
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig103.jpg}
@@ -2827,12 +2909,12 @@ Therefore,by mathematical induction, \(9|(10^n-1)\) for any \(n\in \mathbb{N}\).
 \includegraphics{figures/ch_2/fig104.jpg}
 
 \begin{exercise}[Artin 2.9.6]
-\protect\hypertarget{exr:unnamed-chunk-210}{}\label{exr:unnamed-chunk-210}Prove the Chinese Remainder Theorem: Let \(a, b, u, v\) be integers, and assume that the greatest common divisor of \(a\) and \(b\) is 1. Then there is an integer \(x\) such that \(x \equiv u\) modulo \(a\) and \(X \equiv v\) modulo \(b\).\\
+\protect\hypertarget{exr:unnamed-chunk-216}{}\label{exr:unnamed-chunk-216}Prove the Chinese Remainder Theorem: Let \(a, b, u, v\) be integers, and assume that the greatest common divisor of \(a\) and \(b\) is 1. Then there is an integer \(x\) such that \(x \equiv u\) modulo \(a\) and \(X \equiv v\) modulo \(b\).\\
 Hint: Do the case \(u = 0\) and \(v = 1\) first.
 \end{exercise}
 
 \begin{exercise}[Artin 2.9.7]
-\protect\hypertarget{exr:unnamed-chunk-211}{}\label{exr:unnamed-chunk-211}Determine the order of each of the matrices \(A=\begin{bmatrix}1 & 1 \\ 0 & 1\end{bmatrix}\) and \(B=\begin{bmatrix}1 & 1 \\ 1 & 0\end{bmatrix}\) when the matrix entries are interpreted modulo 3.
+\protect\hypertarget{exr:unnamed-chunk-217}{}\label{exr:unnamed-chunk-217}Determine the order of each of the matrices \(A=\begin{bmatrix}1 & 1 \\ 0 & 1\end{bmatrix}\) and \(B=\begin{bmatrix}1 & 1 \\ 1 & 0\end{bmatrix}\) when the matrix entries are interpreted modulo 3.
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig105.png}
@@ -2841,33 +2923,33 @@ Hint: Do the case \(u = 0\) and \(v = 1\) first.
 \subsection{The Correspondence Theorem}\label{the-correspondence-theorem-1}}
 
 \begin{exercise}[Artin 2.10.1]
-\protect\hypertarget{exr:unnamed-chunk-213}{}\label{exr:unnamed-chunk-213}Describe how to tell from the cycle decomposition whether a permutation is odd or even.
+\protect\hypertarget{exr:unnamed-chunk-219}{}\label{exr:unnamed-chunk-219}Describe how to tell from the cycle decomposition whether a permutation is odd or even.
 \end{exercise}
 
 \begin{exercise}[Artin 2.10.2]
-\protect\hypertarget{exr:unnamed-chunk-214}{}\label{exr:unnamed-chunk-214}Let H and K be subgroups of a group G.
+\protect\hypertarget{exr:unnamed-chunk-220}{}\label{exr:unnamed-chunk-220}Let H and K be subgroups of a group G.
 
 a)Prove that the intersection xH n yK of two cosets of H and K is either empty or else is a coset of the subgroup H n K.
 b) Prove that if H and K have finite index in G then H n K also has finite index in G.
 \end{exercise}
 
 \begin{exercise}[Artin 2.10.3]
-\protect\hypertarget{exr:unnamed-chunk-215}{}\label{exr:unnamed-chunk-215}Let \(G\) and \(G'\) be cyclic groups of orders \(12\) and \(6\), generated by elements \(x\) and \(y\), respectively, and let \(\phi : G \to G'\) be the map defined by \(\phi(x^i) = y^i\). Exhibit the correspondence referred to in the Correspondence Theorem explicitly.
+\protect\hypertarget{exr:unnamed-chunk-221}{}\label{exr:unnamed-chunk-221}Let \(G\) and \(G'\) be cyclic groups of orders \(12\) and \(6\), generated by elements \(x\) and \(y\), respectively, and let \(\phi : G \to G'\) be the map defined by \(\phi(x^i) = y^i\). Exhibit the correspondence referred to in the Correspondence Theorem explicitly.
 \end{exercise}
 
 \begin{exercise}[Artin 2.10.4]
-\protect\hypertarget{exr:unnamed-chunk-216}{}\label{exr:unnamed-chunk-216}With the notation of the Correspondence Theorem, let \(H\) and \(H'\) be corresponding subgroups. Prove that \[[G : H] = [G' : H']\].
+\protect\hypertarget{exr:unnamed-chunk-222}{}\label{exr:unnamed-chunk-222}With the notation of the Correspondence Theorem, let \(H\) and \(H'\) be corresponding subgroups. Prove that \[[G : H] = [G' : H']\].
 \end{exercise}
 
 \begin{exercise}[Artin 2.10.5]
-\protect\hypertarget{exr:unnamed-chunk-217}{}\label{exr:unnamed-chunk-217}With reference to the homomorphism S4 -\textgreater{} S3 described in Example 2.5.13, determine the six subgroups of S4 that contain K.
+\protect\hypertarget{exr:unnamed-chunk-223}{}\label{exr:unnamed-chunk-223}With reference to the homomorphism S4 -\textgreater{} S3 described in Example 2.5.13, determine the six subgroups of S4 that contain K.
 \end{exercise}
 
 \hypertarget{product-group}{%
 \subsection{Product Group}\label{product-group}}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-218}{}\label{exr:unnamed-chunk-218}Let \(x\) be an element of order \(r\) of a group \(G\), and let \(y\) be an element of \(G'\) of order \(s\). What is the order of \((x, y)\) in the product group \(G \times G'\)?
+\protect\hypertarget{exr:unnamed-chunk-224}{}\label{exr:unnamed-chunk-224}Let \(x\) be an element of order \(r\) of a group \(G\), and let \(y\) be an element of \(G'\) of order \(s\). What is the order of \((x, y)\) in the product group \(G \times G'\)?
 \end{exercise}
 
 \textbf{Solution}: The order of \((x, y)\) in the product group \(G \times G'\) is \(lcm(r,s)\)\\
@@ -2877,7 +2959,7 @@ This implies, \(x^n=1_G\) and \(y^n=1_{G'}\). Since order of \(x\) and \(y\) are
 So, we know that the least positive integer such that above property holds is \(lcm(r,s)\). Hence,The order of \((x, y)\) in the product group \(G \times G'\) is \(lcm(r,s)\).
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-219}{}\label{exr:unnamed-chunk-219}What does Proposition \ref{prp:prp2114} tell us when, with the usual notation for the symmetric
+\protect\hypertarget{exr:unnamed-chunk-225}{}\label{exr:unnamed-chunk-225}What does Proposition \ref{prp:prp2114} tell us when, with the usual notation for the symmetric
 group \(S_3,K\) and \(H\) are the subgroups \(<y>\) and \(<x>\)?
 \end{exercise}
 
@@ -2900,7 +2982,7 @@ f(x,y)\cdot f(x,1)&=& (x\cdot y)\cdot (x\cdot 1)=(xy)\cdot x=y
 Thus, \(f\) is not a homomorphism.
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-220}{}\label{exr:unnamed-chunk-220}Prove that the product of two infinite cyclic groups is not infinite cyclic.
+\protect\hypertarget{exr:unnamed-chunk-226}{}\label{exr:unnamed-chunk-226}Prove that the product of two infinite cyclic groups is not infinite cyclic.
 \end{exercise}
 
 \begin{proof}
@@ -2941,7 +3023,7 @@ We can consider \(\mathbb{Z}\times \mathbb{Z}\). Suppose that \((a, b)\) generat
 \end{proof}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-222}{}\label{exr:unnamed-chunk-222}
+\protect\hypertarget{exr:unnamed-chunk-228}{}\label{exr:unnamed-chunk-228}
 
 In each of the following cases, determine whether or not \(G\) is isomorphic to the product group \(H \times K\).
 
@@ -3111,7 +3193,7 @@ Consider \(a + bi \in C^\times\). Then
 So, \(HK = G\). So, by proposition \ref{prp:prp2114} \(G \cong H \times K\).
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-223}{}\label{exr:unnamed-chunk-223}Let \(G_1\) and \(G_2\) be groups, and let \(Z_i\) be the center of \(G_i\). Prove that the center of the product group \(G_1 \times G_2\) is \(Z_1 \times Z_2\).
+\protect\hypertarget{exr:unnamed-chunk-229}{}\label{exr:unnamed-chunk-229}Let \(G_1\) and \(G_2\) be groups, and let \(Z_i\) be the center of \(G_i\). Prove that the center of the product group \(G_1 \times G_2\) is \(Z_1 \times Z_2\).
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig04.jpg}
@@ -3119,11 +3201,11 @@ So, \(HK = G\). So, by proposition \ref{prp:prp2114} \(G \cong H \times K\).
 \includegraphics{figures/ch_2/fig05.jpg}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-224}{}\label{exr:unnamed-chunk-224}Let \(G\) be a group that contains normal subgroups of orders \(3\) and \(5\), respectively. Prove that \(G\) contains an element of order \(15\).
+\protect\hypertarget{exr:unnamed-chunk-230}{}\label{exr:unnamed-chunk-230}Let \(G\) be a group that contains normal subgroups of orders \(3\) and \(5\), respectively. Prove that \(G\) contains an element of order \(15\).
 \end{exercise}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-225}{}\label{exr:unnamed-chunk-225}Let \(H\) be a subgroup of a group \(G\), let \(\phi:G \to H\) be a homomorphism whose restriction to \(H\) is the identity map, and let \(N\) be its kernel. What can one say about the product map \(H \times N \to G\)?
+\protect\hypertarget{exr:unnamed-chunk-231}{}\label{exr:unnamed-chunk-231}Let \(H\) be a subgroup of a group \(G\), let \(\phi:G \to H\) be a homomorphism whose restriction to \(H\) is the identity map, and let \(N\) be its kernel. What can one say about the product map \(H \times N \to G\)?
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig06.png}
@@ -3132,7 +3214,7 @@ So, \(HK = G\). So, by proposition \ref{prp:prp2114} \(G \cong H \times K\).
 \includegraphics{figures/ch_2/fig08.jpg}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-226}{}\label{exr:unnamed-chunk-226}Let \(G\), \(G'\), and \(H\) be groups. Establish a bijective correspondence between homomorphisms \(\phi : H \to G \times G'\) from \(H\) to the product group and pairs \((\varphi, \varphi')\) consisting of a homomorphism \(\varphi:H \to G\) and a homomorphism \(\varphi':H \to G'\).
+\protect\hypertarget{exr:unnamed-chunk-232}{}\label{exr:unnamed-chunk-232}Let \(G\), \(G'\), and \(H\) be groups. Establish a bijective correspondence between homomorphisms \(\phi : H \to G \times G'\) from \(H\) to the product group and pairs \((\varphi, \varphi')\) consisting of a homomorphism \(\varphi:H \to G\) and a homomorphism \(\varphi':H \to G'\).
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig10.png}
@@ -3145,7 +3227,7 @@ So, \(HK = G\). So, by proposition \ref{prp:prp2114} \(G \cong H \times K\).
 \includegraphics{figures/ch_2/fig16.jpg}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-227}{}\label{exr:unnamed-chunk-227}Let \(H\) and \(K\) be subgroups of a group \(G\). Prove that the product set \(HK\) is a subgroup of \(G\) if and only if \(HK = KH\).
+\protect\hypertarget{exr:unnamed-chunk-233}{}\label{exr:unnamed-chunk-233}Let \(H\) and \(K\) be subgroups of a group \(G\). Prove that the product set \(HK\) is a subgroup of \(G\) if and only if \(HK = KH\).
 \end{exercise}
 
 \textbf{Solution} :
@@ -3202,7 +3284,7 @@ Therefore, the product set \(HK\) is a subgroup of \(G\) if and only if \(HK = K
 \subsection{Quotient Groups}\label{quotient-groups-1}}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-229}{}\label{exr:unnamed-chunk-229}Show that if a subgroup \(H\) of a group \(G\) is not normal, there are left cosets \(aH\) and \(bH\)
+\protect\hypertarget{exr:unnamed-chunk-235}{}\label{exr:unnamed-chunk-235}Show that if a subgroup \(H\) of a group \(G\) is not normal, there are left cosets \(aH\) and \(bH\)
 whose product is not a coset.
 \end{exercise}
 
@@ -3224,7 +3306,7 @@ Thus, \(b^{-1}h_1b\in H\). and since \(b\in G\) and \(h_1\in H\) is arbitary, \(
 \end{proof}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-231}{}\label{exr:unnamed-chunk-231}In the general linear group \(GL_3(\mathbb{R})\), consider the subsets:
+\protect\hypertarget{exr:unnamed-chunk-237}{}\label{exr:unnamed-chunk-237}In the general linear group \(GL_3(\mathbb{R})\), consider the subsets:
 
 \[ H = \left\{ \begin{pmatrix} 1 & * & * \\ 0 & 1 & * \\ 0 & 0 & 1 \end{pmatrix} \mid * \text{ represents an arbitrary real number} \right\} \]
 
@@ -3326,7 +3408,7 @@ Thus,
 \end{itemize}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-232}{}\label{exr:unnamed-chunk-232}Let \(P\) be a partition of a group \(G\) with the property that for any pair of elements \(A\), \(B\) of the partition, the product set \(AB\) is contained entirely within another element \(C\) of the partition. Let \(N\) be the element of \(P\) that contains 1. Prove that \(N\) is a normal subgroup of \(G\) and that \(P\) is the set of its cosets.
+\protect\hypertarget{exr:unnamed-chunk-238}{}\label{exr:unnamed-chunk-238}Let \(P\) be a partition of a group \(G\) with the property that for any pair of elements \(A\), \(B\) of the partition, the product set \(AB\) is contained entirely within another element \(C\) of the partition. Let \(N\) be the element of \(P\) that contains 1. Prove that \(N\) is a normal subgroup of \(G\) and that \(P\) is the set of its cosets.
 \end{exercise}
 
 \begin{proof}
@@ -3411,7 +3493,7 @@ Hence, we can conclude that \(A =aN\).
 \end{proof}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-234}{}\label{exr:unnamed-chunk-234}Let \(H = \{\pm1, \pm i\}\) be the subgroup of \(G = C^{\times}\) of fourth roots of unity. Describe the cosets of \(H\) in \(G\) explicitly. Is \(G / H\) isomorphic to \(G\)?
+\protect\hypertarget{exr:unnamed-chunk-240}{}\label{exr:unnamed-chunk-240}Let \(H = \{\pm1, \pm i\}\) be the subgroup of \(G = C^{\times}\) of fourth roots of unity. Describe the cosets of \(H\) in \(G\) explicitly. Is \(G / H\) isomorphic to \(G\)?
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig36.png}
@@ -3423,7 +3505,7 @@ Hence, we can conclude that \(A =aN\).
 \includegraphics{figures/ch_2/fig39.png}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-235}{}\label{exr:unnamed-chunk-235}
+\protect\hypertarget{exr:unnamed-chunk-241}{}\label{exr:unnamed-chunk-241}
 
 Let \(G\) be the group of upper triangular real matrices \(\begin{bmatrix} a & b \\ 0 & d \end{bmatrix}\) with \(a\) and \(d\) different from zero. For each of the following subsets, determine whether or not \(S\) is a subgroup, and whether or not \(S\) is a normal subgroup. If \(S\) is a normal subgroup, identify the quotient group \(G /S\).
 
@@ -3457,7 +3539,7 @@ Let \(G\) be the group of upper triangular real matrices \(\begin{bmatrix} a & b
 \subsection{Miscellaneous Problems}\label{miscellaneous-problems}}
 
 \begin{exercise}[M1]
-\protect\hypertarget{exr:unnamed-chunk-236}{}\label{exr:unnamed-chunk-236}Describe the column vectors \((a, c)^T\) that occur as the first column of an integer matrix \(A\) whose inverse is also an integer matrix.
+\protect\hypertarget{exr:unnamed-chunk-242}{}\label{exr:unnamed-chunk-242}Describe the column vectors \((a, c)^T\) that occur as the first column of an integer matrix \(A\) whose inverse is also an integer matrix.
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig47.png}
@@ -3465,7 +3547,7 @@ Let \(G\) be the group of upper triangular real matrices \(\begin{bmatrix} a & b
 \includegraphics{figures/ch_2/fig48.png}
 
 \begin{exercise}[M.2]
-\protect\hypertarget{exr:unnamed-chunk-237}{}\label{exr:unnamed-chunk-237}\leavevmode
+\protect\hypertarget{exr:unnamed-chunk-243}{}\label{exr:unnamed-chunk-243}\leavevmode
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
@@ -3500,7 +3582,7 @@ Thus, every group of even order contains an element of order \(2\).
 \textbf{Claim b}: Let \(G\) be a group whose identity is \(e\).Let \(G\) be of order \(21\).(\textbar G=21\textbar) Then,\(\exists x \in G: |x| = 3\)
 
 \begin{exercise}[Artin 2.M.9]
-\protect\hypertarget{exr:unnamed-chunk-239}{}\label{exr:unnamed-chunk-239}(Double Cosets) Let \(H\) and \(K\) be subgroups of a group \(G\), and let \(g\) be an element of \(G\). \textbackslash{}
+\protect\hypertarget{exr:unnamed-chunk-245}{}\label{exr:unnamed-chunk-245}(Double Cosets) Let \(H\) and \(K\) be subgroups of a group \(G\), and let \(g\) be an element of \(G\). \textbackslash{}
 The set \(HgK = \{x \in G | x = hgk\) for some \(h \in H, k \in K\}\) is called a double coset. \textbackslash{}
 Do the double cosets partition \(G\)?
 \end{exercise}
@@ -3534,7 +3616,7 @@ Therefore, for every \(g \in G\) we have that \(g \sim g\). so \(\sim\) is refle
 By Artin's book Proposition 2.7.4, double cosets partition G?
 
 \begin{exercise}[Artin 2.M.10]
-\protect\hypertarget{exr:unnamed-chunk-240}{}\label{exr:unnamed-chunk-240}Let \(H\) be a subgroup of a group \(G\). Show that the double cosets (see Exercise M.9))
+\protect\hypertarget{exr:unnamed-chunk-246}{}\label{exr:unnamed-chunk-246}Let \(H\) be a subgroup of a group \(G\). Show that the double cosets (see Exercise M.9))
 \[HgH = \{h_1gh_2 | h_1, h_2 \in H\}\]
 are the left cosets \(gH\) if and only if \(H\) is normal.
 \end{exercise}
@@ -3564,7 +3646,7 @@ are the left cosets \(gH\) if and only if \(H\) is normal.
 \subsection{Fields}\label{fields-1}}
 
 \begin{exercise}[Artin 3.1.1]
-\protect\hypertarget{exr:unnamed-chunk-242}{}\label{exr:unnamed-chunk-242}Prove that the numbers of the form \(a + b\sqrt(2)\),where a and b are rational numbers, form a subfield of \(\mathbb{C}\)
+\protect\hypertarget{exr:unnamed-chunk-248}{}\label{exr:unnamed-chunk-248}Prove that the numbers of the form \(a + b\sqrt(2)\),where a and b are rational numbers, form a subfield of \(\mathbb{C}\)
 \end{exercise}
 
 \includegraphics{figures/ch_3/ex-1.1-1.png}
@@ -3573,20 +3655,20 @@ are the left cosets \(gH\) if and only if \(H\) is normal.
 \includegraphics{figures/ch_3/ex-1.1-4.png}
 
 \begin{exercise}[Artin 3.1.2]
-\protect\hypertarget{exr:unnamed-chunk-247}{}\label{exr:unnamed-chunk-247}Find the inverse of \(5\) modulo \(p\), for \(p= 7, 11, 13,\) and \(17\).
+\protect\hypertarget{exr:unnamed-chunk-253}{}\label{exr:unnamed-chunk-253}Find the inverse of \(5\) modulo \(p\), for \(p= 7, 11, 13,\) and \(17\).
 \end{exercise}
 
 \includegraphics{figures/ch_3/ex-1.2-1.png}
 \includegraphics{figures/ch_3/ex-1.2-1.png}
 
 \begin{exercise}[Artin 3.1.3]
-\protect\hypertarget{exr:unnamed-chunk-250}{}\label{exr:unnamed-chunk-250}Compute the product polynomial \((x^3 + 3x^2 + 3x + 1)(x^4 + 4x^3 + 6x^2 + 4x + 1)\) when the coefficients are regarded as elements of the field \(\mathbb{F}_7\). Explain your answer.
+\protect\hypertarget{exr:unnamed-chunk-256}{}\label{exr:unnamed-chunk-256}Compute the product polynomial \((x^3 + 3x^2 + 3x + 1)(x^4 + 4x^3 + 6x^2 + 4x + 1)\) when the coefficients are regarded as elements of the field \(\mathbb{F}_7\). Explain your answer.
 \end{exercise}
 
 \includegraphics{figures/ch_3/ex-1.3.png}
 
 \begin{exercise}[Artin 3.1.4]
-\protect\hypertarget{exr:unnamed-chunk-252}{}\label{exr:unnamed-chunk-252}
+\protect\hypertarget{exr:unnamed-chunk-258}{}\label{exr:unnamed-chunk-258}
 
 Consider the system of linear equations
 \[\begin{bmatrix}6 & -3\\ 2 & 6\end{bmatrix}
@@ -3609,7 +3691,7 @@ Consider the system of linear equations
 \includegraphics{figures/ch_3/ex-1.4-2.png}
 
 \begin{exercise}[Artin 3.1.5]
-\protect\hypertarget{exr:unnamed-chunk-255}{}\label{exr:unnamed-chunk-255}Determine the primes \(p\) such that the
+\protect\hypertarget{exr:unnamed-chunk-261}{}\label{exr:unnamed-chunk-261}Determine the primes \(p\) such that the
 \[A =\begin{bmatrix} 1 & 2 & 0 \\ 0 & 3 & -1 \\ -2 & 0 & 2 \end{bmatrix}\]
 is invertible, when its entries are considered to be in \(\mathbb{F}_p\).
 \end{exercise}
@@ -3617,7 +3699,7 @@ is invertible, when its entries are considered to be in \(\mathbb{F}_p\).
 \includegraphics{figures/ch_3/ex-1.5.png}
 
 \begin{exercise}[Artin 3.1.5]
-\protect\hypertarget{exr:unnamed-chunk-257}{}\label{exr:unnamed-chunk-257}
+\protect\hypertarget{exr:unnamed-chunk-263}{}\label{exr:unnamed-chunk-263}
 
 Solve completely the systems of linear equations \(AX = 0\) and \(AX = B\), where
 \[
@@ -3646,13 +3728,13 @@ A = \begin{bmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 1 & -1 & -1 \end{bmatrix} \quad \t
 \includegraphics{figures/ch_3/ex-1.6-5.png}
 
 \begin{exercise}[Artin 3.1.7]
-\protect\hypertarget{exr:unnamed-chunk-263}{}\label{exr:unnamed-chunk-263}By finding primitive elements, verify that the multiplicative group \(\mathbb{F}_P^\times\);is cyclic for all primes \(p < 20\).
+\protect\hypertarget{exr:unnamed-chunk-269}{}\label{exr:unnamed-chunk-269}By finding primitive elements, verify that the multiplicative group \(\mathbb{F}_P^\times\);is cyclic for all primes \(p < 20\).
 \end{exercise}
 
 \includegraphics{figures/ch_2/fig100.png}
 
 \begin{exercise}[Artin 3.1.8]
-\protect\hypertarget{exr:unnamed-chunk-265}{}\label{exr:unnamed-chunk-265}Let \(p\) be a prime integer.
+\protect\hypertarget{exr:unnamed-chunk-271}{}\label{exr:unnamed-chunk-271}Let \(p\) be a prime integer.
 (a) Prove Fermat's Theorem: For every integer \(a\), \(a^p \equiv a modulo p\).
 (b) Prove Wilson's Theorem: \((p -1)!\equiv -1(modulo p)\).
 \end{exercise}
@@ -3661,7 +3743,7 @@ A = \begin{bmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 1 & -1 & -1 \end{bmatrix} \quad \t
 \includegraphics{figures/ch_3/ex-1.8-2.png}
 
 \begin{exercise}[Artin 3.1.9]
-\protect\hypertarget{exr:unnamed-chunk-268}{}\label{exr:unnamed-chunk-268}Determine the orders of the matrices
+\protect\hypertarget{exr:unnamed-chunk-274}{}\label{exr:unnamed-chunk-274}Determine the orders of the matrices
 \(\begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}\)
 and
 \(\begin{bmatrix} 2 & 0 \\ 0 & 1 \end{bmatrix}\)
@@ -3672,7 +3754,7 @@ in the group \(GL_2(\mathbb{F}_7)\).
 \includegraphics{figures/ch_3/ex-1.9-2.png}
 
 \begin{exercise}[Artin 3.1.10]
-\protect\hypertarget{exr:unnamed-chunk-271}{}\label{exr:unnamed-chunk-271}Interpreting matrix entries in the field \(\mathbb{F}_2\), prove that the four matrices
+\protect\hypertarget{exr:unnamed-chunk-277}{}\label{exr:unnamed-chunk-277}Interpreting matrix entries in the field \(\mathbb{F}_2\), prove that the four matrices
 \begin{align*}
 \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}, 
 \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}, 
@@ -3789,7 +3871,7 @@ Thus, the set of non-zero elements of given set is an abelian group.
 Thus, The given set forms a field.
 
 \begin{exercise}[Artin 3.1.9]
-\protect\hypertarget{exr:unnamed-chunk-272}{}\label{exr:unnamed-chunk-272}Prove that the set of symbols \(\{a + bi \mid a, b \in \mathbb{F}_3\}\) forms a field with nine elements, if the laws of composition are made to mimic addition and multiplication of complex numbers. Will the same method work for \(\mathbb{F}_5\)? For \(\mathbb{F}_7\)? Explain.
+\protect\hypertarget{exr:unnamed-chunk-278}{}\label{exr:unnamed-chunk-278}Prove that the set of symbols \(\{a + bi \mid a, b \in \mathbb{F}_3\}\) forms a field with nine elements, if the laws of composition are made to mimic addition and multiplication of complex numbers. Will the same method work for \(\mathbb{F}_5\)? For \(\mathbb{F}_7\)? Explain.
 \end{exercise}
 
 \includegraphics{figures/ch_3/ex-1.11-1.png}
@@ -3800,7 +3882,7 @@ Thus, The given set forms a field.
 \subsection{VectorSpaces}\label{vectorspaces}}
 
 \begin{exercise}[Artin 3.2.1]
-\protect\hypertarget{exr:unnamed-chunk-276}{}\label{exr:unnamed-chunk-276}\leavevmode
+\protect\hypertarget{exr:unnamed-chunk-282}{}\label{exr:unnamed-chunk-282}\leavevmode
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3828,7 +3910,7 @@ Thus, The given set forms a field.
 \includegraphics{figures/ch_3/ex-2.1-b.png}
 
 \begin{exercise}[Artin 3.2.2]
-\protect\hypertarget{exr:unnamed-chunk-279}{}\label{exr:unnamed-chunk-279}
+\protect\hypertarget{exr:unnamed-chunk-285}{}\label{exr:unnamed-chunk-285}
 
 Which of the following subsets is a sub space of the vector space \(F^{n\times n}\) of \(n\times n\) matrices with coefficients in \(F\)?
 
@@ -3850,14 +3932,14 @@ Which of the following subsets is a sub space of the vector space \(F^{n\times n
 \includegraphics{figures/ch_3/ex-2.2-c.png}
 
 \begin{exercise}[Artin 3.3.1]
-\protect\hypertarget{exr:unnamed-chunk-283}{}\label{exr:unnamed-chunk-283}Find a basis for the space of \(n \times n\) symmetric matrices \((A^T = A)\).
+\protect\hypertarget{exr:unnamed-chunk-289}{}\label{exr:unnamed-chunk-289}Find a basis for the space of \(n \times n\) symmetric matrices \((A^T = A)\).
 \end{exercise}
 
 \includegraphics{figures/ch_3/ex-3.1-1.png}
 \includegraphics{figures/ch_3/ex-3.1-2.png}
 
 \begin{exercise}[Artin 3.3.2]
-\protect\hypertarget{exr:unnamed-chunk-286}{}\label{exr:unnamed-chunk-286}Let \(W \subset \mathbb{R}^4\) be the space of solutions of the system of linear equations \(AX = 0\), where
+\protect\hypertarget{exr:unnamed-chunk-292}{}\label{exr:unnamed-chunk-292}Let \(W \subset \mathbb{R}^4\) be the space of solutions of the system of linear equations \(AX = 0\), where
 \(A =\begin{bmatrix} 2 & 1 & 2 & 3 \\ 1 & 1 & 3 & 0 \end{bmatrix}\).
 Find a basis for \(W\).
 \end{exercise}
@@ -3866,7 +3948,7 @@ Find a basis for \(W\).
 \includegraphics{figures/ch_3/ex-3.2-2.png}
 
 \begin{exercise}[Artin 3.3.3]
-\protect\hypertarget{exr:unnamed-chunk-289}{}\label{exr:unnamed-chunk-289}Prove that the three functions \(x^2, \cos(x)\), and \(e^x\) are linearly independent.
+\protect\hypertarget{exr:unnamed-chunk-295}{}\label{exr:unnamed-chunk-295}Prove that the three functions \(x^2, \cos(x)\), and \(e^x\) are linearly independent.
 \end{exercise}
 
 \begin{proof}
@@ -3888,7 +3970,7 @@ These equations show that the only solution is \(a = b = c = 0\). Therefore, the
 \end{proof}
 
 \begin{exercise}[Artin 3.3.4]
-\protect\hypertarget{exr:unnamed-chunk-291}{}\label{exr:unnamed-chunk-291}Let \(A\) be an \(m \times n\) matrix, and let \(A'\) be the result of a sequence of elementary row operations on \(A\). Prove that the rows of \(A\) span the same space as the rows of \(A'\).
+\protect\hypertarget{exr:unnamed-chunk-297}{}\label{exr:unnamed-chunk-297}Let \(A\) be an \(m \times n\) matrix, and let \(A'\) be the result of a sequence of elementary row operations on \(A\). Prove that the rows of \(A\) span the same space as the rows of \(A'\).
 \end{exercise}
 
 \hypertarget{vector-spaces.}{%

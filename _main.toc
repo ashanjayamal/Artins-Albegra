@@ -1,44 +1,44 @@
 \contentsline {chapter}{\numberline {1}Matrices}{5}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Basic Operations}{5}{section.1.1}%
-\contentsline {chapter}{\numberline {2}Group Theory}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Laws of Compositions}{7}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Groups and Subgroups}{8}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Subgroups of the Additive Group of Integers}{10}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Cyclic Groups}{11}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Homomorphisms}{11}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Isomorphisms}{12}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Equivalence Relations and Partitions}{12}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}The Equivalence Relation Defined by a Map}{16}{subsection.2.7.1}%
-\contentsline {section}{\numberline {2.8}Cosets}{20}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Modular Arithmetic}{20}{section.2.9}%
-\contentsline {section}{\numberline {2.10}The Correspondence Theorem}{20}{section.2.10}%
-\contentsline {subsection}{\numberline {2.10.1}PROBLEM}{21}{subsection.2.10.1}%
-\contentsline {subsection}{\numberline {2.10.2}Problem}{24}{subsection.2.10.2}%
-\contentsline {subsection}{\numberline {2.10.3}Problem}{25}{subsection.2.10.3}%
-\contentsline {section}{\numberline {2.11}Product Groups}{25}{section.2.11}%
-\contentsline {section}{\numberline {2.12}Quotient Groups}{31}{section.2.12}%
-\contentsline {chapter}{\numberline {3}Vector Space}{37}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Subspace of \(\symbb {R}^n\)}{37}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Fields}{39}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Exercises}{43}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Chapter 1}{43}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Chapter 2}{43}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Laws of composition}{43}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Groups and Subgroups}{44}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Subgroups of the Additive Group of Integers}{52}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Cyclic group}{56}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Homomorphisms}{79}{subsection.4.2.5}%
-\contentsline {subsection}{\numberline {4.2.6}Isomorphisms}{85}{subsection.4.2.6}%
-\contentsline {subsection}{\numberline {4.2.7}Equivalence Relations and Partitions}{98}{subsection.4.2.7}%
-\contentsline {subsection}{\numberline {4.2.8}Cosets}{107}{subsection.4.2.8}%
-\contentsline {subsection}{\numberline {4.2.9}Modular Arthmetic}{114}{subsection.4.2.9}%
-\contentsline {subsection}{\numberline {4.2.10}The Correspondence Theorem}{118}{subsection.4.2.10}%
-\contentsline {subsection}{\numberline {4.2.11}Product Group}{119}{subsection.4.2.11}%
-\contentsline {subsection}{\numberline {4.2.12}Quotient Groups}{134}{subsection.4.2.12}%
-\contentsline {subsection}{\numberline {4.2.13}Miscellaneous Problems}{149}{subsection.4.2.13}%
-\contentsline {subsection}{\numberline {4.2.14}Problem}{152}{subsection.4.2.14}%
-\contentsline {chapter}{\numberline {5}Tempoarray files for exercises}{153}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Chapter 3}{153}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Fields}{153}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}VectorSpaces}{173}{subsection.5.1.2}%
-\contentsline {chapter}{\numberline {6}Vector spaces.}{183}{chapter.6}%
+\contentsline {chapter}{\numberline {2}Group Theory}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Laws of Compositions}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Groups and Subgroups}{10}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Subgroups of the Additive Group of Integers}{12}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Cyclic Groups}{13}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Homomorphisms}{13}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Isomorphisms}{14}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Equivalence Relations and Partitions}{14}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}The Equivalence Relation Defined by a Map}{18}{subsection.2.7.1}%
+\contentsline {section}{\numberline {2.8}Cosets}{22}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Modular Arithmetic}{22}{section.2.9}%
+\contentsline {section}{\numberline {2.10}The Correspondence Theorem}{22}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}PROBLEM}{23}{subsection.2.10.1}%
+\contentsline {subsection}{\numberline {2.10.2}Problem}{26}{subsection.2.10.2}%
+\contentsline {subsection}{\numberline {2.10.3}Problem}{27}{subsection.2.10.3}%
+\contentsline {section}{\numberline {2.11}Product Groups}{27}{section.2.11}%
+\contentsline {section}{\numberline {2.12}Quotient Groups}{33}{section.2.12}%
+\contentsline {chapter}{\numberline {3}Vector Space}{39}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Subspace of \(\symbb {R}^n\)}{39}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Fields}{41}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Exercises}{45}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Chapter 1}{45}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Chapter 2}{45}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Laws of composition}{45}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Groups and Subgroups}{46}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Subgroups of the Additive Group of Integers}{54}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Cyclic group}{58}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Homomorphisms}{81}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Isomorphisms}{87}{subsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2.7}Equivalence Relations and Partitions}{100}{subsection.4.2.7}%
+\contentsline {subsection}{\numberline {4.2.8}Cosets}{109}{subsection.4.2.8}%
+\contentsline {subsection}{\numberline {4.2.9}Modular Arthmetic}{116}{subsection.4.2.9}%
+\contentsline {subsection}{\numberline {4.2.10}The Correspondence Theorem}{120}{subsection.4.2.10}%
+\contentsline {subsection}{\numberline {4.2.11}Product Group}{121}{subsection.4.2.11}%
+\contentsline {subsection}{\numberline {4.2.12}Quotient Groups}{136}{subsection.4.2.12}%
+\contentsline {subsection}{\numberline {4.2.13}Miscellaneous Problems}{151}{subsection.4.2.13}%
+\contentsline {subsection}{\numberline {4.2.14}Problem}{154}{subsection.4.2.14}%
+\contentsline {chapter}{\numberline {5}Tempoarray files for exercises}{155}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Chapter 3}{155}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Fields}{155}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}VectorSpaces}{175}{subsection.5.1.2}%
+\contentsline {chapter}{\numberline {6}Vector spaces.}{185}{chapter.6}%
