@@ -90,59 +90,53 @@ group but not an abelian group.
 ```{example}
 
 Let $A = \{ 1,\ 2,\ 3\}$
-
-$\mathbb{i} = \begin{pmatrix}
-1 & 2 & 3 \\
-1 & 2 & 3 \\
-\end{pmatrix}$
-
-$\sigma_{1} = \begin{pmatrix}
-1 & 2 & 3 \\
-2 & 3 & 1 \\
-\end{pmatrix}$
-
-$\ \ \ \sigma_{2} = \begin{pmatrix}
-1 & 2 & 3 \\
-3 & 1 & 2 \\
-\end{pmatrix}$
-
-$\tau_{1} = \begin{pmatrix}
-1 & 2 & 3 \\
-1 & 3 & 2 \\
-\end{pmatrix}$
-
-$\tau_{2} = \begin{pmatrix}
-1 & 2 & 3 \\
-3 & 2 & 1 \\
-\end{pmatrix}$
-
-$\tau_{3} = \begin{pmatrix}
-1 & 2 & 3 \\
-2 & 1 & 3 \\
-\end{pmatrix}$
-
-$S_{3} = \left\{ i,\ \ \sigma_{1},\ \ \sigma_{2},\ \ \sigma_{3},\ \ \tau_{1},\ \ \tau_{2},\ \ \tau_{3} \right\}$
-and ${|S}_{n}| = n!$
-
-$S_{3}$ -- symmetric group of 3 elements
-
-${(\ S}_{3},\  \circ \ )$ is a group.
-
-$\sigma_{1^{0}}\sigma_{2} = \begin{pmatrix}
-1 & 2 & 3 \\
-2 & 3 & 1 \\
-\end{pmatrix}\begin{pmatrix}
-1 & 2 & 3 \\
-3 & 1 & 2 \\
-\end{pmatrix} = \begin{pmatrix}
-1 & 2 & 3 \\
-1 & 2 & 3 \\
-\end{pmatrix} = \mathbb{i}$
-
+```
+```{r, echo=FALSE, results='asis'}
+library(knitr)
+kable(
+  data.frame(
+    Left = c(
+      "![](figures/mynote/Picture2.png)",
+      "![](figures/mynote/Picture3.png)",
+      "![](figures/mynote/Picture4.png)",
+      "![](figures/mynote/Picture5.png)",
+      "![](figures/mynote/Picture6.png)",
+      "![](figures/mynote/Picture7.png)"
+    ),
+    Right = c(
+      "$$\\mathbb{i} = \\begin{pmatrix}
+1 & 2 & 3 \\\\
+1 & 2 & 3 \\\\
+\\end{pmatrix}$$",
+      "$$\\sigma_{1} = \\begin{pmatrix}
+1 & 2 & 3 \\\\
+2 & 3 & 1 \\\\
+\\end{pmatrix}$$",
+      "$$\\sigma_{2} = \\begin{pmatrix}
+1 & 2 & 3 \\\\
+3 & 1 & 2 \\\\
+\\end{pmatrix}$$",
+      "$$\\tau_{1} = \\begin{pmatrix}
+1 & 2 & 3 \\\\
+1 & 3 & 2 \\\\
+\\end{pmatrix}$$",
+      "$$\\tau_{2} = \\begin{pmatrix}
+1 & 2 & 3 \\\\
+3 & 2 & 1 \\\\
+\\end{pmatrix}$$",
+      "$$\tau_3 = \\begin{pmatrix}
+4 & 5 & 6 \\\\
+4 & 5 & 6 \\\\
+\\end{pmatrix}$$"
+    )
+  ),
+  col.names = NULL,  # Remove headers
+  escape = FALSE
+)
 ```
 
   ----------------------------------------------------------------------------------------------------------
-  $$\circ$$        $$i$$      $$\sigma_{1}$$   $$\sigma_{2}$$   $$\tau_{1}$$   $$\tau_{1}$$   $$\tau_{1}$$
+  $$\circ$$        $$i$$      $$\sigma_{1}$$   $$\sigma_{2}$$   $$\tau_{1}$$   $$\tau_{2}$$   $$\tau_{3}$$
   ---------------- ---------- ---------------- ---------------- -------------- -------------- --------------
   $$i$$                                                                                       
 
@@ -328,7 +322,7 @@ iii. $a\sim b\ \&\ b\sim c \Rightarrow a\sim c$ (transitive)
 
 ```{example}
 
-1.  Let $n 1$ be fixed integer. Define on
+1.  Let $n> 1$ be fixed integer. Define on
     $\mathbb{Z,\ \ }a,b\mathbb{\in Z}$
 
 $$a\sim b \Leftrightarrow \left. \ n \right|a - b$$
@@ -346,7 +340,7 @@ Show that $\sim$ is an equivalence relation.
 
 ```{definition}
 
-If $\sim \ is\ an\ equivalence\ relation$ on set $S$ then $\overline{a}$
+If $\sim$  is an equivalence relation on set $S$ then $\overline{a}$
 the class of $a$ is defined by,
 
 $\overline{a} = \left\{ b \in \left. \ S \right|\ b\sim a \right\}$
@@ -367,6 +361,8 @@ $\overline{2} = \left\{ y \in \left. \ \mathbb{Z} \right|\ y\sim 2 \right\} = \l
 ```
 
 
+![](figures/mynote/fig1.png)
+
 ```{example}
 $G$ be any group and $H$ be a subgroup of $G$.
 $a\sim b \Leftrightarrow ab^{- 1} \in H$. Find $\overline{a}.$
@@ -375,13 +371,7 @@ $\overline{a} = \left\{ ha\  \right|h \in H\} = Ha$
 ```
 
 ```{theorem}
-If $\sim$ is an equivalence relation on $S$ then
-
-$S = \bigcup\overline{a}$
-
-where the union runs over one element from each class and
-
-$\overline{a} \neq \overline{b}$ implies that $\overline{a} \cap \overline{b} = \phi$
+If $\sim$ is an equivalence relation on $S$ then $S = \bigcup\overline{a}$ where the union runs over one element from each class and $\overline{a} \neq \overline{b}$ implies that $\overline{a} \cap \overline{b} = \phi$
 ```
 
 
@@ -402,7 +392,6 @@ $b \in \overline{a}$. Hence $\overline{a} = \overline{b}$.
 
 
 ```{theorem,name="Lagrange's Theorem"}
-
 If $G$ is a finite group and $H$ is a subgroup of $G$, then order of $H$
 divides order of $G$.
 ```
@@ -419,17 +408,14 @@ $|G| = p$ -- prime
 
 Let $H \subset G$, then
 
-$|H|$ $1 \Rightarrow \left\{ \mathbb{e} \right\}$
-$p \Rightarrow G$
+- $|H|=1 \Rightarrow H=\left\{ \mathbb{e} \right\}$
+- $|H|=p \Rightarrow H=G$
 ```
 
 
 ```{exercise}
 
-Let $n 1$ be a fixed integer. $a,b\mathbb{\in Z}$. Define
-
-$a\sim b \Leftrightarrow n|a - b$
-$\Leftrightarrow a - b \in n\mathbb{Z\ }$
+Let $n> 1$ be a fixed integer. $a,b\mathbb{\in Z}$. Define $$a\sim b \Leftrightarrow n|a - b \Leftrightarrow a - b \in n\mathbb{Z\ }$$
 
 i.  Find $\overline{a}$.
 
@@ -441,7 +427,7 @@ iii. Let
      $\mathbb{Z}_{n} = \left\{ \overline{0,}\ \overline{1},\ \ .\ .\ .,\ \overline{n - 1} \right\}$.
      Show that $\mathbb{Z}_{n}$ forms a group under the binary operation
 
-$\overline{x} + \overline{y} = \overline{x + y}$ .
+$$\overline{x} + \overline{y} = \overline{x + y}$$.
 ```
 
 
@@ -451,7 +437,7 @@ Suppose $\overline{a} = \overline{c}$ and $\overline{b} = \overline{d}$.
 
 Then $n|a - c\ and\ n|b - d$.
 
-i.e., $\exists\ s\ and\ t$ such that $ns = {a - c\ and}{nt} = b - d$
+i.e., $\exists\ s\ and\ t$ such that $ns = {a - c}$ and ${nt} = b - d$
 
 hence $n(s + t) = (a + b) - (c + d)$ and
 
@@ -497,33 +483,33 @@ Suppose $\overline{a} = \overline{c}$ and $\overline{b} = \overline{d}$
 Then $n|a - c\ and\ n|b - d$
 
 i.e., $\exists\ s\ and\ t$ such that $ns = {a - c\ and}{nt} = b - d$
+\begin{align}
+a = ns + c  (\#eq:eq1) \\
+b = nt + d   (\#eq:eq2)
+\end{align}
 
-$a = ns + c$ $\oplus$
+By \@ref(eq:eq1) and \@ref(eq:eq2),
 
-$b = nt + d$ $\otimes$
+$a\cdot b = (ns + c)\left( {nt}{+ d} \right) = n^{2}st + nsd + ntc + c\cdot d$
 
-By $\oplus$ and $\otimes$,
+$a\cdot b = n\cdot k + c\cdot d$
 
-$a.b = (ns + c)\left( {nt}{+ d} \right) = n^{2}st + nsd + ntc + c.d$
+$n\cdot k = a \cdot b - c\cdot d$
 
-$a.b = n.k + c.d$
+$\Rightarrow {n\ |\ a\cdot b} - c \cdot d$
 
-$n.k = a.b - c.d$
-
-$\Rightarrow {n\ |\ a.b} - c.d$
-
-$\Rightarrow \overline{a.b} = \overline{c.d}$
+$\Rightarrow \overline{a \cdot b} = \overline{c \cdot d}$
 
 Hence $.$ is well defined.
 
 Since
-$\left( \overline{a}.\overline{b} \right).\overline{c} = \overline{a}.\left( \overline{b}.\overline{c} \right)$,
-$\bullet$ is associative.
+$\left( \overline{a}\cdot \overline{b} \right)\cdot \overline{c} = \overline{a} \cdot \left( \overline{b} \cdot \overline{c} \right)$,
+$\cdot$ is associative.
 
 Now $\overline{1} \in \mathbb{Z}_{n}$ and for all
 $\overline{a} \in \mathbb{Z}_{n}$
 
-$\overline{a}.\overline{1} = \overline{a.1} = \overline{a} = \overline{1.a} = \overline{1}.\overline{a}$
+$\overline{a} \cdot \overline{1} = \overline{a.1} = \overline{a} = \overline{1 \cdot a} = \overline{1} \cdot \overline{a}$
 
 This implies that $\overline{1}$ is the identity element.
 
@@ -559,7 +545,7 @@ Conversely suppose $\overline{a} \in \mathbb{Z}_{n}$,
 $\overline{a} \neq \overline{0}$ and $\overline{a}$ has an inverse.
 
 Then there exists $\overline{b} \in \mathbb{Z}_{n}$ such that
-$\overline{a}.\ \overline{b} = \overline{1}$.
+$\overline{a}\cdot \overline{b} = \overline{1}$.
 
 This implies that $n\ |\ ab - 1$
 
@@ -568,8 +554,7 @@ Hence $ab - 1 = nr$ for some $r\mathbb{\in Z}$.
 Thus $ab - nr = 1,\ \ \gcd(a,n) = 1$.
 
 Let $U_{n}$ be the set of all elements of
-$\mathbb{Z}_{n} \smallsetminus \left\{ \overline{0} \right\}$ that have
-an inverse in
+$\mathbb{Z}_{n} \smallsetminus \left\{ \overline{0} \right\}$ that have an inverse in
 $\mathbb{Z}_{n} \smallsetminus \left\{ \overline{0} \right\}$.
 
 i.e.,
@@ -583,22 +568,23 @@ Then $(U_{n},\ \  \cdot )$ is a group.
 
 If $n = 6$,
 
-$\mathbb{Z}_{6} = \left\{ \overline{0,}\overline{1},\ \overline{2,}\overline{3},\overline{4,}\overline{5}\}\ \ \ \  \right.\ $
+$\mathbb{Z}_{6} = \left\{ \overline{0},\overline{1},\ \overline{2},\overline{3},\overline{4},\overline{5}\}\ \ \ \  \right.\ $
 
 $U_{6} = \left\{ \overline{1,}\ \overline{5} \right\}$
 
-$U_{8} = \left\{ \overline{1,}\overline{3},\overline{5},\ \overline{7} \right\}$
->
-$U_{7} = \left\{ \overline{1,}\overline{2,}\overline{3},\overline{4,}\overline{5},\ \overline{6} \right\}$
+$U_{8} = \left\{ \overline{1},\overline{3},\overline{5},\ \overline{7} \right\}$
+
+$U_{7} = \left\{ \overline{1},\overline{2},\overline{3},\overline{4,}\overline{5},\ \overline{6} \right\}$
 
 Let ($G,\ \ *$) be a group, $a \in G$ and $n\mathbb{\in Z}$. We now
 define the integral power $a^{n}$ of $a$ as follows.
 
-$a^{0} = \mathbb{e}$
+\begin{align}
+a^{0} &= \mathbb{e}\\
+a^{n} &= a*a^{n - 1} \text{ if } n 0\\
+a^{n} &= \left( a^{- 1} \right)^{- n} \text{ if } n < 0
+\end{align}
 
-$a^{n} = a*a^{n - 1}$ if $n 0$
-
-$a^{n} = \left( a^{- 1} \right)^{- n}$ if $n < 0$
 
 Note that $a^{n} = \left( a^{- n} \right)^{- 1}$ if $n < 0$.
 ```
@@ -630,9 +616,7 @@ $O(a) = n.$
 i.  If $a^{m} = \mathbb{e}$ for some positive integer $m$, then $n$
     divides $m$.
 
-ii. For every positive integer $t$,
-
-$0\left( a^{t} \right) = \frac{n}{\gcd(t,n)}$
+ii. For every positive integer $t$,  $0\left( a^{t} \right) = \frac{n}{\gcd(t,n)}$
 ```
 
 
@@ -640,57 +624,27 @@ $0\left( a^{t} \right) = \frac{n}{\gcd(t,n)}$
 
 i.  By the division algorithm, $\exists q,\ r\mathbb{\in Z}$ such that
     $m = nq + r\ \ \ 0 \leq r < n$.
+Now $a^{r} = a^{m - nq} = a^{m}.a^{- nq} = \mathbb{e}.\left( a^{n} \right)^{- q} = \mathbb{e}.\mathbb{e}^{- q} = \mathbb{e}. Since $n$ is the smallest positive integer such that
+$a^{n} = \mathbb{e}$ and $a^{r} = \mathbb{e}$, it follows that $r = 0$. Thus $m = nq$. This implies that $n$ divides $m$.
 
-Now
-$a^{r} = a^{m - nq} = a^{m}.a^{- nq} = \mathbb{e}.\left( a^{n} \right)^{- q} = \mathbb{e}.\mathbb{e}^{- q} = \mathbb{e}$
-
-Since $n$ is the smallest positive integer such that
-$a^{n} = \mathbb{e}$ and $a^{r} = \mathbb{e}$, it follows that $r = 0$.
-
-Thus $m = nq$.
-
-This implies that $n$ divides $m$.
-
-ii. Let $0\left( a^{t} \right) = k$.
-
-Then $a^{tk} = e.$
-
-By (i.) $n$ divides $kt$.
-
-Thus $\exists r\mathbb{\in Z}$ such that $kt = nr$.
-
-Let $\gcd(t,n) = d$.
-
-Then $\exists u,v\mathbb{\in Z}$ such that $t = du,\ \ n = \mathbb{d}v$
-and $\gcd(u,v) = 1$
-
+ii. Let $0\left( a^{t} \right) = k$. Then $a^{tk} = e.$ By (i.) $n$ divides $kt$. Thus $\exists r\mathbb{\in Z}$ such that $kt = nr$. Let $\gcd(t,n) = d$. Then $\exists u,v\mathbb{\in Z}$ such that $t = du,\ \ n = \mathbb{d}v$ and $\gcd(u,v) = 1$ 
 Now $kt = nr \Rightarrow k\mathbb{d}u = dvr$
-
 $\Rightarrow {ku} = rv$
-
 Thus $v$ divides $ku$.
-
 Since $\gcd(u,v) = 1$, $v$ divides $k$.
-
 Thus $\frac{n}{d}$ divides $k$.
-
 Now
 $\left( a^{t} \right)^{\frac{n}{d}} = a^{\frac{nt}{d}} = a^{\frac{n\mathbb{d}u}{d}} = a^{nu} = \left( a^{n} \right)^{u} = \mathbb{e}^{u} = \mathbb{e}$.
-
 Since $0\left( a^{t} \right)^{k} = k$, $k$ divides $\frac{n}{d}$.
-
 Since $k$ and $\frac{n}{d}$ are positive integers, $k = \ \frac{n}{d}$
-
 Hence $0\left( a^{t} \right) = k = \frac{n}{d} = \frac{n}{\gcd(t,n)}$.
 ```
 
-[Lemma:]
+```{lemma}
 
-Let $G$ be a group. If $a \in G$ and $O(a) = m,$ then
+Let $G$ be a group. If $a \in G$ and $O(a) = m,$ then $A = \left\{ \mathbb{e},a,a^{2},\ .\ .\ .,a^{m - 1}\  \right\}$ is a subgroup of $G$.
+```
 
-$A = \left\{ \mathbb{e},a,a^{2},\ .\ .\ .,a^{m - 1}\  \right\}$
-
-is a subgroup of $G$.
 
 ```{proof} 
 HW
@@ -706,25 +660,15 @@ Let $G$ be a finite group. Then $O(a)|\ |G|.$
 
 Let $O(a) = m$
 
-Take $A = \left\{ \mathbb{e},a,a^{2},\ .\ .\ .,a^{m - 1}\  \right\}$
-
-We have seen that $A \subset G$ and $|A| = m = O(a)$
-
-By Lagrange's theorem,
-
-$|A|\ |\ |G| \Rightarrow O\left. \ (a) \right|\ |G|$
-
-Since $O\left. \ (a) \right|\ |G|$, we have
-
-$n = |G| = kO(a)$
-
-$a^{n} = a^{kO(a)} = \left( a^{O(a)} \right)^{k} = \mathbb{e}^{k} = \mathbb{e}$
-
+Take $A = \left\{ \mathbb{e},a,a^{2},\ .\ .\ .,a^{m - 1}\  \right\}$ We have seen that $A \subset G$ and $|A| = m = O(a)$ By Lagrange's theorem, $|A|\ |\ |G| \Rightarrow O\left. \ (a) \right|\ |G|$ Since $O\left. \ (a) \right|\ |G|$, we have $n = |G| = kO(a)$ $a^{n} = a^{kO(a)} = \left( a^{O(a)} \right)^{k} = \mathbb{e}^{k} = \mathbb{e}$
 Hence we have proved that if $G$ is a finite group of order
 $n,\ then\ a^{n} = \mathbb{e}$ for any $a \in G$.
-
 Hence the order of any element of a finite group is finite.
 ```
+
+
+
+
 
 
 
