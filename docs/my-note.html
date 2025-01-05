@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2024-12-24" />
+<meta name="date" content="2025-01-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -142,6 +142,7 @@
 <li class="chapter" data-level="6.1" data-path="my-note.html"><a href="my-note.html#group"><i class="fa fa-check"></i><b>6.1</b> Group</a></li>
 <li class="chapter" data-level="6.2" data-path="my-note.html"><a href="my-note.html#subgroup"><i class="fa fa-check"></i><b>6.2</b> Subgroup</a></li>
 <li class="chapter" data-level="6.3" data-path="my-note.html"><a href="my-note.html#lagranges-theorem"><i class="fa fa-check"></i><b>6.3</b> Lagrange’s Theorem</a></li>
+<li class="chapter" data-level="6.4" data-path="my-note.html"><a href="my-note.html#group-homorphism"><i class="fa fa-check"></i><b>6.4</b> Group Homorphism</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="vector-spaces..html"><a href="vector-spaces..html"><i class="fa fa-check"></i><b>7</b> Vector spaces.</a></li>
 <li class="divider"></li>
@@ -740,6 +741,115 @@ Hence <span class="math inline">\(0\left( a^{t} \right) = k = \frac{n}{d} = \fra
 Hence we have proved that if <span class="math inline">\(G\)</span> is a finite group of order
 <span class="math inline">\(n,\ then\ a^{n} = \mathbb{e}\)</span> for any <span class="math inline">\(a \in G\)</span>.
 Hence the order of any element of a finite group is finite.</p>
+</div>
+</div>
+<div id="group-homorphism" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Group Homorphism<a href="my-note.html#group-homorphism" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-41" class="definition"><strong>Definition 6.8  </strong></span>Let <span class="math inline">\((G, *)\)</span> and <span class="math inline">\((G_1, *_1)\)</span> be groups, and let <span class="math inline">\(f\)</span> be a function from <span class="math inline">\(G\)</span> into <span class="math inline">\(G_1\)</span>. Then <span class="math inline">\(f\)</span> is called a <strong>homomorphism</strong> of <span class="math inline">\(G\)</span> into <span class="math inline">\(G_1\)</span> if for all <span class="math inline">\(a, b \in G\)</span>,
+<span class="math display">\[
+f(a * b) = f(a) *_1 f(b)
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-42" class="example"><strong>Example 6.12  </strong></span></p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(f: (R^+, \cdot) \to (R, +)\)</span>, where <span class="math inline">\(f(x) = \log_{10}(x)\)</span>:<br />
+For <span class="math inline">\(x, y \in R^+\)</span>,<br />
+<span class="math display">\[
+f(x \cdot y) = \log_{10}(xy) = \log_{10}(x) + \log_{10}(y) = f(x) + f(y)
+\]</span><br />
+Therefore, <span class="math inline">\(f\)</span> is a homomorphism.</p></li>
+<li><p>Let <span class="math inline">\(G\)</span> be an abelian group. Define <span class="math inline">\(f: G \to G\)</span> by <span class="math inline">\(f(a) = a^2 = a \cdot a, \, a \in G\)</span>:<br />
+For <span class="math inline">\(a, b \in G\)</span>,<br />
+<span class="math display">\[
+f(a * b) = (a * b)^2 = a * b * a * b = a^2 * b^2 = f(a) * f(b)
+\]</span><br />
+Hence, <span class="math inline">\(f\)</span> is a homomorphism.</p></li>
+<li><p>Let <span class="math inline">\(G, G_1\)</span> be any groups. Define <span class="math inline">\(f: G \to G_1\)</span> by <span class="math inline">\(f(a) = e_1\)</span> for all <span class="math inline">\(a \in G\)</span>, where <span class="math inline">\(e_1\)</span> is the identity of <span class="math inline">\(G_1\)</span>:<br />
+Since <span class="math inline">\(f(a * b) = e_1 = e_1 *_1 e_1 = f(a) *_1 f(b)\)</span> for all <span class="math inline">\(a, b \in G\)</span>, <span class="math inline">\(f\)</span> is a homomorphism.</p>
+<p>For any groups <span class="math inline">\(G\)</span> and <span class="math inline">\(G_1\)</span>, there is always at least one homomorphism <span class="math inline">\(f: G \to G_1\)</span>, namely the <strong>trivial homomorphism</strong> defined by <span class="math inline">\(f(a) = e_1\)</span> for all <span class="math inline">\(a \in G\)</span>, where <span class="math inline">\(e_1\)</span> is the identity of <span class="math inline">\(G_1\)</span>.</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-43" class="exercise"><strong>Exercise 6.4  </strong></span>Show that the identity map is a homomorphism.</p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-44" class="definition"><strong>Definition 6.9  </strong></span>Let <span class="math inline">\(\phi\)</span> be a mapping of a set <span class="math inline">\(X\)</span> onto a set <span class="math inline">\(Y\)</span>, and let <span class="math inline">\(A \subseteq X\)</span> and <span class="math inline">\(B \subseteq Y\)</span>. The <strong>image</strong> <span class="math inline">\(\phi[A]\)</span> of <span class="math inline">\(A\)</span> in <span class="math inline">\(Y\)</span> under <span class="math inline">\(\phi\)</span> is<br />
+<span class="math display">\[
+\phi[A] = \{\phi(a) \mid a \in A\}
+\]</span><br />
+The set <span class="math inline">\(\phi[X]\)</span> is sometimes called the <strong>range</strong> of <span class="math inline">\(\phi\)</span>. The <strong>inverse image</strong> <span class="math inline">\(\phi^{-1}[B]\)</span> of <span class="math inline">\(B\)</span> in <span class="math inline">\(X\)</span> is<br />
+<span class="math display">\[
+\phi^{-1}[B] = \{x \in X \mid \phi(x) \in B\}
+\]</span></p>
+</div>
+<p><img src="figures/mynote/Picture8.png" /></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-45" class="exercise"><strong>Exercise 6.5  </strong></span>If <span class="math inline">\(f: G \to G&#39;\)</span> is a group homomorphism, then <span class="math inline">\(\text{Im} \, f = f[G]\)</span> is a subgroup of <span class="math inline">\(G&#39;\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-46" class="theorem"><strong>Theorem 6.6  </strong></span>Let <span class="math inline">\(\phi\)</span> be a homomorphism of a group <span class="math inline">\(G\)</span> into a group <span class="math inline">\(G&#39;\)</span>.<br />
+1. If <span class="math inline">\(e\)</span> is the identity in <span class="math inline">\(G\)</span>, then <span class="math inline">\(\phi(e)\)</span> is the identity <span class="math inline">\(e&#39;\)</span> in <span class="math inline">\(G&#39;\)</span>.<br />
+2. If <span class="math inline">\(a \in G\)</span>, then <span class="math inline">\(\phi(a^{-1}) = (\phi(a))^{-1}\)</span>.<br />
+3. If <span class="math inline">\(H\)</span> is a subgroup of <span class="math inline">\(G\)</span>, then <span class="math inline">\(\phi(H)\)</span> is a subgroup of <span class="math inline">\(G&#39;\)</span>.<br />
+4. If <span class="math inline">\(K&#39;\)</span> is a subgroup of <span class="math inline">\(G&#39;\)</span>, then <span class="math inline">\(\phi^{-1}[K&#39;]\)</span> is a subgroup of <span class="math inline">\(G\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-47" class="definition"><strong>Definition 6.10  </strong></span>Let <span class="math inline">\(G\)</span> and <span class="math inline">\(G_1\)</span> be groups. A homomorphism <span class="math inline">\(f: G \to G_1\)</span> is called:<br />
+- An <strong>epimorphism</strong> if <span class="math inline">\(f\)</span> is onto <span class="math inline">\(G_1\)</span>.<br />
+- A <strong>monomorphism</strong> if <span class="math inline">\(f\)</span> is one-to-one.<br />
+- An <strong>isomorphism</strong> if <span class="math inline">\(f\)</span> is both one-to-one and onto <span class="math inline">\(G_1\)</span>. In this case, we write <span class="math inline">\(G \cong G_1\)</span> and say that <span class="math inline">\(G\)</span> and <span class="math inline">\(G_1\)</span> are <strong>isomorphic</strong>.<br />
+- An <strong>automorphism</strong> if <span class="math inline">\(f\)</span> is an isomorphism of a group <span class="math inline">\(G\)</span> onto itself.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-48" class="theorem"><strong>Theorem 6.7  </strong></span>Let <span class="math inline">\(f\)</span> be an isomorphism of a group <span class="math inline">\(G\)</span> onto <span class="math inline">\(G_1\)</span>. Then:<br />
+1. <span class="math inline">\(f^{-1}: G_1 \to G\)</span> is an isomorphism.<br />
+2. For all <span class="math inline">\(a \in G\)</span>, <span class="math inline">\(O(a) = O(f(a))\)</span>.<br />
+3. <span class="math inline">\(G\)</span> is commutative if and only if <span class="math inline">\(G_1\)</span> is commutative.<br />
+4. <span class="math inline">\(G\)</span> is cyclic if and only if <span class="math inline">\(G_1\)</span> is cyclic.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-11" class="proof"><em>Proof</em>. </span>Homework.</p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-50" class="definition"><strong>Definition 6.11  </strong></span>If <span class="math inline">\(f: G \to G_1\)</span> is a homomorphism, the <strong>kernel</strong> of <span class="math inline">\(f\)</span> is defined by:<br />
+<span class="math display">\[
+\ker f = \{g \in G \mid f(g) = e_{G_1}\}
+\]</span></p>
+</div>
+<p><img src="figures/mynote/Picture9.png" /></p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-51" class="example"><strong>Example 6.13  </strong></span>Define <span class="math inline">\(f: (\mathbb{Z}, +) \to (\mathbb{Z}_n, +)\)</span> by <span class="math inline">\(f(a) = \bar{a}\)</span>.<br />
+For <span class="math inline">\(a, b \in \mathbb{Z}\)</span>:<br />
+<span class="math display">\[
+f(a + b) = \overline{a + b} = \bar{a} +_n \bar{b} = f(a) +_n f(b)
+\]</span><br />
+Thus, <span class="math inline">\(f\)</span> is a homomorphism.</p>
+<p><span class="math display">\[
+\ker f = \{a \in \mathbb{Z} \mid f(a) = \bar{0}\} = \{a \in \mathbb{Z} \mid a \text{ is divisible by } n\} = \{qn \mid q \in \mathbb{Z}\}
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-52" class="theorem"><strong>Theorem 6.8  </strong></span>Let <span class="math inline">\(f\)</span> be a homomorphism of a group <span class="math inline">\(G\)</span> into a group <span class="math inline">\(G_1\)</span>. Then <span class="math inline">\(f\)</span> is one-to-one if and only if <span class="math inline">\(\ker f = \{e\}\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-12" class="proof"><em>Proof</em>. </span></p>
+<ul>
+<li>Suppose <span class="math inline">\(f\)</span> is one-to-one. Let <span class="math inline">\(a \in \ker f\)</span>. Then <span class="math inline">\(f(a) = e_1 = f(e)\)</span>. Since <span class="math inline">\(f\)</span> is one-to-one, <span class="math inline">\(a = e\)</span>. Thus, <span class="math inline">\(\ker f = \{e\}\)</span>.<br />
+</li>
+<li>Conversely, suppose <span class="math inline">\(\ker f = \{e\}\)</span>. Let <span class="math inline">\(a, b \in G\)</span> and suppose <span class="math inline">\(f(a) = f(b)\)</span>. Then:<br />
+<span class="math display">\[
+f(ab^{-1}) = f(a)f(b^{-1}) = f(a)f(b)^{-1} = e_1
+\]</span><br />
+Thus, <span class="math inline">\(ab^{-1} \in \ker f = \{e\}\)</span>, so <span class="math inline">\(ab^{-1} = e\)</span>, and <span class="math inline">\(a = b\)</span>.</li>
+</ul>
+</div>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-54" class="theorem"><strong>Theorem 6.9  </strong></span>Let <span class="math inline">\(f\)</span> be a homomorphism of a group <span class="math inline">\(G\)</span> into a group <span class="math inline">\(G_1\)</span>. Then <span class="math inline">\(\ker f\)</span> is a subgroup of <span class="math inline">\(G\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-13" class="proof"><em>Proof</em>. </span>Homework.</p>
 </div>
 
 </div>
