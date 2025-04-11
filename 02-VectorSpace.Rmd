@@ -143,3 +143,167 @@ Let $p$ be a prime integer. Every nonzero congruence class modulo $p$ has a mult
 ```
 
 We discuss the theorem before giving the proof.
+
+
+## Vector Spaces
+
+Having some examples and the concept of a field, we proceed to the definition of a vector space.
+
+```{definition}
+A **vector space** \( V \) over a field \( F \) is a set together with two laws of composition:
+  
+1. _Addition_: \( V \times V \to V \), written \( v, w \mapsto v + w \), for \( v \) and \( w \in V \).
+2. _Scalar multiplication by elements of the field_: \( F \times V \to V \), written \( c, v \mapsto cv \), for \( c \in F \) and \( v \in V \).
+
+These laws are required to satisfy the following axioms:
+- Addition makes \( V \) into a **commutative group** \( V^+ \), with identity denoted by \( 0 \).
+- \( 1 \cdot v = v \), for all \( v \in V \).
+- **Associative law:** \( (ab)v = a(bv) \), for all \( a, b \in F \) and all \( v \in V \).
+- **Distributive laws:**
+  - \( (a + b)v = av + bv \)
+  - \( a(v + w) = av + aw \), for all \( a, b \in F \) and all \( v, w \in V \).
+
+The space \( F^n \) of column vectors with entries in the field \( F \) forms a vector space over \( F \), when addition and scalar multiplication are defined as usual (3.1.1).
+
+```
+
+```{example}
+a. Let \( V = \mathbb{C} \) be the set of complex numbers. Forget about multiplication of two complex numbers. Remember only addition \( x + y \) and multiplication \( rx \) of a complex number \( x \) by a real number \( r \). These operations make \( V \) into a real vector space.\
+
+    
+    _Verification _
+    
+    1. _Closure under addition_: If \(x, y \in \mathbb{C}\), then \(x + y \in \mathbb{C}\) since the sum of two complex numbers is a complex number.  
+    2. _Associativity of addition_: For \(x, y, z \in \mathbb{C}\), \((x + y) + z = x + (y + z)\).  
+    3. _Existence of additive identity_: The complex number \(0 + 0i\) serves as the additive identity, as \(x + 0 = x\) for all \(x \in \mathbb{C}\).  
+    4. _Existence of additive inverses_: For any \(x \in \mathbb{C}\), there exists \(-x \in \mathbb{C}\) such that \(x + (-x) = 0\).  
+    5. _Closure under scalar multiplication_: If \(x \in \mathbb{C}\) and \(r \in \mathbb{R}\), then \(rx \in \mathbb{C}\).  
+    6. _Distributive properties_: For \(r, s \in \mathbb{R}\) and \(x, y \in \mathbb{C}\),  
+       - \(r(x + y) = rx + ry\).  
+       - \((r + s)x = rx + sx\).  
+    7. _Compatibility of scalar multiplication_: For \(r, s \in \mathbb{R}\) and \(x \in \mathbb{C}\), \((rs)x = r(sx)\).  
+    8. _Identity for scalar multiplication_: For \(x \in \mathbb{C}\), \(1 \cdot x = x\).  
+    
+    All axioms hold, so \(V\) is a real vector space.
+
+
+
+
+b. The set of real polynomials \( p(x) = a_nx^n + \dots + a_0 \) is a real vector space, with addition of polynomials and multiplication of polynomials by real numbers as its laws of composition.
+
+     _Verfication_
+     
+    We verify the vector space axioms for the set of polynomials:  
+          
+    1. _Closure under addition_: The sum of two polynomials is a polynomial.      
+    2. _Associativity of addition_: Addition of polynomials is associative.      
+    3. _Existence of additive identity_: The zero polynomial, \(0(x) = 0\),     serves as the additive identity.  
+    4. _Existence of additive inverses_: For any polynomial \(p(x)\), the     polynomial \(-p(x)\) satisfies \(p(x) + (-p(x)) = 0\).  
+    5. _Closure under scalar multiplication_: Multiplying a polynomial by a     real scalar produces a polynomial.  
+    6. _Distributive properties_: For \(r, s \in \mathbb{R}\) and     polynomials \(p(x)\), \(q(x)\),  
+       - \(r(p(x) + q(x)) = rp(x) + rq(x)\).  
+       - \((r + s)p(x) = rp(x) + sp(x)\).  
+    7. _Compatibility of scalar multiplication_: \((rs)p(x) = r(sp(x))\).  
+    8. _Identity for scalar multiplication_: \(1 \cdot p(x) = p(x)\).  
+    
+    
+    All axioms hold, so the set of polynomials is a real vector space.    
+
+c. The set of continuous real-valued functions on the real line is a real vector space, with addition of functions \( f + g \) and multiplication of functions by real numbers as its laws of composition.
+
+    _Verfication_
+    
+    We check the vector space axioms for the set \(C(\mathbb{R})\) of continuous functions \(f : \mathbb{R} \to \mathbb{R}\):  
+    
+    1. _Closure under addition_: If \(f, g \in C(\mathbb{R})\), then \(f + g\) is continuous, so \(f + g \in C(\mathbb{R})\).  
+    2. _Associativity of addition_: Function addition is associative.  
+    3. _Existence of additive identity_: The zero function, \(f(x) = 0\), satisfies \(f + 0 = f\).  
+    4. _Existence of additive inverses_: For \(f \in C(\mathbb{R})\), the function \(-f\) satisfies \(f + (-f) = 0\).  
+    5. _Closure under scalar multiplication_: If \(r \in \mathbb{R}\) and \(f \in C(\mathbb{R})\), then \(rf \in C(\mathbb{R})\).  
+    6. _Distributive properties_: For \(r, s \in \mathbb{R}\) and \(f, g \in C(\mathbb{R})\),  
+       - \(r(f + g) = rf + rg\).  
+       - \((r + s)f = rf + sf\).  
+    7. _Compatibility of scalar multiplication_: \((rs)f = r(sf)\).  
+    8. _Identity for scalar multiplication_: \(1 \cdot f = f\).  
+
+    All axioms hold, so \(C(\mathbb{R})\) is a real vector space.
+
+
+d. The set of solutions of the differential equation \( \frac{dy}{dx} = -y \) is a real vector space.
+    
+    1. _Closure under addition_: If \(y_1(x) = C_1e^{-x}\) and \(y_2(x) = C_2e^{-x}\), then:
+       \[
+       y_1(x) + y_2(x) = C_1e^{-x} + C_2e^{-x} = (C_1 + C_2)e^{-x}.
+       \]
+       Since \(C_1 + C_2 \in \mathbb{R}\), \(y_1 + y_2 \in S\). Hence, closure under addition holds.
+    
+    2. _Associativity of addition_: For \(y_1(x) = C_1e^{-x}\), \(y_2(x) = C_2e^{-x}\), and \(y_3(x) = C_3e^{-x}\):
+       \[
+       (y_1 + y_2) + y_3 = [(C_1 + C_2)e^{-x}] + C_3e^{-x} = (C_1 + C_2 + C_3)e^{-x}.
+       \]
+       Similarly:
+       \[
+       y_1 + (y_2 + y_3) = C_1e^{-x} + [(C_2 + C_3)e^{-x}] = (C_1 + C_2 + C_3)e^{-x}.
+       \]
+       Thus, addition is associative.
+    
+    3. _Existence of additive identity_: The zero solution \(y(x) = 0\) (where \(C = 0\)) satisfies:
+       \[
+       y(x) + 0 = y(x), \quad \text{for all } y(x) \in S.
+       \]
+       Hence, an additive identity exists.
+    
+    4. _Existence of additive inverses_: For \(y(x) = Ce^{-x}\), the function \(-y(x) = -Ce^{-x}\) satisfies:
+       \[
+       y(x) + (-y(x)) = Ce^{-x} + (-Ce^{-x}) = 0.
+       \]
+       Thus, every element has an additive inverse in \(S\).
+    
+    5. _Closure under scalar multiplication_: For \(r \in \mathbb{R}\) and \(y(x) = Ce^{-x}\), we have:
+       \[
+       ry(x) = r(Ce^{-x}) = (rC)e^{-x}.
+       \]
+       Since \(rC \in \mathbb{R}\), \(ry(x) \in S\). Hence, closure under scalar multiplication holds.
+    
+    6. _Distributive property (scalar over function addition)_: For \(r \in \mathbb{R}\) and \(y_1(x), y_2(x) \in S\), we have:
+       \[
+       r(y_1(x) + y_2(x)) = r[(C_1 + C_2)e^{-x}] = (rC_1 + rC_2)e^{-x}.
+       \]
+       On the other hand:
+       \[
+       ry_1(x) + ry_2(x) = (rC_1)e^{-x} + (rC_2)e^{-x} = (rC_1 + rC_2)e^{-x}.
+       \]
+       Thus, this property is satisfied.
+    
+    7. _Distributive property (function over scalar addition)_: For \(r, s \in \mathbb{R}\) and \(y(x) = Ce^{-x}\), we have:
+       \[
+       (r + s)y(x) = (r + s)(Ce^{-x}) = (rC + sC)e^{-x}.
+       \]
+       On the other hand:
+       \[
+       ry(x) + sy(x) = (rC)e^{-x} + (sC)e^{-x} = (rC + sC)e^{-x}.
+       \]
+       Thus, this property is satisfied.
+    
+    8. _Compatibility of scalar multiplication_: For \(r, s \in \mathbb{R}\) and \(y(x) = Ce^{-x}\), we have:
+       \[
+       (rs)y(x) = (rs)(Ce^{-x}) = (r(sC))e^{-x}.
+       \]
+       On the other hand:
+       \[
+       r(sy(x)) = r[(sC)e^{-x}] = (r(sC))e^{-x}.
+       \]
+       Thus, this property is satisfied.
+    
+    9. _Identity for scalar multiplication_: For \(y(x) = Ce^{-x}\), we have:
+       \[
+       1 \cdot y(x) = 1 \cdot (Ce^{-x}) = Ce^{-x}.
+       \]
+       Thus, the identity property holds.
+    
+    
+    
+    Since all eight axioms are verified, the set \(S\) is indeed a real vector space. 
+```
+
+

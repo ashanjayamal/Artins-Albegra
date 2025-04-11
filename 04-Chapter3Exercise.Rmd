@@ -232,6 +232,8 @@ Which of the following subsets is a sub space of the vector space $F^{n\times n}
   knitr::include_graphics('figures/ch_3/ex-2.2-c.png') 
 ```
 
+### Bases and Dimension
+
 ```{exercise,name='Artin 3.3.1'}
 Find a basis for the space of $n \times n$ symmetric matrices $(A^T = A)$.
 ```
